@@ -23,27 +23,32 @@ namespace runner
             var chat = Windows.getChatRoom(basehandle);
             var roomLogger = new ControlLogger(basehandle, chat);
 
-            DumpWindowsHandles.windowsHandles(args);
-            
-            //https://stackoverflow.com/questions/9665579/setting-up-hook-on-windows-messages?lq=1
-                
-            
+            //DumpWindowsHandles.windowsHandles(args);      
+            var hooks = ToolTips.list(basehandle);
+            //WindowsEventTracker tracker = new WindowsEventTracker(0, UInt32.MaxValue, basehandle);
             
 
+            
+            Action.ReadHP();
+            Action.ReadMana();
+
+            
             //////MAIN LOOP
             while (true)
             {
                 //new WindowHandleInfo(basehandle).GetAllChildHandles();
-
+                //ToolTips.list(basehandle);
                 //yield
                 Thread.Sleep(100);
 
                 __base();
 
                 stateEngine.HandleStateChanges(basehandle);
-                Action.ReadHP();
+               
 
-
+                ToolTips.list(basehandle);
+                HoverBox.list(basehandle);                
+                
                 roomLogger.LogRoom();
             }
         }
