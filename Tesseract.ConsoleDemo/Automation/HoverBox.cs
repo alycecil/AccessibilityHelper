@@ -1,49 +1,59 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
 using AutoIt;
 using runner;
-using Tesseract;
-using ImageFormat = System.Drawing.Imaging.ImageFormat;
 
 /// <summary>Contains functionality to get all the open windows.</summary>
 public static class HoverBox
 {
-   // private static Tesseract Ocr;
+    // private static Tesseract Ocr;
 
     static HoverBox()
     {
-       
     }
 
-    public static void handle(IntPtr basehandle)
+    public static VerbWindow handle(IntPtr basehandle, bool b = false)
     {
         var hasStuff = list(basehandle);
         if (!string.IsNullOrEmpty(hasStuff))
         {
-            
-
-            VerbWindow.findWindow(basehandle, hasStuff, true);
-
-
+            return VerbWindow.findWindow(basehandle, hasStuff, true, b);
         }
+
+        return null;
     }
+
+    public static Color wanted = Color.FromArgb(0,16,113,9);
 //style=0x56000000
     /// <summary>Returns a dictionary that contains the handle and title of all the open windows.</summary>
     /// <returns>A dictionary that contains the handle and title of all the open windows.</returns>
-    private static string list(IntPtr basehandle)
+    public static string list(IntPtr basehandle)
     {
-        int l = 966, t = 48, r = 1284, b = 74;
+        ScreenCapturer.GetScale(basehandle, out float sX, out float sY);
 
-        Rectangle rect = new Rectangle(l,t,r-l,b-t);
+        int l = (int) (966 / 2 * sX), 
+            t = (int) (48 / 2 * sY), 
+            r = (int) (1284 / 2 * sX), 
+            b = (int) (74 / 2 * sY);
 
+        
+        Rectangle rect = new Rectangle(l, t, r - l, b - t);
+
+
+        ;
+        var c = AutoItX.PixelGetColor(rect.Left + 3, rect.Top + 3);
+        var c2 = AutoItX.PixelGetColor(rect.Left + 5, rect.Top + 5);
+        if (!c2.Equals(c) || !c.Equals(wanted.ToArgb())) return null;
+        
         var capture = ScreenCapturer.Capture(rect);
+        capture = ScreenCapturer.Capture(rect);
+
+        //Console.WriteLine("Got Color : {0}", c);
+
         capture = ImageManip.AdjustThreshold(capture, .9f);
         capture = ImageManip.Max(capture);
-        
-        return ImageManip.doOcr(capture);
-    }
 
-    
+        return ImageManip.doOcr(capture);
+
+    }
 }

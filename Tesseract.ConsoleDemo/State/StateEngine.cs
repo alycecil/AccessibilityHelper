@@ -1,5 +1,6 @@
 using System;
 using AutoIt;
+using Tesseract.ConsoleDemo;
 
 namespace runner
 {
@@ -20,9 +21,14 @@ namespace runner
             Console.WriteLine("State Change from {0} to {1}",AsString(currentState),AsString(state));
             //TODO send state changes    
 
+            if (state == InCobmatClickingExit)
+            {
+                
+            }
 
             if (state == InCombat)
             {
+                Program.requestScreenScan();
                 Action.inCombat();
             }
             else if (currentState == InCombat && state == InCobmatAfter)
@@ -31,6 +37,7 @@ namespace runner
                 Action.ReadHP();
             }else if (state == OutOfCombat)
             {
+                Program.requestScreenScan();
                 Action.outOfCombat();
             }
         }
@@ -79,10 +86,14 @@ namespace runner
                     return "In Combat";
                 
                 case 2:
-                    return "After Comber";
+                    return "After Combat";
                
+                case 3:
+                    return "Exiting Combat";
+
                 case 4:
                     return "Look At";
+                
                 default:
                     return "NOT KNOWN";
                     

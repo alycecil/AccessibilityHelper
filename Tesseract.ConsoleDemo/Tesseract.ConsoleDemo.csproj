@@ -71,6 +71,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationClientsideProviders" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -82,13 +85,16 @@
     <Compile Include="Api\ListPlayersApi.cs" />
     <Compile Include="Api\UpdatePlayerApi.cs" />
     <Compile Include="Automation\Action.cs" />
+    <Compile Include="Automation\AutomationElement\Scroller.cs" />
     <Compile Include="Automation\Hook\ControlLogger.cs" />
     <Compile Include="Automation\HoverBox.cs" />
     <Compile Include="Automation\ToolTips.cs" />
     <Compile Include="Automation\Windows\ExitWindow.cs" />
     <Compile Include="Automation\Windows\LootWindow.cs" />
+    <Compile Include="Automation\Windows\RepairWindow.cs" />
     <Compile Include="Automation\Windows\VerbWindow.cs" />
     <Compile Include="Automation\Windows\Windows.cs" />
+    <Compile Include="Automation\Windows\WindowScan.cs" />
     <Compile Include="Client\ApiClient.cs" />
     <Compile Include="Client\ApiException.cs" />
     <Compile Include="Client\ApiResponse.cs" />
@@ -119,6 +125,7 @@
     <Compile Include="Win32\partias\Win32GetLong.cs" />
     <Compile Include="Win32\partias\Win32Memory.cs" />
     <Compile Include="Win32\partias\Win32Mouse.cs" />
+    <Compile Include="Win32\partias\Win32Scoll.cs" />
     <Compile Include="Win32\partias\Win32Structs.cs" />
     <Compile Include="Win32\ScreenCapturer.cs" />
     <Compile Include="Win32\Win32.cs" />

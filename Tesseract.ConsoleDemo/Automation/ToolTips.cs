@@ -125,6 +125,8 @@ namespace runner
             if(splits.Length!=2) splits = text.Split(new string[] {" 01 "}, StringSplitOptions.RemoveEmptyEntries);
             if(splits.Length!=2) splits = text.Split(new string[] {" 011 "}, StringSplitOptions.RemoveEmptyEntries);
             if(splits.Length!=2) splits = text.Split(new string[] {" 016"}, StringSplitOptions.RemoveEmptyEntries);
+            if(splits.Length!=2) splits = text.Split(new string[] {" 01"}, StringSplitOptions.RemoveEmptyEntries);
+            if(splits.Length!=2) splits = text.Split(new string[] {"01 "}, StringSplitOptions.RemoveEmptyEntries);
             if (splits.Length == 2)
                 if (int.TryParse(splits[0].Trim(), out var current))
                     if (int.TryParse(splits[1].Trim(), out var max))

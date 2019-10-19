@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Automation;
 using AutoIt;
 using static runner.Win32;
@@ -17,8 +18,20 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
      */
     public class Verb
     {
+        public static readonly string LOOKAT = "Look At",
+            Repair = "Repair",
+            Steal = "Steal",
+            WalkTo = "Walk To",
+            Sell = "Hail",
+            Fight = "Fight",
+            Talk = "Talk",
+            Shop = "Shop",
+            Cast = "Cast",
+            Enter = "Eninr",
+            Close = "Close";
+
         public Rectangle rect;
-        public String what;
+        public string what;
 
         public Verb(Rectangle rect, string what)
         {
@@ -30,17 +43,24 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
     public class VerbWindow
     {
         private const string texts = "StealCastLokAtFightWRrpOpenETe";
-        private IntPtr hWnd;
-        private List<Verb> verbs;
-        private VerbWindow(IntPtr hWnd, List<Verb> v)
+        public IntPtr hWnd;
+        public List<Verb> verbs;
+        public string ocrText;
+
+        private VerbWindow(IntPtr hWnd, List<Verb> v, string ocrText)
         {
             this.hWnd = hWnd;
+            this.ocrText = ocrText;
             this.verbs = v;
         }
 
-        public static VerbWindow fromHandle(IntPtr hWnd)
+        public static VerbWindow fromHandle(IntPtr hWnd, string ocrName, bool lightWeight)
         {
             if (hWnd == IntPtr.Zero) return null;
+
+            if (lightWeight)    
+                return new VerbWindow(hWnd, null, ocrName);
+
             List<Verb> verbs = new List<Verb>();
 
 
@@ -56,7 +76,7 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
             capture = ImageManip.Max(capture);
 
 
-            ScreenCapturer.ImageSave("CapTakeClicker", ImageFormat.Tiff, capture);
+            //ScreenCapturer.ImageSave("CapTakeClicker", ImageFormat.Tiff, capture);
 
             var captureHeight = capture.Height;
             for (int location = 0; location < captureHeight - height; location++)
@@ -79,26 +99,65 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
                 }
 
 
-                location += height;
-
                 //capture = ImageManip.Invert(capture);
 
-//                ScreenCapturer.ImageSave("CapTakeClicker_" + location,ImageFormat.Tiff, sub);
+                //ScreenCapturer.ImageSave("CapTakeClicker_" + location,ImageFormat.Tiff, sub);
 
                 string ocr = ImageManip.doOcr(sub, texts);
 
 //                Console.WriteLine("Verb Window[{1}] [{0}]",
 //                    ocr, location);
-                
-                Rectangle where = new Rectangle(rect.X+offet, rect.Y+location, w, height);
 
-                var item = new Verb(rect: where, what:ocr);
-                
+                if (string.IsNullOrEmpty(ocr)) continue;
+                bool wanted = cleanUpOCR(ocr, out string cleaned);
+                if (!wanted) continue;
+                ocr = cleaned;
+
+
+                Rectangle where = new Rectangle(rect.X + offet, rect.Y + location, w, height);
+
+//                Console.WriteLine("[{2}] Added Verb [{0}] @ [{1}]", ocr, where, 
+//                    Win32GetText.GetControlText(hWnd));
+                var item = new Verb(rect: where, what: ocr);
+
+                location += height;
+
                 verbs.Add(item);
             }
 
 
-            return new VerbWindow(hWnd, verbs);
+            return new VerbWindow(hWnd, verbs, ocrName);
+        }
+
+        private static bool cleanUpOCR(string ocr, out string s)
+        {
+            if (CleanUpOcr(ocr, out s, Verb.LOOKAT)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Repair)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Fight)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Sell)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Shop)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Steal)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Talk)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.WalkTo)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Cast)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Enter)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Close)) return true;
+
+            Console.WriteLine("Dropping Unknown Verb [{0}]", ocr);
+            s = null;
+            return false;
+        }
+
+        private static bool CleanUpOcr(string ocr, out string s, string which)
+        {
+            if (string.Equals(ocr, which, StringComparison.OrdinalIgnoreCase))
+            {
+                s = which;
+                return true;
+            }
+
+            s = null;
+            return false;
         }
 
         private static bool isBlack(Color captureTime)
@@ -108,9 +167,9 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
                    && captureTime.B == 0;
         }
 
-        public static VerbWindow findWindow(IntPtr baseHandle, String mousedOver, bool allowClick)
+        public static VerbWindow findWindow(IntPtr baseHandle, String mousedOver, bool allowClick, bool lightWeight)
         {
-            return fromHandle(_findWindow(baseHandle, mousedOver, allowClick));
+            return fromHandle(_findWindow(baseHandle, mousedOver, allowClick), mousedOver, lightWeight);
         }
 
         const string VerbClass = "Afx:00860000:0:00000000:00000000:0001002B";
@@ -125,6 +184,7 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
                 if (allowClick)
                 {
                     AutoItX.MouseClick();
+ //                   Thread.Sleep(1);
                     myHandle = __findWindow(baseHandle, mousedOver, allowClick);
                 }
             }

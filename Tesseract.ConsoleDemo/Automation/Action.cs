@@ -129,5 +129,10 @@ namespace runner
                 //GET NEXT ONE
             }
         }
+
+        public static void handleRepairControl(IntPtr basehandle)
+        {
+            RepairWindow.handle(basehandle);
+        }
     }
 }

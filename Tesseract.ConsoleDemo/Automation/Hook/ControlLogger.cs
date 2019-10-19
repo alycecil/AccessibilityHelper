@@ -91,10 +91,12 @@ namespace runner
             var stonesYouAre = "stones.  You are ";
             int locStart = split.LastIndexOf(stonesYouAre) + stonesYouAre.Length,
                 locEnd = split.LastIndexOf('%');
-
-            var weight = split.Substring(locStart, locEnd - locStart);
-            Console.WriteLine("{1} Weight : {0}", weight,  DateTime.Now);
-            Action.updateWeight(weight);
+            if (locStart < locEnd)
+            {
+                var weight = split.Substring(locStart, locEnd - locStart);
+                Console.WriteLine("{1} Weight : {0}", weight, DateTime.Now);
+                Action.updateWeight(weight);
+            }
         }
     }
 }

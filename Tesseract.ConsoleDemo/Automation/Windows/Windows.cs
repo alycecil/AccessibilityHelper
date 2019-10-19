@@ -40,6 +40,21 @@ namespace runner
 
             return AutoItX.ControlGetHandle(basehandle, "[Text:" + _ExitCombat + "]");
         }
+        
+        
+        public static IntPtr getRepair(IntPtr basehandle)
+        {
+            if (basehandle == IntPtr.Zero) return IntPtr.Zero;
+
+            return AutoItX.ControlGetHandle(basehandle, "[Text:Repair]");
+        }
+        
+        public static IntPtr getRepairNothingControl(IntPtr basehandle)
+        {
+            if (basehandle == IntPtr.Zero) return IntPtr.Zero;
+
+            return AutoItX.WinGetHandle("Repair");
+        }
 
         public static IntPtr getChatSender(IntPtr basehandle)
         {

@@ -21,6 +21,9 @@
         <e p="app.manifest" t="Include" />
         <e p="Automation" t="Include">
           <e p="Action.cs" t="Include" />
+          <e p="AutomationElement" t="Include">
+            <e p="Scroller.cs" t="Include" />
+          </e>
           <e p="Hook" t="Include">
             <e p="ControlLogger.cs" t="Include" />
           </e>
@@ -29,8 +32,10 @@
           <e p="Windows" t="Include">
             <e p="ExitWindow.cs" t="Include" />
             <e p="LootWindow.cs" t="Include" />
+            <e p="RepairWindow.cs" t="Include" />
             <e p="VerbWindow.cs" t="Include" />
             <e p="Windows.cs" t="Include" />
+            <e p="WindowScan.cs" t="Include" />
           </e>
         </e>
         <e p="bin" t="ExcludeRecursive" />
@@ -94,6 +99,7 @@
             <e p="Win32GetLong.cs" t="Include" />
             <e p="Win32Memory.cs" t="Include" />
             <e p="Win32Mouse.cs" t="Include" />
+            <e p="Win32Scoll.cs" t="Include" />
             <e p="Win32Structs.cs" t="Include" />
           </e>
           <e p="ScreenCapturer.cs" t="Include" />

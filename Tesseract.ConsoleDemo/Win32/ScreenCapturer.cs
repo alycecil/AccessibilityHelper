@@ -90,11 +90,9 @@ namespace runner
                 }
                 return result;
             }
-            catch (ArgumentException ignore)
-            {
-                return new Bitmap(1,1);
-            }
-
+            catch (Exception ignore){}
+            
+            return new Bitmap(1,1);
             
         }
 
@@ -118,6 +116,7 @@ namespace runner
                 (int) ((rect.Bottom - rect.Top))
             );
         }
+        
         public static void ConvertRect(out Rectangle bounds, Rect rect)
         {
             bounds = new Rectangle(
