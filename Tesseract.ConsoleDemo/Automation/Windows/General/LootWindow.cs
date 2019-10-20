@@ -24,9 +24,11 @@ namespace runner
             if (Program.ego?.Weight?.Value == null)
             {
                 Action.askForWeight();
+                TakeAll(hCntr, rectangle, sX, sY);
+                close(hCntr, rectangle, sX, sY);
                 return false;
             }
-            else if (Program.ego?.Weight?.Value > 90)
+            else if (Program.ego?.Weight?.Value > 98)
             {
                 close(hCntr, rectangle, sX, sY);
             }
@@ -56,7 +58,7 @@ namespace runner
 
                 return true;
             }
-            catch (Exception ignore)
+            catch (Exception)
             {
                 return false;
             }
@@ -65,13 +67,13 @@ namespace runner
         private static void TakeAll(IntPtr hCntr, Rectangle rectangle, float sX, float sY)
         {
             AutoItX.MouseClick("LEFT", (int) (rectangle.Left + sX * TakeAllX), (int) (rectangle.Top + sY * TakeAllY));
-            Thread.Sleep(400);
+            Thread.Sleep(1000);
         }
 
         private static void close(IntPtr hCntr, Rectangle rectangle, float sX, float sY)
         {
             AutoItX.MouseClick("LEFT", (int) (rectangle.Left + sX * DoneAllX), (int) (rectangle.Top + sY * TakeAllY));
-            Action.askForWeight();
+            //Action.askForWeight();
         }
 
         static string last = String.Empty;
@@ -108,7 +110,7 @@ namespace runner
                     Console.WriteLine("Looting with Desire {1}@{0}", rect, currentName);
                     AutoItX.MouseClick("LEFT", (int) (rect.X + 3 * sX), (int) (rect.Y + 4 * sY));
                     AutoItX.MouseClick("RIGHT", (int) (rect.X + 3 * sX), (int) (rect.Y + 4 * sY));
-                    Thread.Sleep(10);
+                    Thread.Sleep(400);
 
                     if (currentName.Equals(last))
                     {

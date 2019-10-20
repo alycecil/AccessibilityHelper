@@ -38,22 +38,25 @@ namespace runner
             _expectedTt = expectedTt;
         }
 
-        public static void handle(IntPtr basehandle)
+        public static string handle(IntPtr basehandle)
         {
             var all = list(basehandle);
             foreach (var keyValuePair in all)
             {
                 var winGetState = keyValuePair.Value;
-                if ((winGetState & 2) != 0)
+                if ((winGetState & 2) == 0) continue;
+                var text = HandleVisible(keyValuePair);
+                if (!string.IsNullOrEmpty(text))
                 {
-                    HandleVisible(keyValuePair);
+                    return text;
                 }
             }
 
             //Console.WriteLine("State : {0}", winGetState);
+            return null;
         }
 
-        private static void HandleVisible(KeyValuePair<IntPtr, int> keyValuePair)
+        private static string HandleVisible(KeyValuePair<IntPtr, int> keyValuePair)
         {
 //Console.WriteLine("Visi");
             //ScreenCapturer.CaptureAndSave("alices"+hWnd,hWnd);
@@ -66,10 +69,10 @@ namespace runner
             //ScreenCapturer.ImageSave("currentThing1", ImageFormat.Tiff, capture);
 
 
-            HandleCapture(capture);
+            return HandleCapture(capture);
         }
 
-        private static void HandleCapture(Bitmap capture)
+        private static string HandleCapture(Bitmap capture)
         {
             String text = String.Empty;
             String lookingFor = "None";
@@ -115,6 +118,8 @@ namespace runner
             {
                 Console.WriteLine("TTL [{0}] Looking for [{1}]", text, lookingFor);
             }
+
+            return text;
         }
 
         private static string HandleHealth(Bitmap capture)
@@ -122,11 +127,15 @@ namespace runner
             string text;
             text = ImageManip.doOcr(capture, "0123456789");
             var splits = text.Split(new string[] {"016 "}, StringSplitOptions.RemoveEmptyEntries);
+            if(splits.Length!=2) splits = text.Split(new string[] {" 301 "}, StringSplitOptions.RemoveEmptyEntries);
+            if(splits.Length!=2) splits = text.Split(new string[] {" 201 "}, StringSplitOptions.RemoveEmptyEntries);
+            if(splits.Length!=2) splits = text.Split(new string[] {" 701 "}, StringSplitOptions.RemoveEmptyEntries);
             if(splits.Length!=2) splits = text.Split(new string[] {" 01 "}, StringSplitOptions.RemoveEmptyEntries);
             if(splits.Length!=2) splits = text.Split(new string[] {" 011 "}, StringSplitOptions.RemoveEmptyEntries);
             if(splits.Length!=2) splits = text.Split(new string[] {" 016"}, StringSplitOptions.RemoveEmptyEntries);
             if(splits.Length!=2) splits = text.Split(new string[] {" 01"}, StringSplitOptions.RemoveEmptyEntries);
             if(splits.Length!=2) splits = text.Split(new string[] {"01 "}, StringSplitOptions.RemoveEmptyEntries);
+            
             if (splits.Length == 2)
                 if (int.TryParse(splits[0].Trim(), out var current))
                     if (int.TryParse(splits[1].Trim(), out var max))

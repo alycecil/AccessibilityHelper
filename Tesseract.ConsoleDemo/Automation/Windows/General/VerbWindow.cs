@@ -54,11 +54,13 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
             this.verbs = v;
         }
 
+        public static VerbWindow last = null;
+
         public static VerbWindow fromHandle(IntPtr hWnd, string ocrName, bool lightWeight)
         {
             if (hWnd == IntPtr.Zero) return null;
 
-            if (lightWeight)    
+            if (lightWeight)
                 return new VerbWindow(hWnd, null, ocrName);
 
             List<Verb> verbs = new List<Verb>();
@@ -79,7 +81,7 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
             //ScreenCapturer.ImageSave("CapTakeClicker", ImageFormat.Tiff, capture);
 
             var captureHeight = capture.Height;
-            for (int location = 0; location < captureHeight - height; location++)
+            for (int location = 0; location < captureHeight - height; location+=3)
             {
                 Color captureTime = capture.GetPixel(20, location);
 
@@ -116,8 +118,8 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
 
                 Rectangle where = new Rectangle(rect.X + offet, rect.Y + location, w, height);
 
-//                Console.WriteLine("[{2}] Added Verb [{0}] @ [{1}]", ocr, where, 
-//                    Win32GetText.GetControlText(hWnd));
+                Console.WriteLine("[{2}] Added Verb [{0}] @ [{1}]", ocr, where, 
+                    Win32GetText.GetControlText(hWnd));
                 var item = new Verb(rect: where, what: ocr);
 
                 location += height;
@@ -125,6 +127,7 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
                 verbs.Add(item);
             }
 
+            Console.WriteLine("Set VerbWindow.Last");
 
             return new VerbWindow(hWnd, verbs, ocrName);
         }
@@ -169,7 +172,21 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
 
         public static VerbWindow findWindow(IntPtr baseHandle, String mousedOver, bool allowClick, bool lightWeight)
         {
-            return fromHandle(_findWindow(baseHandle, mousedOver, allowClick), mousedOver, lightWeight);
+            try
+            {
+                var window = _findWindow(baseHandle, mousedOver, allowClick);
+
+                var verbWindow = fromHandle(window, mousedOver, lightWeight);
+                if (!lightWeight)
+                    last = verbWindow;
+                else last = null;
+                return verbWindow;
+            }
+            catch (Exception)
+            {
+            }
+
+            return null;
         }
 
         const string VerbClass = "Afx:00860000:0:00000000:00000000:0001002B";
@@ -184,7 +201,8 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
                 if (allowClick)
                 {
                     AutoItX.MouseClick();
- //                   Thread.Sleep(1);
+                    AutoIt.AutoItX.MouseMove(0, 0, 1);
+                                       Thread.Sleep(1);
                     myHandle = __findWindow(baseHandle, mousedOver, allowClick);
                 }
             }
@@ -237,5 +255,16 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
 
         [DllImport("USER32.DLL")]
         private static extern bool EnumWindows(EnumWindowsProc enumFunc, int lParam);
+
+        public static void click(Verb verb)
+        {
+            int x = verb.rect.X + 5;
+            int y = verb.rect.Y + 5;
+
+            
+            AutoItX.MouseMove(x, y, 1);
+            //Console.WriteLine("Moved to ({0},{1})", x, y);
+            AutoItX.MouseClick("LEFT", x, y, 1, 1);
+        }
     }
 }

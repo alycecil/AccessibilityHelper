@@ -84,16 +84,19 @@
     <Compile Include="Api\HealthApi.cs" />
     <Compile Include="Api\ListPlayersApi.cs" />
     <Compile Include="Api\UpdatePlayerApi.cs" />
-    <Compile Include="Automation\Action.cs" />
+    <Compile Include="Automation\Actions\Action.cs" />
+    <Compile Include="Automation\Actions\ActionFinishes.cs" />
+    <Compile Include="Automation\Actions\ActionRequests.cs" />
     <Compile Include="Automation\AutomationElement\Scroller.cs" />
     <Compile Include="Automation\Hook\ControlLogger.cs" />
     <Compile Include="Automation\HoverBox.cs" />
     <Compile Include="Automation\ToolTips.cs" />
-    <Compile Include="Automation\Windows\ExitWindow.cs" />
-    <Compile Include="Automation\Windows\LootWindow.cs" />
-    <Compile Include="Automation\Windows\RepairWindow.cs" />
-    <Compile Include="Automation\Windows\SellWindow.cs" />
-    <Compile Include="Automation\Windows\VerbWindow.cs" />
+    <Compile Include="Automation\Windows\Combat\CombatWindow.cs" />
+    <Compile Include="Automation\Windows\Combat\ExitWindow.cs" />
+    <Compile Include="Automation\Windows\General\LootWindow.cs" />
+    <Compile Include="Automation\Windows\General\VerbWindow.cs" />
+    <Compile Include="Automation\Windows\NPCS\RepairWindow.cs" />
+    <Compile Include="Automation\Windows\NPCS\SellWindow.cs" />
     <Compile Include="Automation\Windows\Windows.cs" />
     <Compile Include="Automation\Windows\WindowScan.cs" />
     <Compile Include="Client\ApiClient.cs" />
@@ -184,6 +187,9 @@
     <Content Include="x86\libtesseract304.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Automation\Maps" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets" Condition="Exists('..\packages\AutoItX.Dotnet.3.3.14.5\build\AutoItX.Dotnet.targets')" />

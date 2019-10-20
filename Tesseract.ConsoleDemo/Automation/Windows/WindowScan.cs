@@ -54,9 +54,10 @@ namespace runner
 
                 START_Y = 20;
             }
+            Random r = new Random();
             for (int x = START_X; x < END_X; x += STEP_X)
-
             {
+                x += (int)(r.Next() % STEP_X * .25*(r.Next() % 5 -3));
                 
                 for (int y = START_Y; y < END_y; y += STEP_Y)
                 {
@@ -73,6 +74,7 @@ namespace runner
                     {
                         things.Add(new Thing(scaledX,scaledY,h,name));
                         y += 50;
+                        x += 7;
                     
                     
                         //DISMISS

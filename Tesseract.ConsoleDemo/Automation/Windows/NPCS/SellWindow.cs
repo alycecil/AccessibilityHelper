@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Windows.Automation;
 using AutoIt;
 
@@ -55,7 +56,7 @@ namespace runner
 
             try
             {
-                if (sellable.TryGetClickablePoint(out var locBase)) ;
+                if (!sellable.TryGetClickablePoint(out var locBase)) return false;
                 var config = Config.getSellableList();
 
                 int count = 0;
@@ -120,6 +121,8 @@ namespace runner
             ScreenCapturer.GetScale(sellScreen, out float sX, out float sY);
             //click repair all
             AutoItX.MouseClick("LEFT", (int) (sX * baseX), (int) (sY * baseY));
+            Thread.Sleep(100);
+            Action.askForWeight();
         }
     }
 }

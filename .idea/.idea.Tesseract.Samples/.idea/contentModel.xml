@@ -20,7 +20,11 @@
         <e p="app.config" t="Include" />
         <e p="app.manifest" t="Include" />
         <e p="Automation" t="Include">
-          <e p="Action.cs" t="Include" />
+          <e p="Actions" t="Include">
+            <e p="Action.cs" t="Include" />
+            <e p="ActionFinishes.cs" t="Include" />
+            <e p="ActionRequests.cs" t="Include" />
+          </e>
           <e p="AutomationElement" t="Include">
             <e p="Scroller.cs" t="Include" />
           </e>
@@ -28,13 +32,21 @@
             <e p="ControlLogger.cs" t="Include" />
           </e>
           <e p="HoverBox.cs" t="Include" />
+          <e p="Maps" t="Include" />
           <e p="ToolTips.cs" t="Include" />
           <e p="Windows" t="Include">
-            <e p="ExitWindow.cs" t="Include" />
-            <e p="LootWindow.cs" t="Include" />
-            <e p="RepairWindow.cs" t="Include" />
-            <e p="SellWindow.cs" t="Include" />
-            <e p="VerbWindow.cs" t="Include" />
+            <e p="Combat" t="Include">
+              <e p="CombatWindow.cs" t="Include" />
+              <e p="ExitWindow.cs" t="Include" />
+            </e>
+            <e p="General" t="Include">
+              <e p="LootWindow.cs" t="Include" />
+              <e p="VerbWindow.cs" t="Include" />
+            </e>
+            <e p="NPCS" t="Include">
+              <e p="RepairWindow.cs" t="Include" />
+              <e p="SellWindow.cs" t="Include" />
+            </e>
             <e p="Windows.cs" t="Include" />
             <e p="WindowScan.cs" t="Include" />
           </e>

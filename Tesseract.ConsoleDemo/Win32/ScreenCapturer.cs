@@ -90,7 +90,7 @@ namespace runner
                 }
                 return result;
             }
-            catch (Exception ignore){}
+            catch (Exception){}
             
             return new Bitmap(1,1);
             

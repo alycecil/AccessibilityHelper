@@ -23,11 +23,11 @@ public static class HoverBox
         return null;
     }
 
-    public static Color wanted = Color.FromArgb(0,16,113,9);
+    private static Color wanted = Color.FromArgb(0,16,113,9);
 //style=0x56000000
     /// <summary>Returns a dictionary that contains the handle and title of all the open windows.</summary>
     /// <returns>A dictionary that contains the handle and title of all the open windows.</returns>
-    public static string list(IntPtr basehandle)
+    private static string list(IntPtr basehandle)
     {
         ScreenCapturer.GetScale(basehandle, out float sX, out float sY);
 

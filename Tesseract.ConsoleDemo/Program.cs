@@ -12,6 +12,7 @@ namespace Tesseract.ConsoleDemo
         public static WindowScan scan = null;
         public static Player ego = new Player();
         public static StateEngine stateEngine = new StateEngine();
+        public static int MaxHp = 1000;
 
         public static void Main(string[] args)
         {
@@ -37,28 +38,34 @@ namespace Tesseract.ConsoleDemo
                 __base();
 
 
-                EveryTick(basehandle, roomLogger);
-                FastTick(tick, basehandle);
+                EveryTick(basehandle);
+                FastTick(tick, basehandle, roomLogger);
                 CommonTick(tick, basehandle);
                 RareTick(tick);
 
+                
+                EveryTickLast();
 
                 handleScreenScan(tick, basehandle);
-                Action.handleNextAction();
                 tick %= Int32.MaxValue;
             }
         }
 
-        private static void EveryTick(IntPtr basehandle, ControlLogger roomLogger)
+        private static void EveryTickLast()
         {
-            ToolTips.handle(basehandle);
-            HoverBox.handle(basehandle);
-            roomLogger.LogRoom();
+            Action.handleNextAction();
         }
 
-        private static void FastTick(long tick, IntPtr basehandle)
+        private static void EveryTick(IntPtr basehandle)
+        {
+            ToolTips.handle(basehandle);
+        }
+
+        private static void FastTick(long tick, IntPtr basehandle, ControlLogger roomLogger)
         {
             if (tick % 5 != 0) return;
+            roomLogger.LogRoom();
+            HoverBox.handle(basehandle);
             stateEngine.HandleStateChanges(basehandle);
         }
 
@@ -69,27 +76,32 @@ namespace Tesseract.ConsoleDemo
 
             if (stateEngine.InState(StateEngine.InCombat))
             {
-             
-                Action.doCombat(basehandle);   
-            }else
-            if (stateEngine.InState(StateEngine.InCobmatAfter))
+                Action.doCombat(basehandle);
+            }
+            else if (stateEngine.InState(StateEngine.InCobmatAfter))
             {
                 Action.doLoot(basehandle);
                 Action.exitCombat(basehandle);
-            }else
-            if (stateEngine.InState(StateEngine.OutOfCombat))
+            }
+            else
+                //if (stateEngine.InState(StateEngine.OutOfCombat))
             {
                 Action.handleRepairControl(basehandle);
                 Action.doLoot(basehandle);
                 Action.doSell(basehandle);
             }
-            
-            
         }
 
         private static void RareTick(long tick)
         {
-            if (tick % 1000 != 0) return;
+            if (tick % 5000 != 0) return;
+            if (stateEngine.InState(StateEngine.OutOfCombat))
+            {
+                Action.ReadHP();
+                Action.askForWeight();
+            }
+
+            if (tick % 10000 != 0) return;
             //
 
             if (stateEngine.InState(StateEngine.OutOfCombat))
@@ -118,7 +130,7 @@ namespace Tesseract.ConsoleDemo
         }
 
         private static bool __scanPlease = false;
-        
+
 
         public static void requestScreenScan()
         {

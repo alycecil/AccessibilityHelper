@@ -24,22 +24,27 @@ namespace runner
 
             if (state == InCobmatClickingExit)
             {
+                Action.askForWeight();
             }
 
             if (state == InCombat)
             {
+                if (currentState == InCombatActing)
+                {
+                    Action.ReadHP();
+                }
                 //Program.requestScreenScan();
 
                 Action.inCombat();
             }
-            else if (currentState == InCombat && state == InCobmatAfter)
+            else if (currentState == InCombat || currentState == InCombatActing && state == InCobmatAfter)
             {
                 Action.askForWeight();
                 Action.ReadHP();
             }
             else if (state == OutOfCombat)
             {
-                Program.requestScreenScan();
+                //Program.requestScreenScan();
                 Action.outOfCombat();
             }
         }
@@ -49,10 +54,6 @@ namespace runner
             if (Windows.getInCombat() != IntPtr.Zero)
             {
                 seeCombatOption();
-            }
-            else if (Windows.lookatIdentifier(basehandle) != IntPtr.Zero)
-            {
-                seeLookAt();
             }
             else if (Windows.getExitCombatControl(basehandle) != IntPtr.Zero)
             {
@@ -66,6 +67,19 @@ namespace runner
             else if (InState(InCombat))
             {
                 combatWait();
+            }
+            else if (InState(InCobmatClickingExit) || InState(LookAt) || InState(UNKNOWN) ||
+                     Windows.getSell(basehandle)!= IntPtr.Zero
+                     || Windows.getNothingSelling(basehandle)!= IntPtr.Zero
+                     || Windows.getRepairNothingControl(basehandle)!= IntPtr.Zero
+                     || Windows.getRepair(basehandle)!= IntPtr.Zero)
+            {
+                //we out of combat probably
+                state(OutOfCombat);
+            }
+            else if (Windows.lookatIdentifier(basehandle) != IntPtr.Zero)
+            {
+                seeLookAt();
             }
         }
 

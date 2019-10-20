@@ -20,7 +20,7 @@ namespace runner
         public string LogRoom()
         {
             var sb = new StringBuilder();
-            var chatText = AutoItX.ControlGetText(basehandle, chat);
+            var chatText = AutoItX.WinGetText(basehandle).Trim();
             var chatTextLength = chatText.Length;
 
             if (chatTextLength < lenBlock)
@@ -63,7 +63,7 @@ namespace runner
             {
                 HandleLogs(sb);
 
-                //   Console.WriteLine(">[{0}]", sb.ToString());
+                  // Console.WriteLine(">[{0}]", sb.ToString());
             }
 
             sb.Clear();
