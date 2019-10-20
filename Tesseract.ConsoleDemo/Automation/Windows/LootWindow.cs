@@ -71,6 +71,7 @@ namespace runner
         private static void close(IntPtr hCntr, Rectangle rectangle, float sX, float sY)
         {
             AutoItX.MouseClick("LEFT", (int) (rectangle.Left + sX * DoneAllX), (int) (rectangle.Top + sY * TakeAllY));
+            Action.askForWeight();
         }
 
         static string last = String.Empty;
@@ -153,15 +154,10 @@ namespace runner
         }
 
 
-        private static string[] ignore = new string[]
-        {
-            "Mug", "Plate", "Finger", "Pebble", "Candle", "Hammer", "Jet", "Leather Pouch", "Tobac Leaf",
-            "Elder Oak Leaf", "Bowl", "Basalt Rock", "Zombie Finger", "Tooth", "Clump of Grass", "Jaw Bone"
-        };
 
         private static bool wanted(Bitmap cap, string currentName)
         {
-            if (ignore.Contains(currentName))
+            if (Config.getIgnoreList().Contains(currentName))
             {
                 return false;
             }

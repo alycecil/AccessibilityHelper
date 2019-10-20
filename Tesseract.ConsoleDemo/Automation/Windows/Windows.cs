@@ -41,6 +41,19 @@ namespace runner
             return AutoItX.ControlGetHandle(basehandle, "[Text:" + _ExitCombat + "]");
         }
         
+        public static IntPtr getSell(IntPtr basehandle)
+        {
+            if (basehandle == IntPtr.Zero) return IntPtr.Zero;
+
+            return AutoItX.ControlGetHandle(basehandle, "[Text:Sale]");
+        }
+        
+        public static IntPtr getNothingSelling(IntPtr basehandle)
+        {
+            if (basehandle == IntPtr.Zero) return IntPtr.Zero;
+
+            return AutoItX.WinGetHandle("Sale");
+        }
         
         public static IntPtr getRepair(IntPtr basehandle)
         {

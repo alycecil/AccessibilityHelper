@@ -6,7 +6,7 @@ namespace runner
 {
     public class RepairWindow
     {
-        const int baseX = 828 / 2, baseY = 552 / 2;
+        const int baseX = 414, baseY = 276;
 
         public static void handle(IntPtr basehandle)
         {

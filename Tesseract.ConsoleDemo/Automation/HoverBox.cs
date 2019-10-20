@@ -31,10 +31,10 @@ public static class HoverBox
     {
         ScreenCapturer.GetScale(basehandle, out float sX, out float sY);
 
-        int l = (int) (966 / 2 * sX), 
-            t = (int) (48 / 2 * sY), 
-            r = (int) (1284 / 2 * sX), 
-            b = (int) (74 / 2 * sY);
+        int l = (int) (483 * sX), 
+            t = (int) (24 * sY), 
+            r = (int) (642 * sX), 
+            b = (int) (37 * sY);
 
         
         Rectangle rect = new Rectangle(l, t, r - l, b - t);
@@ -46,7 +46,6 @@ public static class HoverBox
         if (!c2.Equals(c) || !c.Equals(wanted.ToArgb())) return null;
         
         var capture = ScreenCapturer.Capture(rect);
-        capture = ScreenCapturer.Capture(rect);
 
         //Console.WriteLine("Got Color : {0}", c);
 

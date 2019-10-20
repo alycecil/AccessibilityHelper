@@ -9,6 +9,7 @@ namespace Tesseract.ConsoleDemo
 {
     internal class Program
     {
+        public static WindowScan scan = null;
         public static Player ego = new Player();
         public static StateEngine stateEngine = new StateEngine();
 
@@ -57,42 +58,54 @@ namespace Tesseract.ConsoleDemo
 
         private static void FastTick(long tick, IntPtr basehandle)
         {
-            if (tick % 5 == 0)
-            {
-                stateEngine.HandleStateChanges(basehandle);
-            }
+            if (tick % 5 != 0) return;
+            stateEngine.HandleStateChanges(basehandle);
         }
 
         private static void CommonTick(long tick, IntPtr basehandle)
         {
-            if (tick % 10 == 0)
+            if (tick % 10 != 0) return;
+
+
+            if (stateEngine.InState(StateEngine.InCombat))
             {
-                Action.handleRepairControl(basehandle);
-                Action.doCombat(basehandle);
+             
+                Action.doCombat(basehandle);   
+            }else
+            if (stateEngine.InState(StateEngine.InCobmatAfter))
+            {
                 Action.doLoot(basehandle);
                 Action.exitCombat(basehandle);
+            }else
+            if (stateEngine.InState(StateEngine.OutOfCombat))
+            {
+                Action.handleRepairControl(basehandle);
+                Action.doLoot(basehandle);
+                Action.doSell(basehandle);
             }
+            
+            
         }
 
         private static void RareTick(long tick)
         {
-            if (tick % 1000 == 0)
+            if (tick % 1000 != 0) return;
+            //
+
+            if (stateEngine.InState(StateEngine.OutOfCombat))
             {
-                //
                 requestScreenScan();
             }
         }
 
         private static void handleScreenScan(long tick, IntPtr basehandle)
         {
-            if (tick % 17 == 0 && __scanPlease)
+            if (!__scanPlease) return;
+            var _scan = WindowScan.scanScreen(basehandle);
+            if (_scan != null)
             {
-                
-                var scan = WindowScan.scanScreen(basehandle);
-                if (scan != null)
-                {
-                    __scanPlease = false;
-                }
+                scan = _scan;
+                __scanPlease = false;
             }
         }
 
@@ -105,10 +118,12 @@ namespace Tesseract.ConsoleDemo
         }
 
         private static bool __scanPlease = false;
+        
 
         public static void requestScreenScan()
         {
             __scanPlease = true;
+            scan = null;
         }
     }
 }

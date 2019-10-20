@@ -50,7 +50,7 @@ namespace runner
             {
                 START_X = 10;
                 END_X = 640;
-                STEP_X = 12;
+                STEP_X = 23;
 
                 START_Y = 20;
             }

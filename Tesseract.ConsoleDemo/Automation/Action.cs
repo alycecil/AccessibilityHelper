@@ -134,5 +134,10 @@ namespace runner
         {
             RepairWindow.handle(basehandle);
         }
+
+        public static void doSell(IntPtr basehandle)
+        {
+            SellWindow.handle(basehandle);
+        }
     }
 }

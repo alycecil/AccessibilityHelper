@@ -33,6 +33,7 @@
             <e p="ExitWindow.cs" t="Include" />
             <e p="LootWindow.cs" t="Include" />
             <e p="RepairWindow.cs" t="Include" />
+            <e p="SellWindow.cs" t="Include" />
             <e p="VerbWindow.cs" t="Include" />
             <e p="Windows.cs" t="Include" />
             <e p="WindowScan.cs" t="Include" />
@@ -49,6 +50,9 @@
           <e p="IApiAccessor.cs" t="Include" />
           <e p="IReadableConfiguration.cs" t="Include" />
           <e p="SwaggerDateConverter.cs" t="Include" />
+        </e>
+        <e p="config" t="Include">
+          <e p="Config.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
           <e p="Entity.cs" t="Include" />
@@ -84,7 +88,6 @@
         <e p="Tesseract.ConsoleDemo.csproj" t="IncludeRecursive" />
         <e p="Util" t="Include">
           <e p="ApiCaller.cs" t="Include" />
-          <e p="Config.cs" t="Include" />
           <e p="ImageManip.cs" t="Include" />
           <e p="StringUtil.cs" t="Include" />
         </e>
