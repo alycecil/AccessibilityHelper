@@ -63,10 +63,10 @@ namespace runner
             //TODO HANDLE BETTER
             var capture = ScreenCapturer.Capture(keyValuePair.Key);
             capture = ImageManip.AdjustThreshold(capture, .3f);
-            //ScreenCapturer.ImageSave("currentThingRaw", ImageFormat.Tiff, capture);
+            ScreenCapturer.ImageSave("currentThingRaw", ImageFormat.Tiff, capture);
             capture = ImageManip.Invert(capture);
             capture = ImageManip.Max(capture);
-            //ScreenCapturer.ImageSave("currentThing1", ImageFormat.Tiff, capture);
+            ScreenCapturer.ImageSave("currentThing1", ImageFormat.Tiff, capture);
 
 
             return HandleCapture(capture);

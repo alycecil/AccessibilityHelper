@@ -13,6 +13,7 @@ namespace Tesseract.ConsoleDemo
         public static Player ego = new Player();
         public static StateEngine stateEngine = new StateEngine();
         public static int MaxHp = 1000;
+        public static long tick = 0;
 
         public static void Main(string[] args)
         {
@@ -29,7 +30,7 @@ namespace Tesseract.ConsoleDemo
 
             Action.ReadHP();
 
-            long tick = 0;
+            
             //////MAIN LOOP
             while (true)
             {
@@ -38,30 +39,31 @@ namespace Tesseract.ConsoleDemo
                 __base();
 
 
-                EveryTick(basehandle);
-                FastTick(tick, basehandle, roomLogger);
-                CommonTick(tick, basehandle);
-                RareTick(tick);
+                EveryTickFirst(basehandle);
+                
+                FastTick(basehandle, roomLogger);
+                CommonTick(basehandle);
+                RareTick();
 
                 
-                EveryTickLast();
+                EveryTickLast(basehandle);
 
-                handleScreenScan(tick, basehandle);
+                handleScreenScan(basehandle);
                 tick %= Int32.MaxValue;
             }
         }
 
-        private static void EveryTickLast()
+        private static void EveryTickLast(IntPtr basehandle)
         {
             Action.handleNextAction();
         }
 
-        private static void EveryTick(IntPtr basehandle)
+        private static void EveryTickFirst(IntPtr basehandle)
         {
             ToolTips.handle(basehandle);
         }
 
-        private static void FastTick(long tick, IntPtr basehandle, ControlLogger roomLogger)
+        private static void FastTick(IntPtr basehandle, ControlLogger roomLogger)
         {
             if (tick % 5 != 0) return;
             roomLogger.LogRoom();
@@ -69,7 +71,7 @@ namespace Tesseract.ConsoleDemo
             stateEngine.HandleStateChanges(basehandle);
         }
 
-        private static void CommonTick(long tick, IntPtr basehandle)
+        private static void CommonTick(IntPtr basehandle)
         {
             if (tick % 10 != 0) return;
 
@@ -92,7 +94,7 @@ namespace Tesseract.ConsoleDemo
             }
         }
 
-        private static void RareTick(long tick)
+        private static void RareTick()
         {
             if (tick % 5000 != 0) return;
             if (stateEngine.InState(StateEngine.OutOfCombat))
@@ -110,7 +112,7 @@ namespace Tesseract.ConsoleDemo
             }
         }
 
-        private static void handleScreenScan(long tick, IntPtr basehandle)
+        private static void handleScreenScan(IntPtr basehandle)
         {
             if (!__scanPlease) return;
             var _scan = WindowScan.scanScreen(basehandle);

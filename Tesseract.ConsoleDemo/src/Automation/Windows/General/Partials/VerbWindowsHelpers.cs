@@ -12,6 +12,26 @@ namespace runner
 {
     public partial class VerbWindow
     {
+        private static VerbWindow fromHandle(IntPtr hWnd, string ocrName, bool lightWeight)
+        {
+            if (hWnd == IntPtr.Zero) return null;
+
+            if (lightWeight)
+                return new VerbWindow(hWnd, null, ocrName);
+
+            List<Verb> verbs = new List<Verb>();
+
+            CaptureScreen(hWnd, out var height, out var offset, out var w, out var rect, out var capture);
+
+            var captureHeight = capture.Height;
+            
+            FindVerbs(hWnd, captureHeight, height, capture, offset, w, rect, verbs);
+
+            Console.WriteLine("Built New VerbWindow with details");
+
+            return new VerbWindow(hWnd, verbs, ocrName);
+        }
+        
         private static void CaptureScreen(IntPtr hWnd, out int height, out int offet, out int w, out Rectangle rect,
             out Bitmap capture)
         {
@@ -19,6 +39,8 @@ namespace runner
             height = (int) (sY * 12);
             offet = (int) (sX * 7);
             w = (int) (sX * 66);
+            
+            Thread.Sleep(100);
 
             ScreenCapturer.GetBounds(hWnd, out rect);
             capture = ScreenCapturer.Capture(rect);
@@ -27,55 +49,18 @@ namespace runner
             capture = ImageManip.Max(capture);
         }
 
-        private static bool cleanUpOCRTT(string ocr, out string s)
+      
+        private static bool CleanUpOcr(string ocr, out string s, string resultValue, string match = null)
         {
-            if (CleanUpOcr(ocr, out s, Verb.LOOKAT, VerbToolTips.LOOKAT)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Repair, VerbToolTips.Repair)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Fight, VerbToolTips.Fight)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Sell, VerbToolTips.Sell)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Shop, VerbToolTips.Shop)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Steal, VerbToolTips.Steal)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Talk, VerbToolTips.Talk)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.WalkTo, VerbToolTips.WalkTo)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Cast, VerbToolTips.Cast)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Enter, VerbToolTips.Enter)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Close, VerbToolTips.Close)) return true;
-
-            Console.WriteLine("Dropping Unknown Verb [{0}]", ocr);
-            s = null;
-            return false;
-        }
-        
-        private static bool cleanUpOCR(string ocr, out string s)
-        {
-            if (CleanUpOcr(ocr, out s, Verb.LOOKAT)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Repair)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Fight)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Sell)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Shop)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Steal)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Talk)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.WalkTo)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Cast)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Enter)) return true;
-            if (CleanUpOcr(ocr, out s, Verb.Close)) return true;
-
-            Console.WriteLine("Dropping Unknown Verb [{0}]", ocr);
-            s = null;
-            return false;
-        }
-        
-        private static bool CleanUpOcr(string ocr, out string s, string which, string match = null)
-        {
-            if (!string.IsNullOrEmpty(match))
+            if (string.IsNullOrEmpty(match))
             {
-                match = which;
+                match = resultValue;
             }
 
             if (string.Equals(ocr, match, StringComparison.OrdinalIgnoreCase)
                 || ocr.StartsWith(match, StringComparison.OrdinalIgnoreCase))
             {
-                s = which;
+                s = resultValue;
                 return true;
             }
 
@@ -153,6 +138,24 @@ namespace runner
             return myHandle;
         }
 
+        private static string ToolTipHelper(IntPtr hWnd, string ocr, Rectangle bounds)
+        {
+            new Verb(bounds, null).mouseover(out var x, out var y);
+            Console.WriteLine("--XXX-- Mouse move, sleep");
+            Thread.Sleep(2);
+
+            ToolTips.setExpected(ExpectedTT.Buttons);
+
+            var tt = ToolTips.handle(hWnd);
+            Console.WriteLine(" --{1}--[{0}]", tt, ocr);
+            return tt;
+        }
+
+        private static Rectangle BuildBounds(Rectangle rect, int offset, int w, int height, int location)
+        {
+            return new Rectangle(rect.X + offset, rect.Y + location, w, height);
+        }
+        
         private delegate bool EnumWindowsProc(IntPtr hWnd, int lParam);
 
         [DllImport("USER32.DLL")]
