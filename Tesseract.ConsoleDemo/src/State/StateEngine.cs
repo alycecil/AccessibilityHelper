@@ -55,7 +55,9 @@ namespace runner
             {
                 seeCombatOption();
             }
-            else if (Windows.getExitCombatControl(basehandle) != IntPtr.Zero)
+            else if (Windows.getExitCombatControl(basehandle) != IntPtr.Zero
+                 && !InState(InCobmatClickingExit)
+            )
             {
                 seeExitCombat();
             }
@@ -68,11 +70,14 @@ namespace runner
             {
                 combatWait();
             }
-            else if (InState(InCobmatClickingExit) || InState(LookAt) || InState(UNKNOWN) ||
-                     Windows.getSell(basehandle)!= IntPtr.Zero
-                     || Windows.getNothingSelling(basehandle)!= IntPtr.Zero
-                     || Windows.getRepairNothingControl(basehandle)!= IntPtr.Zero
-                     || Windows.getRepair(basehandle)!= IntPtr.Zero)
+            else if (
+                InState(InCobmatClickingExit)
+                || InState(LookAt)
+                || InState(UNKNOWN)
+                || Windows.getSell(basehandle) != IntPtr.Zero
+                || Windows.getNothingSelling(basehandle) != IntPtr.Zero
+                || Windows.getRepairNothingControl(basehandle) != IntPtr.Zero
+                || Windows.getRepair(basehandle) != IntPtr.Zero)
             {
                 //we out of combat probably
                 state(OutOfCombat);
@@ -86,11 +91,9 @@ namespace runner
 
         private void state(int newState)
         {
-            if (currentState != newState)
-            {
-                alert(newState);
-                currentState = newState;
-            }
+            if (currentState == newState) return;
+            alert(newState);
+            currentState = newState;
         }
 
         private string AsString(int state)
@@ -108,8 +111,10 @@ namespace runner
 
                 case 3:
                     return "Exiting Combat";
+
                 case 5:
                     return "Taking a Turn!";
+
                 case 4:
                     return "Look At";
 
@@ -119,23 +124,23 @@ namespace runner
         }
 
 
-        public void seeCombatOption()
+        private void seeCombatOption()
         {
             state(InCombat);
         }
 
-        public void seeLookAt()
+        private void seeLookAt()
         {
             state(LookAt);
         }
 
-        public void seeInventory()
+        private void seeInventory()
         {
             if (currentState == UNKNOWN || currentState == InCobmatClickingExit)
                 state(OutOfCombat);
         }
 
-        public void seeExitCombat()
+        private void seeExitCombat()
         {
             state(InCobmatAfter);
         }

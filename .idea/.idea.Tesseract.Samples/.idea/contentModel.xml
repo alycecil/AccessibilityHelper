@@ -8,82 +8,117 @@
         <e p="AutoItX.Dotnet.3.3.14.5\build\AutoItX3_x64.dll" t="Include" />
       </e>
       <e p="Tesseract.ConsoleDemo" t="IncludeRecursive">
-        <e p="Api" t="Include">
-          <e p="BasicErrorControllerApi.cs" t="Include" />
-          <e p="CompleteOrdersPlayerApi.cs" t="Include" />
-          <e p="GetOrdersPlayerApi.cs" t="Include" />
-          <e p="GetPlayerApi.cs" t="Include" />
-          <e p="HealthApi.cs" t="Include" />
-          <e p="ListPlayersApi.cs" t="Include" />
-          <e p="UpdatePlayerApi.cs" t="Include" />
-        </e>
         <e p="app.config" t="Include" />
         <e p="app.manifest" t="Include" />
-        <e p="Automation" t="Include">
-          <e p="Actions" t="Include">
-            <e p="Action.cs" t="Include" />
-            <e p="ActionFinishes.cs" t="Include" />
-            <e p="ActionRequests.cs" t="Include" />
-          </e>
-          <e p="AutomationElement" t="Include">
-            <e p="Scroller.cs" t="Include" />
-          </e>
-          <e p="Hook" t="Include">
-            <e p="ControlLogger.cs" t="Include" />
-          </e>
-          <e p="HoverBox.cs" t="Include" />
-          <e p="Maps" t="Include" />
-          <e p="ToolTips.cs" t="Include" />
-          <e p="Windows" t="Include">
-            <e p="Combat" t="Include">
-              <e p="CombatWindow.cs" t="Include" />
-              <e p="ExitWindow.cs" t="Include" />
-            </e>
-            <e p="General" t="Include">
-              <e p="LootWindow.cs" t="Include" />
-              <e p="VerbWindow.cs" t="Include" />
-            </e>
-            <e p="NPCS" t="Include">
-              <e p="RepairWindow.cs" t="Include" />
-              <e p="SellWindow.cs" t="Include" />
-            </e>
-            <e p="Windows.cs" t="Include" />
-            <e p="WindowScan.cs" t="Include" />
-          </e>
-        </e>
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Client" t="Include">
-          <e p="ApiClient.cs" t="Include" />
-          <e p="ApiException.cs" t="Include" />
-          <e p="ApiResponse.cs" t="Include" />
-          <e p="Configuration.cs" t="Include" />
-          <e p="ExceptionFactory.cs" t="Include" />
-          <e p="GlobalConfiguration.cs" t="Include" />
-          <e p="IApiAccessor.cs" t="Include" />
-          <e p="IReadableConfiguration.cs" t="Include" />
-          <e p="SwaggerDateConverter.cs" t="Include" />
-        </e>
-        <e p="config" t="Include">
-          <e p="Config.cs" t="Include" />
-        </e>
-        <e p="Model" t="Include">
-          <e p="Entity.cs" t="Include" />
-          <e p="Event.cs" t="Include" />
-          <e p="Expiringint.cs" t="Include" />
-          <e p="ModelAndView.cs" t="Include" />
-          <e p="Player.cs" t="Include" />
-          <e p="PlayerUpdate.cs" t="Include" />
-          <e p="View.cs" t="Include" />
-        </e>
         <e p="obj" t="ExcludeRecursive" />
         <e p="packages.config" t="Include" />
         <e p="phototest.tif" t="Include" />
-        <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
-        <e p="State" t="Include">
-          <e p="StateEngine.cs" t="Include" />
+        <e p="src" t="Include">
+          <e p="Automation" t="Include">
+            <e p="Actions" t="Include">
+              <e p="Action.cs" t="Include" />
+              <e p="ActionFinishes.cs" t="Include" />
+              <e p="ActionRequests.cs" t="Include" />
+            </e>
+            <e p="AutomationElement" t="Include">
+              <e p="Scroller.cs" t="Include" />
+            </e>
+            <e p="Hook" t="Include">
+              <e p="ControlLogger.cs" t="Include" />
+            </e>
+            <e p="HoverBox.cs" t="Include" />
+            <e p="ToolTips.cs" t="Include" />
+            <e p="Windows" t="Include">
+              <e p="Combat" t="Include">
+                <e p="CombatWindow.cs" t="Include" />
+                <e p="ExitWindow.cs" t="Include" />
+              </e>
+              <e p="General" t="Include">
+                <e p="LootWindow.cs" t="Include" />
+                <e p="Partials" t="Include">
+                  <e p="Verbs.cs" t="Include" />
+                  <e p="VerbWindowsHelpers.cs" t="Include" />
+                </e>
+                <e p="VerbWindow.cs" t="Include" />
+              </e>
+              <e p="NPCS" t="Include">
+                <e p="RepairWindow.cs" t="Include" />
+                <e p="SellWindow.cs" t="Include" />
+              </e>
+              <e p="Windows.cs" t="Include" />
+              <e p="WindowScan.cs" t="Include" />
+            </e>
+          </e>
+          <e p="config" t="Include">
+            <e p="Config.cs" t="Include" />
+            <e p="Secrets.cs" t="Include" />
+            <e p="Sellables.cs" t="Include" />
+          </e>
+          <e p="Main" t="Include">
+            <e p="Program.cs" t="Include" />
+          </e>
+          <e p="State" t="Include">
+            <e p="StateEngine.cs" t="Include" />
+          </e>
+          <e p="swagger" t="Include">
+            <e p="Api" t="Include">
+              <e p="BasicErrorControllerApi.cs" t="Include" />
+              <e p="CompleteOrdersPlayerApi.cs" t="Include" />
+              <e p="GetOrdersPlayerApi.cs" t="Include" />
+              <e p="GetPlayerApi.cs" t="Include" />
+              <e p="HealthApi.cs" t="Include" />
+              <e p="ListPlayersApi.cs" t="Include" />
+              <e p="UpdatePlayerApi.cs" t="Include" />
+            </e>
+            <e p="Client" t="Include">
+              <e p="ApiClient.cs" t="Include" />
+              <e p="ApiException.cs" t="Include" />
+              <e p="ApiResponse.cs" t="Include" />
+              <e p="Configuration.cs" t="Include" />
+              <e p="ExceptionFactory.cs" t="Include" />
+              <e p="GlobalConfiguration.cs" t="Include" />
+              <e p="IApiAccessor.cs" t="Include" />
+              <e p="IReadableConfiguration.cs" t="Include" />
+              <e p="SwaggerDateConverter.cs" t="Include" />
+            </e>
+            <e p="Model" t="Include">
+              <e p="Entity.cs" t="Include" />
+              <e p="Event.cs" t="Include" />
+              <e p="Expiringint.cs" t="Include" />
+              <e p="ModelAndView.cs" t="Include" />
+              <e p="Player.cs" t="Include" />
+              <e p="PlayerUpdate.cs" t="Include" />
+              <e p="View.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Util" t="Include">
+            <e p="ApiCaller.cs" t="Include" />
+            <e p="ImageManip.cs" t="Include" />
+            <e p="StringUtil.cs" t="Include" />
+            <e p="Win32" t="Include">
+              <e p="Helpers" t="Include">
+                <e p="DumpWindowsHandles.cs" t="Include" />
+                <e p="OpenWindowGetter.cs" t="Include" />
+                <e p="Win32GetText.cs" t="Include" />
+              </e>
+              <e p="partias" t="Include">
+                <e p="Win32Dpi.cs" t="Include" />
+                <e p="Win32GetLong.cs" t="Include" />
+                <e p="Win32Memory.cs" t="Include" />
+                <e p="Win32Mouse.cs" t="Include" />
+                <e p="Win32Scoll.cs" t="Include" />
+                <e p="Win32Structs.cs" t="Include" />
+              </e>
+              <e p="ScreenCapturer.cs" t="Include" />
+              <e p="Win32.cs" t="Include" />
+              <e p="WindowHandleInfo.cs" t="Include" />
+              <e p="WindowsEventTracker.cs" t="Include" />
+            </e>
+          </e>
         </e>
         <e p="tessdata" t="Include">
           <e p="config" t="Include" />
@@ -98,30 +133,6 @@
           <e p="eng.traineddata" t="Include" />
         </e>
         <e p="Tesseract.ConsoleDemo.csproj" t="IncludeRecursive" />
-        <e p="Util" t="Include">
-          <e p="ApiCaller.cs" t="Include" />
-          <e p="ImageManip.cs" t="Include" />
-          <e p="StringUtil.cs" t="Include" />
-        </e>
-        <e p="Win32" t="Include">
-          <e p="Helpers" t="Include">
-            <e p="DumpWindowsHandles.cs" t="Include" />
-            <e p="OpenWindowGetter.cs" t="Include" />
-            <e p="Win32GetText.cs" t="Include" />
-          </e>
-          <e p="partias" t="Include">
-            <e p="Win32Dpi.cs" t="Include" />
-            <e p="Win32GetLong.cs" t="Include" />
-            <e p="Win32Memory.cs" t="Include" />
-            <e p="Win32Mouse.cs" t="Include" />
-            <e p="Win32Scoll.cs" t="Include" />
-            <e p="Win32Structs.cs" t="Include" />
-          </e>
-          <e p="ScreenCapturer.cs" t="Include" />
-          <e p="Win32.cs" t="Include" />
-          <e p="WindowHandleInfo.cs" t="Include" />
-          <e p="WindowsEventTracker.cs" t="Include" />
-        </e>
         <e p="x64" t="Include">
           <e p="liblept172.dll" t="Include" />
           <e p="libtesseract304.dll" t="Include" />
