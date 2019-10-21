@@ -87,10 +87,12 @@
     <Compile Include="src\Automation\ToolTips.cs" />
     <Compile Include="src\Automation\Windows\Combat\CombatWindow.cs" />
     <Compile Include="src\Automation\Windows\Combat\ExitWindow.cs" />
+    <Compile Include="src\Automation\Windows\General\ChatFrame.cs" />
     <Compile Include="src\Automation\Windows\General\LootWindow.cs" />
     <Compile Include="src\Automation\Windows\General\Partials\Verbs.cs" />
     <Compile Include="src\Automation\Windows\General\Partials\VerbWindowsHelpers.cs" />
     <Compile Include="src\Automation\Windows\General\VerbWindow.cs" />
+    <Compile Include="src\Automation\Windows\Magic\SpellWindow.cs" />
     <Compile Include="src\Automation\Windows\NPCS\RepairWindow.cs" />
     <Compile Include="src\Automation\Windows\NPCS\SellWindow.cs" />
     <Compile Include="src\Automation\Windows\Windows.cs" />

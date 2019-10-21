@@ -14,6 +14,7 @@ namespace runner
     {
         Health,
         Mana,
+        Inventory,
         Buttons,
         Other,
         None
@@ -109,6 +110,7 @@ namespace runner
                     text = ImageManip.doOcr(capture);
                     break;
 
+                case Inventory:
                 case Other:
                 default:
                     break;
@@ -210,6 +212,10 @@ namespace runner
                 case Mana:
                     move(590, 350);
                     break;
+                case Inventory:
+                    move(500, 375);
+                    break;
+                
             }
         }
     }

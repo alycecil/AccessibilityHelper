@@ -25,10 +25,7 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
         }
 
         public static VerbWindow last = null;
-
        
-
-
         public static VerbWindow findWindow(IntPtr baseHandle, String mousedOver, bool allowClick, bool lightWeight)
         {
             try

@@ -17,7 +17,7 @@ namespace runner
             Steal = "Pick this",
             WalkTo = "Walk",
             Sell = "Sell",
-            Fight = "Fight",
+            Fight = "Start combat",
             Talk = "Talk",
             Shop = "Buy something from",
             Cast = "Cast",

@@ -41,12 +41,20 @@ public static class HoverBox
 
         var c = AutoItX.PixelGetColor(rect.Left + 3, rect.Top + 3);
         var c2 = AutoItX.PixelGetColor(rect.Left + 5, rect.Top + 5);
-        if (!c2.Equals(c))
-            return null;
+        var c3 = AutoItX.PixelGetColor(rect.Left + 17, rect.Top + 4);
         
-        Console.WriteLine("Got Color : {0}", c);
+        if (!c2.Equals(c) || !c2.Equals(c3))
+            return null;
 
-        if (!c.Equals(wanted.ToArgb())) return null;
+        int argb = wanted.ToArgb();
+        if (!c.Equals(argb))
+        {
+            if(c != 497579 && c != 6244104)
+                Console.WriteLine("Got Color : {0}", c); 
+            //item color : 6244104
+            return null;
+            
+        }
 
         var capture = ScreenCapturer.Capture(rect);
         capture = ImageManip.AdjustThreshold(capture, .9f);

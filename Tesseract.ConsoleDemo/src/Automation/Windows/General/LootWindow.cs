@@ -67,7 +67,7 @@ namespace runner
         private static void TakeAll(IntPtr hCntr, Rectangle rectangle, float sX, float sY)
         {
             AutoItX.MouseClick("LEFT", (int) (rectangle.Left + sX * TakeAllX), (int) (rectangle.Top + sY * TakeAllY));
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
         }
 
         private static void close(IntPtr hCntr, Rectangle rectangle, float sX, float sY)
@@ -102,14 +102,11 @@ namespace runner
 
                 var currentName = child.Current.Name;
 
-                //ScreenCapturer.ImageSave("RLoot_" + i + "_" + currentName, ImageFormat.Tiff, cap);
-                //Console.WriteLine("Loot: {0} @ {1}", currentName, rect);
-
                 if (wanted(cap, currentName))
                 {
                     Console.WriteLine("Looting with Desire {1}@{0}", rect, currentName);
-                    AutoItX.MouseClick("LEFT", (int) (rect.X + 3 * sX), (int) (rect.Y + 4 * sY));
-                    AutoItX.MouseClick("RIGHT", (int) (rect.X + 3 * sX), (int) (rect.Y + 4 * sY));
+                    AutoItX.MouseClick("LEFT", (int) (rect.X + 13 * sX), (int) (rect.Y + 4 * sY));
+                    AutoItX.MouseClick("RIGHT", (int) (rect.X + 13 * sX), (int) (rect.Y + 4 * sY));
                     Thread.Sleep(400);
 
                     if (currentName.Equals(last))

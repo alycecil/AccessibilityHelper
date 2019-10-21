@@ -79,6 +79,11 @@ namespace runner
             return AutoItX.ControlGetHandle(basehandle, "[ID:666]");
         }
 
+        public static IntPtr getSpellList(IntPtr basehandle)
+        {
+            return getHandle(_SpellList);
+        }
+
         public static IntPtr lookatIdentifier(IntPtr basehandle)
         {
             //todo this does up by a couple
@@ -87,7 +92,7 @@ namespace runner
             if (focused == basehandle) return IntPtr.Zero;
 
             var ID = Win32.GetDlgCtrlID(focused);
-            if(ID <= 666) return IntPtr.Zero;
+            if(ID <= 666 || ID == 700) return IntPtr.Zero;
             
             var t = Win32GetText.GetControlText(focused);
             if (!string.IsNullOrEmpty(t))
@@ -97,12 +102,6 @@ namespace runner
 
             return IntPtr.Zero;
         }
-//
-//        public static IntPtr getGameBar(IntPtr basehandle)
-//        {
-//            return AutoItX.ControlGetHandle(basehandle, "[ID:68325664]");
-//        }
-
 
         public static IntPtr HandleInventory()
         {
@@ -120,12 +119,6 @@ namespace runner
             }
 
             return IntPtr.Zero;
-        }
-
-
-        public static void click(IntPtr window, IntPtr handle)
-        {
-            //TODO
         }
     }
 }

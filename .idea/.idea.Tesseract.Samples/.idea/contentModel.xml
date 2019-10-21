@@ -38,12 +38,16 @@
                 <e p="ExitWindow.cs" t="Include" />
               </e>
               <e p="General" t="Include">
+                <e p="ChatFrame.cs" t="Include" />
                 <e p="LootWindow.cs" t="Include" />
                 <e p="Partials" t="Include">
                   <e p="Verbs.cs" t="Include" />
                   <e p="VerbWindowsHelpers.cs" t="Include" />
                 </e>
                 <e p="VerbWindow.cs" t="Include" />
+              </e>
+              <e p="Magic" t="Include">
+                <e p="SpellWindow.cs" t="Include" />
               </e>
               <e p="NPCS" t="Include">
                 <e p="RepairWindow.cs" t="Include" />

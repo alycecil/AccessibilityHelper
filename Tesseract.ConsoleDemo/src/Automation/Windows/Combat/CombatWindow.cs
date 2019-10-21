@@ -13,6 +13,8 @@ namespace runner
         private static string GuardTT = "Passive attack"; //...
         private static string AttackTT = "Normal attack with"; //...
         private static string ChargeTT = "Aggressive attack with"; //...
+        private static string CastTT = "Cast"; //...
+        private static string FleeTT = "Attempt to run"; //...
 
         public static void handle(IntPtr baseHandle)
         {
@@ -27,19 +29,29 @@ namespace runner
             Dictionary<string, Point> spots = GetClicks(baseHandle, bounds);
 
             //TODO If Action Hooks
-            if (Config.autoGuard() && (Program.ego?.Hp?.Value == null || Program.ego.Hp.Value + 20 > Program.MaxHp))
+            if (Config.autoGuard() && (
+                    Program.ego?.Hp?.Value == null 
+                    || Program.ego.Hp.Value * 1.1 > Program.MaxHp
+                    )
+                )
             {
                 string tt = GuardTT;
                 foreach (var spot in spots)
                 {
-                    
-                    if (spot.Key?.StartsWith(tt) == true)
+                    string spotKey = spot.Key;
+                    if (spotKey?.StartsWith(tt) == true)
                     {
                         AutoItX.MouseClick("LEFT",bounds.X + spot.Value.X, bounds.Y + spot.Value.Y, 1, 1);        
                     }
+                    else
+                    {
+                        Console.WriteLine("saw [{0}] looking for [{1}]",spotKey,tt);
+                    }
                 }
-
-                
+            }
+            else
+            {
+                Console.WriteLine("Not sure what to do");
             }
         }
 
@@ -53,7 +65,7 @@ namespace runner
             }
 
             var seenBefore = new HashSet<string>();
-            for (int x = 10; x < bounds.Width; x += 40)
+            for (int x = 20; x < bounds.Width; x += 40)
             {
                 for (int y = 10; y < bounds.Height; y += 30)
                 {

@@ -61,6 +61,8 @@ namespace runner
                 
                 for (int y = START_Y; y < END_y; y += STEP_Y)
                 {
+                    y += (int) (r.Next() % STEP_Y * .25 * (r.Next() % 5 - 3));
+                    
                     var scaledX = (int) (x * sX);
                     var scaledY = (int) (y * sY);
                     
@@ -78,7 +80,7 @@ namespace runner
                     
                     
                         //DISMISS
-                        AutoItX.MouseClick("right", 0, 0, 1, 0);
+                        AutoItX.MouseClick("middle", 40, 40, 1, 0);
                     }
                     else
                     {

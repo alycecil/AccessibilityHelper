@@ -126,7 +126,7 @@ namespace runner
                 {
                     Console.WriteLine("Selling");
                     VerbWindow.click(verb);
-                    // wantToRepair = true;
+                    wantToRepair = true;
                 }
                 else if (
                     weight> 55 &&
@@ -138,7 +138,7 @@ namespace runner
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
                     VerbWindow.click(implied);
-                    // wantToRepair = true;
+                    wantToRepair = true;
                 } else if (
                     weight> 75 &&
                     verb.what.Equals(Verb.Talk))
@@ -149,13 +149,14 @@ namespace runner
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
                     VerbWindow.click(implied);
-                    // wantToRepair = true;
+                    wantToRepair = true;
                 }
                 else
                 {
                     Console.WriteLine("-- Nothing doing.");
                 }
             }
+            
 
             return false;
         }

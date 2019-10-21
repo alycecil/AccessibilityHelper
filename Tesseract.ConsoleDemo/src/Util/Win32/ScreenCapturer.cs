@@ -107,7 +107,7 @@ namespace runner
         
         public static void ConvertRect(out Rectangle bounds, System.Windows.Rect rect)
         {
-            GetScale(IntPtr.Zero, out float scaleX, out float scaleY);
+            //GetScale(IntPtr.Zero, out float scaleX, out float scaleY);
             
             bounds = new Rectangle(
                 (int) (rect.Left),
