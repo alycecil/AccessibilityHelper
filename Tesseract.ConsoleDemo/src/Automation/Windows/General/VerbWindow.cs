@@ -50,7 +50,7 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
             return null;
         }
 
-        const string VerbClass = "Afx:00860000:0:00000000:00000000:0001002B";
+        const string VerbClass = "Afx:";//...
 
 
         public void dismiss()

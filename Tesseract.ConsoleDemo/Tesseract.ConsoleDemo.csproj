@@ -81,23 +81,33 @@
     <Compile Include="src\Automation\Actions\Action.cs" />
     <Compile Include="src\Automation\Actions\ActionFinishes.cs" />
     <Compile Include="src\Automation\Actions\ActionRequests.cs" />
+    <Compile Include="src\Automation\Actions\ActionWorkers\AbstractActionWorker.cs" />
+    <Compile Include="src\Automation\Actions\ActionWorkers\ActionIdle.cs" />
+    <Compile Include="src\Automation\Actions\ActionWorkers\ActionMove.cs" />
+    <Compile Include="src\Automation\Actions\ActionWorkers\ActionRepair.cs" />
+    <Compile Include="src\Automation\Actions\ActionWorkers\ActionSell.cs" />
     <Compile Include="src\Automation\AutomationElement\Scroller.cs" />
+    <Compile Include="src\Automation\Cursor\CursorUtil.cs" />
+    <Compile Include="src\Automation\Hook\BundledControlLogger.cs" />
     <Compile Include="src\Automation\Hook\ControlLogger.cs" />
+    <Compile Include="src\Automation\Hook\SingleControlLogger.cs" />
     <Compile Include="src\Automation\HoverBox.cs" />
+    <Compile Include="src\Automation\ITickable.cs" />
     <Compile Include="src\Automation\ToolTips.cs" />
     <Compile Include="src\Automation\Windows\Combat\CombatWindow.cs" />
     <Compile Include="src\Automation\Windows\Combat\ExitWindow.cs" />
     <Compile Include="src\Automation\Windows\General\ChatFrame.cs" />
+    <Compile Include="src\Automation\Windows\General\Inventory.cs" />
     <Compile Include="src\Automation\Windows\General\LootWindow.cs" />
     <Compile Include="src\Automation\Windows\General\Partials\Verbs.cs" />
     <Compile Include="src\Automation\Windows\General\Partials\VerbWindowsHelpers.cs" />
     <Compile Include="src\Automation\Windows\General\VerbWindow.cs" />
     <Compile Include="src\Automation\Windows\Magic\Spell.cs" />
     <Compile Include="src\Automation\Windows\Magic\SpellWindow.cs" />
+    <Compile Include="src\Automation\Windows\Magic\Teleport.cs" />
     <Compile Include="src\Automation\Windows\NPCS\RepairWindow.cs" />
     <Compile Include="src\Automation\Windows\NPCS\SellWindow.cs" />
     <Compile Include="src\Automation\Windows\Scans\FullWindowScan.cs" />
-    <Compile Include="src\Automation\Windows\Scans\ITickable.cs" />
     <Compile Include="src\Automation\Windows\Scans\PartialWindowScan.cs" />
     <Compile Include="src\Automation\Windows\Scans\Thing.cs" />
     <Compile Include="src\Automation\Windows\Scans\WindowScan.cs" />
@@ -133,6 +143,7 @@
     <Compile Include="src\Util\ApiCaller.cs" />
     <Compile Include="src\Util\ImageManip.cs" />
     <Compile Include="src\Util\StringUtil.cs" />
+    <Compile Include="src\Util\Win32\Win32CursorUtils.cs" />
     <Compile Include="src\Util\Win32\Helpers\DumpWindowsHandles.cs" />
     <Compile Include="src\Util\Win32\Helpers\OpenWindowGetter.cs" />
     <Compile Include="src\Util\Win32\Helpers\Win32GetText.cs" />
@@ -183,7 +194,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app.manifest" />
+    <Content Include="down.tiff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="left.tiff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="right.tiff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="tessdata\config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="up.tiff">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="x64\liblept172.dll">

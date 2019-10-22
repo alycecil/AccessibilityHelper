@@ -1,7 +1,10 @@
 using System;
 using System.Drawing;
+using System.Threading;
 using AutoIt;
 using IO.Swagger.Model;
+using runner.ActionWorkers;
+using runner.Magic;
 using Tesseract.ConsoleDemo;
 using static IO.Swagger.Model.Event.ActionEnum;
 
@@ -12,177 +15,138 @@ namespace runner
         static ApiCaller caller = new ApiCaller();
 
 
-        private static void HandleComplete(Event.ActionEnum action)
+        private static void HandleComplete(Event.ActionEnum actionCompleted, String paramDet = null)
         {
-            HandleComplete(action, String.Empty);
-        }
+            if (actionCompleted == _currentAction)
+            {
+                HandleComplete(true);
+            }
+            else
+            {
+                Console.WriteLine("Implied Action Completed [{0}]", actionCompleted);
+            }
 
-
-        private static void HandleComplete(Event.ActionEnum checkStatus, string weight)
-        {
-            currentAction = Idle;
+            //if(_currentAction != Idle)
+            _currentAction = Idle;
         }
 
 
         private static Event currentEvent = null;
-        private static Event.ActionEnum currentAction = Idle;
-        private static bool wantToRepair = true;
+        private static Event.ActionEnum _currentAction = Idle;
+        public static bool wantToRepair = true;
 
-        public static void handleNextAction()
+        public static void handleNextAction(IntPtr baseHandle)
         {
-            if (currentAction == Idle)
+            bool complete = false;
+            switch (_currentAction)
             {
-                if (DoIdle()) return;
-            }
-            else if (currentAction == CheckHpMana || currentAction == CheckStatus)
-            {
-                Console.WriteLine("Checking Status");
-            }
-            else
-            {
-                throw new NotImplementedException();
+                case Idle when ActionIdle.DoIdle():
+                    Console.WriteLine("Found a verb to do.");
+                    return;
+                case Idle:
+                    complete = true;
+                    break;
+
+                case CheckStatus:
+                    break;
+                case Move:
+                    complete = ActionMove.handle(baseHandle, currentEvent);
+                    break;
+
+                case CheckInventory:
+                    //TODO better read mana
+                    complete = Inventory.handle(baseHandle);
+                    break;
+
+                case CheckHpMana:
+                {
+                    if (Program.getTick() % 100 == 0)
+                    {
+                        Action.ReadHP();
+                    }
+
+                    //Console.WriteLine("Checking Status");
+                    break;
+                }
+                case Teleport when !Program.stateEngine.InState(StateEngine.OutOfCombat):
+                    return;
+                case Teleport:
+                    complete = new SpellWindow("Teleport", SpellType.Teleport).handle(baseHandle, currentEvent);
+                    break;
+
+                case CombatGuard:
+                    break;
+                case Repair:
+                    complete = ActionRepair.DoAction();
+                    break;
+                case SellInventory:
+                    complete = ActionSell.DoAction();
+                    break;
+
+                case CombatAttack:
+                case CombatCast:
+                default:
+                    if (Program.stateEngine.InState(StateEngine.OutOfCombat))
+                        throw new NotImplementedException();
+                    break;
             }
 
             //TODO
             if (currentEvent == null)
             {
-                //GET NEXT ONE
-            }
-        }
+                GetNextEvent();
 
-        private static bool DoIdle()
-        {
-            var verbWindow = VerbWindow.last;
-            bool didSomething = false;
-
-            if (verbWindow == null)
-            {
-                //Console.Write("[...]");
-                return false;
-            }
-
-            if (verbWindow.verbs.Count == 0)
-            {
-                Console.WriteLine("Scrap Scan Sucked, Trying Again");
-                int type = verbWindow.type;
-                verbWindow = VerbWindow.findWindow(Windows.HandleBaseWindow(), verbWindow.ocrText, false, false);
-                verbWindow.type = type;
-                Console.WriteLine("Actions Scanned Again");
-
-                if (verbWindow == null || verbWindow.verbs.Count == 0)
+                switch (_currentAction)
                 {
-                    Console.WriteLine("Nothing To Do Yet, Maybe I should screen scan better");
-                    return false;
+                    case CheckStatus:
+                        Console.WriteLine("Checking Status [{0}]", currentEvent);
+                        askForWeight();
+                        break;
+                    case SellInventory:
+                    case Repair:
+                        WindowScan.requestScreenScan();
+                        break;
+                    default:
+                        //no start action
+                        break;
                 }
-            }
-
-
-            if (!Win32.IsWindowVisible(verbWindow.hWnd) || verbWindow.verbs.Count == 0)
-            {
-                Console.WriteLine("Lost VerbWindow");
-                VerbWindow.last = null;
-                return true;
-            }
-
-            if (!Program.stateEngine.InState(StateEngine.OutOfCombat))
-            {
-                Console.WriteLine("Not Lazing About, stopping doIdle");
-                return false;
-            }
-
-            foreach (var verb in verbWindow.verbs)
-            {
-                if (didSomething) break;
-                //Console.WriteLine("Idle Considering doing[{0}]", verb.what);
-                
-                var hpValue = Program.ego?.Hp?.Value;
-                var maxHp = Program.MaxHp;
-                var weight = Program.ego?.Weight?.Value;
-                
-                if (hpValue == null)
-                {
-                    hpValue = maxHp;
-                }
-                if (weight == null)
-                {
-                    weight = 60;
-                }
-                
-                if (
-                    hpValue > 20 && 
-                    weight< 80 &&
-                    verb.what.Equals(Verb.Fight)
-                )
-                {
-                    Console.WriteLine("Starting A fight");
-                    VerbWindow.click(verb);
-                    didSomething = true;
-                }
-                else if (
-                    wantToRepair &&
-                    verb.what.Equals(Verb.Repair))
-                {
-                    Console.WriteLine("Repairing");
-                    VerbWindow.click(verb);
-                    wantToRepair = false;
-                    didSomething = true;
-                }
-                else if (
-                    weight> 55 &&
-                    verb.what.Equals(Verb.Sell))
-                {
-                    Console.WriteLine("Selling");
-                    VerbWindow.click(verb);
-                    wantToRepair = true;
-                    didSomething = true;
-                }
-                else if (
-                    weight> 55 &&
-                    verb.what.Equals(Verb.Repair))
-                {
-                    Console.WriteLine("Selling at implied Button");
-                    ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);
-                    var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y + 60 * sX), verb.rect.Width,
-                        verb.rect.Height);
-                    Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(implied);
-                    wantToRepair = true;
-                    didSomething = true;
-                } else if (
-                    weight> 75 &&
-                    verb.what.Equals(Verb.Talk))
-                {
-                    Console.WriteLine("Selling at implied Button from Talk");
-                    ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);
-                    var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y - 15 * sX), verb.rect.Width,
-                        verb.rect.Height);
-                    Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(implied);
-                    wantToRepair = true;
-                    didSomething = true;
-                }
-                else
-                {
-                    //Console.WriteLine("-- Nothing doing.");
-                }
-            }
-
-            if (!didSomething)
-            {
-                Console.Write("Idle Considered doing [");
-                foreach (var verb in verbWindow.verbs)
-                    Console.Write("Verb[{0}],", verb.what);
-                
-                Console.WriteLine("].");
-                
             }
             else
             {
-                VerbWindow.last = null;
+                HandleComplete(complete);
             }
-            
+        }
 
-            return false;
+        private static void GetNextEvent()
+        {
+//GET NEXT ONE
+            currentEvent = caller.nextEvent(Program.ego.Name);
+            Event.ActionEnum? currentEventAction = currentEvent?.Action;
+            if (currentEventAction != null)
+            {
+                _currentAction = (Event.ActionEnum) currentEventAction;
+            }
+            else
+            {
+                _currentAction = Idle;
+            }
+        }
+
+        private static void HandleComplete(bool complete)
+        {
+            if (complete && _currentAction != Idle)
+            {
+                //tell api we are done
+                Console.WriteLine("Complete Event [{0}]+[{1}]", caller.completeEvent(Program.ego.Name, currentEvent),
+                    currentEvent);
+                currentEvent = null;
+                _currentAction = Idle;
+            }
+        }
+
+        public static void setCurrentAction(Event.ActionEnum status)
+        {
+            _currentAction = status;
         }
     }
 }

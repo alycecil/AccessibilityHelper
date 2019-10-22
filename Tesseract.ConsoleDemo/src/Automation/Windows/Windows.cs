@@ -22,7 +22,10 @@ namespace runner
 
             return IntPtr.Zero;
         }
-
+        public static IntPtr getTeleport()
+        {
+            return getHandle("Teleport");
+        }
 
         public static IntPtr getLoot()
         {
@@ -105,7 +108,10 @@ namespace runner
 
         public static IntPtr HandleInventory()
         {
-            return getHandle(_titleInventory);
+            IntPtr handleInventory = getHandle(_titleInventory);
+            if(handleInventory!=IntPtr.Zero)
+                AutoItX.WinMove(handleInventory, 0, 800);
+            return handleInventory;
         }
 
         public static IntPtr HandleBaseWindow()

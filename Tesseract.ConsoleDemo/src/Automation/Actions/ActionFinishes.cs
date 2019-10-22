@@ -1,5 +1,5 @@
 using System;
-using AutoIt;
+using System.Threading;
 using IO.Swagger.Model;
 using Tesseract.ConsoleDemo;
 using static IO.Swagger.Model.Event.ActionEnum;
@@ -8,6 +8,18 @@ namespace runner
 {
     public static partial class Action
     {
+        private static int min = 0, max = 100;
+
+        public static void updateWeightOnlyIfAbove(int pmin)
+        {
+            min = pmin;
+        }
+
+        public static void updateWeightOnlyIfUnder(int pmax)
+        {
+            max = pmax;
+        }
+
         public static void updateWeight(string weight)
         {
             int _weight = Int32.Parse(weight.Trim());
@@ -15,9 +27,24 @@ namespace runner
             var __w = caller.updateWeight(Program.ego.Name, _weight);
             Program.ego.Weight = __w.Weight;
 
-            HandleComplete(Event.ActionEnum.CheckStatus, "WEIGHT");
+            var notTooMuch = _weight < max;
+            if (_weight > min && notTooMuch)
+            {
+                HandleComplete(CheckStatus, "WEIGHT");
+                updateWeightOnlyIfUnder(100);
+            }
+            else
+            {
+                Console.WriteLine("Ignoring Weight update [{_weight}]");
+
+                if (!notTooMuch)
+                {
+                    Thread.Sleep(TimeSpan.FromMinutes(20));
+                    Console.WriteLine("Waking back up");
+                }
+            }
         }
-        
+
         public static void ReadHPComplete(int current, int max)
         {
             caller.updateHp(Program.ego.Name, current, max);
@@ -34,10 +61,18 @@ namespace runner
 
             ToolTips.setExpected(ExpectedTT.None);
         }
-        
-        
-      
-        
+
+        public static void soldInventory()
+        {
+            HandleComplete(SellInventory);
+        }
+
+        public static void repaired()
+        {
+            HandleComplete(Repair);
+        }
+
+
         public static void inCombat()
         {
             caller.inCombat(Program.ego.Name);
@@ -47,6 +82,5 @@ namespace runner
         {
             caller.outOfCombat(Program.ego.Name);
         }
-
     }
 }

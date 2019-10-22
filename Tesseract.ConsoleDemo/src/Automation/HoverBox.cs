@@ -66,7 +66,7 @@ public static class HoverBox
         }
         else if (c != 497579)
         {
-            Console.WriteLine("Got Color : {0}", c);
+            //Console.WriteLine("Got Color : {0}", c);
             //item color : 6244104
         }
         return null;

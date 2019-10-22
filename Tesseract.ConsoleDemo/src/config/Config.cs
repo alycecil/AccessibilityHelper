@@ -1,4 +1,7 @@
+using System;
 using System.Collections.Generic;
+using System.Threading;
+using AutoIt;
 
 namespace runner
 {
@@ -7,7 +10,9 @@ namespace runner
         public static readonly string 
             KEY_API_ENDPOINT = "API_ENDPOINT",
             KEY_ME = "NAME",
-            KEY_AUTOGUARD = "KEY_AUTO_GUARD";
+            KEY_SCREENSCAN = "SCREENSCAN",
+            KEY_AUTOGUARD = "KEY_AUTO_GUARD",
+            KEY_TELEPORT = "KEY_TELEPORT..";
 
         private static bool loaded = false;
         private static Dictionary<string, string> config = new Dictionary<string, string>();
@@ -16,23 +21,62 @@ namespace runner
         {
             load();
 
-            config.TryGetValue(key, out var value);
-            return value;
-        }
+            if(config.TryGetValue(key, out var value))
+                return value;
 
-        public static bool autoGuard()
+            return null;
+        }
+        
+        private static bool getBoolean(string key)
         {
-            string config = get(KEY_AUTOGUARD);
+            string config = get(key);
             if (string.IsNullOrEmpty(config)) return false;
             if ("0".Equals(config) || "false".Equals(config)) return false;
 
             return true;
+        }
+        
+        private static bool getAsInt(string key, out int val)
+        {
+            val = 0;
+            string config = get(key);
+            if (string.IsNullOrEmpty(config)) return false;
+            return int.TryParse(config, out val);
+        }
+
+        public static bool autoGuard()
+        {
+            string keyAutoguard = KEY_AUTOGUARD;
+            return getBoolean(keyAutoguard);
+        }
+
+        public static bool screenScan()
+        {
+            string keyAutoguard = KEY_SCREENSCAN;
+            return getBoolean(keyAutoguard);
         }
 
 
         public static string[] getIgnoreList()
         {
             return ignoreList;
+        }
+
+        public static bool click(string keyX, string keyY)
+        {
+            var foundX = getAsInt(keyX, out int x);
+            var foundY = getAsInt(keyY, out int y);
+            if (foundX && foundY)
+            {
+                ScreenCapturer.GetScale(IntPtr.Zero,out float sX, out float sY);
+                AutoItX.MouseMove((int) (x * sX), (int) (y * sY));
+                Thread.Sleep(1);
+                AutoItX.MouseClick();
+                return true;
+            }
+
+            return false;
+
         }
     }
 }

@@ -15,6 +15,7 @@ namespace runner
         Health,
         Mana,
         Inventory,
+        Spells,
         Buttons,
         Other,
         None
@@ -110,7 +111,7 @@ namespace runner
                     text = ImageManip.doOcr(capture);
                     break;
 
-                case Inventory:
+                case ExpectedTT.Inventory:
                 case Other:
                 default:
                     break;
@@ -207,13 +208,20 @@ namespace runner
             switch (expectedTt)
             {
                 case Health:
+                    AutoItX.WinActivate(Windows.HandleBaseWindow());
                     move(500, 350);
                     break;
                 case Mana:
+                    AutoItX.WinActivate(Windows.HandleBaseWindow());
                     move(590, 350);
                     break;
-                case Inventory:
+                case ExpectedTT.Inventory:
+                    AutoItX.WinActivate(Windows.HandleBaseWindow());
                     move(500, 375);
+                    break;
+                case Spells:
+                    AutoItX.WinActivate(Windows.HandleBaseWindow());
+                    move(590, 375);
                     break;
                 
             }

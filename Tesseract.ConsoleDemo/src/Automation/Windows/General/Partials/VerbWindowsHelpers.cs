@@ -17,21 +17,24 @@ namespace runner
             if (hWnd == IntPtr.Zero) return null;
 
             if (lightWeight)
+            {
+                Console.WriteLine("Built New Lightweight VerbWindow");
                 return new VerbWindow(hWnd, null, ocrName);
+            }
 
             List<Verb> verbs = new List<Verb>();
 
             CaptureScreen(hWnd, out var height, out var offset, out var w, out var rect, out var capture);
 
             var captureHeight = capture.Height;
-            
+
             FindVerbs(hWnd, captureHeight, height, capture, offset, w, rect, verbs);
 
             Console.WriteLine("Built New VerbWindow with details");
 
             return new VerbWindow(hWnd, verbs, ocrName);
         }
-        
+
         private static void CaptureScreen(IntPtr hWnd, out int height, out int offet, out int w, out Rectangle rect,
             out Bitmap capture)
         {
@@ -39,7 +42,7 @@ namespace runner
             height = (int) (sY * 12);
             offet = (int) (sX * 7);
             w = (int) (sX * 66);
-            
+
             Thread.Sleep(100);
 
             ScreenCapturer.GetBounds(hWnd, out rect);
@@ -49,7 +52,7 @@ namespace runner
             capture = ImageManip.Max(capture);
         }
 
-      
+
         private static bool CleanUpOcr(string ocr, out string s, string resultValue, string match = null)
         {
             if (string.IsNullOrEmpty(match))
@@ -74,10 +77,8 @@ namespace runner
                    && captureTime.G == 0
                    && captureTime.B == 0;
         }
-        
-        
-        
-        
+
+
         private static IntPtr _findWindow(IntPtr baseHandle, String mousedOver, bool allowClick)
         {
             var myHandle = __findWindow(baseHandle, mousedOver, allowClick);
@@ -86,10 +87,11 @@ namespace runner
                 //var p  = AutoItX.MouseGetPos();
                 if (allowClick)
                 {
-                Console.WriteLine("Mouse Over New Thing [{0}], Clicking on", mousedOver);
+                    Console.WriteLine("Mouse Over New Thing [{0}], Clicking on", mousedOver);
                     AutoItX.MouseClick();
+                    Thread.Sleep(TimeSpan.FromMilliseconds(100));
                     AutoIt.AutoItX.MouseMove(0, 0, 1);
-                    Thread.Sleep(1);
+
                     myHandle = __findWindow(baseHandle, mousedOver, allowClick);
                 }
             }
@@ -109,8 +111,11 @@ namespace runner
                 if (hWnd == shellWindow) return true;
 
                 var clz = Win32GetText.getClassName(hWnd);
-                if (!VerbClass.Equals(clz))
+                if (!clz.StartsWith(VerbClass))
                     return true;
+
+                var text = Win32GetText.GetControlText(hWnd);
+                if (string.IsNullOrEmpty(text)) return true;
 
                 ScreenCapturer.GetBounds(hWnd, out var rect);
                 //Console.WriteLine("Right Class {0:x} @{1}", hWnd.ToInt32(), rect);
@@ -155,11 +160,10 @@ namespace runner
         {
             return new Rectangle(rect.X + offset, rect.Y + location, w, height);
         }
-        
+
         private delegate bool EnumWindowsProc(IntPtr hWnd, int lParam);
 
         [DllImport("USER32.DLL")]
         private static extern bool EnumWindows(EnumWindowsProc enumFunc, int lParam);
-
     }
 }

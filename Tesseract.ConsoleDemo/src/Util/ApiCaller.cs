@@ -89,6 +89,31 @@ namespace runner
             var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
             return resp;
         }
-        
+
+
+
+        public Event nextEvent(string name)
+        {
+            //try {
+                var api = new GetOrdersPlayerApi(basePath());
+                return api.EventUsingGET(name);
+            //}ca
+        }
+
+        public string completeEvent(string egoName, Event currentEvent)
+        {
+            var api = new CompleteOrdersPlayerApi(basePath());
+            return api.EventUsingPOST(true, currentEvent.Id, egoName);
+        }
+
+        public Player login(string name)
+        {
+            var x = new UpdatePlayerApi(basePath());
+
+            var playerUpdate = new PlayerUpdate();
+            playerUpdate.Name = name;
+            var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
+            return resp;
+        }
     }
 }

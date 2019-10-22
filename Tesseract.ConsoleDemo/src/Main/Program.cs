@@ -22,13 +22,14 @@ namespace Tesseract.ConsoleDemo
             AutoItX.Init();
             ego.Name = Config.get(Config.KEY_ME);
 
+            new ApiCaller().login(ego.Name);
 
             var basehandle = __base();
 
-            var chat = Windows.getChatRoom(basehandle);
-            var roomLogger = new ControlLogger(basehandle, chat);
-
+            
+            var roomLogger = ControlLogger.build(basehandle);
             Action.ReadHP();
+            
 
             
             //////MAIN LOOP
@@ -53,9 +54,11 @@ namespace Tesseract.ConsoleDemo
             }
         }
 
+        const int WARMUP_TICKS = 10;
         private static void EveryTickLast(IntPtr basehandle)
         {
-            Action.handleNextAction();
+            if(tick>WARMUP_TICKS)
+                Action.handleNextAction(basehandle);
         }
 
         private static void EveryTickFirst(IntPtr basehandle)
@@ -121,6 +124,11 @@ namespace Tesseract.ConsoleDemo
             IntPtr basehandle = Windows.HandleBaseWindow();
             if (basehandle == IntPtr.Zero) throw new Exception("Other App Not Running");
             return basehandle;
+        }
+
+        public static long getTick()
+        {
+            return tick;
         }
     }
 }

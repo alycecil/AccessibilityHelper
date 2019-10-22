@@ -63,3 +63,7 @@ C:\dev\runner\Tesseract.ConsoleDemo\obj\Debug\Tesseract.ConsoleDemo.csproj.CopyC
 C:\dev\runner\Tesseract.ConsoleDemo\obj\Debug\Tesseract.ConsoleDemo.exe
 C:\dev\runner\Tesseract.ConsoleDemo\obj\Debug\Tesseract.ConsoleDemo.pdb
 C:\dev\runner\Tesseract.ConsoleDemo\bin\Debug\tessdata\config
+C:\dev\runner\Tesseract.ConsoleDemo\bin\Debug\down.tiff
+C:\dev\runner\Tesseract.ConsoleDemo\bin\Debug\left.tiff
+C:\dev\runner\Tesseract.ConsoleDemo\bin\Debug\right.tiff
+C:\dev\runner\Tesseract.ConsoleDemo\bin\Debug\up.tiff

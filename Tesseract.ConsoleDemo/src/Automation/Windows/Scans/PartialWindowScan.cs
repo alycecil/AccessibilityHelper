@@ -32,6 +32,9 @@ namespace runner
 
         public override void tickCommon(long tick, IntPtr baseHandle)
         {
+            if (!Config.screenScan())
+                return;
+            
             bool afterEndY = currentY > END_y-STEP_Y;
             bool afterEndX = currentX > END_X-STEP_X;
 
@@ -66,7 +69,7 @@ namespace runner
             }
             else if (afterEndY)
             {
-                currentY = START_Y + 2;
+                currentY = START_Y + 3 + currentY%END_y;
             }
             currentX += STEP_X;
 
@@ -75,7 +78,6 @@ namespace runner
             VerbWindow.findWindow(baseHandle,"DISMISS")?.dismiss();
             AutoItX.MouseMove((int) (currentX * sX), (int) (currentY * sY), 1);
 
-            //throw new System.NotImplementedException();
         }
     }
 }

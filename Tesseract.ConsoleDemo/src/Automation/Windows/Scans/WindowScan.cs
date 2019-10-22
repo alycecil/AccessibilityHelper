@@ -18,6 +18,9 @@ namespace runner
 
         public static void handleScreenScan(IntPtr basehandle)
         {
+            if (!Config.screenScan())
+                return;
+
             if (__scanPlease)
             {
                 if (Program.scan == null)
@@ -38,9 +41,10 @@ namespace runner
 
         public static void flushScreenScan()
         {
+            //Program.scan?.delete();
             Program.scan = null;
         }
-        
+
         public static void requestScreenScan()
         {
             __scanPlease = true;

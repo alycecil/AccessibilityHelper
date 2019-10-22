@@ -11,26 +11,42 @@
         <e p="app.config" t="Include" />
         <e p="app.manifest" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="down.tiff" t="Include" />
+        <e p="Left.tiff" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="packages.config" t="Include" />
         <e p="phototest.tif" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
+        <e p="right.tiff" t="Include" />
         <e p="src" t="Include">
           <e p="Automation" t="Include">
             <e p="Actions" t="Include">
               <e p="Action.cs" t="Include" />
               <e p="ActionFinishes.cs" t="Include" />
               <e p="ActionRequests.cs" t="Include" />
+              <e p="ActionWorkers" t="Include">
+                <e p="AbstractActionWorker.cs" t="Include" />
+                <e p="ActionIdle.cs" t="Include" />
+                <e p="ActionMove.cs" t="Include" />
+                <e p="ActionRepair.cs" t="Include" />
+                <e p="ActionSell.cs" t="Include" />
+              </e>
             </e>
             <e p="AutomationElement" t="Include">
               <e p="Scroller.cs" t="Include" />
             </e>
+            <e p="Cursor" t="Include">
+              <e p="CursorUtil.cs" t="Include" />
+            </e>
             <e p="Hook" t="Include">
+              <e p="BundledControlLogger.cs" t="Include" />
               <e p="ControlLogger.cs" t="Include" />
+              <e p="SingleControlLogger.cs" t="Include" />
             </e>
             <e p="HoverBox.cs" t="Include" />
+            <e p="ITickable.cs" t="Include" />
             <e p="ToolTips.cs" t="Include" />
             <e p="Windows" t="Include">
               <e p="Combat" t="Include">
@@ -39,6 +55,7 @@
               </e>
               <e p="General" t="Include">
                 <e p="ChatFrame.cs" t="Include" />
+                <e p="Inventory.cs" t="Include" />
                 <e p="LootWindow.cs" t="Include" />
                 <e p="Partials" t="Include">
                   <e p="Verbs.cs" t="Include" />
@@ -49,6 +66,7 @@
               <e p="Magic" t="Include">
                 <e p="Spell.cs" t="Include" />
                 <e p="SpellWindow.cs" t="Include" />
+                <e p="Teleport.cs" t="Include" />
               </e>
               <e p="NPCS" t="Include">
                 <e p="RepairWindow.cs" t="Include" />
@@ -56,7 +74,6 @@
               </e>
               <e p="Scans" t="Include">
                 <e p="FullWindowScan.cs" t="Include" />
-                <e p="ITickable.cs" t="Include" />
                 <e p="PartialWindowScan.cs" t="Include" />
                 <e p="Thing.cs" t="Include" />
                 <e p="WindowScan.cs" t="Include" />
@@ -126,6 +143,7 @@
               </e>
               <e p="ScreenCapturer.cs" t="Include" />
               <e p="Win32.cs" t="Include" />
+              <e p="Win32CursorUtils.cs" t="Include" />
               <e p="WindowHandleInfo.cs" t="Include" />
               <e p="WindowsEventTracker.cs" t="Include" />
             </e>
@@ -144,6 +162,7 @@
           <e p="eng.traineddata" t="Include" />
         </e>
         <e p="Tesseract.ConsoleDemo.csproj" t="IncludeRecursive" />
+        <e p="up.tiff" t="Include" />
         <e p="x64" t="Include">
           <e p="liblept172.dll" t="Include" />
           <e p="libtesseract304.dll" t="Include" />
