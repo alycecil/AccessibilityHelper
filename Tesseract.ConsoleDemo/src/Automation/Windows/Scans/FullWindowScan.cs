@@ -3,33 +3,19 @@ using System.Collections.Generic;
 using System.Threading;
 using AutoIt;
 using Tesseract.ConsoleDemo;
-using static HoverBox;
 
 namespace runner
 {
-    public class Thing
+    public class FullWindowScan : WindowScan 
     {
-        public Thing(int x, int y, VerbWindow verbWindow, string name)
+        public FullWindowScan(List<Thing> things) : base(things)
         {
-            this.x = x;
-            this.y = y;
-            this.verbWindow = verbWindow;
-            this.name = name;
         }
 
-        public int x, y;
-        public VerbWindow verbWindow;
-        public string name;
-    }
-    public class WindowScan
-    {
-        public List<Thing> things;
-
-        public WindowScan(List<Thing> things)
-        {
-            this.things = things;
-        }
-
+        //Does Nothing, scanned already
+        public override void tickCommon(long tick)
+        {}
+        
         public static WindowScan scanScreen(IntPtr hWnd)
         {
 //            if (string.IsNullOrEmpty(verb)) return null;
@@ -39,21 +25,14 @@ namespace runner
             ScreenCapturer.GetScale(hWnd, out float sX, out float sY);
 
             Console.WriteLine(DateTime.Now);
-            int START_X = 40;
-            int END_X = 620;
-            int STEP_X = 27;
-            int START_Y = 90;
-            int STEP_Y = 13;
-            int END_y = 288;
+            GetConfig(out var START_X, 
+                out var END_X, 
+                out var STEP_X, 
+                out var START_Y, 
+                out var STEP_Y,
+                out var END_y);
 
-            if (Program.stateEngine.InState(StateEngine.InCombat))
-            {
-                START_X = 10;
-                END_X = 640;
-                STEP_X = 23;
-
-                START_Y = 20;
-            }
+            
             Random r = new Random();
             for (int x = START_X; x < END_X; x += STEP_X)
             {
@@ -67,8 +46,8 @@ namespace runner
                     var scaledY = (int) (y * sY);
                     
                     AutoItX.MouseMove(scaledX, scaledY, 1);
-                   Thread.Sleep(TimeSpan.FromMilliseconds(0.8));
-                    var h = handle(hWnd, true);
+                    Thread.Sleep(TimeSpan.FromMilliseconds(0.8));
+                    var h = HoverBox.handle(hWnd, true);
                     
                     if (h == null) continue;
                     var name = Win32GetText.GetControlText(h.hWnd);
@@ -110,7 +89,7 @@ namespace runner
 
             //TODO
             Console.WriteLine("D0ne at {0}",DateTime.Now);
-            return new WindowScan(things);
+            return new FullWindowScan(things);
         }
     }
 }

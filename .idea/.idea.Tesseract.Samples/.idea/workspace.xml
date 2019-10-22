@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23560944-9abb-4b5b-8cc4-98a9e35d63be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/ChatFrame.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Spell.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/ITickable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/Thing.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Tesseract.ConsoleDemo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Tesseract.ConsoleDemo.csproj" afterDir="false" />
@@ -16,12 +19,13 @@
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/WindowScan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/WindowScan.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/WindowScan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,31 +82,33 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="config" value="6" />
-          <entry key="cs" value="18668" />
+          <entry key="cs" value="20621" />
           <entry key="gitignore" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="18668" />
+          <entry key="C#" value="20621" />
           <entry key="PLAIN_TEXT" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="config" value="5" />
-          <entry key="cs" value="213" />
+          <entry key="cs" value="237" />
           <entry key="csproj" value="4" />
           <entry key="gitignore" value="1" />
           <entry key="manifest" value="1" />
+          <entry key="targets" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="213" />
+          <entry key="C#" value="237" />
           <entry key="Config" value="3" />
           <entry key="Csproj" value="4" />
           <entry key="Manifest File" value="1" />
+          <entry key="MsBuild targets file" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
@@ -113,59 +119,25 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="117" column="35" selection-start-line="117" selection-start-column="35" selection-end-line="117" selection-end-column="35" />
+            <state relative-caret-position="17">
+              <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
               <folding>
-                <marker date="1571622339876" expanded="false" signature="6:119" ph="..." />
-                <marker date="1571622339876" expanded="true" signature="152:3769" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="181:3767" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="474:1368" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="917:1358" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="1430:1489" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="1552:1613" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="1696:1886" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="1945:2581" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="2056:2129" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="2198:2316" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="2401:2571" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="2621:3032" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="2735:2835" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="2957:3022" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="3097:3342" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="3236:3332" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="3383:3583" ph="{...}" />
-                <marker date="1571622339876" expanded="true" signature="3683:3761" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
-              <folding>
-                <marker date="1571642881689" expanded="false" signature="6:27" ph="..." />
-                <marker date="1571642881689" expanded="true" signature="45:3490" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="72:3488" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="506:686" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="563:643" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="727:792" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="836:901" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="971:1142" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="1207:1363" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="1438:1571" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="1638:1796" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="1877:2012" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="2075:2164" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="2225:2314" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="2376:2438" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="2504:3043" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="2940:3000" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="3091:3158" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="3207:3482" ph="{...}" />
-                <marker date="1571642881689" expanded="true" signature="3269:3439" ph="{...}" />
+                <marker date="1571699544391" expanded="false" signature="6:119" ph="..." />
+                <marker date="1571699544391" expanded="true" signature="152:3356" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="181:3354" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="475:1340" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="918:1330" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="1402:1461" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="1524:1585" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="1668:1858" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="1917:2644" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="2029:2102" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="2171:2289" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="2374:2544" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="2684:3106" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="2798:2898" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="3020:3096" ph="{...}" />
+                <marker date="1571699544391" expanded="true" signature="3148:3348" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -174,152 +146,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
-              <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+            <state relative-caret-position="170">
+              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
               <folding>
-                <marker date="1571641721428" expanded="false" signature="6:63" ph="..." />
-                <marker date="1571641721428" expanded="true" signature="168:1900" ph="{...}" />
-                <marker date="1571641721428" expanded="true" signature="230:242" ph="{...}" />
-                <marker date="1571641721428" expanded="true" signature="314:527" ph="{...}" />
-                <marker date="1571641721428" expanded="true" signature="406:499" ph="{...}" />
-                <marker date="1571641721428" expanded="true" signature="618:821" ph="///Returns a dictionary that contains the handle and title of all the open windows. ... " />
-                <marker date="1571641721428" expanded="true" signature="871:1898" ph="{...}" />
-                <marker date="1571641721428" expanded="true" signature="1499:1694" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="159" column="9" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="9" />
-              <folding>
-                <marker date="1571618070356" expanded="false" signature="6:56" ph="..." />
-                <marker date="1571618070356" expanded="true" signature="74:4136" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="105:4134" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="436:1352" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="640:707" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="743:979" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="809:882" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="1086:1186" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="1229:1342" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="1411:2628" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="1475:1538" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="1680:1741" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="1805:1865" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="1905:1963" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="2379:2487" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="2561:2618" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="2671:2807" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="2851:3396" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="2888:3386" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="3437:3486" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="3520:3567" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="3604:3741" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="3779:3833" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="3874:3935" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="3970:4025" ph="{...}" />
-                <marker date="1571618070356" expanded="true" signature="4066:4128" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="162" column="50" selection-start-line="162" selection-start-column="50" selection-end-line="162" selection-end-column="50" />
-              <folding>
-                <marker date="1571639058517" expanded="false" signature="6:224" ph="..." />
-                <marker date="1571639058517" expanded="true" signature="242:7526" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="271:377" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="408:593" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="706:7524" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="830:888" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="944:1447" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="1040:1350" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="1267:1336" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="1532:2119" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="1543:1669" ph="/* Console.WriteLine(&quot;Visi&quot;); ... */" />
-                <marker date="1571639058517" expanded="true" signature="2180:3707" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="2303:3513" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="2563:2663" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="2709:3057" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="2796:3035" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="3559:3671" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="3767:5435" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="5078:5399" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="5446:5653" ph="///Returns a dictionary that contains the handle and title of all the open windows. ... " />
-                <marker date="1571639058517" expanded="true" signature="5725:6646" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="6328:6558" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="6698:6889" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="6798:6879" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="7144:7518" ph="{...}" />
-                <marker date="1571639058517" expanded="true" signature="7186:7508" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2297">
-              <caret line="157" column="13" selection-start-line="157" selection-start-column="13" selection-end-line="157" selection-end-column="13" />
-              <folding>
-                <marker date="1571642329872" expanded="false" signature="6:150" ph="..." />
-                <marker date="1571642329872" expanded="true" signature="168:5234" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="209:5232" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="336:406" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="496:550" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="760:1265" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="809:875" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="958:1040" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="1057:1138" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="1196:1255" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="1303:5226" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="1397:1497" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="1543:2052" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="1873:2038" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="2142:2293" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="2365:2495" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="2547:5176" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="2803:2874" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="2910:2979" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="3155:3294" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="3407:3581" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="3690:3861" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="3972:4457" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="4550:5045" ph="{...}" />
-                <marker date="1571642329872" expanded="true" signature="5066:5162" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-              <folding>
-                <marker date="1571637932150" expanded="false" signature="6:166" ph="..." />
-                <marker date="1571637932150" expanded="true" signature="184:2898" ph="{...}" />
-                <marker date="1571637932150" expanded="true" signature="216:2896" ph="{...}" />
-                <marker date="1571637932150" expanded="true" signature="598:1872" ph="{...}" />
-                <marker date="1571637932150" expanded="true" signature="1197:1759" ph="{...}" />
-                <marker date="1571637932150" expanded="true" signature="1292:1745" ph="{...}" />
-                <marker date="1571637932150" expanded="true" signature="1414:1573" ph="{...}" />
-                <marker date="1571637932150" expanded="true" signature="1598:1727" ph="{...}" />
-                <marker date="1571637932150" expanded="true" signature="1776:1862" ph="{...}" />
-                <marker date="1571637932150" expanded="true" signature="2072:2890" ph="{...}" />
-                <marker date="1571637932150" expanded="true" signature="2127:2197" ph="{...}" />
-                <marker date="1571637932150" expanded="true" signature="2306:2841" ph="{...}" />
-                <marker date="1571637932150" expanded="true" signature="2381:2827" ph="{...}" />
-                <marker date="1571637932150" expanded="true" signature="2606:2809" ph="{...}" />
+                <marker date="1571701851974" expanded="true" signature="6:63" ph="..." />
+                <marker date="1571701851974" expanded="true" signature="168:2296" ph="{...}" />
+                <marker date="1571701851974" expanded="true" signature="230:242" ph="{...}" />
+                <marker date="1571701851974" expanded="true" signature="314:669" ph="{...}" />
+                <marker date="1571701851974" expanded="true" signature="420:641" ph="{...}" />
+                <marker date="1571701851974" expanded="true" signature="814:1017" ph="///Returns a dictionary that contains the handle and title of all the open windows. ... " />
+                <marker date="1571701851974" expanded="true" signature="1081:2036" ph="{...}" />
+                <marker date="1571701851974" expanded="true" signature="1683:1761" ph="{...}" />
+                <marker date="1571701851974" expanded="true" signature="1794:1871" ph="{...}" />
+                <marker date="1571701851974" expanded="true" signature="1901:2009" ph="{...}" />
+                <marker date="1571701851974" expanded="true" signature="2085:2294" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -328,17 +168,175 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
+            <state relative-caret-position="18">
+              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
               <folding>
-                <marker date="1571637288943" expanded="false" signature="6:61" ph="..." />
-                <marker date="1571637288943" expanded="true" signature="79:1469" ph="{...}" />
-                <marker date="1571637288943" expanded="true" signature="86:281" ph="/* How found:&#9;Focus ... */" />
-                <marker date="1571637288943" expanded="true" signature="317:1467" ph="{...}" />
-                <marker date="1571637288943" expanded="true" signature="557:671" ph="{...}" />
-                <marker date="1571637288943" expanded="true" signature="843:1373" ph="{...}" />
-                <marker date="1571637288943" expanded="true" signature="869:1196" ph="{...}" />
-                <marker date="1571637288943" expanded="true" signature="1238:1337" ph="{...}" />
+                <marker date="1571701422008" expanded="false" signature="6:61" ph="..." />
+                <marker date="1571701422008" expanded="true" signature="79:1590" ph="{...}" />
+                <marker date="1571701422008" expanded="true" signature="86:281" ph="/* How found:&#9;Focus ... */" />
+                <marker date="1571701422008" expanded="true" signature="317:1588" ph="{...}" />
+                <marker date="1571701422008" expanded="true" signature="557:671" ph="{...}" />
+                <marker date="1571701422008" expanded="true" signature="861:1374" ph="{...}" />
+                <marker date="1571701422008" expanded="true" signature="887:1214" ph="{...}" />
+                <marker date="1571701422008" expanded="true" signature="1256:1338" ph="{...}" />
+                <marker date="1571701422008" expanded="true" signature="1485:1582" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
+              <folding>
+                <marker date="1571701598520" expanded="false" signature="6:150" ph="..." />
+                <marker date="1571701598520" expanded="true" signature="168:6061" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="209:6059" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="336:406" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="496:550" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="760:1265" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="809:875" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="958:1040" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="1057:1138" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="1196:1255" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="1303:6053" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="1435:1535" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="1581:2174" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="1995:2160" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="2264:2415" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="2487:2617" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="2669:5610" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="3028:3101" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="3137:3206" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="3382:3562" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="3675:3890" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="3999:4211" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="4322:4848" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="4941:5477" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="5498:5596" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="5642:5918" ph="{...}" />
+                <marker date="1571701598520" expanded="true" signature="5935:6003" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+              <folding>
+                <marker date="1571697863411" expanded="false" signature="6:56" ph="..." />
+                <marker date="1571697863411" expanded="true" signature="74:4159" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="105:4157" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="436:1375" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="640:707" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="743:979" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="809:882" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="1108:1208" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="1251:1365" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="1434:2651" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="1498:1561" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="1703:1764" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="1828:1888" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="1928:1986" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="2402:2510" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="2584:2641" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="2694:2830" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="2874:3419" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="2911:3409" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="3460:3509" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="3543:3590" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="3627:3764" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="3802:3856" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="3897:3958" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="3993:4048" ph="{...}" />
+                <marker date="1571697863411" expanded="true" signature="4089:4151" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="727">
+              <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+              <folding>
+                <marker date="1571695896524" expanded="true" signature="6:114" ph="..." />
+                <marker date="1571695896524" expanded="true" signature="132:3417" ph="{...}" />
+                <marker date="1571695896524" expanded="true" signature="180:3415" ph="{...}" />
+                <marker date="1571695896524" expanded="true" signature="251:271" ph="{...}" />
+                <marker date="1571695896524" expanded="true" signature="363:374" ph="{...}" />
+                <marker date="1571695896524" expanded="true" signature="440:3409" ph="{...}" />
+                <marker date="1571695896524" expanded="true" signature="451:619" ph="/* if (string.IsNullOrEmpty(verb)) return null; ... */" />
+                <marker date="1571695896524" expanded="true" signature="1100:3273" ph="{...}" />
+                <marker date="1571695896524" expanded="true" signature="1264:3259" ph="{...}" />
+                <marker date="1571695896524" expanded="true" signature="1873:2197" ph="{...}" />
+                <marker date="1571695896524" expanded="true" signature="2222:2410" ph="{...}" />
+                <marker date="1571695896524" expanded="true" signature="2411:3220" ph="/* if (h?.verbs == null) continue; ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/Thing.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <marker date="1571694411370" expanded="true" signature="16:358" ph="{...}" />
+                <marker date="1571694411370" expanded="true" signature="41:356" ph="{...}" />
+                <marker date="1571694411370" expanded="true" signature="118:258" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+              <folding>
+                <marker date="1571702144294" expanded="true" signature="6:85" ph="..." />
+                <marker date="1571702144294" expanded="true" signature="103:1884" ph="{...}" />
+                <marker date="1571702144294" expanded="true" signature="153:1882" ph="{...}" />
+                <marker date="1571702144294" expanded="true" signature="393:653" ph="{...}" />
+                <marker date="1571702144294" expanded="true" signature="706:1876" ph="{...}" />
+                <marker date="1571702144294" expanded="true" signature="1023:1087" ph="{...}" />
+                <marker date="1571702144294" expanded="true" signature="1124:1188" ph="{...}" />
+                <marker date="1571702144294" expanded="true" signature="1245:1297" ph="{...}" />
+                <marker date="1571702144294" expanded="true" signature="1330:1430" ph="{...}" />
+                <marker date="1571702144294" expanded="true" signature="1462:1526" ph="{...}" />
+                <marker date="1571702144294" expanded="true" signature="1543:1607" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+              <folding>
+                <marker date="1571702476597" expanded="false" signature="6:76" ph="..." />
+                <marker date="1571702476597" expanded="true" signature="94:1950" ph="{...}" />
+                <marker date="1571702476597" expanded="true" signature="145:1948" ph="{...}" />
+                <marker date="1571702476597" expanded="true" signature="233:287" ph="{...}" />
+                <marker date="1571702476597" expanded="true" signature="442:949" ph="{...}" />
+                <marker date="1571702476597" expanded="true" signature="482:648" ph="{...}" />
+                <marker date="1571702476597" expanded="true" signature="538:634" ph="{...}" />
+                <marker date="1571702476597" expanded="true" signature="689:939" ph="{...}" />
+                <marker date="1571702476597" expanded="true" signature="805:925" ph="{...}" />
+                <marker date="1571702476597" expanded="true" signature="995:1048" ph="{...}" />
+                <marker date="1571702476597" expanded="true" signature="1104:1188" ph="{...}" />
+                <marker date="1571702476597" expanded="true" signature="1240:1330" ph="{...}" />
+                <marker date="1571702476597" expanded="true" signature="1537:1889" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -347,55 +345,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="480">
+              <caret line="200" column="4" selection-start-line="200" selection-start-column="4" selection-end-line="200" selection-end-column="4" />
               <folding>
-                <marker date="1571639568837" expanded="false" signature="6:235" ph="..." />
-                <marker date="1571639568837" expanded="true" signature="253:6743" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="292:652" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="675:1622" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="1136:1216" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="1265:1435" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="1488:1616" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="1659:6741" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="1709:1775" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="1939:3674" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="2253:3623" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="2378:2486" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="2715:2909" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="3067:3237" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="3333:3502" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="3523:3609" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="3838:4720" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="4027:4272" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="4289:4433" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="4800:5798" ph="{...}" />
-                <marker date="1571639568837" expanded="true" signature="5872:6726" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/WindowScan.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="82" column="50" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="50" />
-              <folding>
-                <marker date="1571643062162" expanded="false" signature="6:137" ph="..." />
-                <marker date="1571643062162" expanded="true" signature="155:3860" ph="{...}" />
-                <marker date="1571643062162" expanded="true" signature="180:495" ph="{...}" />
-                <marker date="1571643062162" expanded="true" signature="257:397" ph="{...}" />
-                <marker date="1571643062162" expanded="true" signature="523:3858" ph="{...}" />
-                <marker date="1571643062162" expanded="true" signature="611:665" ph="{...}" />
-                <marker date="1571643062162" expanded="true" signature="723:3852" ph="{...}" />
-                <marker date="1571643062162" expanded="true" signature="734:902" ph="/* if (string.IsNullOrEmpty(verb)) return null; ... */" />
-                <marker date="1571643062162" expanded="true" signature="1315:1462" ph="{...}" />
-                <marker date="1571643062162" expanded="true" signature="1557:3720" ph="{...}" />
-                <marker date="1571643062162" expanded="true" signature="1721:3706" ph="{...}" />
-                <marker date="1571643062162" expanded="true" signature="2320:2644" ph="{...}" />
-                <marker date="1571643062162" expanded="true" signature="2669:2857" ph="{...}" />
-                <marker date="1571643062162" expanded="true" signature="2858:3667" ph="/* if (h?.verbs == null) continue; ... */" />
+                <marker date="1571700883719" expanded="false" signature="6:235" ph="..." />
+                <marker date="1571700883719" expanded="true" signature="253:6820" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="292:652" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="675:1689" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="1136:1216" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="1265:1502" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="1555:1683" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="1726:6818" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="1776:1842" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="2006:3755" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="2322:3702" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="2447:2557" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="2788:2982" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="3140:3312" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="3408:3579" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="3600:3688" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="3919:4797" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="4108:4353" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="4370:4514" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="4877:5875" ph="{...}" />
+                <marker date="1571700883719" expanded="true" signature="5949:6803" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -405,21 +378,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pot</find>
-      <find>teal</find>
-      <find>ask</find>
-      <find>plate</find>
-      <find>askForWeight</find>
-      <find>hp</find>
-      <find>fromHandle</find>
-      <find>looting</find>
-      <find>Belt</find>
-      <find>last</find>
-      <find>sY</find>
-      <find>Verb</find>
-      <find>clicking on</find>
-      <find>diamon</find>
-      <find>Program.ego?.Weight?.Value</find>
       <find>looting with</find>
       <find>Verb\.(.*)\)\) return true;</find>
       <find>long tick,</find>
@@ -434,7 +392,22 @@
       <find>Got C</find>
       <find>Got</find>
       <find>6244104</find>
+      <find>Added OCR Verb</find>
+      <find>Mouse move, slee</find>
+      <find>-- Nothing doing.</find>
+      <find>--</find>
       <find>idle con</find>
+      <find>idle co</find>
+      <find>[.]</find>
+      <find>TTL</find>
+      <find>Possible Checks -</find>
+      <find>erbWindow.last</find>
+      <find>Mouse Over New Thing</find>
+      <find>out int</find>
+      <find>handleScreenScan</find>
+      <find>sX</find>
+      <find>int</find>
+      <find>END_y</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;,\n&quot;</replace>
@@ -469,6 +442,7 @@
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/WindowHandleInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/DumpWindowsHandles.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Mouse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FD91C077-A8ED-4A58-AA91-24B36DD6F89B/c5/c0e8457c/KnownColor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Memory.cs" root0="FORCE_HIGHLIGHTING" />
@@ -478,7 +452,7 @@
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Dpi.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32GetLong.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/WindowScan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Client/ApiClient.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58282784-AF6A-4871-B9B7-2811FAB15086/73/dcbbeb58/AutoItX_DLLImport.cs" root0="SKIP_HIGHLIGHTING" />
@@ -517,9 +491,14 @@
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Scoll.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Api/HealthApi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/Thing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33C590FB-77D1-4FFD-B11B-3D104CA038E5/76/ba59bd9b/Rect.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/ITickable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Spell.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33C590FB-77D1-4FFD-B11B-3D104CA038E5/ff/1dc7e65d/Point.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/RepairWindow.cs" root0="FORCE_HIGHLIGHTING" />
@@ -531,12 +510,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/Util/ImageManip.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/Automation/Windows/ExitWindow.cs" />
-        <option value="$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C0290916-2770-4C2F-8853-D40EAD53667F/90/d5cc540a/AutomationElement.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/Win32/partias/Win32Structs.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/Win32/Win32.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/Win32/partias/Win32Scoll.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/Automation/AutomationElement/Scroller.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/app.config" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/Automation/Windows/VerbWindow.cs" />
@@ -567,21 +540,27 @@
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/config/Sellables.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/config/Secrets.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/config/Config.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/ChatFrame.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/WindowScan.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Spell.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/Thing.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/ITickable.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" />
       </list>
     </option>
   </component>
@@ -592,8 +571,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1284" />
-    <option name="width" value="2432" />
+    <option name="x" value="1416" />
+    <option name="width" value="2300" />
     <option name="height" value="2172" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -790,7 +769,27 @@
               <item name="src" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Windows" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Magic" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Windows" type="24d0babc:SolutionExplorerModelNode" />
               <item name="NPCS" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
+            <path>
+              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Windows" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Scans" type="24d0babc:SolutionExplorerModelNode" />
             </path>
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
@@ -824,33 +823,6 @@
               <item name="src" type="24d0babc:SolutionExplorerModelNode" />
               <item name="swagger" type="24d0babc:SolutionExplorerModelNode" />
             </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Util" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Util" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Win32" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Util" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Win32" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="partias" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -861,7 +833,7 @@
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="Ver&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs&#10;verb&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs&#10;con&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/config/Config.cs&#10;Comba&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Windows/Combat/CombatWindow.cs&#10;Ac&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Action.cs&#10;TakeA&#9;null&#9;null&#10;Too&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/ToolTips.cs&#10;Conf&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/config/Config.cs&#10;prog&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Program.cs&#10;weight&#9;null&#9;null&#10;Stat&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/State/StateEngine.cs&#10;Config&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/config/Config.cs&#10;State&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/State/StateEngine.cs&#10;Action&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Action.cs&#10;loot&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Windows/LootWindow.cs&#10;StateE&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/State/StateEngine.cs&#10;ScreenSc&#9;null&#9;null&#10;scree&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;Control&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Hook/ControlLogger.cs&#10;chat&#9;null&#9;null&#10;Sc&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;screen&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;Screen&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;GetDlgCtrlID&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs&#10;Ver&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs&#10;verb&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs&#10;con&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/config/Config.cs&#10;Comba&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Windows/Combat/CombatWindow.cs&#10;Ac&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Action.cs&#10;TakeA&#9;null&#9;null&#10;Too&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/ToolTips.cs&#10;Conf&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/config/Config.cs&#10;prog&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Program.cs&#10;weight&#9;null&#9;null&#10;Stat&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/State/StateEngine.cs&#10;Config&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/config/Config.cs&#10;State&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/State/StateEngine.cs&#10;Action&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Action.cs&#10;loot&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Windows/LootWindow.cs&#10;StateE&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/State/StateEngine.cs&#10;ScreenSc&#9;null&#9;null&#10;scree&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;Control&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Hook/ControlLogger.cs&#10;chat&#9;null&#9;null&#10;Sc&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;screen&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;Screen&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;GetDlgCtrlID&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/packages" />
     <property name="settings.editor.selected.configurable" value="Errors" />
@@ -910,12 +882,12 @@
       <updated>1571372194871</updated>
       <workItem from="1571372196057" duration="1962000" />
       <workItem from="1571415711427" duration="2681000" />
-      <workItem from="1571418444334" duration="151165000" />
+      <workItem from="1571418444334" duration="169440000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155808000" />
+    <option name="totallyTimeSpent" value="174083000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -927,10 +899,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="642" y="0" width="1216" height="1086" extended-state="0" />
+    <frame x="708" y="0" width="1150" height="1086" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30656305" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32509157" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Change Signature" sideWeight="0.5089127" side_tool="true" weight="0.31903765" />
@@ -1082,10 +1054,10 @@
           <line>43</line>
           <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs" initialLine="46">
             <startOffsets>
-              <option value="1286" />
+              <option value="1287" />
             </startOffsets>
             <endOffsets>
-              <option value="1323" />
+              <option value="1324" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="117" />
@@ -1102,6 +1074,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs</url>
+          <line>62</line>
+          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" initialLine="64">
+            <startOffsets>
+              <option value="1361" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1380" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="127" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1173,75 +1158,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/packages.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Scoll.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
-          <folding>
-            <marker date="1571617000417" expanded="false" signature="6:51" ph="..." />
-            <marker date="1571617000417" expanded="true" signature="69:526" ph="{...}" />
-            <marker date="1571617000417" expanded="true" signature="103:524" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Structs.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding>
-            <marker date="1571617000412" expanded="false" signature="6:90" ph="..." />
-            <marker date="1571617000412" expanded="true" signature="108:5733" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="148:5731" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="202:716" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="807:1215" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="1297:1435" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="1537:1906" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="2011:2218" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="2325:2496" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="2596:3206" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="3217:3292" ph="/// Notify m header structure. ... " />
-            <marker date="1571617000412" expanded="true" signature="3366:3485" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="3563:3711" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="3791:4039" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="4121:4238" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="4347:4489" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="4612:5059" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="4824:5017" ph="[...]" />
-            <marker date="1571617000412" expanded="true" signature="5164:5415" ph="{...}" />
-            <marker date="1571617000412" expanded="true" signature="5494:5725" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58282784-AF6A-4871-B9B7-2811FAB15086/55/c0533573/AutoItX.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="739" column="22" selection-start-line="739" selection-start-column="22" selection-end-line="739" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FD91C077-A8ED-4A58-AA91-24B36DD6F89B/c5/c0e8457c/KnownColor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="175" column="31" selection-start-line="175" selection-start-column="31" selection-end-line="175" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Bitmap.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="675" column="21" selection-start-line="675" selection-start-column="21" selection-end-line="675" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Color.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -1770,30 +1686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="59" column="34" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
-          <folding>
-            <marker date="1571627535839" expanded="false" signature="6:235" ph="..." />
-            <marker date="1571627535839" expanded="true" signature="253:5409" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="291:5407" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="389:981" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="1139:1628" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="1742:2168" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="1797:1862" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="2019:2109" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="2224:2365" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="2498:3117" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="2626:3077" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="2812:3063" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="3216:4545" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="4633:4990" ph="{...}" />
-            <marker date="1571627535839" expanded="true" signature="5097:5198" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1836">
@@ -1886,58 +1778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/SellWindow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-361">
-          <caret line="58" column="68" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
-          <folding>
-            <marker date="1571616872569" expanded="false" signature="6:118" ph="..." />
-            <marker date="1571616872569" expanded="true" signature="136:3755" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="166:3753" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="303:1196" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="420:516" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="847:934" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="1037:1097" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="1123:1186" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="1316:2771" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="1415:1508" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="1525:2651" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="1750:2637" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="2078:2524" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="2681:2734" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="2911:3419" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="3232:3382" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="3473:3747" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/ControlLogger.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
-          <folding>
-            <marker date="1571616872549" expanded="false" signature="6:46" ph="..." />
-            <marker date="1571616872549" expanded="true" signature="64:2866" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="90:2864" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="201:293" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="393:1803" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="605:707" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="825:925" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="942:1540" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="1055:1201" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="1264:1411" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="1432:1526" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="1612:1738" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="1861:2229" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="2047:2219" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="2125:2205" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="2287:2858" ph="{...}" />
-            <marker date="1571616872549" expanded="true" signature="2623:2848" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/AutomationElement/Scroller.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-398">
@@ -1965,28 +1805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding>
-            <marker date="1571616872611" expanded="false" signature="6:56" ph="..." />
-            <marker date="1571616872611" expanded="true" signature="74:1823" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="115:1821" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="165:288" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="328:447" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="522:587" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="641:704" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="755:962" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="1018:1083" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="1137:1355" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="1280:1308" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="1413:1815" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="1681:1805" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Mouse.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -2003,240 +1821,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Spell.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <marker date="1571687754537" expanded="true" signature="37:218" ph="{...}" />
+            <marker date="1571687754537" expanded="true" signature="65:147" ph="{...}" />
+            <marker date="1571687754537" expanded="true" signature="170:216" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/SellWindow.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="58" column="68" selection-start-line="58" selection-start-column="68" selection-end-line="58" selection-end-column="68" />
+          <folding>
+            <marker date="1571616872569" expanded="false" signature="6:118" ph="..." />
+            <marker date="1571616872569" expanded="true" signature="136:3755" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="166:3753" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="303:1196" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="420:516" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="847:934" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="1037:1097" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="1123:1186" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="1316:2771" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="1415:1508" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="1525:2651" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="1750:2637" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="2078:2524" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="2681:2734" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="2911:3419" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="3232:3382" ph="{...}" />
+            <marker date="1571616872569" expanded="true" signature="3473:3747" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="442">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding>
-            <marker date="1571639389354" expanded="true" signature="22:76" ph="{...}" />
-            <marker date="1571639389354" expanded="true" signature="53:74" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-          <folding>
-            <marker date="1571637932150" expanded="false" signature="6:166" ph="..." />
-            <marker date="1571637932150" expanded="true" signature="184:2898" ph="{...}" />
-            <marker date="1571637932150" expanded="true" signature="216:2896" ph="{...}" />
-            <marker date="1571637932150" expanded="true" signature="598:1872" ph="{...}" />
-            <marker date="1571637932150" expanded="true" signature="1197:1759" ph="{...}" />
-            <marker date="1571637932150" expanded="true" signature="1292:1745" ph="{...}" />
-            <marker date="1571637932150" expanded="true" signature="1414:1573" ph="{...}" />
-            <marker date="1571637932150" expanded="true" signature="1598:1727" ph="{...}" />
-            <marker date="1571637932150" expanded="true" signature="1776:1862" ph="{...}" />
-            <marker date="1571637932150" expanded="true" signature="2072:2890" ph="{...}" />
-            <marker date="1571637932150" expanded="true" signature="2127:2197" ph="{...}" />
-            <marker date="1571637932150" expanded="true" signature="2306:2841" ph="{...}" />
-            <marker date="1571637932150" expanded="true" signature="2381:2827" ph="{...}" />
-            <marker date="1571637932150" expanded="true" signature="2606:2809" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="27" column="7" selection-start-line="27" selection-start-column="7" selection-end-line="27" selection-end-column="7" />
-          <folding>
-            <marker date="1571637288943" expanded="false" signature="6:61" ph="..." />
-            <marker date="1571637288943" expanded="true" signature="79:1469" ph="{...}" />
-            <marker date="1571637288943" expanded="true" signature="86:281" ph="/* How found:&#9;Focus ... */" />
-            <marker date="1571637288943" expanded="true" signature="317:1467" ph="{...}" />
-            <marker date="1571637288943" expanded="true" signature="557:671" ph="{...}" />
-            <marker date="1571637288943" expanded="true" signature="843:1373" ph="{...}" />
-            <marker date="1571637288943" expanded="true" signature="869:1196" ph="{...}" />
-            <marker date="1571637288943" expanded="true" signature="1238:1337" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding>
-            <marker date="1571639568837" expanded="false" signature="6:235" ph="..." />
-            <marker date="1571639568837" expanded="true" signature="253:6743" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="292:652" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="675:1622" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="1136:1216" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="1265:1435" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="1488:1616" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="1659:6741" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="1709:1775" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="1939:3674" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="2253:3623" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="2378:2486" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="2715:2909" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="3067:3237" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="3333:3502" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="3523:3609" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="3838:4720" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="4027:4272" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="4289:4433" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="4800:5798" ph="{...}" />
-            <marker date="1571639568837" expanded="true" signature="5872:6726" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="159" column="9" selection-start-line="159" selection-start-column="9" selection-end-line="159" selection-end-column="9" />
-          <folding>
-            <marker date="1571618070356" expanded="false" signature="6:56" ph="..." />
-            <marker date="1571618070356" expanded="true" signature="74:4136" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="105:4134" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="436:1352" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="640:707" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="743:979" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="809:882" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="1086:1186" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="1229:1342" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="1411:2628" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="1475:1538" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="1680:1741" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="1805:1865" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="1905:1963" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="2379:2487" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="2561:2618" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="2671:2807" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="2851:3396" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="2888:3386" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="3437:3486" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="3520:3567" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="3604:3741" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="3779:3833" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="3874:3935" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="3970:4025" ph="{...}" />
-            <marker date="1571618070356" expanded="true" signature="4066:4128" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="51" column="42" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
-          <folding>
-            <marker date="1571641721428" expanded="false" signature="6:63" ph="..." />
-            <marker date="1571641721428" expanded="true" signature="168:1900" ph="{...}" />
-            <marker date="1571641721428" expanded="true" signature="230:242" ph="{...}" />
-            <marker date="1571641721428" expanded="true" signature="314:527" ph="{...}" />
-            <marker date="1571641721428" expanded="true" signature="406:499" ph="{...}" />
-            <marker date="1571641721428" expanded="true" signature="618:821" ph="///Returns a dictionary that contains the handle and title of all the open windows. ... " />
-            <marker date="1571641721428" expanded="true" signature="871:1898" ph="{...}" />
-            <marker date="1571641721428" expanded="true" signature="1499:1694" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="162" column="50" selection-start-line="162" selection-start-column="50" selection-end-line="162" selection-end-column="50" />
-          <folding>
-            <marker date="1571639058517" expanded="false" signature="6:224" ph="..." />
-            <marker date="1571639058517" expanded="true" signature="242:7526" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="271:377" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="408:593" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="706:7524" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="830:888" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="944:1447" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="1040:1350" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="1267:1336" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="1532:2119" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="1543:1669" ph="/* Console.WriteLine(&quot;Visi&quot;); ... */" />
-            <marker date="1571639058517" expanded="true" signature="2180:3707" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="2303:3513" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="2563:2663" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="2709:3057" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="2796:3035" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="3559:3671" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="3767:5435" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="5078:5399" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="5446:5653" ph="///Returns a dictionary that contains the handle and title of all the open windows. ... " />
-            <marker date="1571639058517" expanded="true" signature="5725:6646" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="6328:6558" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="6698:6889" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="6798:6879" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="7144:7518" ph="{...}" />
-            <marker date="1571639058517" expanded="true" signature="7186:7508" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2297">
-          <caret line="157" column="13" selection-start-line="157" selection-start-column="13" selection-end-line="157" selection-end-column="13" />
-          <folding>
-            <marker date="1571642329872" expanded="false" signature="6:150" ph="..." />
-            <marker date="1571642329872" expanded="true" signature="168:5234" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="209:5232" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="336:406" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="496:550" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="760:1265" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="809:875" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="958:1040" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="1057:1138" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="1196:1255" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="1303:5226" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="1397:1497" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="1543:2052" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="1873:2038" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="2142:2293" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="2365:2495" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="2547:5176" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="2803:2874" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="2910:2979" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="3155:3294" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="3407:3581" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="3690:3861" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="3972:4457" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="4550:5045" ph="{...}" />
-            <marker date="1571642329872" expanded="true" signature="5066:5162" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="117" column="35" selection-start-line="117" selection-start-column="35" selection-end-line="117" selection-end-column="35" />
-          <folding>
-            <marker date="1571622339876" expanded="false" signature="6:119" ph="..." />
-            <marker date="1571622339876" expanded="true" signature="152:3769" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="181:3767" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="474:1368" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="917:1358" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="1430:1489" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="1552:1613" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="1696:1886" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="1945:2581" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="2056:2129" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="2198:2316" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="2401:2571" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="2621:3032" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="2735:2835" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="2957:3022" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="3097:3342" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="3236:3332" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="3383:3583" ph="{...}" />
-            <marker date="1571622339876" expanded="true" signature="3683:3761" ph="{...}" />
+            <marker date="1571693057617" expanded="false" signature="6:66" ph="..." />
+            <marker date="1571693057617" expanded="true" signature="84:702" ph="{...}" />
+            <marker date="1571693057617" expanded="true" signature="115:700" ph="{...}" />
+            <marker date="1571693057617" expanded="true" signature="185:344" ph="{...}" />
+            <marker date="1571693057617" expanded="true" signature="434:676" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+        <state relative-caret-position="228">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
           <folding>
             <marker date="1571642881689" expanded="false" signature="6:27" ph="..." />
             <marker date="1571642881689" expanded="true" signature="45:3490" ph="{...}" />
@@ -2262,25 +1902,387 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/WindowScan.cs">
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/ITickable.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="82" column="50" selection-start-line="82" selection-start-column="50" selection-end-line="82" selection-end-column="50" />
+        <state>
           <folding>
-            <marker date="1571643062162" expanded="false" signature="6:137" ph="..." />
-            <marker date="1571643062162" expanded="true" signature="155:3860" ph="{...}" />
-            <marker date="1571643062162" expanded="true" signature="180:495" ph="{...}" />
-            <marker date="1571643062162" expanded="true" signature="257:397" ph="{...}" />
-            <marker date="1571643062162" expanded="true" signature="523:3858" ph="{...}" />
-            <marker date="1571643062162" expanded="true" signature="611:665" ph="{...}" />
-            <marker date="1571643062162" expanded="true" signature="723:3852" ph="{...}" />
-            <marker date="1571643062162" expanded="true" signature="734:902" ph="/* if (string.IsNullOrEmpty(verb)) return null; ... */" />
-            <marker date="1571643062162" expanded="true" signature="1315:1462" ph="{...}" />
-            <marker date="1571643062162" expanded="true" signature="1557:3720" ph="{...}" />
-            <marker date="1571643062162" expanded="true" signature="1721:3706" ph="{...}" />
-            <marker date="1571643062162" expanded="true" signature="2320:2644" ph="{...}" />
-            <marker date="1571643062162" expanded="true" signature="2669:2857" ph="{...}" />
-            <marker date="1571643062162" expanded="true" signature="2858:3667" ph="/* if (h?.verbs == null) continue; ... */" />
+            <marker date="1571695803798" expanded="true" signature="16:99" ph="{...}" />
+            <marker date="1571695803798" expanded="true" signature="49:97" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/ControlLogger.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="96" column="16" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
+          <folding>
+            <marker date="1571616872549" expanded="false" signature="6:46" ph="..." />
+            <marker date="1571616872549" expanded="true" signature="64:2866" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="90:2864" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="201:293" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="393:1803" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="605:707" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="825:925" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="942:1540" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="1055:1201" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="1264:1411" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="1432:1526" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="1612:1738" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="1861:2229" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="2047:2219" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="2125:2205" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="2287:2858" ph="{...}" />
+            <marker date="1571616872549" expanded="true" signature="2623:2848" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="85" column="35" selection-start-line="85" selection-start-column="35" selection-end-line="85" selection-end-column="35" />
+          <folding>
+            <marker date="1571690442921" expanded="false" signature="6:235" ph="..." />
+            <marker date="1571690442921" expanded="true" signature="253:5413" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="291:5411" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="389:981" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="1139:1628" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="1742:2168" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="1797:1862" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="2019:2109" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="2224:2365" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="2498:3117" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="2626:3077" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="2812:3063" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="3216:4545" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="4633:4994" ph="{...}" />
+            <marker date="1571690442921" expanded="true" signature="5101:5202" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="62" column="46" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
+          <folding>
+            <marker date="1571616872611" expanded="false" signature="6:56" ph="..." />
+            <marker date="1571616872611" expanded="true" signature="74:1823" ph="{...}" />
+            <marker date="1571616872611" expanded="true" signature="115:1821" ph="{...}" />
+            <marker date="1571616872611" expanded="true" signature="165:288" ph="{...}" />
+            <marker date="1571616872611" expanded="true" signature="328:447" ph="{...}" />
+            <marker date="1571616872611" expanded="true" signature="522:587" ph="{...}" />
+            <marker date="1571616872611" expanded="true" signature="641:704" ph="{...}" />
+            <marker date="1571616872611" expanded="true" signature="755:962" ph="{...}" />
+            <marker date="1571616872611" expanded="true" signature="1018:1083" ph="{...}" />
+            <marker date="1571616872611" expanded="true" signature="1137:1355" ph="{...}" />
+            <marker date="1571616872611" expanded="true" signature="1280:1308" ph="{...}" />
+            <marker date="1571616872611" expanded="true" signature="1413:1815" ph="{...}" />
+            <marker date="1571616872611" expanded="true" signature="1681:1805" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/Microsoft.Common.CurrentVersion.targets">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="4563" column="4" selection-start-line="4563" selection-start-column="4" selection-end-line="4563" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="29" />
+          <folding>
+            <marker date="1571698398195" expanded="false" signature="6:166" ph="..." />
+            <marker date="1571698398195" expanded="true" signature="184:2994" ph="{...}" />
+            <marker date="1571698398195" expanded="true" signature="216:2992" ph="{...}" />
+            <marker date="1571698398195" expanded="true" signature="598:1872" ph="{...}" />
+            <marker date="1571698398195" expanded="true" signature="1197:1759" ph="{...}" />
+            <marker date="1571698398195" expanded="true" signature="1292:1745" ph="{...}" />
+            <marker date="1571698398195" expanded="true" signature="1414:1573" ph="{...}" />
+            <marker date="1571698398195" expanded="true" signature="1598:1727" ph="{...}" />
+            <marker date="1571698398195" expanded="true" signature="1776:1862" ph="{...}" />
+            <marker date="1571698398195" expanded="true" signature="2072:2986" ph="{...}" />
+            <marker date="1571698398195" expanded="true" signature="2127:2197" ph="{...}" />
+            <marker date="1571698398195" expanded="true" signature="2392:2937" ph="{...}" />
+            <marker date="1571698398195" expanded="true" signature="2477:2923" ph="{...}" />
+            <marker date="1571698398195" expanded="true" signature="2702:2905" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="121" column="15" selection-start-line="118" selection-start-column="14" selection-end-line="121" selection-end-column="15" />
+          <folding>
+            <marker date="1571691537435" expanded="false" signature="6:224" ph="..." />
+            <marker date="1571691537435" expanded="true" signature="242:7534" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="271:377" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="408:593" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="706:7532" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="830:888" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="944:1447" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="1040:1350" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="1267:1336" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="1532:2119" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="1543:1669" ph="/* Console.WriteLine(&quot;Visi&quot;); ... */" />
+            <marker date="1571691537435" expanded="true" signature="2180:3715" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="2303:3513" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="2563:2663" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="2709:3057" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="2796:3035" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="3515:3679" ph="/* if (!string.IsNullOrEmpty(text)) ... */" />
+            <marker date="1571691537435" expanded="true" signature="3775:5443" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="5086:5407" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="5454:5661" ph="///Returns a dictionary that contains the handle and title of all the open windows. ... " />
+            <marker date="1571691537435" expanded="true" signature="5733:6654" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="6336:6566" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="6706:6897" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="6806:6887" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="7152:7526" ph="{...}" />
+            <marker date="1571691537435" expanded="true" signature="7194:7516" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="200" column="4" selection-start-line="200" selection-start-column="4" selection-end-line="200" selection-end-column="4" />
+          <folding>
+            <marker date="1571700883719" expanded="false" signature="6:235" ph="..." />
+            <marker date="1571700883719" expanded="true" signature="253:6820" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="292:652" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="675:1689" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="1136:1216" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="1265:1502" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="1555:1683" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="1726:6818" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="1776:1842" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="2006:3755" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="2322:3702" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="2447:2557" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="2788:2982" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="3140:3312" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="3408:3579" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="3600:3688" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="3919:4797" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="4108:4353" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="4370:4514" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="4877:5875" ph="{...}" />
+            <marker date="1571700883719" expanded="true" signature="5949:6803" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+          <folding>
+            <marker date="1571701422008" expanded="false" signature="6:61" ph="..." />
+            <marker date="1571701422008" expanded="true" signature="79:1590" ph="{...}" />
+            <marker date="1571701422008" expanded="true" signature="86:281" ph="/* How found:&#9;Focus ... */" />
+            <marker date="1571701422008" expanded="true" signature="317:1588" ph="{...}" />
+            <marker date="1571701422008" expanded="true" signature="557:671" ph="{...}" />
+            <marker date="1571701422008" expanded="true" signature="861:1374" ph="{...}" />
+            <marker date="1571701422008" expanded="true" signature="887:1214" ph="{...}" />
+            <marker date="1571701422008" expanded="true" signature="1256:1338" ph="{...}" />
+            <marker date="1571701422008" expanded="true" signature="1485:1582" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="96" column="33" selection-start-line="96" selection-start-column="33" selection-end-line="96" selection-end-column="33" />
+          <folding>
+            <marker date="1571699544391" expanded="false" signature="6:119" ph="..." />
+            <marker date="1571699544391" expanded="true" signature="152:3356" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="181:3354" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="475:1340" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="918:1330" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="1402:1461" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="1524:1585" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="1668:1858" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="1917:2644" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="2029:2102" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="2171:2289" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="2374:2544" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="2684:3106" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="2798:2898" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="3020:3096" ph="{...}" />
+            <marker date="1571699544391" expanded="true" signature="3148:3348" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="67" column="44" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
+          <folding>
+            <marker date="1571701598520" expanded="false" signature="6:150" ph="..." />
+            <marker date="1571701598520" expanded="true" signature="168:6061" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="209:6059" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="336:406" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="496:550" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="760:1265" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="809:875" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="958:1040" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="1057:1138" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="1196:1255" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="1303:6053" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="1435:1535" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="1581:2174" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="1995:2160" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="2264:2415" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="2487:2617" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="2669:5610" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="3028:3101" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="3137:3206" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="3382:3562" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="3675:3890" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="3999:4211" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="4322:4848" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="4941:5477" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="5498:5596" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="5642:5918" ph="{...}" />
+            <marker date="1571701598520" expanded="true" signature="5935:6003" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+          <folding>
+            <marker date="1571701851974" expanded="true" signature="6:63" ph="..." />
+            <marker date="1571701851974" expanded="true" signature="168:2296" ph="{...}" />
+            <marker date="1571701851974" expanded="true" signature="230:242" ph="{...}" />
+            <marker date="1571701851974" expanded="true" signature="314:669" ph="{...}" />
+            <marker date="1571701851974" expanded="true" signature="420:641" ph="{...}" />
+            <marker date="1571701851974" expanded="true" signature="814:1017" ph="///Returns a dictionary that contains the handle and title of all the open windows. ... " />
+            <marker date="1571701851974" expanded="true" signature="1081:2036" ph="{...}" />
+            <marker date="1571701851974" expanded="true" signature="1683:1761" ph="{...}" />
+            <marker date="1571701851974" expanded="true" signature="1794:1871" ph="{...}" />
+            <marker date="1571701851974" expanded="true" signature="1901:2009" ph="{...}" />
+            <marker date="1571701851974" expanded="true" signature="2085:2294" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+          <folding>
+            <marker date="1571697863411" expanded="false" signature="6:56" ph="..." />
+            <marker date="1571697863411" expanded="true" signature="74:4159" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="105:4157" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="436:1375" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="640:707" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="743:979" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="809:882" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="1108:1208" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="1251:1365" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="1434:2651" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="1498:1561" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="1703:1764" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="1828:1888" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="1928:1986" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="2402:2510" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="2584:2641" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="2694:2830" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="2874:3419" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="2911:3409" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="3460:3509" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="3543:3590" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="3627:3764" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="3802:3856" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="3897:3958" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="3993:4048" ph="{...}" />
+            <marker date="1571697863411" expanded="true" signature="4089:4151" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="727">
+          <caret line="58" column="20" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+          <folding>
+            <marker date="1571695896524" expanded="true" signature="6:114" ph="..." />
+            <marker date="1571695896524" expanded="true" signature="132:3417" ph="{...}" />
+            <marker date="1571695896524" expanded="true" signature="180:3415" ph="{...}" />
+            <marker date="1571695896524" expanded="true" signature="251:271" ph="{...}" />
+            <marker date="1571695896524" expanded="true" signature="363:374" ph="{...}" />
+            <marker date="1571695896524" expanded="true" signature="440:3409" ph="{...}" />
+            <marker date="1571695896524" expanded="true" signature="451:619" ph="/* if (string.IsNullOrEmpty(verb)) return null; ... */" />
+            <marker date="1571695896524" expanded="true" signature="1100:3273" ph="{...}" />
+            <marker date="1571695896524" expanded="true" signature="1264:3259" ph="{...}" />
+            <marker date="1571695896524" expanded="true" signature="1873:2197" ph="{...}" />
+            <marker date="1571695896524" expanded="true" signature="2222:2410" ph="{...}" />
+            <marker date="1571695896524" expanded="true" signature="2411:3220" ph="/* if (h?.verbs == null) continue; ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/Thing.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <marker date="1571694411370" expanded="true" signature="16:358" ph="{...}" />
+            <marker date="1571694411370" expanded="true" signature="41:356" ph="{...}" />
+            <marker date="1571694411370" expanded="true" signature="118:258" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding>
+            <marker date="1571702144294" expanded="true" signature="6:85" ph="..." />
+            <marker date="1571702144294" expanded="true" signature="103:1884" ph="{...}" />
+            <marker date="1571702144294" expanded="true" signature="153:1882" ph="{...}" />
+            <marker date="1571702144294" expanded="true" signature="393:653" ph="{...}" />
+            <marker date="1571702144294" expanded="true" signature="706:1876" ph="{...}" />
+            <marker date="1571702144294" expanded="true" signature="1023:1087" ph="{...}" />
+            <marker date="1571702144294" expanded="true" signature="1124:1188" ph="{...}" />
+            <marker date="1571702144294" expanded="true" signature="1245:1297" ph="{...}" />
+            <marker date="1571702144294" expanded="true" signature="1330:1430" ph="{...}" />
+            <marker date="1571702144294" expanded="true" signature="1462:1526" ph="{...}" />
+            <marker date="1571702144294" expanded="true" signature="1543:1607" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <folding>
+            <marker date="1571702476597" expanded="false" signature="6:76" ph="..." />
+            <marker date="1571702476597" expanded="true" signature="94:1950" ph="{...}" />
+            <marker date="1571702476597" expanded="true" signature="145:1948" ph="{...}" />
+            <marker date="1571702476597" expanded="true" signature="233:287" ph="{...}" />
+            <marker date="1571702476597" expanded="true" signature="442:949" ph="{...}" />
+            <marker date="1571702476597" expanded="true" signature="482:648" ph="{...}" />
+            <marker date="1571702476597" expanded="true" signature="538:634" ph="{...}" />
+            <marker date="1571702476597" expanded="true" signature="689:939" ph="{...}" />
+            <marker date="1571702476597" expanded="true" signature="805:925" ph="{...}" />
+            <marker date="1571702476597" expanded="true" signature="995:1048" ph="{...}" />
+            <marker date="1571702476597" expanded="true" signature="1104:1188" ph="{...}" />
+            <marker date="1571702476597" expanded="true" signature="1240:1330" ph="{...}" />
+            <marker date="1571702476597" expanded="true" signature="1537:1889" ph="{...}" />
           </folding>
         </state>
       </provider>

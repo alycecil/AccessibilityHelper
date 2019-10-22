@@ -13,7 +13,7 @@ namespace Tesseract.ConsoleDemo
         public static Player ego = new Player();
         public static StateEngine stateEngine = new StateEngine();
         public static int MaxHp = 1000;
-        public static long tick = 0;
+        private static long tick = 0;
 
         public static void Main(string[] args)
         {
@@ -48,7 +48,7 @@ namespace Tesseract.ConsoleDemo
                 
                 EveryTickLast(basehandle);
 
-                handleScreenScan(basehandle);
+                
                 tick %= Int32.MaxValue;
             }
         }
@@ -73,7 +73,7 @@ namespace Tesseract.ConsoleDemo
 
         private static void CommonTick(IntPtr basehandle)
         {
-            if (tick % 10 != 0) return;
+            //if (tick % 1 != 0) return;
 
 
             if (stateEngine.InState(StateEngine.InCombat))
@@ -92,6 +92,9 @@ namespace Tesseract.ConsoleDemo
                 Action.doLoot(basehandle);
                 Action.doSell(basehandle);
             }
+
+            scan?.tickCommon(tick);
+            WindowScan.handleScreenScan(basehandle);
         }
 
         private static void RareTick()
@@ -108,20 +111,10 @@ namespace Tesseract.ConsoleDemo
 
             if (stateEngine.InState(StateEngine.OutOfCombat))
             {
-                requestScreenScan();
+                WindowScan.requestScreenScan();
             }
         }
 
-        private static void handleScreenScan(IntPtr basehandle)
-        {
-            if (!__scanPlease) return;
-            var _scan = WindowScan.scanScreen(basehandle);
-            if (_scan != null)
-            {
-                scan = _scan;
-                __scanPlease = false;
-            }
-        }
 
 
         private static IntPtr __base()
@@ -129,15 +122,6 @@ namespace Tesseract.ConsoleDemo
             IntPtr basehandle = Windows.HandleBaseWindow();
             if (basehandle == IntPtr.Zero) throw new Exception("Other App Not Running");
             return basehandle;
-        }
-
-        private static bool __scanPlease = false;
-
-
-        public static void requestScreenScan()
-        {
-            __scanPlease = true;
-            scan = null;
         }
     }
 }

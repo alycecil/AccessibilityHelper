@@ -47,14 +47,21 @@
                 <e p="VerbWindow.cs" t="Include" />
               </e>
               <e p="Magic" t="Include">
+                <e p="Spell.cs" t="Include" />
                 <e p="SpellWindow.cs" t="Include" />
               </e>
               <e p="NPCS" t="Include">
                 <e p="RepairWindow.cs" t="Include" />
                 <e p="SellWindow.cs" t="Include" />
               </e>
+              <e p="Scans" t="Include">
+                <e p="FullWindowScan.cs" t="Include" />
+                <e p="ITickable.cs" t="Include" />
+                <e p="PartialWindowScan.cs" t="Include" />
+                <e p="Thing.cs" t="Include" />
+                <e p="WindowScan.cs" t="Include" />
+              </e>
               <e p="Windows.cs" t="Include" />
-              <e p="WindowScan.cs" t="Include" />
             </e>
           </e>
           <e p="config" t="Include">

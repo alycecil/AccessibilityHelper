@@ -37,14 +37,15 @@ namespace runner
 
                 Action.inCombat();
             }
-            else if (currentState == InCombat || currentState == InCombatActing && state == InCobmatAfter)
+            else if (currentState == InCombat 
+                     || currentState == InCombatActing && state == InCobmatAfter)
             {
                 Action.askForWeight();
                 Action.ReadHP();
             }
             else if (state == OutOfCombat)
             {
-                //Program.requestScreenScan();
+                WindowScan.requestScreenScan();
                 Action.outOfCombat();
             }
         }

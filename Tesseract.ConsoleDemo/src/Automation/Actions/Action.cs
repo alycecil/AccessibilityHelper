@@ -53,7 +53,7 @@ namespace runner
         private static bool DoIdle()
         {
             var verbWindow = VerbWindow.last;
-
+            bool didSomething = false;
 
             if (verbWindow == null)
             {
@@ -64,7 +64,9 @@ namespace runner
             if (verbWindow.verbs.Count == 0)
             {
                 Console.WriteLine("Scrap Scan Sucked, Trying Again");
+                int type = verbWindow.type;
                 verbWindow = VerbWindow.findWindow(Windows.HandleBaseWindow(), verbWindow.ocrText, false, false);
+                verbWindow.type = type;
                 Console.WriteLine("Actions Scanned Again");
 
                 if (verbWindow == null || verbWindow.verbs.Count == 0)
@@ -90,13 +92,16 @@ namespace runner
 
             foreach (var verb in verbWindow.verbs)
             {
-                Console.WriteLine("Idle Considering doing[{0}]", verb.what);
+                if (didSomething) break;
+                //Console.WriteLine("Idle Considering doing[{0}]", verb.what);
+                
                 var hpValue = Program.ego?.Hp?.Value;
+                var maxHp = Program.MaxHp;
                 var weight = Program.ego?.Weight?.Value;
                 
                 if (hpValue == null)
                 {
-                    hpValue = 500;
+                    hpValue = maxHp;
                 }
                 if (weight == null)
                 {
@@ -111,6 +116,7 @@ namespace runner
                 {
                     Console.WriteLine("Starting A fight");
                     VerbWindow.click(verb);
+                    didSomething = true;
                 }
                 else if (
                     wantToRepair &&
@@ -119,6 +125,7 @@ namespace runner
                     Console.WriteLine("Repairing");
                     VerbWindow.click(verb);
                     wantToRepair = false;
+                    didSomething = true;
                 }
                 else if (
                     weight> 55 &&
@@ -127,6 +134,7 @@ namespace runner
                     Console.WriteLine("Selling");
                     VerbWindow.click(verb);
                     wantToRepair = true;
+                    didSomething = true;
                 }
                 else if (
                     weight> 55 &&
@@ -139,6 +147,7 @@ namespace runner
                     Verb implied = new Verb(r2, Verb.Sell);
                     VerbWindow.click(implied);
                     wantToRepair = true;
+                    didSomething = true;
                 } else if (
                     weight> 75 &&
                     verb.what.Equals(Verb.Talk))
@@ -150,11 +159,26 @@ namespace runner
                     Verb implied = new Verb(r2, Verb.Sell);
                     VerbWindow.click(implied);
                     wantToRepair = true;
+                    didSomething = true;
                 }
                 else
                 {
-                    Console.WriteLine("-- Nothing doing.");
+                    //Console.WriteLine("-- Nothing doing.");
                 }
+            }
+
+            if (!didSomething)
+            {
+                Console.Write("Idle Considered doing [");
+                foreach (var verb in verbWindow.verbs)
+                    Console.Write("Verb[{0}],", verb.what);
+                
+                Console.WriteLine("].");
+                
+            }
+            else
+            {
+                VerbWindow.last = null;
             }
             
 

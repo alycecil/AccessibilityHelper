@@ -116,10 +116,10 @@ namespace runner
                     break;
             }
 
-            if (!string.IsNullOrEmpty(text))
-            {
-                Console.WriteLine("TTL [{0}] Looking for [{1}]", text, lookingFor);
-            }
+//            if (!string.IsNullOrEmpty(text))
+//            {
+//                Console.WriteLine("TTL [{0}] Looking for [{1}]", text, lookingFor);
+//            }
 
             return text;
         }

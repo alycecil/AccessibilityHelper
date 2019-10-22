@@ -25,7 +25,8 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
         }
 
         public static VerbWindow last = null;
-       
+        public int type;
+
         public static VerbWindow findWindow(IntPtr baseHandle, String mousedOver, bool allowClick, bool lightWeight)
         {
             try
@@ -40,7 +41,6 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
             }
             catch (Exception wtfHappened)
             {
-                
                 Console.Error.WriteLine(wtfHappened);
             }
 
@@ -49,6 +49,11 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
 
         const string VerbClass = "Afx:00860000:0:00000000:00000000:0001002B";
 
-       
+
+        public void dismiss()
+        {
+            if (hWnd != IntPtr.Zero)
+                AutoItX.WinClose(hWnd);
+        }
     }
 }

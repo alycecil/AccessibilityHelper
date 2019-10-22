@@ -51,7 +51,9 @@ namespace runner
         public void click(out int x, out int y)
         {
             mouseover(out x, out y);
-            //Console.WriteLine("Moved to ({0},{1})", x, y);
+            Console.WriteLine("Clicking on ({0},{1})", x, y);
+            Thread.Sleep(1);
+            mouseover(out x, out y);
             AutoItX.MouseClick("LEFT", x, y, 1, 1);
         }
 
@@ -77,17 +79,17 @@ namespace runner
             ScreenCapturer.ImageSave("DoVerb", ImageFormat.Tiff, capture);
             var end = captureHeight - height;
             const int stepSize = 3;
-            Console.WriteLine("Possible Checks - [{0}]", end / stepSize);
+            //Console.WriteLine("Possible Checks - [{0}]", end / stepSize);
             for (int location = 0; location < end; location += stepSize)
             {
                 Color captureTime = capture.GetPixel(20, location);
 
                 if (isBlack(captureTime))
                 {
-                    Console.Write("[.]");
+                    //Console.Write("[.]");
                     continue;
                 }
-                Console.Write("[X]");
+//                Console.Write("[X]");
 
 
                 Rectangle r2 = new Rectangle(offset, location, w, height);
@@ -107,21 +109,21 @@ namespace runner
                 {
                     location += height;
                     verbs.Add(item);
-                    Console.WriteLine("Added OCR Verb");
+                    //Console.WriteLine("Added OCR Verb");
                 }
                 else if (TryGetVerb(hWnd, ocr, rect, offset, w, height, out item, 1, location))
                 {
                     location += height;
                     verbs.Add(item);
-                    Console.WriteLine("Added TT Verb");
+                    //Console.WriteLine("Added TT Verb");
                 }
                 else
                 {
-                    Console.WriteLine("Skipped");
+                    //Console.WriteLine("Skipped");
                 }
             }
 
-            Console.WriteLine("Done.");
+            //Console.WriteLine("Done.");
         }
 
 
@@ -150,7 +152,7 @@ namespace runner
             ocr = cleaned;
 
 
-            Console.WriteLine("[{2}] Added Verb [{0}] @ [{1}]", ocr, bounds,
+            Console.Write("[{2}] Added Verb [{0}] @ [{1}]", ocr, bounds,
                 Win32GetText.GetControlText(hWnd));
             item = new Verb(rect: bounds, what: ocr);
             return true;

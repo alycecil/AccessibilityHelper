@@ -92,11 +92,16 @@
     <Compile Include="src\Automation\Windows\General\Partials\Verbs.cs" />
     <Compile Include="src\Automation\Windows\General\Partials\VerbWindowsHelpers.cs" />
     <Compile Include="src\Automation\Windows\General\VerbWindow.cs" />
+    <Compile Include="src\Automation\Windows\Magic\Spell.cs" />
     <Compile Include="src\Automation\Windows\Magic\SpellWindow.cs" />
     <Compile Include="src\Automation\Windows\NPCS\RepairWindow.cs" />
     <Compile Include="src\Automation\Windows\NPCS\SellWindow.cs" />
+    <Compile Include="src\Automation\Windows\Scans\FullWindowScan.cs" />
+    <Compile Include="src\Automation\Windows\Scans\ITickable.cs" />
+    <Compile Include="src\Automation\Windows\Scans\PartialWindowScan.cs" />
+    <Compile Include="src\Automation\Windows\Scans\Thing.cs" />
+    <Compile Include="src\Automation\Windows\Scans\WindowScan.cs" />
     <Compile Include="src\Automation\Windows\Windows.cs" />
-    <Compile Include="src\Automation\Windows\WindowScan.cs" />
     <Compile Include="src\config\Config.cs" />
     <Compile Include="src\config\Secrets.cs" />
     <Compile Include="src\config\Sellables.cs" />

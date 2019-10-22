@@ -63,11 +63,11 @@ namespace runner
             {
                 return clickingLocations;
             }
-
+            ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
             var seenBefore = new HashSet<string>();
-            for (int x = 20; x < bounds.Width; x += 40)
+            for (int x = 20; x < bounds.Width; x += (int)(40*sX))
             {
-                for (int y = 10; y < bounds.Height; y += 30)
+                for (int y = 10; y < bounds.Height; y += (int)(25*sX))
                 {
                     AutoItX.MouseMove(bounds.X + x, bounds.Y + y, 1);
                     var tt = ToolTips.handle(baseHandle);
