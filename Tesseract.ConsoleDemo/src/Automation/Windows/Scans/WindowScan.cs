@@ -43,18 +43,20 @@ namespace runner
         {
             //Program.scan?.delete();
             Program.scan = null;
+            __scanPlease = false;
+            __fullScreenPlease = false;
         }
 
         public static void requestScreenScan()
         {
-            __scanPlease = true;
             flushScreenScan();
+            __scanPlease = true;
         }
 
         public static void requestFullScreenScan()
         {
-            __fullScreenPlease = true;
             flushScreenScan();
+            __fullScreenPlease = true;
         }
 
         public static void GetConfig(

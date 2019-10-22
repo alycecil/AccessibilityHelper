@@ -29,6 +29,7 @@ namespace runner
 
             if (state == InCombat)
             {
+                WindowScan.flushScreenScan();
                 if (currentState == InCombatActing)
                 {
                     Action.ReadHP();

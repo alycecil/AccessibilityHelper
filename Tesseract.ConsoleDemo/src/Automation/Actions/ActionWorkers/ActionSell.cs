@@ -64,10 +64,11 @@ namespace runner.ActionWorkers
                 
                 Console.WriteLine("Sold Stuff, lets get out weight below 70% or we cant do a thing");
                 Action.setCurrentAction(Event.ActionEnum.CheckStatus);
-                Action.updateWeightOnlyIfUnder(70);
+                Action.updateWeightOnlyIfUnder(70);                                              
                 Action.askForWeight();
                 //we need to wait for a voice command on what to do, if weight over 70% 
             }
+            
             return false;
         }
     }

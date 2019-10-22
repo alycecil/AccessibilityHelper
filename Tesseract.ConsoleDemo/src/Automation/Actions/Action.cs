@@ -74,8 +74,6 @@ namespace runner
                     complete = new SpellWindow("Teleport", SpellType.Teleport).handle(baseHandle, currentEvent);
                     break;
 
-                case CombatGuard:
-                    break;
                 case Repair:
                     complete = ActionRepair.DoAction();
                     break;
@@ -85,6 +83,10 @@ namespace runner
 
                 case CombatAttack:
                 case CombatCast:
+                case CombatGuard:
+                    Action.doCombat(baseHandle);
+                    complete = Windows.getInCombat() == IntPtr.Zero;
+                    break;
                 default:
                     if (Program.stateEngine.InState(StateEngine.OutOfCombat))
                         throw new NotImplementedException();
@@ -96,6 +98,12 @@ namespace runner
             {
                 GetNextEvent();
 
+
+                if (_currentAction != Idle)
+                {
+                    Console.WriteLine("Given Task : [{0}]", currentEvent);
+                }
+                
                 switch (_currentAction)
                 {
                     case CheckStatus:
