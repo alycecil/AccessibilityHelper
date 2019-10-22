@@ -27,8 +27,11 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
         public static VerbWindow last = null;
         public int type;
 
-        public static VerbWindow findWindow(IntPtr baseHandle, String mousedOver, bool allowClick, bool lightWeight)
-        {
+        public static VerbWindow findWindow(IntPtr baseHandle,
+            String mousedOver,
+            bool allowClick = false, 
+            bool lightWeight = false
+        ){
             try
             {
                 var window = _findWindow(baseHandle, mousedOver, allowClick);
@@ -53,7 +56,14 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
         public void dismiss()
         {
             if (hWnd != IntPtr.Zero)
+            {
+                Console.WriteLine("Dismissing");
                 AutoItX.WinClose(hWnd);
+            }
+            else
+            {
+                Console.WriteLine("Not Happening");
+            }
         }
     }
 }

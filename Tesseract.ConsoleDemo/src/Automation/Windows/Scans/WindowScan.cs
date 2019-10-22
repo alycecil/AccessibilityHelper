@@ -61,7 +61,7 @@ namespace runner
             out int STEP_Y,
             out int END_y)
         {
-            START_X = 40;
+            START_X = 30;
             END_X = 620;
             STEP_X = 23;
             START_Y = 90;
@@ -76,6 +76,6 @@ namespace runner
             START_Y = 20;
         }
 
-        public abstract void tickCommon(long tick);
+        public abstract void tickCommon(long tick, IntPtr baseHandle);
     }
 }

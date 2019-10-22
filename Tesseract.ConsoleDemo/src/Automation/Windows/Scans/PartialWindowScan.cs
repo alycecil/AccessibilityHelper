@@ -30,10 +30,10 @@ namespace runner
         }
 
 
-        public override void tickCommon(long tick)
+        public override void tickCommon(long tick, IntPtr baseHandle)
         {
-            bool afterEndY = currentY > END_y;
-            bool afterEndX = currentX > END_X;
+            bool afterEndY = currentY > END_y-STEP_Y;
+            bool afterEndX = currentX > END_X-STEP_X;
 
             GetConfig(out START_X,
                 out END_X,
@@ -62,19 +62,17 @@ namespace runner
             {
                 currentX = START_X;
                 currentY += STEP_Y;
+                return;
             }
             else if (afterEndY)
             {
-                currentY = START_Y;
+                currentY = START_Y + 2;
             }
-            else
-            {
-                currentX += STEP_X;
-            }
+            currentX += STEP_X;
 
 
             ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);
-            VerbWindow.last?.dismiss();
+            VerbWindow.findWindow(baseHandle,"DISMISS")?.dismiss();
             AutoItX.MouseMove((int) (currentX * sX), (int) (currentY * sY), 1);
 
             //throw new System.NotImplementedException();

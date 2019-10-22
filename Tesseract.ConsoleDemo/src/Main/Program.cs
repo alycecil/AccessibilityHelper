@@ -35,7 +35,7 @@ namespace Tesseract.ConsoleDemo
             while (true)
             {
                 tick++;
-                Thread.Sleep(20);
+                Thread.Sleep(19);
                 __base();
 
 
@@ -65,15 +65,17 @@ namespace Tesseract.ConsoleDemo
 
         private static void FastTick(IntPtr basehandle, ControlLogger roomLogger)
         {
-            if (tick % 5 != 0) return;
+            if (tick % 3 != 0) return;
             roomLogger.LogRoom();
+            scan?.tickCommon(tick, basehandle);
+            WindowScan.handleScreenScan(basehandle);
             HoverBox.handle(basehandle);
             stateEngine.HandleStateChanges(basehandle);
         }
 
         private static void CommonTick(IntPtr basehandle)
         {
-            //if (tick % 1 != 0) return;
+            if (tick % 7 != 0) return;
 
 
             if (stateEngine.InState(StateEngine.InCombat))
@@ -92,9 +94,6 @@ namespace Tesseract.ConsoleDemo
                 Action.doLoot(basehandle);
                 Action.doSell(basehandle);
             }
-
-            scan?.tickCommon(tick);
-            WindowScan.handleScreenScan(basehandle);
         }
 
         private static void RareTick()

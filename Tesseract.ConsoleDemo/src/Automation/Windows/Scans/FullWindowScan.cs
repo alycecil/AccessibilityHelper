@@ -12,10 +12,6 @@ namespace runner
         {
         }
 
-        //Does Nothing, scanned already
-        public override void tickCommon(long tick)
-        {}
-        
         public static WindowScan scanScreen(IntPtr hWnd)
         {
 //            if (string.IsNullOrEmpty(verb)) return null;
@@ -90,6 +86,11 @@ namespace runner
             //TODO
             Console.WriteLine("D0ne at {0}",DateTime.Now);
             return new FullWindowScan(things);
+        }
+
+        //Does Nothing, scanned already
+        public override void tickCommon(long tick, IntPtr baseHandle)
+        {
         }
     }
 }

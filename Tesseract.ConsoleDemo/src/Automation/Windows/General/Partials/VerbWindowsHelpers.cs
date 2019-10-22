@@ -83,10 +83,10 @@ namespace runner
             var myHandle = __findWindow(baseHandle, mousedOver, allowClick);
             if (myHandle == IntPtr.Zero)
             {
-                Console.WriteLine("Mouse Over New Thing [{0}], Clicking on", mousedOver);
                 //var p  = AutoItX.MouseGetPos();
                 if (allowClick)
                 {
+                Console.WriteLine("Mouse Over New Thing [{0}], Clicking on", mousedOver);
                     AutoItX.MouseClick();
                     AutoIt.AutoItX.MouseMove(0, 0, 1);
                     Thread.Sleep(1);
