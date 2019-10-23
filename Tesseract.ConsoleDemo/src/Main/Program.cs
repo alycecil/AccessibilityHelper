@@ -36,7 +36,7 @@ namespace Tesseract.ConsoleDemo
             while (true)
             {
                 tick++;
-                Thread.Sleep(19);
+                Thread.Sleep(3);
                 __base();
 
 

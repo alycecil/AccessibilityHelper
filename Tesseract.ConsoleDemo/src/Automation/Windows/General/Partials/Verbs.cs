@@ -22,6 +22,8 @@ namespace runner
             Shop = "Buy something from",
             Cast = "Cast",
             Enter = "Eninr",
+            Sit = "Sit",
+            Stand = "Stand",
             Close = "Close";
     }
 
@@ -37,6 +39,8 @@ namespace runner
             Shop = "Shop",
             Cast = "Cast",
             Enter = "Eninr",
+            Sit = "Sit",
+            Stand = "Stand",
             Close = "Close";
 
         public Rectangle rect;
@@ -172,6 +176,8 @@ namespace runner
             if (CleanUpOcr(ocr, out s, Verb.Enter, VerbToolTips.Enter)) return true;
             if (CleanUpOcr(ocr, out s, Verb.Close, VerbToolTips.Close)) return true;
             if (CleanUpOcr(ocr, out s, Verb.Steal, VerbToolTips.Steal)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Sit, VerbToolTips.Sit)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Stand, VerbToolTips.Stand)) return true;
             
 
             Console.WriteLine("Dropping TT Unknown Verb [{0}]", ocr);
@@ -192,6 +198,8 @@ namespace runner
             if (CleanUpOcr(ocr, out s, Verb.Cast)) return true;
             if (CleanUpOcr(ocr, out s, Verb.Enter)) return true;
             if (CleanUpOcr(ocr, out s, Verb.Close)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Sit)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Stand)) return true;
 
             Console.WriteLine("Dropping OCR Unknown Verb [{0}]", ocr);
             s = null;

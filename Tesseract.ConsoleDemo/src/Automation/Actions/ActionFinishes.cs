@@ -8,7 +8,7 @@ namespace runner
 {
     public static partial class Action
     {
-        private static int min = 0, max = 100;
+        private static int min = 0, max = 101;
 
         public static void updateWeightOnlyIfAbove(int pmin)
         {
@@ -31,7 +31,7 @@ namespace runner
             if (_weight > min && notTooMuch)
             {
                 HandleComplete(CheckStatus, "WEIGHT");
-                updateWeightOnlyIfUnder(100);
+                updateWeightOnlyIfUnder(101);
             }
             else
             {

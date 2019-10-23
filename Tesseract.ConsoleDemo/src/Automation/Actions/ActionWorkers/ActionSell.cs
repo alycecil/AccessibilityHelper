@@ -66,6 +66,10 @@ namespace runner.ActionWorkers
                 Action.setCurrentAction(Event.ActionEnum.CheckStatus);
                 Action.updateWeightOnlyIfUnder(70);                                              
                 Action.askForWeight();
+                
+                
+                VerbWindow.last = null;
+                WindowScan.flushScreenScan();
                 //we need to wait for a voice command on what to do, if weight over 70% 
             }
             

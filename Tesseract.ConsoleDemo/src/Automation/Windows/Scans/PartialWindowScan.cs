@@ -61,17 +61,17 @@ namespace runner
                 return;
             }
 
-            else if (afterEndX)
-            {
-                currentX = START_X;
-                currentY += STEP_Y;
-                return;
-            }
             else if (afterEndY)
             {
-                currentY = START_Y + 3 + currentY%END_y;
+                currentY = START_Y;
+                currentX += STEP_X;
+                return;
             }
-            currentX += STEP_X;
+            else if (afterEndX)
+            {
+                currentX = START_X + 3 + currentX%END_X;
+            }
+            currentY += STEP_Y;
 
 
             ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);

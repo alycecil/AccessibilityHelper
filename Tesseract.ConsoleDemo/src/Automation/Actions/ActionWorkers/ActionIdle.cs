@@ -38,7 +38,7 @@ namespace runner.ActionWorkers
 
                 if (
                     hpValue > 20 &&
-                    weight < 80 &&
+                    weight < 90 &&
                     verb.what.Equals(Verb.Fight)
                 )
                 {
@@ -107,6 +107,7 @@ namespace runner.ActionWorkers
             else
             {
                 VerbWindow.last = null;
+                WindowScan.flushScreenScan();
             }
 
 

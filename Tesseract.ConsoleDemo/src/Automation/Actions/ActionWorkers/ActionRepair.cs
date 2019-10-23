@@ -32,6 +32,10 @@ namespace runner.ActionWorkers
                     Thread.Sleep(TimeSpan.FromSeconds(3));
                     Action.handleRepairControl(Windows.HandleBaseWindow());
                     
+                    
+                    VerbWindow.last = null;
+                    WindowScan.flushScreenScan();
+                    
                     didSomething = true;
                 }
             }

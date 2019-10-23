@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Threading;
+using System.Web.Configuration;
 using AutoIt;
 using IO.Swagger.Model;
 using runner.ActionWorkers;
@@ -47,6 +48,9 @@ namespace runner
                     complete = true;
                     break;
 
+                case CheckStatus when Program.getTick() % 1000 == 0:
+                    complete = true;
+                    break;
                 case CheckStatus:
                     break;
                 case Move:
@@ -93,9 +97,13 @@ namespace runner
                     break;
             }
 
+            if (Program.stateEngine.InState(StateEngine.InCombatActing))
+                return;
+            
             //TODO
-            if (currentEvent == null)
+            if (currentEvent == null || _currentAction == Idle)
             {
+                
                 GetNextEvent();
 
 
@@ -107,7 +115,7 @@ namespace runner
                 switch (_currentAction)
                 {
                     case CheckStatus:
-                        Console.WriteLine("Checking Status [{0}]", currentEvent);
+                        //Console.WriteLine("Checking Status [{0}]", currentEvent);
                         askForWeight();
                         break;
                     case SellInventory:
