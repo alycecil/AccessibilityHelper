@@ -110,11 +110,15 @@ namespace runner.ActionWorkers
                 AutoItX.MouseMove(x, y, 1);
                 Thread.Sleep(1);
 
-                if (!CursorUtil.isCursor(desired, out int clickx, out int clickY)) continue;
-                
+                if (!CursorUtil.isCursor(desired, out int clickx, out int clickY)){ Thread.Sleep(100); continue;}
+                Thread.Sleep(100);
                 AutoItX.MouseMove(x, y, 1);
                 Thread.Sleep(10);
-                AutoItX.MouseClick("LEFT", x, y, 3,3);
+                AutoItX.MouseClick("LEFT", x, y, 1);
+                Thread.Sleep(1);
+                AutoItX.MouseClick("LEFT", x, y, 1);
+                Thread.Sleep(1);
+                AutoItX.MouseClick("LEFT", x, y, 1);
                 Thread.Sleep(TimeSpan.FromSeconds(1));
                 return true;
             }

@@ -132,11 +132,17 @@ namespace runner
         {
             if (x == 0 || y == 0)
             {
-                using (var g1 = Graphics.FromHwnd(IntPtr.Zero))
+                using (var g1 = Graphics.FromHwnd(handle))
                 {
                     x = g1.DpiX / 96f;
                     y = g1.DpiY / 96f;
                 }
+
+                if (x < 2)
+                    x = 2;
+                if (y < 2)
+                    y = 2;
+                Console.WriteLine("Scale is [{0}, {1}]",x,y);
             }
 
             scaleX = x;

@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Threading;
 using AutoIt;
 using runner;
+using runner.Cursor;
 
 /// <summary>Contains functionality to get all the open windows.</summary>
 public static class HoverBox
 {
     // private static Tesseract Ocr;
+    internal static bool wantItem = false;
 
     static HoverBox()
     {
@@ -18,9 +22,9 @@ public static class HoverBox
         if (!string.IsNullOrEmpty(hasStuff))
         {
             var findWindow = VerbWindow.findWindow(basehandle, hasStuff, true, b);
-            if(findWindow!=null)
+            if (findWindow != null)
                 findWindow.type = type;
-            
+
 
             return findWindow;
         }
@@ -46,29 +50,21 @@ public static class HoverBox
             b = (int) (37 * sY);
 
         Rectangle rect = new Rectangle(l, t, r - l, b - t);
-
         var c = AutoItX.PixelGetColor(rect.Left + 3, rect.Top + 3);
-        var c2 = AutoItX.PixelGetColor(rect.Left + 5, rect.Top + 5);
-        var c3 = AutoItX.PixelGetColor(rect.Left + 17, rect.Top + 4);
 
-        if (!c2.Equals(c) || !c2.Equals(c3))
-            return null;
-
-        if (c.Equals(hasHp))
-        {
-            type = hasHp;
-            return DoOcr(rect);
-        }
-        else if (c.Equals(item))
+        if (c.Equals(item) && wantItem)
         {
             type = item;
             return DoOcr(rect);
         }
-        else if (c != 497579)
+        else if (CursorUtil.isCursor(CursorUtil.hand, out int clickx, out int clickY))
         {
-            //Console.WriteLine("Got Color : {0}", c);
-            //item color : 6244104
+            var ocr = DoOcr(rect);
+            if(!string.IsNullOrEmpty(ocr))
+                return ocr;
+            return "IMPLIED";
         }
+
         return null;
     }
 
@@ -77,6 +73,18 @@ public static class HoverBox
         var capture = ScreenCapturer.Capture(rect);
         capture = ImageManip.AdjustThreshold(capture, .9f);
         capture = ImageManip.Max(capture);
-        return ImageManip.doOcr(capture);
+
+        var ocr = ImageManip.doOcr(capture);
+//        if (!string.IsNullOrEmpty(ocr))
+//        {
+//            Console.WriteLine("ocr [{0}]", ocr);
+//            ScreenCapturer.ImageSave("cap_%NOW%_" + ocr + "_", ImageFormat.Tiff, capture);
+//        }
+//        else
+//        {
+//            ScreenCapturer.ImageSave("cap_%NOW%_EMPTY_", ImageFormat.Tiff, capture);
+//        }
+
+        return ocr;
     }
 }

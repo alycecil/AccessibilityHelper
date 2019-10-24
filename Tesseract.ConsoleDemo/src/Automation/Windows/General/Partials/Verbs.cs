@@ -15,6 +15,7 @@ namespace runner
         public static readonly string 
             Repair = "Repair",
             Steal = "Pick this",
+            Take = "Pick up",
             WalkTo = "Walk",
             Sell = "Sell",
             Fight = "Start combat",
@@ -41,6 +42,7 @@ namespace runner
             Enter = "Eninr",
             Sit = "Sit",
             Stand = "Stand",
+            Take = "Take",
             Close = "Close";
 
         public Rectangle rect;
@@ -178,6 +180,7 @@ namespace runner
             if (CleanUpOcr(ocr, out s, Verb.Steal, VerbToolTips.Steal)) return true;
             if (CleanUpOcr(ocr, out s, Verb.Sit, VerbToolTips.Sit)) return true;
             if (CleanUpOcr(ocr, out s, Verb.Stand, VerbToolTips.Stand)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Take, VerbToolTips.Take)) return true;
             
 
             Console.WriteLine("Dropping TT Unknown Verb [{0}]", ocr);
@@ -200,6 +203,7 @@ namespace runner
             if (CleanUpOcr(ocr, out s, Verb.Close)) return true;
             if (CleanUpOcr(ocr, out s, Verb.Sit)) return true;
             if (CleanUpOcr(ocr, out s, Verb.Stand)) return true;
+            if (CleanUpOcr(ocr, out s, Verb.Take)) return true;
 
             Console.WriteLine("Dropping OCR Unknown Verb [{0}]", ocr);
             s = null;

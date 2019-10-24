@@ -197,6 +197,9 @@
     <Content Include="down.tiff">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="hand.tiff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="left.tiff">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

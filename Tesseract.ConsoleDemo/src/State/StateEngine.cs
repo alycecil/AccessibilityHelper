@@ -22,11 +22,6 @@ namespace runner
             Console.WriteLine("State Change from {0} to {1}", AsString(currentState), AsString(state));
             //TODO send state changes    
 
-            if (state == InCobmatClickingExit)
-            {
-                Action.askForWeight();
-            }
-
             if (state == InCombat)
             {
                 WindowScan.flushScreenScan();

@@ -101,19 +101,29 @@ namespace Tesseract.ConsoleDemo
 
         private static void RareTick()
         {
+            
+            if (tick % 100 != 0) return;
+            //
+
+            if (stateEngine.InState(StateEngine.OutOfCombat))
+            {
+                if(scan == null)
+                    WindowScan.requestScreenScan();
+            }
+            
             if (tick % 5000 != 0) return;
             if (stateEngine.InState(StateEngine.OutOfCombat))
             {
                 Action.ReadHP();
                 Action.askForWeight();
             }
-
+            
             if (tick % 10000 != 0) return;
             //
 
             if (stateEngine.InState(StateEngine.OutOfCombat))
             {
-                WindowScan.requestScreenScan();
+                    WindowScan.requestScreenScan();
             }
         }
 

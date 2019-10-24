@@ -36,10 +36,18 @@ namespace runner.ActionWorkers
                     weight = 60;
                 }
 
-                if (
+                if (hpValue > 20 &&
+                    verb.what.Equals(Verb.Steal))
+                {
+                    Console.WriteLine("Stealing!!!!");
+                    VerbWindow.click(verb);
+                    didSomething = true;
+                }
+                else if (
                     hpValue > 20 &&
                     weight < 90 &&
-                    verb.what.Equals(Verb.Fight)
+                    verb.what.Equals(Verb.Fight) 
+                    //&& verbWindow.ocrText?.TrimEnd()?.EndsWith("hp", StringComparison.OrdinalIgnoreCase) == true
                 )
                 {
                     Console.WriteLine("Starting A fight");

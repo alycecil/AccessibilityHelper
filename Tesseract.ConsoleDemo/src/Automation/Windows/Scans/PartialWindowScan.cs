@@ -35,8 +35,8 @@ namespace runner
             if (!Config.screenScan())
                 return;
             
-            bool afterEndY = currentY > END_y-STEP_Y;
-            bool afterEndX = currentX > END_X-STEP_X;
+            bool afterEndY = currentY > END_y-STEP_Y+1;
+            bool afterEndX = currentX > (END_X-STEP_X+1);
 
             GetConfig(out START_X,
                 out END_X,
@@ -45,7 +45,7 @@ namespace runner
                 out STEP_Y,
                 out END_y);
 
-            if (currentX < START_X)
+            if (currentX < START_X) 
             {
                 currentX = START_X;
             }
@@ -63,20 +63,27 @@ namespace runner
 
             else if (afterEndY)
             {
+                int y = currentY;
                 currentY = START_Y;
                 currentX += STEP_X;
+                
+                //Console.WriteLine("Resetting Current Y from [{0}] to [{1}]", y, currentX);
                 return;
             }
             else if (afterEndX)
             {
-                currentX = START_X + 3 + currentX%END_X;
+                var x = currentX;
+                currentX = START_X + 3 + (currentX%END_X);
+                //Console.WriteLine("Resetting Current X from [{0}] to [{1}]", x, currentX);
             }
             currentY += STEP_Y;
 
 
-            ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);
             VerbWindow.findWindow(baseHandle,"DISMISS")?.dismiss();
-            AutoItX.MouseMove((int) (currentX * sX), (int) (currentY * sY), 1);
+            ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
+            int _y = (int) (currentY * sY);
+            int _x = (int) (currentX * sX);
+            AutoItX.MouseMove(_x, _y, 1);
 
         }
     }

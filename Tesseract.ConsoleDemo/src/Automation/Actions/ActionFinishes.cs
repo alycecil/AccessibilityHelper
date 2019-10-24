@@ -35,7 +35,7 @@ namespace runner
             }
             else
             {
-                Console.WriteLine("Ignoring Weight update [{_weight}]");
+                Console.WriteLine("Ignoring Weight update [{0}], taking a nap.", _weight);
 
                 if (!notTooMuch)
                 {
