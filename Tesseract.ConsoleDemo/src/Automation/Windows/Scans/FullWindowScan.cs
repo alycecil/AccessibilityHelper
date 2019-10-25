@@ -8,11 +8,11 @@ namespace runner
 {
     public class FullWindowScan : WindowScan 
     {
-        public FullWindowScan(List<Thing> things) : base(things)
+        public FullWindowScan(List<Thing> things, Program program) : base(things, program)
         {
         }
 
-        public static WindowScan scanScreen(IntPtr hWnd)
+        public static WindowScan scanScreen(Program program, IntPtr hWnd)
         {
 //            if (string.IsNullOrEmpty(verb)) return null;
 //
@@ -21,7 +21,8 @@ namespace runner
             ScreenCapturer.GetScale(hWnd, out float sX, out float sY);
 
             Console.WriteLine(DateTime.Now);
-            GetConfig(out var START_X, 
+            WindowScanManager.GetConfig(program, 
+                out var START_X, 
                 out var END_X, 
                 out var STEP_X, 
                 out var START_Y, 
@@ -41,9 +42,9 @@ namespace runner
                     var scaledX = (int) (x * sX);
                     var scaledY = (int) (y * sY);
                     
-                    AutoItX.MouseMove(scaledX, scaledY, 1);
+                    MouseManager.MouseMove(hWnd, scaledX, scaledY, 1);
                     Thread.Sleep(TimeSpan.FromMilliseconds(0.8));
-                    var h = HoverBox.handle(hWnd, true);
+                    var h = HoverBox.handle(program, hWnd, true);
                     
                     if (h == null) continue;
                     var name = Win32GetText.GetControlText(h.hWnd);
@@ -55,7 +56,7 @@ namespace runner
                     
                     
                         //DISMISS
-                        AutoItX.MouseClick("middle", 40, 40, 1, 0);
+                        MouseManager.MouseClick(hWnd,"middle", 40, 40, 1, 0);
                     }
                     else
                     {
@@ -72,7 +73,7 @@ namespace runner
 //                        {
 //                            int x2 = hVerb.rect.Left + hVerb.rect.Width / 2;
 //                            int y2 = hVerb.rect.Top + hVerb.rect.Height / 2;
-//                            AutoItX.MouseClick("LEFT", x2, y2);
+//                            MouseManager.MouseClick("LEFT", x2, y2);
 //                            return null;
 //                        }
 //                        
@@ -85,11 +86,11 @@ namespace runner
 
             //TODO
             Console.WriteLine("D0ne at {0}",DateTime.Now);
-            return new FullWindowScan(things);
+            return new FullWindowScan(things, program);
         }
 
         //Does Nothing, scanned already
-        public override void tickCommon(long tick, IntPtr baseHandle)
+        public override void tickCommon(long tick, Program program, IntPtr baseHandle)
         {
         }
     }

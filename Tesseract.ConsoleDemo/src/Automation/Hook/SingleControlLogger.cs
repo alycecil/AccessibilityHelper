@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using AutoIt;
+using Tesseract.ConsoleDemo;
 
 namespace runner
 {
@@ -8,69 +9,78 @@ namespace runner
     {
         private static int lenBlock = 157;
 
-        public SingleControlLogger(IntPtr basehandle, IntPtr chat)
+        public SingleControlLogger(Program program, IntPtr baseHandle, IntPtr chat) : base(program)
         {
-            this.basehandle = basehandle;
+            this.baseHandle = baseHandle;
             this.chat = chat;
         }
 
-        IntPtr basehandle, chat;
+        IntPtr baseHandle, chat;
         string lastBlock = null;
 
         public override string LogRoom()
         {
-            var sb = new StringBuilder();
-            var chatText = AutoItX.WinGetText(basehandle).Trim();
-            var chatTextLength = chatText.Length;
-
-            if (chatTextLength < lenBlock)
+            try
             {
-                //not enough to capture
-                return lastBlock;
-            }
+                var sb = new StringBuilder();
+                var chatText = AutoItX.WinGetText(baseHandle).Trim();
+                var chatTextLength = chatText.Length;
 
-            var block = chatText.Substring(chatTextLength - lenBlock, lenBlock);
-
-            if (lastBlock == null)
-            {
-                sb.Append(chatText);
-                lastBlock = block;
-            }
-            else
-            {
-                var newAfter = chatText.LastIndexOf(lastBlock);
-
-                if (newAfter < 0)
+                if (chatTextLength < lenBlock)
                 {
-                    //all new
-                    sb.Append(chatText);
-                    lastBlock = block;
+                    //not enough to capture
+                    return lastBlock;
                 }
-                else if (newAfter + lenBlock < chatTextLength)
+
+                var block = chatText.Substring(chatTextLength - lenBlock, lenBlock);
+
+                if (lastBlock == null)
                 {
-                    sb.Append(chatText.Substring(newAfter + lenBlock));
+                    sb.Append(chatText);
                     lastBlock = block;
                 }
                 else
                 {
-                    //Console.WriteLine("<No new logs.");
+                    var newAfter = chatText.LastIndexOf(lastBlock);
+
+                    if (newAfter < 0)
+                    {
+                        //all new
+                        sb.Append(chatText);
+                        lastBlock = block;
+                    }
+                    else if (newAfter + lenBlock < chatTextLength)
+                    {
+                        sb.Append(chatText.Substring(newAfter + lenBlock));
+                        lastBlock = block;
+                    }
+                    else
+                    {
+                        //Console.WriteLine("<No new logs.");
+                    }
                 }
+
+
+                //TODO Flush to somewheere
+                if (sb.Length > 0)
+                {
+                    HandleLogs(sb);
+
+                    // Console.WriteLine(">[{0}]", sb.ToString());
+                }
+
+                sb.Clear();
+                return lastBlock;
             }
-
-
-            //TODO Flush to somewheere
-            if (sb.Length > 0)
+            catch (Exception e)
             {
-                HandleLogs(sb);
-
-                // Console.WriteLine(">[{0}]", sb.ToString());
+                Console.Error.WriteLine("Had an oopsie with a control logger: {0}", e);
+                lastBlock = null;
+                return null;
             }
-
-            sb.Clear();
-            return lastBlock;
         }
 
-        private static void HandleLogs(StringBuilder sb)
+        private void HandleLogs(StringBuilder sb)
         {
             var raw = sb.ToString();
             var splits = raw.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
@@ -85,7 +95,7 @@ namespace runner
             }
         }
 
-        public static void HandleWeightLog(string split)
+        private void HandleWeightLog(string split)
         {
 //You are carrying 220 stones in equipment.  Your carrying capacity is 315 stones.  You are 70% encumbered.
             var stonesYouAre = "stones.  You are ";
@@ -95,7 +105,7 @@ namespace runner
             {
                 var weight = split.Substring(locStart, locEnd - locStart);
                 Console.WriteLine("{1} Weight : {0}", weight, DateTime.Now);
-                Action.updateWeight(weight);
+                program.action.UpdateWeight(weight);
             }
         }
     }

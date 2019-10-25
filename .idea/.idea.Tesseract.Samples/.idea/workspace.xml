@@ -2,17 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23560944-9abb-4b5b-8cc4-98a9e35d63be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/MouseManager/MouseManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/TooltipToVerb.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbToolTips.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindowOCR.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScanManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/BoundsManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/OCRHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/PixelManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Release/Tesseract.ConsoleDemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Release/Tesseract.ConsoleDemo.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Release/Tesseract.ConsoleDemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Release/Tesseract.ConsoleDemo.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.runner/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.runner/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.runner/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.runner/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.runner/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.runner/riderModule.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Tesseract.ConsoleDemo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Tesseract.ConsoleDemo.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionFinishes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionFinishes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionRepair.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionRepair.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionSell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionSell.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/BundledControlLogger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/BundledControlLogger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/ControlLogger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/ControlLogger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/SingleControlLogger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/SingleControlLogger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ITickable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ITickable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/ExitWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/ExitWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/Verbs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/RepairWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/RepairWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/SellWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/SellWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ApiCaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ApiCaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Mouse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Mouse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Config.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,564 +63,168 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1185349464">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="config" value="2" />
-          <entry key="cs" value="12" />
-          <entry key="csproj" value="1" />
-          <entry key="manifest" value="1" />
-          <entry key="tif" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="C#" value="12" />
-          <entry key="Config" value="2" />
-          <entry key="Csproj" value="1" />
-          <entry key="Image" value="1" />
-          <entry key="Manifest File" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="cs" value="279" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="C#" value="279" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-812628174">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.55" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="config" value="6" />
-          <entry key="cs" value="27528" />
-          <entry key="gitignore" value="21" />
-          <entry key="txt" value="19" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="C#" value="27528" />
-          <entry key="PLAIN_TEXT" value="46" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="config" value="5" />
-          <entry key="cs" value="379" />
-          <entry key="csproj" value="4" />
-          <entry key="gitignore" value="1" />
-          <entry key="manifest" value="1" />
-          <entry key="targets" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="C#" value="379" />
-          <entry key="Config" value="3" />
-          <entry key="Csproj" value="4" />
-          <entry key="Manifest File" value="1" />
-          <entry key="MsBuild targets file" value="1" />
-          <entry key="PLAIN_TEXT" value="3" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="84" column="53" selection-start-line="84" selection-start-column="53" selection-end-line="84" selection-end-column="53" />
-              <folding>
-                <marker date="1571791404522" expanded="false" signature="6:254" ph="..." />
-                <marker date="1571791404522" expanded="true" signature="272:5216" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="313:5214" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="473:818" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="534:600" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="617:731" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="1045:4211" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="1126:3138" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="1975:2060" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="3332:4114" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="3441:3552" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="3609:4100" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="4131:4201" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="4255:4654" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="4460:4560" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="4577:4644" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="4713:5081" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="4775:5071" ph="{...}" />
-                <marker date="1571791404522" expanded="true" signature="5151:5208" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="116" column="56" selection-start-line="116" selection-start-column="56" selection-end-line="116" selection-end-column="56" />
-              <folding>
-                <marker date="1571781845796" expanded="false" signature="6:235" ph="..." />
-                <marker date="1571781845796" expanded="true" signature="253:5593" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="291:5591" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="389:1068" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="479:638" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="1218:1695" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="1803:2229" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="1858:1923" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="2080:2170" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="2285:2426" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="2525:3178" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="2653:3138" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="2749:3124" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="3277:4734" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="4822:5183" ph="{...}" />
-                <marker date="1571781845796" expanded="true" signature="5290:5391" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
-              <folding>
-                <marker date="1571616872611" expanded="false" signature="6:56" ph="..." />
-                <marker date="1571616872611" expanded="true" signature="74:1823" ph="{...}" />
-                <marker date="1571616872611" expanded="true" signature="115:1821" ph="{...}" />
-                <marker date="1571616872611" expanded="true" signature="165:288" ph="{...}" />
-                <marker date="1571616872611" expanded="true" signature="328:447" ph="{...}" />
-                <marker date="1571616872611" expanded="true" signature="522:587" ph="{...}" />
-                <marker date="1571616872611" expanded="true" signature="641:704" ph="{...}" />
-                <marker date="1571616872611" expanded="true" signature="755:962" ph="{...}" />
-                <marker date="1571616872611" expanded="true" signature="1018:1083" ph="{...}" />
-                <marker date="1571616872611" expanded="true" signature="1137:1355" ph="{...}" />
-                <marker date="1571616872611" expanded="true" signature="1280:1308" ph="{...}" />
-                <marker date="1571616872611" expanded="true" signature="1413:1815" ph="{...}" />
-                <marker date="1571616872611" expanded="true" signature="1681:1805" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionFinishes.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
-              <folding>
-                <marker date="1571789370561" expanded="false" signature="6:138" ph="..." />
-                <marker date="1571789370561" expanded="true" signature="156:2095" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="197:2093" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="312:356" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="418:462" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="518:1232" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="788:917" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="934:1222" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="1055:1208" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="1297:1436" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="1494:1666" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="1710:1773" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="1812:1868" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="1908:1975" ph="{...}" />
-                <marker date="1571789370561" expanded="true" signature="2017:2087" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Secrets.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3200">
-              <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-              <folding>
-                <marker date="1571794766700" expanded="true" signature="16:6643" ph="{...}" />
-                <marker date="1571794766700" expanded="true" signature="57:6641" ph="{...}" />
-                <marker date="1571794766700" expanded="true" signature="98:677" ph="{...}" />
-                <marker date="1571794766700" expanded="true" signature="249:305" ph="/* TODO here ... */" />
-                <marker date="1571794766700" expanded="true" signature="363:442" ph="/* config[KEY_ME] = &quot;AliSmash&quot;; ... */" />
-                <marker date="1571794766700" expanded="true" signature="772:2846" ph="{...}" />
-                <marker date="1571794766700" expanded="true" signature="2927:3499" ph="{...}" />
-                <marker date="1571794766700" expanded="true" signature="2959:3007" ph="{...}" />
-                <marker date="1571794766700" expanded="true" signature="3039:3086" ph="{...}" />
-                <marker date="1571794766700" expanded="true" signature="3118:3166" ph="{...}" />
-                <marker date="1571794766700" expanded="true" signature="3198:3246" ph="{...}" />
-                <marker date="1571794766700" expanded="true" signature="3278:3329" ph="{...}" />
-                <marker date="1571794766700" expanded="true" signature="3361:3412" ph="{...}" />
-                <marker date="1571794766700" expanded="true" signature="3444:3488" ph="{...}" />
-                <marker date="1571794766700" expanded="true" signature="3564:6634" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="198" column="64" selection-start-line="198" selection-start-column="64" selection-end-line="198" selection-end-column="64" />
-              <folding>
-                <marker date="1571786975399" expanded="false" signature="6:235" ph="..." />
-                <marker date="1571786975399" expanded="true" signature="253:7222" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="292:706" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="729:1797" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="1244:1324" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="1373:1610" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="1663:1791" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="1834:7220" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="1884:1950" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="2114:3863" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="2430:3810" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="2555:2665" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="2896:3090" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="3248:3420" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="3516:3687" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="3708:3796" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="4027:4905" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="4216:4461" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="4478:4622" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="4985:6149" ph="{...}" />
-                <marker date="1571786975399" expanded="true" signature="6223:7205" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1275">
-              <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
-              <folding>
-                <marker date="1571787824531" expanded="false" signature="6:119" ph="..." />
-                <marker date="1571787824531" expanded="true" signature="152:3542" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="181:3540" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="475:1349" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="928:1339" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="1448:1555" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="1618:1679" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="1762:2053" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="2112:2747" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="2222:2295" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="2364:2482" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="2567:2737" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="2787:3209" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="2901:3001" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="3123:3199" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="3251:3451" ph="{...}" />
-                <marker date="1571787824531" expanded="true" signature="3489:3534" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="107" column="35" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
-              <folding>
-                <marker date="1571776965474" expanded="false" signature="6:118" ph="..." />
-                <marker date="1571776965474" expanded="true" signature="150:3750" ph="{...}" />
-                <marker date="1571776965474" expanded="true" signature="171:283" ph="{...}" />
-                <marker date="1571776965474" expanded="true" signature="313:3748" ph="{...}" />
-                <marker date="1571776965474" expanded="true" signature="392:2284" ph="{...}" />
-                <marker date="1571776965474" expanded="true" signature="451:532" ph="{...}" />
-                <marker date="1571776965474" expanded="true" signature="673:2247" ph="{...}" />
-                <marker date="1571776965474" expanded="true" signature="899:2142" ph="{...}" />
-                <marker date="1571776965474" expanded="true" signature="2303:2358" ph="{...}" />
-                <marker date="1571776965474" expanded="true" signature="2473:3742" ph="{...}" />
-                <marker date="1571776965474" expanded="true" signature="2639:3620" ph="{...}" />
-                <marker date="1571776965474" expanded="true" signature="2713:3127" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionSell.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
-              <folding>
-                <marker date="1571786061183" expanded="false" signature="6:112" ph="..." />
-                <marker date="1571786061183" expanded="true" signature="144:2980" ph="{...}" />
-                <marker date="1571786061183" expanded="true" signature="197:2978" ph="{...}" />
-                <marker date="1571786061183" expanded="true" signature="241:2972" ph="{...}" />
-                <marker date="1571786061183" expanded="true" signature="429:562" ph="{...}" />
-                <marker date="1571786061183" expanded="true" signature="614:2214" ph="{...}" />
-                <marker date="1571786061183" expanded="true" signature="740:960" ph="{...}" />
-                <marker date="1571786061183" expanded="true" signature="1037:1582" ph="{...}" />
-                <marker date="1571786061183" expanded="true" signature="1657:2200" ph="{...}" />
-                <marker date="1571786061183" expanded="true" signature="2245:2923" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-629">
-              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-              <folding>
-                <marker date="1571786650049" expanded="false" signature="6:64" ph="..." />
-                <marker date="1571786650049" expanded="true" signature="96:3968" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="149:3966" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="191:3960" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="379:509" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="561:3509" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="888:961" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="998:1067" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="1227:1407" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="1527:1749" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="1859:2078" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="2190:2723" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="2833:3376" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="3397:3495" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="3541:3784" ph="{...}" />
-                <marker date="1571786650049" expanded="true" signature="3801:3915" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>int</find>
-      <find>END_y</find>
-      <find>Mouse Over New Thin</find>
-      <find>checkHP</find>
-      <find>Action.ReadHP();</find>
-      <find>name</find>
-      <find>PlayerUpdateUsingPOST</find>
-      <find>currentAction</find>
-      <find>Invent</find>
-      <find>Treewal</find>
-      <find>ControlLogger</find>
-      <find>TreeWalker</find>
-      <find>complete ev</find>
-      <find>_titleInventory</find>
-      <find>Complete Event</find>
-      <find>Win32Stuff.</find>
-      <find>Win32CursorUtils</find>
-      <find>grap</find>
-      <find>graph</find>
-      <find>RepairWindow</find>
-      <find>Got Color</find>
-      <find>last</find>
-      <find>scan</find>
-      <find>mouse ov</find>
-      <find>screenscan</find>
-      <find>SCREENSCAN</find>
-      <find>Program.scan</find>
-      <find>ImageS</find>
-      <find>CheckStatus</find>
-      <find>Checking Status</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>&quot;,\n&quot;</replace>
-      <replace>Mythril</replace>
-      <replace>Steel</replace>
-      <replace>Iron</replace>
-      <replace>weight</replace>
-      <replace>Verb.$1, VerbToolTips.$1)) return true;</replace>
-      <replace>_currentAction</replace>
-    </replaceStrings>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Config.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Bitmap.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ImageManip.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/StringUtil.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ApiCaller.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/da/c53b408a/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/Expiringint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/Player.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/Win32Stuff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/Entity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/ModelAndView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/View.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/PlayerUpdate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/Entity.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/Event.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/Expiringint.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/ModelAndView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32CursorUtils.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/CaptureScreen.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/WindowHandleInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/Win32GetText.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/DumpWindowsHandles.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Mouse.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/FD91C077-A8ED-4A58-AA91-24B36DD6F89B/c5/c0e8457c/KnownColor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Memory.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Rectangle.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Structs.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Dpi.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32GetLong.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Secrets.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/665B28F5-5500-4489-92DD-68C3D28682E2/01/2ff918e4/Page.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Client/ApiClient.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58282784-AF6A-4871-B9B7-2811FAB15086/73/dcbbeb58/AutoItX_DLLImport.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0B94BFA9-2F0F-4D80-A8F7-ACA56A6424C9/82/67b3e961/Int32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/bf/7b44afd7/Action.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58282784-AF6A-4871-B9B7-2811FAB15086/55/c0533573/AutoItX.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionSell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionRepair.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Sellables.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Color.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/ControlLogger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/665B28F5-5500-4489-92DD-68C3D28682E2/69/72bf3aca/Page.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/ExitWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/SellWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Advanced/ImageAttributes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/cc/6b44f5fb/Console.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/app.config" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionFinishes.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C0290916-2770-4C2F-8853-D40EAD53667F/90/d5cc540a/AutomationElement.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/packages.config" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/ChatFrame.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Api/CompleteOrdersPlayerApi.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Api/UpdatePlayerApi.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Scoll.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Api/HealthApi.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/Thing.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33C590FB-77D1-4FFD-B11B-3D104CA038E5/76/ba59bd9b/Rect.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Api/GetOrdersPlayerApi.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ITickable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Spell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/33C590FB-77D1-4FFD-B11B-3D104CA038E5/ff/1dc7e65d/Point.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/BundledControlLogger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/SingleControlLogger.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C0290916-2770-4C2F-8853-D40EAD53667F/06/c467767a/Condition.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/RepairWindow.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C0290916-2770-4C2F-8853-D40EAD53667F/ee/7d85ad1c/PropertyCondition.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/31B0B0BC-393F-4B8A-8E02-A9600A6C5A3D/a7/98f53e65/AutomationProperty.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/AutomationElement/Scroller.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Graphics.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/ControlLogger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Cursor/CursorUtil.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C0290916-2770-4C2F-8853-D40EAD53667F/f4/c3ea440e/ScrollPattern.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/Properties/AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionFinishes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionRepair.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58282784-AF6A-4871-B9B7-2811FAB15086/f6/25817d0b/AutoItX.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionSell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/SellWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/RepairWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Spell.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/Thing.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/ExitWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Inventory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/ChatFrame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/OCRHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/Verbs.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/AutomationElement/Scroller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/PixelManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindowOCR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/TooltipToVerb.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbToolTips.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowHelper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScanManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/MouseManager/MouseManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/StringUtil.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ApiCaller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ImageManip.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/WindowHandleInfo.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32CursorUtils.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/app.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/Win32GetText.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/DumpWindowsHandles.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Scoll.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Memory.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Dpi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Mouse.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Structs.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/packages.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32GetLong.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Config.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Sellables.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Secrets.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Api/UpdatePlayerApi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Api/HealthApi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Api/ListPlayersApi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Api/CompleteOrdersPlayerApi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Api/GetOrdersPlayerApi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/Event.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/Automation/Windows/General/Partials/Verbs.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/Automation/Windows/General/VerbWindow.cs" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/config/Sellables.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/config/Secrets.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/config/Config.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/ChatFrame.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/WindowScan.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Spell.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/Thing.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/ITickable.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/AutomationElement/Scroller.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionCurrent.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ApiCaller.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Config.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/BundledControlLogger.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/SingleControlLogger.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/ControlLogger.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/Move.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/CursorUtils.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32CursorUtils.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/AutomationElement/Scroller.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Cursor/CursorUtil.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ImageManip.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Secrets.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Inventory.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/RepairWindow.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Mouse.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Config.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/ExitWindow.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ITickable.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionRepair.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionSell.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScanManager.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/BundledControlLogger.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/ControlLogger.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/SingleControlLogger.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/Verbs.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/PixelManager.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/OCRHelper.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/TooltipToVerb.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/OCRHelper.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindowOCR.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindow.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowHelper.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ApiCaller.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/MouseManager/MouseManager.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/SellWindow.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionSell.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionFinishes.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Secrets.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionRepair.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-10" />
-    <option name="width" value="2030" />
-    <option name="height" value="2172" />
-  </component>
+  <component name="ProjectId" id="1Sdlxqtut3SsmanK8kPRJWbcUWL" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -592,246 +239,14 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectView">
-    <navigator currentView="SolutionExplorer" proportions="" version="1">
-      <autoscrollFromSource SolutionExplorer="true" />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="SolutionExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Properties" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Actions" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Actions" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="ActionWorkers" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Cursor" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Windows" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Windows" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Combat" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Windows" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="General" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Windows" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="General" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Partials" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Windows" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Magic" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Windows" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="NPCS" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Automation" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Windows" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Scans" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="config" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Main" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="src" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="State" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Tesseract.Samples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Console Examples" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Tesseract.ConsoleDemo" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="x86" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-all-files" value="false" />
-      </pane>
-      <pane id="FileSystemExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="runner" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="runner" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Tesseract.ConsoleDemo" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="161ac34:FileSystemExplorerRootNode" />
-              <item name="runner" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="Tesseract.ConsoleDemo" type="34e6ba20:FileSystemExplorerNode" />
-              <item name="src" type="34e6ba20:FileSystemExplorerNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="Tesseract.Samples" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="Tesseract.Samples" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Tesseract.ConsoleDemo" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Tesseract.Samples" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Tesseract.ConsoleDemo" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="Tesseract.Samples" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Tesseract.ConsoleDemo" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="config" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="screensca&#9;null&#9;null&#10;Secret&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/config/Secrets.cs&#10;dire&#9;null&#9;null&#10;handleIn&#9;null&#9;null&#10;Action&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs&#10;con&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/config/Config.cs&#10;Tele&#9;null&#9;null&#10;Ac&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs&#10;action&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs&#10;Ver&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs&#10;verb&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs&#10;Comba&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Windows/Combat/CombatWindow.cs&#10;TakeA&#9;null&#9;null&#10;Too&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/ToolTips.cs&#10;Conf&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/config/Config.cs&#10;prog&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Program.cs&#10;weight&#9;null&#9;null&#10;Stat&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/State/StateEngine.cs&#10;Config&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/config/Config.cs&#10;State&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/State/StateEngine.cs&#10;loot&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Windows/LootWindow.cs&#10;StateE&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/State/StateEngine.cs&#10;ScreenSc&#9;null&#9;null&#10;scree&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;Control&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Hook/ControlLogger.cs&#10;chat&#9;null&#9;null&#10;Sc&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;screen&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;Screen&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;GetDlgCtrlID&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="secr&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/config/Secrets.cs&#10;sec&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/config/Secrets.cs&#10;screensca&#9;null&#9;null&#10;Secret&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/config/Secrets.cs&#10;dire&#9;null&#9;null&#10;handleIn&#9;null&#9;null&#10;Action&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs&#10;con&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/config/Config.cs&#10;Tele&#9;null&#9;null&#10;Ac&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs&#10;action&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs&#10;Ver&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs&#10;verb&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs&#10;Comba&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Windows/Combat/CombatWindow.cs&#10;TakeA&#9;null&#9;null&#10;Too&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/ToolTips.cs&#10;Conf&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/config/Config.cs&#10;prog&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Program.cs&#10;weight&#9;null&#9;null&#10;Stat&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/State/StateEngine.cs&#10;Config&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/config/Config.cs&#10;State&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/State/StateEngine.cs&#10;loot&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Windows/LootWindow.cs&#10;StateE&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/State/StateEngine.cs&#10;ScreenSc&#9;null&#9;null&#10;scree&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;Control&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Automation/Hook/ControlLogger.cs&#10;chat&#9;null&#9;null&#10;Sc&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;screen&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;Screen&#9;FILE&#9;file://C:/dev/runner/Tesseract.ConsoleDemo/Win32/ScreenCapturer.cs&#10;GetDlgCtrlID&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tesseract.ConsoleDemo/Tesseract.ConsoleDemo.csproj" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -878,7 +293,15 @@
       <workItem from="1571372196057" duration="1962000" />
       <workItem from="1571415711427" duration="2681000" />
       <workItem from="1571418444334" duration="192681000" />
-      <workItem from="1571758799680" duration="33372000" />
+      <workItem from="1571758799680" duration="49359000" />
+      <workItem from="1571853518193" duration="594000" />
+      <workItem from="1571872675460" duration="657000" />
+      <workItem from="1571875764989" duration="541000" />
+      <workItem from="1571899547121" duration="1764000" />
+      <workItem from="1571901609301" duration="270000" />
+      <workItem from="1571903169589" duration="2320000" />
+      <workItem from="1571948104179" duration="15077000" />
+      <workItem from="1572022972926" duration="8422000" />
     </task>
     <task id="LOCAL-00001" summary="Note">
       <created>1571704973144</created>
@@ -901,91 +324,41 @@
       <option name="project" value="LOCAL" />
       <updated>1571784082309</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="click on stuff">
+      <created>1571959946695</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571959946695</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230696000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-5" y="0" width="1015" height="1086" extended-state="0" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37931034" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32845187" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49108735" visible="true" weight="0.38912135" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.71937084" weight="0.3002092" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="NuGet" order="7" sideWeight="0.49817118" weight="0.32924336" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3294979" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unit Tests" order="11" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.3294979" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.28062913" side_tool="true" weight="0.51022494" />
-      <window_info anchor="bottom" id="Build" order="14" sideWeight="0.47516558" weight="0.3253138" />
-      <window_info anchor="bottom" id="Change Signature" order="15" sideWeight="0.5089127" side_tool="true" weight="0.31903765" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Errors In Solution" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Unit Tests Coverage" order="5" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29233512" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Change Signature" order="0" sideWeight="0.5089127" side_tool="true" weight="0.31903765" />
-      <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.3294979" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49108735" weight="0.27824268" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.71937084" visible="true" weight="0.46861926" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="NuGet" order="8" sideWeight="0.49817118" weight="0.32924336" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3294979" />
-      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unit Tests" order="12" />
-      <window_info anchor="bottom" id="Terminal" order="13" weight="0.3294979" />
-      <window_info anchor="bottom" id="Event Log" order="14" sideWeight="0.28062913" side_tool="true" weight="0.51022494" />
-      <window_info anchor="bottom" id="Build" order="15" sideWeight="0.47516558" weight="0.32845187" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Errors In Solution" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Unit Tests Coverage" order="5" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
     <MESSAGE value="Note" />
     <MESSAGE value="Cursors" />
     <MESSAGE value="Sell" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sell" />
+    <MESSAGE value="click on stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="click on stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -995,102 +368,33 @@
           <option name="timeStamp" value="1" />
         </breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/AutomationElement/Scroller.cs</url>
-          <line>98</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Automation/AutomationElement/Scroller.cs" initialLine="71" />
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/AutomationElement/Scroller.cs</url>
-          <line>90</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Automation/AutomationElement/Scroller.cs" initialLine="63" />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/AutomationElement/Scroller.cs</url>
-          <line>82</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Automation/AutomationElement/Scroller.cs" initialLine="55" />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/AutomationElement/Scroller.cs</url>
-          <line>75</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Automation/AutomationElement/Scroller.cs" initialLine="48" />
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/AutomationElement/Scroller.cs</url>
-          <line>63</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Automation/AutomationElement/Scroller.cs" initialLine="63" />
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/SellWindow.cs</url>
-          <line>16</line>
+          <line>17</line>
           <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Automation/Windows/SellWindow.cs" initialLine="15" />
           <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs</url>
-          <line>46</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs" initialLine="46">
-            <startOffsets>
-              <option value="1340" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1377" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs</url>
           <line>53</line>
           <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" initialLine="49">
             <startOffsets>
-              <option value="1807" />
+              <option value="1859" />
             </startOffsets>
             <endOffsets>
-              <option value="1848" />
+              <option value="1900" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs</url>
-          <line>65</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" initialLine="64">
-            <startOffsets>
-              <option value="1469" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1469" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs</url>
-          <line>64</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs" initialLine="61">
-            <startOffsets>
-              <option value="1718" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1753" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs</url>
           <line>49</line>
           <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs" initialLine="32">
             <startOffsets>
-              <option value="1240" />
+              <option value="1252" />
             </startOffsets>
             <endOffsets>
-              <option value="1276" />
+              <option value="1288" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="138" />
@@ -1100,26 +404,65 @@
           <line>54</line>
           <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" initialLine="54">
             <startOffsets>
-              <option value="1558" />
+              <option value="1610" />
             </startOffsets>
             <endOffsets>
-              <option value="1571" />
+              <option value="1623" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="141" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs</url>
-          <line>125</line>
+          <line>129</line>
           <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" initialLine="125">
             <startOffsets>
-              <option value="3719" />
+              <option value="4064" />
             </startOffsets>
             <endOffsets>
-              <option value="3732" />
+              <option value="4077" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="147" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs</url>
+          <line>80</line>
+          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" initialLine="76">
+            <startOffsets>
+              <option value="2071" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2145" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="162" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs</url>
+          <line>78</line>
+          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" initialLine="74">
+            <startOffsets>
+              <option value="1976" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1993" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="163" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs</url>
+          <line>68</line>
+          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" initialLine="61">
+            <startOffsets>
+              <option value="2094" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2095" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="165" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -1131,1023 +474,5 @@
         <watch expression="text" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>currentEvent</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Config.config</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Program.stateEngine</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Program.stateEngine.ToString()</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>stateEngine.ToString()</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>split.StartsWith(&quot;Info&gt; You are carrying&quot;)</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>split.StartsWith(&quot;Info&gt; You are carrying&quot;</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>sellable.GetClickablePoint()</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>InvokeAutomationElement(sellable)</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>sellable.GetSupportedPatterns()</expression-string>
-        <language-id>C#</language-id>
-        <custom-info>RiderImportsList:</custom-info>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Api/GetOrdersPlayerApi.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="227" column="10" selection-start-line="227" selection-start-column="10" selection-end-line="227" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="41" selection-start-line="39" selection-start-column="16" selection-end-line="41" />
-          <folding>
-            <marker date="1571637601253" expanded="false" signature="6:184" ph="..." />
-            <marker date="1571637601253" expanded="true" signature="232:5127" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="424:1875" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="677:874" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="928:1005" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="1124:1777" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="1518:1609" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="1643:1732" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="1807:1865" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="1967:2138" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="2228:2404" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="2661:4885" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="3098:4815" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="3271:4311" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="3667:4144" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="3764:4041" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="4169:4293" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="4418:4479" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="4512:4618" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="4639:4801" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="4955:5121" ph="{...}" />
-            <marker date="1571637601253" expanded="true" signature="5027:5085" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="18" column="27" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
-          <folding>
-            <marker date="1571698398195" expanded="false" signature="6:166" ph="..." />
-            <marker date="1571698398195" expanded="true" signature="216:2992" ph="{...}" />
-            <marker date="1571698398195" expanded="true" signature="598:1872" ph="{...}" />
-            <marker date="1571698398195" expanded="true" signature="1197:1759" ph="{...}" />
-            <marker date="1571698398195" expanded="true" signature="1292:1745" ph="{...}" />
-            <marker date="1571698398195" expanded="true" signature="1414:1573" ph="{...}" />
-            <marker date="1571698398195" expanded="true" signature="1598:1727" ph="{...}" />
-            <marker date="1571698398195" expanded="true" signature="1776:1862" ph="{...}" />
-            <marker date="1571698398195" expanded="true" signature="2072:2986" ph="{...}" />
-            <marker date="1571698398195" expanded="true" signature="2127:2197" ph="{...}" />
-            <marker date="1571698398195" expanded="true" signature="2392:2937" ph="{...}" />
-            <marker date="1571698398195" expanded="true" signature="2477:2923" ph="{...}" />
-            <marker date="1571698398195" expanded="true" signature="2702:2905" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Spell.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0B94BFA9-2F0F-4D80-A8F7-ACA56A6424C9/82/67b3e961/Int32.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="120" column="23" selection-start-line="120" selection-start-column="23" selection-end-line="120" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/BundledControlLogger.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C0290916-2770-4C2F-8853-D40EAD53667F/06/c467767a/Condition.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C0290916-2770-4C2F-8853-D40EAD53667F/90/d5cc540a/AutomationElement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="285" column="71" selection-start-line="285" selection-start-column="71" selection-end-line="285" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/31B0B0BC-393F-4B8A-8E02-A9600A6C5A3D/a7/98f53e65/AutomationProperty.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C0290916-2770-4C2F-8853-D40EAD53667F/ee/7d85ad1c/PropertyCondition.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-374">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/ControlLogger.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/SingleControlLogger.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-947">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/Move.cs" />
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/Entity.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/swagger/Model/Event.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="169" column="23" selection-start-line="169" selection-start-column="23" selection-end-line="169" selection-end-column="23" />
-          <folding>
-            <marker date="1571416987068" expanded="true" signature="0:156" ph="/* Api Documentation ... */" />
-            <marker date="1571416987068" expanded="false" signature="164:569" ph="..." />
-            <marker date="1571416987068" expanded="true" signature="597:9230" ph="{...}" />
-            <marker date="1571416987068" expanded="true" signature="604:650" ph="/// Event ... " />
-            <marker date="1571416987068" expanded="true" signature="741:9227" ph="{...}" />
-            <marker date="1571416987068" expanded="true" signature="756:819" ph="/// Defines Action ... " />
-            <marker date="1571416987068" expanded="true" signature="903:3613" ph="{...}" />
-            <marker date="1571416987068" expanded="true" signature="939:1035" ph="/// Enum CheckStatus for value: checkStatus ... " />
-            <marker date="1571416987068" expanded="true" signature="1138:1234" ph="/// Enum CheckHpMana for value: checkHpMana ... " />
-            <marker date="1571416987068" expanded="true" signature="1337:1419" ph="/// Enum Idle for value: idle ... " />
-            <marker date="1571416987068" expanded="true" signature="1508:1594" ph="/// Enum Logout for value: logout ... " />
-            <marker date="1571416987068" expanded="true" signature="1687:1771" ph="/// Enum Login for value: login ... " />
-            <marker date="1571416987068" expanded="true" signature="1862:1952" ph="/// Enum Teleport for value: teleport ... " />
-            <marker date="1571416987068" expanded="true" signature="2049:2131" ph="/// Enum Move for value: move ... " />
-            <marker date="1571416987068" expanded="true" signature="2220:2306" ph="/// Enum Repair for value: repair ... " />
-            <marker date="1571416987068" expanded="true" signature="2399:2499" ph="/// Enum SellInventory for value: sellInventory ... " />
-            <marker date="1571416987068" expanded="true" signature="2606:2708" ph="/// Enum CheckInventory for value: checkInventory ... " />
-            <marker date="1571416987068" expanded="true" signature="2818:2920" ph="/// Enum StashInventory for value: stashInventory ... " />
-            <marker date="1571416987068" expanded="true" signature="3030:3126" ph="/// Enum CombatGuard for value: combatGuard ... " />
-            <marker date="1571416987068" expanded="true" signature="3230:3328" ph="/// Enum CombatAttack for value: combatAttack ... " />
-            <marker date="1571416987068" expanded="true" signature="3434:3528" ph="/// Enum CombatCast for value: combatCast ... " />
-            <marker date="1571416987068" expanded="true" signature="3623:3691" ph="/// Gets or Sets Action ... " />
-            <marker date="1571416987068" expanded="true" signature="3808:4161" ph="/// Initializes a new instance of the &lt;see cref=&quot;Event&quot; /&gt; class. ... " />
-            <marker date="1571416987068" expanded="true" signature="4364:4552" ph="{...}" />
-            <marker date="1571416987068" expanded="true" signature="4570:4634" ph="/// Gets or Sets Id ... " />
-            <marker date="1571416987068" expanded="true" signature="4742:4812" ph="/// Gets or Sets Priority ... " />
-            <marker date="1571416987068" expanded="true" signature="4927:4995" ph="/// Gets or Sets Source ... " />
-            <marker date="1571416987068" expanded="true" signature="5108:5177" ph="/// Gets or Sets Targets ... " />
-            <marker date="1571416987068" expanded="true" signature="5298:5457" ph="/// Returns the string presentation of the object ... " />
-            <marker date="1571416987068" expanded="true" signature="5499:5990" ph="{...}" />
-            <marker date="1571416987068" expanded="true" signature="6002:6171" ph="/// Returns the JSON string presentation of the object ... " />
-            <marker date="1571416987068" expanded="true" signature="6210:6305" ph="{...}" />
-            <marker date="1571416987068" expanded="true" signature="6315:6498" ph="/// Returns true if objects are equal ... " />
-            <marker date="1571416987068" expanded="true" signature="6548:6616" ph="{...}" />
-            <marker date="1571416987068" expanded="true" signature="6626:6828" ph="/// Returns true if Event instances are equal ... " />
-            <marker date="1571416987068" expanded="true" signature="6868:7912" ph="{...}" />
-            <marker date="1571416987068" expanded="true" signature="7922:8030" ph="/// Gets the hash code ... " />
-            <marker date="1571416987068" expanded="true" signature="8072:8814" ph="{...}" />
-            <marker date="1571416987068" expanded="true" signature="8135:8804" ph="{...}" />
-            <marker date="1571416987068" expanded="true" signature="8824:9035" ph="/// To validate all properties of the instance ... " />
-            <marker date="1571416987068" expanded="true" signature="9176:9221" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Win32Stuff.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="9" selection-end-line="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/CaptureScreen.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1571617000423" expanded="true" signature="6:197" ph="..." />
-            <marker date="1571617000423" expanded="true" signature="261:7024" ph="{...}" />
-            <marker date="1571617000423" expanded="true" signature="382:495" ph="/* public const int TTM_GETTEXTA = (0x0400 + 11); ... */" />
-            <marker date="1571617000423" expanded="true" signature="589:878" ph="/* TTM_GETTOOLINFOA = (TTM_BASE + 8), ... */" />
-            <marker date="1571617000423" expanded="true" signature="1139:1334" ph="/* TTM_SETTITLEA           =(WM_USER + 32),  // wParam = TTI_*, lParam = char* szTitle ... */" />
-            <marker date="1571617000423" expanded="true" signature="2984:3073" ph="[...]" />
-            <marker date="1571617000423" expanded="true" signature="3204:3293" ph="[...]" />
-            <marker date="1571617000423" expanded="true" signature="4981:5070" ph="[...]" />
-            <marker date="1571617000423" expanded="true" signature="5637:5826" ph="/* [DllImport(&quot;user32.dll&quot;, EntryPoint = &quot;SendMessage&quot;, CharSet = CharSet.Auto)] ... */" />
-            <marker date="1571617000423" expanded="true" signature="6663:6840" ph="/* [DllImport(&quot;user32.dll&quot;, CharSet = CharSet.Auto, ExactSpelling = true)] ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-          <folding>
-            <marker date="1571718551557" expanded="false" signature="6:89" ph="..." />
-            <marker date="1571718551557" expanded="true" signature="145:1332" ph="{...}" />
-            <marker date="1571718551557" expanded="true" signature="186:326" ph="{...}" />
-            <marker date="1571718551557" expanded="true" signature="397:1326" ph="{...}" />
-            <marker date="1571718551557" expanded="true" signature="452:533" ph="{...}" />
-            <marker date="1571718551557" expanded="true" signature="694:903" ph="{...}" />
-            <marker date="1571718551557" expanded="true" signature="1135:1192" ph="{...}" />
-            <marker date="1571718551557" expanded="true" signature="1209:1290" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="114" column="9" selection-start-line="114" selection-start-column="9" selection-end-line="114" selection-end-column="9" />
-          <folding>
-            <marker date="1571761088068" expanded="false" signature="6:27" ph="..." />
-            <marker date="1571761088068" expanded="true" signature="45:3751" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="72:3749" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="506:686" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="563:643" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="729:791" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="831:896" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="940:1005" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="1075:1246" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="1311:1467" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="1542:1675" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="1742:1900" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="1981:2116" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="2179:2268" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="2329:2418" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="2480:2542" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="2608:3147" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="3044:3104" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="3195:3419" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="3468:3743" ph="{...}" />
-            <marker date="1571761088068" expanded="true" signature="3530:3700" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="89" column="17" selection-start-line="85" selection-start-column="16" selection-end-line="89" selection-end-column="17" />
-          <folding>
-            <marker date="1571630172327" expanded="false" signature="6:120" ph="..." />
-            <marker date="1571630172327" expanded="true" signature="138:6535" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="168:211" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="251:6533" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="540:678" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="825:1414" ph="///Capture Active Window, Desktop, Window or Control by hWnd or .NET Contro/Form and save it to a specified file. ... " />
-            <marker date="1571630172327" expanded="true" signature="1551:1627" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="1637:2177" ph="///Capture a specific window (or control) and save it to a specified file. ... " />
-            <marker date="1571630172327" expanded="true" signature="2278:2356" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="2367:2558" ph="///Capture the active window (default) or the desktop and return it as a bitmap ... " />
-            <marker date="1571630172327" expanded="true" signature="2634:2755" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="2766:2922" ph="///Capture a specific window and return it as a bitmap ... " />
-            <marker date="1571630172327" expanded="true" signature="2974:3252" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="3308:3869" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="3334:3765" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="3477:3720" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="3944:4112" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="4209:4534" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="4615:4841" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="4973:5282" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="5017:5223" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="5095:5209" ph="{...}" />
-            <marker date="1571630172327" expanded="true" signature="5431:5959" ph="///Save an image to a specific file ... " />
-            <marker date="1571630172327" expanded="true" signature="6046:6526" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ImageManip.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="848">
-          <caret line="235" column="9" selection-start-line="235" selection-start-column="9" selection-end-line="235" selection-end-column="9" />
-          <folding>
-            <marker date="1571772060014" expanded="false" signature="6:219" ph="..." />
-            <marker date="1571772060014" expanded="true" signature="237:8805" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="274:8803" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="409:1333" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="718:806" ph="/* Draw the image onto the new bitmap ... */" />
-            <marker date="1571772060014" expanded="true" signature="848:983" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="1134:1265" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="1391:1834" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="1530:1769" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="1894:2340" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="2033:2275" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="2421:3103" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="3179:4564" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="3444:4527" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="3510:3643" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="3664:3856" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="4171:4513" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="4245:4495" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="4371:4473" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="4615:7811" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="4709:4778" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="4795:7425" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="4908:7411" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="4996:7393" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="5081:7371" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="5473:7345" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="5973:6155" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="6448:6621" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="6857:7018" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="7457:7699" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="7712:7801" ph="/* Console.Write(&quot;Press any key to continue . . . &quot;); ... */" />
-            <marker date="1571772060014" expanded="true" signature="8003:8797" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="8399:8667" ph="{...}" />
-            <marker date="1571772060014" expanded="true" signature="8687:8787" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ApiCaller.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="113" column="37" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="37" />
-          <folding>
-            <marker date="1571708844382" expanded="false" signature="6:100" ph="..." />
-            <marker date="1571708844382" expanded="true" signature="118:3241" ph="{...}" />
-            <marker date="1571708844382" expanded="true" signature="147:3239" ph="{...}" />
-            <marker date="1571708844382" expanded="true" signature="181:201" ph="{...}" />
-            <marker date="1571708844382" expanded="true" signature="236:312" ph="{...}" />
-            <marker date="1571708844382" expanded="true" signature="345:483" ph="{...}" />
-            <marker date="1571708844382" expanded="true" signature="576:934" ph="{...}" />
-            <marker date="1571708844382" expanded="true" signature="1002:1324" ph="{...}" />
-            <marker date="1571708844382" expanded="true" signature="1385:1708" ph="{...}" />
-            <marker date="1571708844382" expanded="true" signature="1770:2101" ph="{...}" />
-            <marker date="1571708844382" expanded="true" signature="2166:2493" ph="{...}" />
-            <marker date="1571708844382" expanded="true" signature="2540:2708" ph="{...}" />
-            <marker date="1571708844382" expanded="true" signature="2781:2935" ph="{...}" />
-            <marker date="1571708844382" expanded="true" signature="2977:3233" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32CursorUtils.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="40" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="40" />
-          <folding>
-            <marker date="1571770960734" expanded="false" signature="7:74" ph="..." />
-            <marker date="1571770960734" expanded="true" signature="92:3743" ph="{...}" />
-            <marker date="1571770960734" expanded="true" signature="135:3741" ph="{...}" />
-            <marker date="1571770960734" expanded="true" signature="215:1037" ph="{...}" />
-            <marker date="1571770960734" expanded="true" signature="433:978" ph="{...}" />
-            <marker date="1571770960734" expanded="true" signature="495:964" ph="{...}" />
-            <marker date="1571770960734" expanded="true" signature="619:946" ph="{...}" />
-            <marker date="1571770960734" expanded="false" signature="1047:2657" ph="Class Variables" />
-            <marker date="1571770960734" expanded="true" signature="1298:1985" ph="{...}" />
-            <marker date="1571770960734" expanded="true" signature="2059:2135" ph="{...}" />
-            <marker date="1571770960734" expanded="true" signature="2215:2637" ph="{...}" />
-            <marker date="1571770960734" expanded="false" signature="2668:3735" ph="Class Functions" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Cursor/CursorUtil.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-          <folding>
-            <marker date="1571772055100" expanded="true" signature="6:103" ph="..." />
-            <marker date="1571772055100" expanded="true" signature="128:843" ph="{...}" />
-            <marker date="1571772055100" expanded="true" signature="158:841" ph="{...}" />
-            <marker date="1571772055100" expanded="true" signature="433:493" ph="{...}" />
-            <marker date="1571772055100" expanded="true" signature="570:817" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58282784-AF6A-4871-B9B7-2811FAB15086/55/c0533573/AutoItX.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="677" column="22" selection-start-line="677" selection-start-column="22" selection-end-line="677" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ITickable.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <marker date="1571702735685" expanded="true" signature="31:133" ph="{...}" />
-            <marker date="1571702735685" expanded="true" signature="64:131" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="37" column="67" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
-          <folding>
-            <marker date="1571718573866" expanded="false" signature="6:174" ph="..." />
-            <marker date="1571718573866" expanded="true" signature="192:4413" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="223:4411" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="349:439" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="499:584" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="691:1690" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="1140:1544" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="1184:1530" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="1585:1680" ph="/* maybe change schools ... */" />
-            <marker date="1571718573866" expanded="true" signature="1854:3082" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="1947:2005" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="2022:2962" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="2186:2948" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="2515:2841" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="2992:3045" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="3261:3665" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="3570:3627" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="3744:4209" ph="{...}" />
-            <marker date="1571718573866" expanded="true" signature="4290:4405" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/RepairWindow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding>
-            <marker date="1571616872565" expanded="false" signature="6:46" ph="..." />
-            <marker date="1571616872565" expanded="true" signature="64:987" ph="{...}" />
-            <marker date="1571616872565" expanded="true" signature="96:985" ph="{...}" />
-            <marker date="1571616872565" expanded="true" signature="200:979" ph="{...}" />
-            <marker date="1571616872565" expanded="true" signature="319:653" ph="{...}" />
-            <marker date="1571616872565" expanded="true" signature="557:639" ph="{...}" />
-            <marker date="1571616872565" expanded="true" signature="745:969" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Inventory.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <marker date="1571777635012" expanded="false" signature="6:84" ph="..." />
-            <marker date="1571777635012" expanded="true" signature="102:581" ph="{...}" />
-            <marker date="1571777635012" expanded="true" signature="131:579" ph="{...}" />
-            <marker date="1571777635012" expanded="true" signature="190:573" ph="{...}" />
-            <marker date="1571777635012" expanded="true" signature="469:537" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
-          <folding>
-            <marker date="1571781048936" expanded="false" signature="6:63" ph="..." />
-            <marker date="1571781048936" expanded="true" signature="168:2298" ph="{...}" />
-            <marker date="1571781048936" expanded="true" signature="230:242" ph="{...}" />
-            <marker date="1571781048936" expanded="true" signature="314:669" ph="{...}" />
-            <marker date="1571781048936" expanded="true" signature="420:641" ph="{...}" />
-            <marker date="1571781048936" expanded="true" signature="814:1017" ph="///Returns a dictionary that contains the handle and title of all the open windows. ... " />
-            <marker date="1571781048936" expanded="true" signature="1081:2038" ph="{...}" />
-            <marker date="1571781048936" expanded="true" signature="1683:1761" ph="{...}" />
-            <marker date="1571781048936" expanded="true" signature="1794:1871" ph="{...}" />
-            <marker date="1571781048936" expanded="true" signature="1901:2011" ph="{...}" />
-            <marker date="1571781048936" expanded="true" signature="1924:2001" ph="/* Console.WriteLine(&quot;Got Color : {0}&quot;, c); ... */" />
-            <marker date="1571781048936" expanded="true" signature="2087:2296" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/Win32GetText.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-          <folding>
-            <marker date="1571416990794" expanded="false" signature="6:92" ph="..." />
-            <marker date="1571416990794" expanded="true" signature="110:1219" ph="{...}" />
-            <marker date="1571416990794" expanded="true" signature="157:1217" ph="{...}" />
-            <marker date="1571416990794" expanded="true" signature="220:795" ph="{...}" />
-            <marker date="1571416990794" expanded="true" signature="852:1211" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
-          <folding>
-            <marker date="1571781633607" expanded="false" signature="6:61" ph="..." />
-            <marker date="1571781633607" expanded="true" signature="79:1785" ph="{...}" />
-            <marker date="1571781633607" expanded="true" signature="86:281" ph="/* How found:&#9;Focus ... */" />
-            <marker date="1571781633607" expanded="true" signature="317:1783" ph="{...}" />
-            <marker date="1571781633607" expanded="true" signature="557:671" ph="{...}" />
-            <marker date="1571781633607" expanded="true" signature="923:1427" ph="{...}" />
-            <marker date="1571781633607" expanded="true" signature="940:1267" ph="{...}" />
-            <marker date="1571781633607" expanded="true" signature="1309:1391" ph="{...}" />
-            <marker date="1571781633607" expanded="true" signature="1506:1777" ph="{...}" />
-            <marker date="1571781633607" expanded="true" signature="1553:1670" ph="{...}" />
-            <marker date="1571781633607" expanded="true" signature="1687:1767" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/SellWindow.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="41" column="24" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
-          <folding>
-            <marker date="1571616872569" expanded="false" signature="6:118" ph="..." />
-            <marker date="1571616872569" expanded="true" signature="136:3755" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="166:3753" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="303:1196" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="420:516" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="847:934" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="1037:1097" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="1123:1186" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="1316:2771" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="1415:1508" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="1525:2651" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="1750:2637" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="2078:2524" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="2681:2734" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="2911:3419" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="3232:3382" ph="{...}" />
-            <marker date="1571616872569" expanded="true" signature="3473:3747" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="939">
-          <caret line="117" column="13" selection-start-line="117" selection-start-column="13" selection-end-line="117" selection-end-column="13" />
-          <folding>
-            <marker date="1571764912465" expanded="false" signature="6:224" ph="..." />
-            <marker date="1571764912465" expanded="true" signature="242:7940" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="271:393" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="424:609" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="722:7938" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="846:904" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="960:1463" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="1056:1366" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="1283:1352" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="1548:2135" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="1559:1685" ph="/* Console.WriteLine(&quot;Visi&quot;); ... */" />
-            <marker date="1571764912465" expanded="true" signature="2196:3742" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="2319:3540" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="2579:2679" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="2725:3073" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="2812:3051" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="3542:3706" ph="/* if (!string.IsNullOrEmpty(text)) ... */" />
-            <marker date="1571764912465" expanded="true" signature="3802:5470" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="5113:5434" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="5481:5688" ph="///Returns a dictionary that contains the handle and title of all the open windows. ... " />
-            <marker date="1571764912465" expanded="true" signature="5760:6681" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="6363:6593" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="6733:6924" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="6833:6914" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="7179:7932" ph="{...}" />
-            <marker date="1571764912465" expanded="true" signature="7221:7922" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Config.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="52" column="27" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="27" />
-          <folding>
-            <marker date="1571718945716" expanded="false" signature="6:85" ph="..." />
-            <marker date="1571718945716" expanded="true" signature="103:2215" ph="{...}" />
-            <marker date="1571718945716" expanded="true" signature="144:2213" ph="{...}" />
-            <marker date="1571718945716" expanded="true" signature="583:735" ph="{...}" />
-            <marker date="1571718945716" expanded="true" signature="795:1015" ph="{...}" />
-            <marker date="1571718945716" expanded="true" signature="1086:1275" ph="{...}" />
-            <marker date="1571718945716" expanded="true" signature="1315:1429" ph="{...}" />
-            <marker date="1571718945716" expanded="true" signature="1470:1585" ph="{...}" />
-            <marker date="1571718945716" expanded="true" signature="1634:1685" ph="{...}" />
-            <marker date="1571718945716" expanded="true" signature="1745:2207" ph="{...}" />
-            <marker date="1571718945716" expanded="true" signature="1893:2169" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
-          <folding>
-            <marker date="1571783434272" expanded="false" signature="6:76" ph="..." />
-            <marker date="1571783434272" expanded="true" signature="94:2136" ph="{...}" />
-            <marker date="1571783434272" expanded="true" signature="145:2134" ph="{...}" />
-            <marker date="1571783434272" expanded="true" signature="233:287" ph="{...}" />
-            <marker date="1571783434272" expanded="true" signature="442:1012" ph="{...}" />
-            <marker date="1571783434272" expanded="true" signature="545:711" ph="{...}" />
-            <marker date="1571783434272" expanded="true" signature="601:697" ph="{...}" />
-            <marker date="1571783434272" expanded="true" signature="752:1002" ph="{...}" />
-            <marker date="1571783434272" expanded="true" signature="868:988" ph="{...}" />
-            <marker date="1571783434272" expanded="true" signature="1058:1223" ph="{...}" />
-            <marker date="1571783434272" expanded="true" signature="1271:1355" ph="{...}" />
-            <marker date="1571783434272" expanded="true" signature="1407:1497" ph="{...}" />
-            <marker date="1571783434272" expanded="true" signature="1704:2056" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-107">
-          <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="53" />
-          <folding>
-            <marker date="1571783261302" expanded="false" signature="6:56" ph="..." />
-            <marker date="1571783261302" expanded="true" signature="74:4205" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="105:4203" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="436:1421" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="640:707" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="743:1025" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="855:928" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="1154:1254" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="1297:1411" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="1480:2697" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="1544:1607" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="1749:1810" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="1874:1934" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="1974:2032" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="2448:2556" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="2630:2687" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="2740:2876" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="2920:3465" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="2957:3455" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="3506:3555" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="3589:3636" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="3673:3810" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="3848:3902" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="3943:4004" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="4039:4094" ph="{...}" />
-            <marker date="1571783261302" expanded="true" signature="4135:4197" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="67" column="23" selection-start-line="67" selection-start-column="23" selection-end-line="67" selection-end-column="23" />
-          <folding>
-            <marker date="1571784881508" expanded="false" signature="6:85" ph="..." />
-            <marker date="1571784881508" expanded="true" signature="103:1958" ph="{...}" />
-            <marker date="1571784881508" expanded="true" signature="153:1956" ph="{...}" />
-            <marker date="1571784881508" expanded="true" signature="393:653" ph="{...}" />
-            <marker date="1571784881508" expanded="true" signature="725:1950" ph="{...}" />
-            <marker date="1571784881508" expanded="true" signature="1131:1195" ph="{...}" />
-            <marker date="1571784881508" expanded="true" signature="1232:1296" ph="{...}" />
-            <marker date="1571784881508" expanded="true" signature="1353:1405" ph="{...}" />
-            <marker date="1571784881508" expanded="true" signature="1438:1562" ph="{...}" />
-            <marker date="1571784881508" expanded="true" signature="1594:1679" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding>
-            <marker date="1571777828652" expanded="true" signature="45:1330" ph="{...}" />
-            <marker date="1571777828652" expanded="true" signature="94:1328" ph="{...}" />
-            <marker date="1571777828652" expanded="true" signature="171:1322" ph="{...}" />
-            <marker date="1571777828652" expanded="true" signature="260:360" ph="{...}" />
-            <marker date="1571777828652" expanded="true" signature="406:1044" ph="{...}" />
-            <marker date="1571777828652" expanded="true" signature="865:1030" ph="{...}" />
-            <marker date="1571777828652" expanded="true" signature="1134:1286" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionRepair.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
-          <folding>
-            <marker date="1571786043885" expanded="false" signature="6:88" ph="..." />
-            <marker date="1571786043885" expanded="true" signature="120:1337" ph="{...}" />
-            <marker date="1571786043885" expanded="true" signature="175:1335" ph="{...}" />
-            <marker date="1571786043885" expanded="true" signature="219:1329" ph="{...}" />
-            <marker date="1571786043885" expanded="true" signature="406:539" ph="{...}" />
-            <marker date="1571786043885" expanded="true" signature="591:1284" ph="{...}" />
-            <marker date="1571786043885" expanded="true" signature="735:1270" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-629">
-          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
-          <folding>
-            <marker date="1571786650049" expanded="false" signature="6:64" ph="..." />
-            <marker date="1571786650049" expanded="true" signature="96:3968" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="149:3966" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="191:3960" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="379:509" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="561:3509" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="888:961" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="998:1067" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="1227:1407" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="1527:1749" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="1859:2078" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="2190:2723" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="2833:3376" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="3397:3495" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="3541:3784" ph="{...}" />
-            <marker date="1571786650049" expanded="true" signature="3801:3915" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="198" column="64" selection-start-line="198" selection-start-column="64" selection-end-line="198" selection-end-column="64" />
-          <folding>
-            <marker date="1571786975399" expanded="false" signature="6:235" ph="..." />
-            <marker date="1571786975399" expanded="true" signature="253:7222" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="292:706" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="729:1797" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="1244:1324" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="1373:1610" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="1663:1791" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="1834:7220" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="1884:1950" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="2114:3863" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="2430:3810" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="2555:2665" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="2896:3090" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="3248:3420" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="3516:3687" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="3708:3796" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="4027:4905" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="4216:4461" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="4478:4622" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="4985:6149" ph="{...}" />
-            <marker date="1571786975399" expanded="true" signature="6223:7205" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="107" column="35" selection-start-line="107" selection-start-column="35" selection-end-line="107" selection-end-column="35" />
-          <folding>
-            <marker date="1571776965474" expanded="false" signature="6:118" ph="..." />
-            <marker date="1571776965474" expanded="true" signature="150:3750" ph="{...}" />
-            <marker date="1571776965474" expanded="true" signature="171:283" ph="{...}" />
-            <marker date="1571776965474" expanded="true" signature="313:3748" ph="{...}" />
-            <marker date="1571776965474" expanded="true" signature="392:2284" ph="{...}" />
-            <marker date="1571776965474" expanded="true" signature="451:532" ph="{...}" />
-            <marker date="1571776965474" expanded="true" signature="673:2247" ph="{...}" />
-            <marker date="1571776965474" expanded="true" signature="899:2142" ph="{...}" />
-            <marker date="1571776965474" expanded="true" signature="2303:2358" ph="{...}" />
-            <marker date="1571776965474" expanded="true" signature="2473:3742" ph="{...}" />
-            <marker date="1571776965474" expanded="true" signature="2639:3620" ph="{...}" />
-            <marker date="1571776965474" expanded="true" signature="2713:3127" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionSell.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="16" />
-          <folding>
-            <marker date="1571786061183" expanded="false" signature="6:112" ph="..." />
-            <marker date="1571786061183" expanded="true" signature="144:2980" ph="{...}" />
-            <marker date="1571786061183" expanded="true" signature="197:2978" ph="{...}" />
-            <marker date="1571786061183" expanded="true" signature="241:2972" ph="{...}" />
-            <marker date="1571786061183" expanded="true" signature="429:562" ph="{...}" />
-            <marker date="1571786061183" expanded="true" signature="614:2214" ph="{...}" />
-            <marker date="1571786061183" expanded="true" signature="740:960" ph="{...}" />
-            <marker date="1571786061183" expanded="true" signature="1037:1582" ph="{...}" />
-            <marker date="1571786061183" expanded="true" signature="1657:2200" ph="{...}" />
-            <marker date="1571786061183" expanded="true" signature="2245:2923" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionFinishes.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <marker date="1571789370561" expanded="false" signature="6:138" ph="..." />
-            <marker date="1571789370561" expanded="true" signature="156:2095" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="197:2093" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="312:356" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="418:462" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="518:1232" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="788:917" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="934:1222" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="1055:1208" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="1297:1436" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="1494:1666" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="1710:1773" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="1812:1868" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="1908:1975" ph="{...}" />
-            <marker date="1571789370561" expanded="true" signature="2017:2087" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
-          <folding>
-            <marker date="1571616872611" expanded="false" signature="6:56" ph="..." />
-            <marker date="1571616872611" expanded="true" signature="74:1823" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="115:1821" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="165:288" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="328:447" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="522:587" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="641:704" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="755:962" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="1018:1083" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="1137:1355" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="1280:1308" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="1413:1815" ph="{...}" />
-            <marker date="1571616872611" expanded="true" signature="1681:1805" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="84" column="53" selection-start-line="84" selection-start-column="53" selection-end-line="84" selection-end-column="53" />
-          <folding>
-            <marker date="1571791404522" expanded="false" signature="6:254" ph="..." />
-            <marker date="1571791404522" expanded="true" signature="272:5216" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="313:5214" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="473:818" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="534:600" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="617:731" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="1045:4211" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="1126:3138" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="1975:2060" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="3332:4114" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="3441:3552" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="3609:4100" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="4131:4201" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="4255:4654" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="4460:4560" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="4577:4644" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="4713:5081" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="4775:5071" ph="{...}" />
-            <marker date="1571791404522" expanded="true" signature="5151:5208" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="116" column="56" selection-start-line="116" selection-start-column="56" selection-end-line="116" selection-end-column="56" />
-          <folding>
-            <marker date="1571781845796" expanded="false" signature="6:235" ph="..." />
-            <marker date="1571781845796" expanded="true" signature="253:5593" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="291:5591" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="389:1068" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="479:638" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="1218:1695" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="1803:2229" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="1858:1923" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="2080:2170" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="2285:2426" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="2525:3178" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="2653:3138" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="2749:3124" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="3277:4734" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="4822:5183" ph="{...}" />
-            <marker date="1571781845796" expanded="true" signature="5290:5391" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Secrets.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3200">
-          <caret line="11" column="23" lean-forward="true" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <marker date="1571794766700" expanded="true" signature="16:6643" ph="{...}" />
-            <marker date="1571794766700" expanded="true" signature="57:6641" ph="{...}" />
-            <marker date="1571794766700" expanded="true" signature="98:677" ph="{...}" />
-            <marker date="1571794766700" expanded="true" signature="249:305" ph="/* TODO here ... */" />
-            <marker date="1571794766700" expanded="true" signature="363:442" ph="/* config[KEY_ME] = &quot;AliSmash&quot;; ... */" />
-            <marker date="1571794766700" expanded="true" signature="772:2846" ph="{...}" />
-            <marker date="1571794766700" expanded="true" signature="2927:3499" ph="{...}" />
-            <marker date="1571794766700" expanded="true" signature="2959:3007" ph="{...}" />
-            <marker date="1571794766700" expanded="true" signature="3039:3086" ph="{...}" />
-            <marker date="1571794766700" expanded="true" signature="3118:3166" ph="{...}" />
-            <marker date="1571794766700" expanded="true" signature="3198:3246" ph="{...}" />
-            <marker date="1571794766700" expanded="true" signature="3278:3329" ph="{...}" />
-            <marker date="1571794766700" expanded="true" signature="3361:3412" ph="{...}" />
-            <marker date="1571794766700" expanded="true" signature="3444:3488" ph="{...}" />
-            <marker date="1571794766700" expanded="true" signature="3564:6634" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1275">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
-          <folding>
-            <marker date="1571787824531" expanded="false" signature="6:119" ph="..." />
-            <marker date="1571787824531" expanded="true" signature="152:3542" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="181:3540" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="475:1349" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="928:1339" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="1448:1555" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="1618:1679" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="1762:2053" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="2112:2747" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="2222:2295" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="2364:2482" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="2567:2737" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="2787:3209" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="2901:3001" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="3123:3199" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="3251:3451" ph="{...}" />
-            <marker date="1571787824531" expanded="true" signature="3489:3534" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>

@@ -20,14 +20,14 @@ namespace runner
             this.type = type;
         }
 
-        public bool handle(IntPtr baseHandle, Event param)
+        public bool handle(IntPtr baseHandle, Program program, Event param)
         {
-            return __handle(baseHandle, spellName, type, param);
+            return __handle(program, baseHandle, spellName, type, param);
         }
 
-        private static bool __handle(IntPtr baseHandle, string spellName, SpellType type, Event curEvent)
+        private static bool __handle(Program program, IntPtr baseHandle, string spellName, SpellType type, Event curEvent)
         {
-            if (!TryGetWindow(baseHandle, out IntPtr spell)) return false;
+            if (!TryGetWindow(program, baseHandle, out IntPtr spell)) return false;
 
             AutoItX.WinActivate(spell);
             var ae = AutomationElement.FromHandle(spell);
@@ -86,7 +86,7 @@ namespace runner
                         ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
 
 
-                        AutoItX.MouseClick("RIGHT", (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
+                        MouseManager.MouseClick(baseHandle,"RIGHT", (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
                         return true;
                     }
 
@@ -125,18 +125,18 @@ namespace runner
             return false;
         }
 
-        private static bool TryGetWindow(IntPtr baseHandle, out IntPtr spell)
+        private static bool TryGetWindow(Program program, IntPtr baseHandle, out IntPtr spell)
         {
             if (__TryGetWindow(baseHandle, out spell)) return true;
 
 
-            if (!Program.stateEngine.InState(StateEngine.OutOfCombat)) return false;
+            if (!program.stateEngine.InState(StateEngine.OutOfCombat)) return false;
             
             Teleport.close();
 
-            ToolTips.moveOver(ExpectedTT.Spells);
+            ToolTips.moveOver(baseHandle,ExpectedTT.Spells);
             Thread.Sleep(1);
-            AutoItX.MouseClick();
+            MouseManager.MouseClick(baseHandle);
             if (__TryGetWindow(baseHandle, out spell)) return true;
 
             //anyother look ups here

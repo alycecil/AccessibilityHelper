@@ -26,7 +26,7 @@ namespace runner
             //ScreenCapturer.ImageSave("RExit", ImageFormat.Tiff, ScreenCapturer.Capture(rectangle));
             //AutoItX.ControlClick(hWdw, hCntr, "left", 1, startBtnX, startBtnY);
 
-            AutoItX.MouseClick("LEFT", rectangle.X, rectangle.Y);
+            MouseManager.MouseClick(hCntr,"LEFT", rectangle.X, rectangle.Y);
             
             
 

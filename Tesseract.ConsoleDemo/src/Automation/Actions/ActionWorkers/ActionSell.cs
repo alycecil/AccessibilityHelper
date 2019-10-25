@@ -8,12 +8,12 @@ namespace runner.ActionWorkers
 {
     public class ActionSell : AbstractActionWorker
     {
-        public static bool DoAction()
+        public static bool DoAction(Program program, IntPtr baseHandle)
         {
             bool didSomething = false;
-            if (!findVerbWindow(out var verbWindow)) return false;
+            if (!findVerbWindow(program, baseHandle,out var verbWindow)) return false;
 
-            if (!Program.stateEngine.InState(StateEngine.OutOfCombat))
+            if (!program.stateEngine.InState(StateEngine.OutOfCombat))
             {
                 Console.WriteLine("Can't Repair while not out of combat");
                 return false;
@@ -27,8 +27,8 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Sell))
                 {
                     Console.WriteLine("selling");
-                    VerbWindow.click(verb);
-                    Action.wantToRepair = false;
+                    VerbWindow.click(baseHandle,verb);
+                    program.action.wantToRepair = false;
                     didSomething = true;
                 }
                 else if (
@@ -39,8 +39,8 @@ namespace runner.ActionWorkers
                     var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y + 60 * sX), verb.rect.Width,
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(implied);
-                    Action.wantToRepair = true;
+                    VerbWindow.click(baseHandle, implied);
+                    program.action.wantToRepair = true;
                     didSomething = true;
                 }
                 else if (
@@ -51,8 +51,8 @@ namespace runner.ActionWorkers
                     var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y - 15 * sX), verb.rect.Width,
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(implied);
-                    Action.wantToRepair = true;
+                    VerbWindow.click(baseHandle,implied);
+                    program.action.wantToRepair = true;
                     didSomething = true;
                 }
             }
@@ -60,17 +60,10 @@ namespace runner.ActionWorkers
             if (didSomething)
             {
                 Thread.Sleep(TimeSpan.FromSeconds(1));
-                Action.doSell(Windows.HandleBaseWindow());
+                program.lastVerbWindow = null;
+                program.windowScanManager.flushScreenScan();
+                program.action.doSell(baseHandle);
                 
-                Console.WriteLine("Sold Stuff, lets get out weight below 70% or we cant do a thing");
-                Action.setCurrentAction(Event.ActionEnum.CheckStatus);
-                Action.updateWeightOnlyIfUnder(70);                                              
-                Action.askForWeight();
-                
-                
-                VerbWindow.last = null;
-                WindowScan.flushScreenScan();
-                //we need to wait for a voice command on what to do, if weight over 70% 
             }
             
             return false;

@@ -1,12 +1,13 @@
 using System;
+using Tesseract.ConsoleDemo;
 
 namespace runner.ActionWorkers
 {
     public abstract class AbstractActionWorker
     {
-        internal static bool findVerbWindow(out VerbWindow verbWindow)
+        internal static bool findVerbWindow(Program program, IntPtr baseHandle, out VerbWindow verbWindow)
         {
-            verbWindow = VerbWindow.last;
+            verbWindow = program.lastVerbWindow;
 
             if (verbWindow == null)
             {
@@ -18,15 +19,16 @@ namespace runner.ActionWorkers
             {
                 Console.WriteLine("Scrap Scan Sucked, Trying Again");
                 int type = verbWindow.type;
-                verbWindow = VerbWindow.findWindow(Windows.HandleBaseWindow(), verbWindow.ocrText, false, false);
+                verbWindow = VerbWindow.findWindow(program, baseHandle, verbWindow.ocrText, false, false);
                 if (verbWindow != null)
                     verbWindow.type = type;
-
+                program.lastVerbWindow = verbWindow;
                 Console.WriteLine("Actions Scanned Again");
 
                 if (verbWindow == null || verbWindow.verbs.Count == 0)
                 {
                     Console.WriteLine("Nothing To Do Yet, Maybe I should screen scan better");
+                    program.lastVerbWindow = null;
                     return false;
                 }
             }
@@ -35,7 +37,7 @@ namespace runner.ActionWorkers
             if (!Win32.IsWindowVisible(verbWindow.hWnd) || verbWindow.verbs.Count == 0)
             {
                 Console.WriteLine("Lost VerbWindow");
-                VerbWindow.last = null;
+                program.lastVerbWindow = null;
                 return false;
             }
 

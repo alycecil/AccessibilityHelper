@@ -8,9 +8,9 @@ namespace runner
     {
         const int baseX = 414, baseY = 276;
 
-        public static void handle(IntPtr basehandle)
+        public static void handle(IntPtr baseHandle)
         {
-            var repair = Windows.getRepairNothingControl(basehandle);
+            var repair = Windows.getRepairNothingControl(baseHandle);
             if (repair != IntPtr.Zero)
             {
                 var text =
@@ -22,12 +22,12 @@ namespace runner
                 }
             }
 
-            repair = Windows.getRepair(basehandle);
+            repair = Windows.getRepair(baseHandle);
             if (repair != IntPtr.Zero)
             {
                 ScreenCapturer.GetScale(repair, out float sX, out float sY);
                 //click repair all
-                AutoItX.MouseClick("LEFT", (int) (sX * baseX), (int) (sY * baseY));
+                MouseManager.MouseClick(baseHandle, "LEFT", (int) (sX * baseX), (int) (sY * baseY));
             }
         }
     }

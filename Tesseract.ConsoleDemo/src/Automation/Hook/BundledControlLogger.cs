@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using Tesseract.ConsoleDemo;
 
 namespace runner
 {
     class BundledControlLogger : ControlLogger
     {
-        public BundledControlLogger(List<ControlLogger> controls)
+        public BundledControlLogger(Program program, List<ControlLogger> controls) : base(program)
         {
             this.controls = controls;
         }

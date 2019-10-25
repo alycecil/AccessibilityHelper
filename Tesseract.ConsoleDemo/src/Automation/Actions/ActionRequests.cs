@@ -4,58 +4,56 @@ using Tesseract.ConsoleDemo;
 
 namespace runner
 {
-    public static partial class Action
+    public partial class Action
     {
-       
-        public static void ReadHP()
+        public void ReadHP(IntPtr baseHandle)
         {
-            ToolTips.moveOver(ExpectedTT.Health);
+            ToolTips.moveOver(baseHandle, ExpectedTT.Health);
             ToolTips.setExpected(ExpectedTT.Health);
         }
 
-        private static void ReadMana()
+        private void ReadMana(IntPtr baseHandle)
         {
-            ToolTips.moveOver(ExpectedTT.Mana);
+            ToolTips.moveOver(baseHandle, ExpectedTT.Mana);
             ToolTips.setExpected(ExpectedTT.Mana);
         }
-        
-        public static void handleRepairControl(IntPtr basehandle)
+
+        public void handleRepairControl(IntPtr baseHandle)
         {
-            RepairWindow.handle(basehandle);
+            RepairWindow.handle(baseHandle);
         }
 
-        public static void doSell(IntPtr basehandle)
+        public void doSell(IntPtr baseHandle)
         {
-            SellWindow.handle(basehandle);
-        }
-        
-        public static void askForWeight()
-        {
-            var basehandle = Windows.HandleBaseWindow();
-            var charOut = Windows.getChatSender(basehandle);
-            AutoItX.ControlSend(basehandle, charOut, "/weight\r\n");
+            SellWindow.handle(_program, baseHandle);
         }
 
-        public static void doCombat(IntPtr baseHandle)
+        public void askForWeight(IntPtr baseHandle)
         {
-            CombatWindow.handle(baseHandle);
+            var charOut = Windows.getChatSender(baseHandle);
+            AutoItX.ControlSend(baseHandle, charOut, "/weight\r\n");
         }
 
-        public static void doLoot(IntPtr baseHandle)
+        public void doCombat(IntPtr baseHandle)
+        {
+            CombatWindow.handle(_program, baseHandle);
+        }
+
+        public void doLoot(IntPtr baseHandle)
         {
             var loot = Windows.getLoot();
             if (loot == IntPtr.Zero) return;
 
-            if (LootWindow.HandleLoot(loot))
+            if (LootWindow.HandleLoot(_program, baseHandle, loot))
             {
             }
 
             AutoItX.WinClose(loot);
         }
 
-        public static void exitCombat(IntPtr baseHandle)
+        public void exitCombat(IntPtr baseHandle)
         {
-            if (!Program.stateEngine.InState(StateEngine.InCobmatAfter)) return;
+            if (!_program.stateEngine.InState(StateEngine.InCobmatAfter)) return;
             if (Windows.getLoot() != IntPtr.Zero) return;
 
             var exit = Windows.getExitCombatControl(baseHandle);
@@ -63,7 +61,7 @@ namespace runner
             if (ExitWindow.Click(baseHandle, exit))
             {
                 //todo handle complete
-                Program.stateEngine.clickedExitCombat();
+                _program.stateEngine.clickedExitCombat();
             }
         }
     }

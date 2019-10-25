@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using AutoIt;
 using IO.Swagger.Model;
@@ -7,136 +8,167 @@ using Action = runner.Action;
 
 namespace Tesseract.ConsoleDemo
 {
-    internal class Program
+    public class Program
     {
-        public static WindowScan scan = null;
-        public static Player ego = new Player();
-        public static StateEngine stateEngine = new StateEngine();
-        public static int MaxHp = 1000;
+        public WindowScan scan = null;
+        public Player ego = new Player();
+        public StateEngine stateEngine;
+        public int MaxHp = 1000;
         private static long tick = 0;
+        public WindowScanManager windowScanManager;
+        public readonly IntPtr baseHandle;
+        private ControlLogger roomLogger;
+        public Action action;
+        public VerbWindow lastVerbWindow;
+
+        public Program(IntPtr baseHandle)
+        {
+            this.baseHandle = baseHandle;
+            this.action = new Action(this);
+            this.stateEngine = new StateEngine(this, baseHandle);
+            this.roomLogger = ControlLogger.build(this, baseHandle);
+        }
 
         public static void Main(string[] args)
         {
             ImageManip.testOcr(args);
             //Win32GetText.GetToolTipText((IntPtr)0x47)
             AutoItX.Init();
+
+
+            //var baseHandle
+            List<IntPtr> handleBaseWindows = Windows.HandleBaseWindows();
+            if (handleBaseWindows.Count < 1)
+            {
+                throw new Exception("Other App Not Running");
+            }
+            
+            foreach (IntPtr baseHandle in handleBaseWindows)
+            {
+                //todo refactor into threads
+                new Program(baseHandle).MainLoop();
+            }
+
+            //Action.ReadHP();
+
+
+           
+        }
+
+        private void MainLoop()
+        {
             ego.Name = Config.get(Config.KEY_ME);
 
             new ApiCaller().login(ego.Name);
-
-            var basehandle = __base();
-
-            
-            var roomLogger = ControlLogger.build(basehandle);
-            Action.ReadHP();
-            
-
-            
-            //////MAIN LOOP
+//////MAIN LOOP
             while (true)
             {
                 tick++;
-                Thread.Sleep(3);
+                Thread.Sleep(1);
                 __base();
 
 
-                EveryTickFirst(basehandle);
-                
-                FastTick(basehandle, roomLogger);
-                CommonTick(basehandle);
+                EveryTickFirst();
+
+                FastTick();
+                CommonTick();
                 RareTick();
 
-                
-                EveryTickLast(basehandle);
 
-                
+                EveryTickLast();
+
+
                 tick %= Int32.MaxValue;
             }
         }
 
         const int WARMUP_TICKS = 10;
-        private static void EveryTickLast(IntPtr basehandle)
+
+        private void EveryTickLast()
         {
-            if(tick>WARMUP_TICKS)
-                Action.handleNextAction(basehandle);
+            if (tick > WARMUP_TICKS)
+                action.HandleNextAction(baseHandle);
         }
 
-        private static void EveryTickFirst(IntPtr basehandle)
+        private void EveryTickFirst()
         {
-            ToolTips.handle(basehandle);
+            ToolTips.handle(this, baseHandle);
         }
 
-        private static void FastTick(IntPtr basehandle, ControlLogger roomLogger)
+        private void FastTick()
         {
             if (tick % 3 != 0) return;
             roomLogger.LogRoom();
-            scan?.tickCommon(tick, basehandle);
-            WindowScan.handleScreenScan(basehandle);
-            HoverBox.handle(basehandle);
-            stateEngine.HandleStateChanges(basehandle);
+            scan?.tickCommon(tick, this, baseHandle);
+            windowScanManager.handleScreenScan(this, baseHandle);
+            HoverBox.handle(this, baseHandle);
+            stateEngine.HandleStateChanges();
         }
 
-        private static void CommonTick(IntPtr basehandle)
+        private void CommonTick()
         {
             if (tick % 7 != 0) return;
 
 
             if (stateEngine.InState(StateEngine.InCombat))
             {
-                Action.doCombat(basehandle);
+                action.doCombat(baseHandle);
             }
             else if (stateEngine.InState(StateEngine.InCobmatAfter))
             {
-                Action.doLoot(basehandle);
-                Action.exitCombat(basehandle);
+                action.doLoot(baseHandle);
+                action.exitCombat(baseHandle);
             }
             else
                 //if (stateEngine.InState(StateEngine.OutOfCombat))
             {
-                Action.handleRepairControl(basehandle);
-                Action.doLoot(basehandle);
-                Action.doSell(basehandle);
+                action.handleRepairControl(baseHandle);
+                action.doLoot(baseHandle);
+                action.doSell(baseHandle);
             }
         }
 
-        private static void RareTick()
+        private void RareTick()
         {
-            
             if (tick % 100 != 0) return;
+            
+
+            action.GetNextEvent(baseHandle);
             //
 
             if (stateEngine.InState(StateEngine.OutOfCombat))
             {
-                if(scan == null)
-                    WindowScan.requestScreenScan();
+                if (scan == null)
+                    windowScanManager.requestScreenScan(baseHandle);
             }
-            
+
             if (tick % 5000 != 0) return;
             if (stateEngine.InState(StateEngine.OutOfCombat))
             {
-                Action.ReadHP();
-                Action.askForWeight();
+                action.ReadHP(baseHandle);
+                action.askForWeight(baseHandle);
             }
-            
+
             if (tick % 10000 != 0) return;
             //
 
             if (stateEngine.InState(StateEngine.OutOfCombat))
             {
-                    WindowScan.requestScreenScan();
+                windowScanManager.requestScreenScan(baseHandle);
             }
         }
 
 
-
-        private static IntPtr __base()
+        private IntPtr __base()
         {
-            IntPtr basehandle = Windows.HandleBaseWindow();
-            if (basehandle == IntPtr.Zero) throw new Exception("Other App Not Running");
-            return basehandle;
+            if (AutoItX.WinExists(baseHandle) == 0)
+            {
+                throw new Exception("Other App Not Running");
+            }
+            return baseHandle;
         }
 
-        public static long getTick()
+        public long getTick()
         {
             return tick;
         }

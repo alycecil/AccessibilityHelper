@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using AutoIt;
+using Tesseract.ConsoleDemo;
 
 namespace runner
 {
@@ -16,21 +17,23 @@ namespace runner
             STEP_Y,
             END_y;
 
-        public PartialWindowScan() : base(new List<Thing>())
+        public PartialWindowScan(Program program) : base(new List<Thing>(), program)
         {
-            GetConfig(out START_X,
+            WindowScanManager.GetConfig(program,
+                out START_X,
                 out END_X,
                 out STEP_X,
                 out START_Y,
                 out STEP_Y,
                 out END_y);
 
-            currentX = START_X;
+            var r = new Random();
+            currentX = 400+r.Next(1,100);
             currentY = START_Y;
         }
 
 
-        public override void tickCommon(long tick, IntPtr baseHandle)
+        public override void tickCommon(long tick, Program program, IntPtr baseHandle)
         {
             if (!Config.screenScan())
                 return;
@@ -38,7 +41,8 @@ namespace runner
             bool afterEndY = currentY > END_y-STEP_Y+1;
             bool afterEndX = currentX > (END_X-STEP_X+1);
 
-            GetConfig(out START_X,
+            WindowScanManager.GetConfig(program,
+                out START_X,
                 out END_X,
                 out STEP_X,
                 out START_Y,
@@ -79,11 +83,11 @@ namespace runner
             currentY += STEP_Y;
 
 
-            VerbWindow.findWindow(baseHandle,"DISMISS")?.dismiss();
+            VerbWindow.findWindow(program, baseHandle,"DISMISS")?.dismiss();
             ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
             int _y = (int) (currentY * sY);
             int _x = (int) (currentX * sX);
-            AutoItX.MouseMove(_x, _y, 1);
+            MouseManager.MouseMove(baseHandle, _x, _y, 1);
 
         }
     }

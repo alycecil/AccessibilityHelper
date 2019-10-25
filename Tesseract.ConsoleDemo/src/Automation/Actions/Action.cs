@@ -11,12 +11,133 @@ using static IO.Swagger.Model.Event.ActionEnum;
 
 namespace runner
 {
-    public static partial class Action
+    public partial class Action
     {
-        static ApiCaller caller = new ApiCaller();
+        private static readonly ApiCaller _caller = new ApiCaller();
+        private Event _currentEvent;
+        private Event.ActionEnum _currentAction = Idle;
+        private readonly Program _program;
+
+        public Action(Program program)
+        {
+            this._program = program;
+        }
+
+        public bool wantToRepair = true;
+
+        public void HandleNextAction(IntPtr baseHandle)
+        {
+            bool complete = false;
+            switch (_currentAction)
+            {
+                case Idle when ActionIdle.DoIdle(_program, baseHandle):
+                    Console.WriteLine("Found a verb to do.");
+                    return;
+                case Idle:
+                    complete = true;
+                    break;
+
+                case CheckStatus when _program.getTick() % 1000 == 0:
+                    complete = true;
+                    break;
+                case CheckStatus:
+                    break;
+                case Move:
+                    complete = ActionMove.handle(baseHandle, _currentEvent);
+                    break;
+
+                case CheckInventory:
+                    //TODO better read mana
+                    complete = Inventory.handle(baseHandle);
+                    break;
+
+                case CheckHpMana:
+                {
+                    if (_program.getTick() % 100 == 0)
+                    {
+                        this.ReadHP(baseHandle);
+                    }
+
+                    //Console.WriteLine("Checking Status");
+                    break;
+                }
+                case Teleport when !_program.stateEngine.InState(StateEngine.OutOfCombat):
+                    return;
+                case Teleport:
+                    complete = new SpellWindow("Teleport", SpellType.Teleport).handle(baseHandle, _program,
+                        _currentEvent);
+                    break;
+
+                case Repair:
+                    complete = ActionRepair.DoAction(_program, baseHandle);
+                    break;
+                case SellInventory:
+                    complete = ActionSell.DoAction(_program, baseHandle);
+                    break;
+
+                case CombatAttack:
+                case CombatCast:
+                case CombatGuard:
+                    this.doCombat(baseHandle);
+                    complete = Windows.getInCombat(baseHandle) == IntPtr.Zero;
+                    break;
+                default:
+                    if (_program.stateEngine.InState(StateEngine.OutOfCombat))
+                        throw new NotImplementedException();
+                    break;
+            }
+
+            if (_program.stateEngine.InState(StateEngine.InCombatActing))
+                return;
+            HandleComplete(complete);
+        }
+
+        public void GetNextEvent(IntPtr baseHandle)
+        {
+//TODO
+            if (_currentEvent == null || _currentAction == Idle)
+            {
+                GetNextEvent(_program);
 
 
-        private static void HandleComplete(Event.ActionEnum actionCompleted, String paramDet = null)
+                if (_currentAction != Idle)
+                {
+                    Console.WriteLine("Given Task : [{0}]", _currentEvent);
+                }
+
+                switch (_currentAction)
+                {
+                    case CheckStatus:
+                        //Console.WriteLine("Checking Status [{0}]", currentEvent);
+                        askForWeight(baseHandle);
+                        break;
+                    case SellInventory:
+                    case Repair:
+                        _program.windowScanManager.requestScreenScan(baseHandle);
+                        break;
+                    //default:
+                    //no start action
+                    //    break;
+                }
+            }
+        }
+
+        private void GetNextEvent(Program program)
+        {
+//GET NEXT ONE
+            _currentEvent = _caller.nextEvent(program.ego.Name);
+            Event.ActionEnum? currentEventAction = _currentEvent?.Action;
+            if (currentEventAction != null)
+            {
+                _currentAction = (Event.ActionEnum) currentEventAction;
+            }
+            else
+            {
+                _currentAction = Idle;
+            }
+        }
+
+        private void HandleComplete(Event.ActionEnum actionCompleted, string paramDet = null)
         {
             if (actionCompleted == _currentAction)
             {
@@ -31,136 +152,19 @@ namespace runner
             _currentAction = Idle;
         }
 
-
-        private static Event currentEvent = null;
-        private static Event.ActionEnum _currentAction = Idle;
-        public static bool wantToRepair = true;
-
-        public static void handleNextAction(IntPtr baseHandle)
-        {
-            bool complete = false;
-            switch (_currentAction)
-            {
-                case Idle when ActionIdle.DoIdle():
-                    Console.WriteLine("Found a verb to do.");
-                    return;
-                case Idle:
-                    complete = true;
-                    break;
-
-                case CheckStatus when Program.getTick() % 1000 == 0:
-                    complete = true;
-                    break;
-                case CheckStatus:
-                    break;
-                case Move:
-                    complete = ActionMove.handle(baseHandle, currentEvent);
-                    break;
-
-                case CheckInventory:
-                    //TODO better read mana
-                    complete = Inventory.handle(baseHandle);
-                    break;
-
-                case CheckHpMana:
-                {
-                    if (Program.getTick() % 100 == 0)
-                    {
-                        Action.ReadHP();
-                    }
-
-                    //Console.WriteLine("Checking Status");
-                    break;
-                }
-                case Teleport when !Program.stateEngine.InState(StateEngine.OutOfCombat):
-                    return;
-                case Teleport:
-                    complete = new SpellWindow("Teleport", SpellType.Teleport).handle(baseHandle, currentEvent);
-                    break;
-
-                case Repair:
-                    complete = ActionRepair.DoAction();
-                    break;
-                case SellInventory:
-                    complete = ActionSell.DoAction();
-                    break;
-
-                case CombatAttack:
-                case CombatCast:
-                case CombatGuard:
-                    Action.doCombat(baseHandle);
-                    complete = Windows.getInCombat() == IntPtr.Zero;
-                    break;
-                default:
-                    if (Program.stateEngine.InState(StateEngine.OutOfCombat))
-                        throw new NotImplementedException();
-                    break;
-            }
-
-            if (Program.stateEngine.InState(StateEngine.InCombatActing))
-                return;
-            
-            //TODO
-            if (currentEvent == null || _currentAction == Idle)
-            {
-                
-                GetNextEvent();
-
-
-                if (_currentAction != Idle)
-                {
-                    Console.WriteLine("Given Task : [{0}]", currentEvent);
-                }
-                
-                switch (_currentAction)
-                {
-                    case CheckStatus:
-                        //Console.WriteLine("Checking Status [{0}]", currentEvent);
-                        askForWeight();
-                        break;
-                    case SellInventory:
-                    case Repair:
-                        WindowScan.requestScreenScan();
-                        break;
-                    default:
-                        //no start action
-                        break;
-                }
-            }
-            else
-            {
-                HandleComplete(complete);
-            }
-        }
-
-        private static void GetNextEvent()
-        {
-//GET NEXT ONE
-            currentEvent = caller.nextEvent(Program.ego.Name);
-            Event.ActionEnum? currentEventAction = currentEvent?.Action;
-            if (currentEventAction != null)
-            {
-                _currentAction = (Event.ActionEnum) currentEventAction;
-            }
-            else
-            {
-                _currentAction = Idle;
-            }
-        }
-
-        private static void HandleComplete(bool complete)
+        private void HandleComplete(bool complete)
         {
             if (complete && _currentAction != Idle)
             {
                 //tell api we are done
-                Console.WriteLine("Complete Event [{0}]+[{1}]", caller.completeEvent(Program.ego.Name, currentEvent),
-                    currentEvent);
-                currentEvent = null;
+                Console.WriteLine("Complete Event:[{0}]\r\n---Api result:[{1}]", _caller.completeEvent(_program.ego.Name, _currentEvent),
+                    _currentEvent);
+                _currentEvent = null;
                 _currentAction = Idle;
             }
         }
 
-        public static void setCurrentAction(Event.ActionEnum status)
+        public void SetCurrentAction(Event.ActionEnum status)
         {
             _currentAction = status;
         }

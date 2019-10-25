@@ -5,6 +5,7 @@ using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using AutoIt;
 using runner;
+using Tesseract.ConsoleDemo;
 using static runner.ExpectedTT;
 using static runner.Win32;
 
@@ -40,14 +41,14 @@ namespace runner
             _expectedTt = expectedTt;
         }
 
-        public static string handle(IntPtr basehandle)
+        public static string handle(Program program,  IntPtr baseHandle)
         {
-            var all = list(basehandle);
+            var all = list(baseHandle);
             foreach (var keyValuePair in all)
             {
                 var winGetState = keyValuePair.Value;
                 if ((winGetState & 2) == 0) continue;
-                var text = HandleVisible(keyValuePair);
+                var text = HandleVisible(program, baseHandle, keyValuePair);
                 if (!string.IsNullOrEmpty(text))
                 {
                     return text;
@@ -58,23 +59,23 @@ namespace runner
             return null;
         }
 
-        private static string HandleVisible(KeyValuePair<IntPtr, int> keyValuePair)
+        private static string HandleVisible(Program program, IntPtr baseHandle, KeyValuePair<IntPtr, int> keyValuePair)
         {
 //Console.WriteLine("Visi");
             //ScreenCapturer.CaptureAndSave("alices"+hWnd,hWnd);
             //TODO HANDLE BETTER
             var capture = ScreenCapturer.Capture(keyValuePair.Key);
             capture = ImageManip.AdjustThreshold(capture, .3f);
-            ScreenCapturer.ImageSave("currentThingRaw", ImageFormat.Tiff, capture);
+//            ScreenCapturer.ImageSave("currentThingRaw", ImageFormat.Tiff, capture);
             capture = ImageManip.Invert(capture);
             capture = ImageManip.Max(capture);
-            ScreenCapturer.ImageSave("currentThing1", ImageFormat.Tiff, capture);
+//            ScreenCapturer.ImageSave("currentThing1", ImageFormat.Tiff, capture);
 
 
-            return HandleCapture(capture);
+            return HandleCapture(program, baseHandle, capture);
         }
 
-        private static string HandleCapture(Bitmap capture)
+        private static string HandleCapture(Program program, IntPtr baseHandle, Bitmap capture)
         {
             String text = String.Empty;
             String lookingFor = "None";
@@ -95,14 +96,14 @@ namespace runner
                             Console.WriteLine("Mana is at [{0}]", current);
 
                             setExpected(Other);
-                            Action.ReadManaComplete(current);
+                            program.action.ReadManaComplete(current);
                         }
                     }
 
                     break;
                 case Health:
                     lookingFor = "HP";
-                    text = HandleHealth(capture);
+                    text = HandleHealth(program, baseHandle, capture);
 
 
                     break;
@@ -125,7 +126,7 @@ namespace runner
             return text;
         }
 
-        private static string HandleHealth(Bitmap capture)
+        private static string HandleHealth(Program program, IntPtr baseHandle, Bitmap capture)
         {
             string text;
             text = ImageManip.doOcr(capture, "0123456789");
@@ -149,7 +150,7 @@ namespace runner
                         Console.WriteLine("Hp is at [{0}] of [{1}]", current, max);
 
                         setExpected(Other);
-                        Action.ReadHPComplete(current, max);
+                        program.action.ReadHpComplete(baseHandle, current, max);
                     }
 
             return text;
@@ -158,9 +159,9 @@ namespace runner
 
         /// <summary>Returns a dictionary that contains the handle and title of all the open windows.</summary>
         /// <returns>A dictionary that contains the handle and title of all the open windows.</returns>
-        private static IDictionary<IntPtr, int> list(IntPtr basehandle)
+        private static IDictionary<IntPtr, int> list(IntPtr baseHandle)
         {
-            GetWindowThreadProcessId(basehandle, out var main);
+            GetWindowThreadProcessId(baseHandle, out var main);
             IntPtr shellWindow = GetShellWindow();
             Dictionary<IntPtr, int> windows = new Dictionary<IntPtr, int>();
 
@@ -203,25 +204,25 @@ namespace runner
         private static extern bool EnumWindows(EnumWindowsProc enumFunc, int lParam);
 
 
-        public static void moveOver(ExpectedTT expectedTt)
+        public static void moveOver(IntPtr baseHandle, ExpectedTT expectedTt)
         {
             switch (expectedTt)
             {
                 case Health:
-                    AutoItX.WinActivate(Windows.HandleBaseWindow());
-                    move(500, 350);
+                    AutoItX.WinActivate(baseHandle);
+                    MouseManager.MouseMove(baseHandle, 500, 350);
                     break;
                 case Mana:
-                    AutoItX.WinActivate(Windows.HandleBaseWindow());
-                    move(590, 350);
+                    AutoItX.WinActivate(baseHandle);
+                    MouseManager.MouseMove(baseHandle,590, 350);
                     break;
                 case ExpectedTT.Inventory:
-                    AutoItX.WinActivate(Windows.HandleBaseWindow());
-                    move(500, 375);
+                    AutoItX.WinActivate(baseHandle);
+                    MouseManager.MouseMove(baseHandle,500, 375);
                     break;
                 case Spells:
-                    AutoItX.WinActivate(Windows.HandleBaseWindow());
-                    move(590, 375);
+                    AutoItX.WinActivate(baseHandle);
+                    MouseManager.MouseMove(baseHandle,590, 375);
                     break;
                 
             }

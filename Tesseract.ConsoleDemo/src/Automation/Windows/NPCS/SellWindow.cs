@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Automation;
 using AutoIt;
+using Tesseract.ConsoleDemo;
 
 namespace runner
 {
@@ -10,16 +11,16 @@ namespace runner
     {
         private const int baseX = 414, baseY = 276; //, offX = 5, offY = 20;
 
-        public static void handle(IntPtr basehandle)
+        public static void handle(Program program, IntPtr baseHandle)
         {
-            var sellForm = Windows.getNothingSelling(basehandle);
+            var sellForm = Windows.getNothingSelling(baseHandle);
             if (sellForm != IntPtr.Zero)
             {
                 AutoItX.WinClose(sellForm);
                 return;
             }
 
-            var sellScreen = Windows.getSell(basehandle);
+            var sellScreen = Windows.getSell(baseHandle);
 
             if (sellScreen == IntPtr.Zero) return;
 
@@ -29,28 +30,28 @@ namespace runner
             AutomationElement list = walker.GetFirstChild(ae);
             if (list == null)
             {
-                close(sellScreen);
+                close(program, baseHandle, sellScreen);
                 return;
             }
 
             bool didOnce = false;
-            while (SellStuff(basehandle, walker, list, sellScreen))
+            while (SellStuff(program, baseHandle, walker, list, sellScreen))
             {
                 didOnce = true;
             }
 
             if (didOnce)
             {
-                close(sellScreen);
+                close(program, baseHandle, sellScreen);
             }
         }
 
-        private static bool SellStuff(IntPtr basehandle, TreeWalker walker, AutomationElement list, IntPtr sellScreen)
+        private static bool SellStuff(Program program, IntPtr baseHandle, TreeWalker walker, AutomationElement list, IntPtr sellScreen)
         {
             var sellable = walker.GetFirstChild(list);
             if (sellable == null)
             {
-                close(sellScreen);
+                close(program, baseHandle, sellScreen);
                 return false;
             }
 
@@ -70,13 +71,13 @@ namespace runner
                     {
                         //todo click
 
-                        ScreenCapturer.GetScale(basehandle, out float sX, out float sY);
+                        ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
 
                         //TODO
                         Console.WriteLine("Selling [{0}] @ false loc {1}", name, loc2);
 
 
-                        AutoItX.MouseClick("RIGHT", (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
+                        MouseManager.MouseClick(baseHandle,"RIGHT", (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
                         return true;
                     }
 
@@ -116,13 +117,13 @@ namespace runner
             return false;
         }
 
-        private static void close(IntPtr sellScreen)
+        private static void close(Program program, IntPtr baseHandle, IntPtr sellScreen)
         {
             ScreenCapturer.GetScale(sellScreen, out float sX, out float sY);
-            //click repair all
-            AutoItX.MouseClick("LEFT", (int) (sX * baseX), (int) (sY * baseY));
+            MouseManager.MouseClick(baseHandle,"LEFT", (int) (sX * baseX), (int) (sY * baseY));
             Thread.Sleep(100);
-            Action.askForWeight();
+            
+            program.action.SoldInventory();
         }
     }
 }

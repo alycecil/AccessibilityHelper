@@ -6,32 +6,32 @@ using static IO.Swagger.Model.Event.ActionEnum;
 
 namespace runner
 {
-    public static partial class Action
+    public partial class Action
     {
         private static int min = 0, max = 101;
 
-        public static void updateWeightOnlyIfAbove(int pmin)
+        public void UpdateWeightOnlyIfAbove(int pmin)
         {
             min = pmin;
         }
 
-        public static void updateWeightOnlyIfUnder(int pmax)
+        public void UpdateWeightOnlyIfUnder(int pmax)
         {
             max = pmax;
         }
 
-        public static void updateWeight(string weight)
+        public void UpdateWeight(string weight)
         {
             int _weight = Int32.Parse(weight.Trim());
 
-            var __w = caller.updateWeight(Program.ego.Name, _weight);
-            Program.ego.Weight = __w.Weight;
+            var __w = _caller.updateWeight(_program.ego.Name, _weight);
+            _program.ego.Weight = __w.Weight;
 
             var notTooMuch = _weight < max;
             if (_weight > min && notTooMuch)
             {
                 HandleComplete(CheckStatus, "WEIGHT");
-                updateWeightOnlyIfUnder(101);
+                UpdateWeightOnlyIfUnder(101);
             }
             else
             {
@@ -45,42 +45,50 @@ namespace runner
             }
         }
 
-        public static void ReadHPComplete(int current, int max)
+        public void ReadHpComplete(IntPtr baseHandle, int current, int max)
         {
-            caller.updateHp(Program.ego.Name, current, max);
+            _caller.updateHp(_program.ego.Name, current, max);
 
-            Program.MaxHp = max;
-            ReadMana();
+            _program.MaxHp = max;
+            ReadMana(baseHandle);
         }
 
-        public static void ReadManaComplete(int current)
+        public void ReadManaComplete(int current)
         {
-            caller.updateMana(Program.ego.Name, current);
+            _caller.updateMana(_program.ego.Name, current);
 
             HandleComplete(CheckHpMana);
 
             ToolTips.setExpected(ExpectedTT.None);
         }
 
-        public static void soldInventory()
+        public void SoldInventory()
         {
+            Console.WriteLine("Sold Stuff, lets get out weight below 70% or we cant do a thing");
+            SetCurrentAction(Event.ActionEnum.CheckStatus);
+            UpdateWeightOnlyIfUnder(70);                                              
+            askForWeight(_program.baseHandle);
+                
+                
+            
+            //we need to wait for a voice command on what to do, if weight over 70% 
             HandleComplete(SellInventory);
         }
 
-        public static void repaired()
+        public void Repaired()
         {
             HandleComplete(Repair);
         }
 
 
-        public static void inCombat()
+        public void inCombat()
         {
-            caller.inCombat(Program.ego.Name);
+            _caller.inCombat(_program.ego.Name);
         }
 
-        public static void outOfCombat()
+        public void outOfCombat()
         {
-            caller.outOfCombat(Program.ego.Name);
+            _caller.outOfCombat(_program.ego.Name);
         }
     }
 }

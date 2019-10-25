@@ -16,9 +16,9 @@ namespace runner
         private static string CastTT = "Cast"; //...
         private static string FleeTT = "Attempt to run"; //...
 
-        public static void handle(IntPtr baseHandle)
+        public static void handle(Program program, IntPtr baseHandle)
         {
-            var combat = Windows.getInCombat();
+            var combat = Windows.getInCombat(baseHandle);
             if (combat == IntPtr.Zero) return;
 
             ScreenCapturer.GetBounds(combat, out var bounds);
@@ -26,12 +26,12 @@ namespace runner
             ToolTips.setExpected(ExpectedTT.Buttons);
 
 
-            Dictionary<string, Point> spots = GetClicks(baseHandle, bounds);
+            Dictionary<string, Point> spots = GetClicks(program, baseHandle, bounds);
 
             //TODO If Action Hooks
             if (Config.autoGuard() && (
-                    Program.ego?.Hp?.Value == null 
-                    || Program.ego.Hp.Value * 1.1 > Program.MaxHp
+                    program.ego?.Hp?.Value == null 
+                    || program.ego.Hp.Value * 1.1 > program.MaxHp
                     )
                 )
             {
@@ -41,7 +41,7 @@ namespace runner
                     string spotKey = spot.Key;
                     if (spotKey?.StartsWith(tt) == true)
                     {
-                        AutoItX.MouseClick("LEFT",bounds.X + spot.Value.X, bounds.Y + spot.Value.Y, 1, 1);        
+                        MouseManager.MouseClick(baseHandle,"LEFT",bounds.X + spot.Value.X, bounds.Y + spot.Value.Y, 1, 1);        
                     }
                     else
                     {
@@ -57,7 +57,7 @@ namespace runner
 
         private static Dictionary<string, Point> clickingLocations = new Dictionary<string, Point>();
 
-        private static Dictionary<string, Point> GetClicks(IntPtr baseHandle, Rectangle bounds)
+        private static Dictionary<string, Point> GetClicks(Program program, IntPtr baseHandle, Rectangle bounds)
         {
             if (clickingLocations.Count > 0)
             {
@@ -67,10 +67,10 @@ namespace runner
             var seenBefore = new HashSet<string>();
             for (int x = 20; x < bounds.Width; x += (int)(40*sX))
             {
-                for (int y = 10; y < bounds.Height; y += (int)(25*sX))
+                for (int y = 20; y < bounds.Height; y += (int)(40*sY))
                 {
-                    AutoItX.MouseMove(bounds.X + x, bounds.Y + y, 1);
-                    var tt = ToolTips.handle(baseHandle);
+                    MouseManager.MouseMove(baseHandle,bounds.X + x, bounds.Y + y, 1);
+                    var tt = ToolTips.handle(program, baseHandle);
                     if (!string.IsNullOrEmpty(tt) && !seenBefore.Contains(tt))
                     {
                         seenBefore.Add(tt);

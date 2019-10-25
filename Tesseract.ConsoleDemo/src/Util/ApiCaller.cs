@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 using IO.Swagger.Api;
 using IO.Swagger.Model;
@@ -7,7 +8,6 @@ namespace runner
 {
     public class ApiCaller
     {
-
         public ApiCaller()
         {
         }
@@ -16,104 +16,168 @@ namespace runner
         {
             return Config.get(Config.KEY_API_ENDPOINT);
         }
+
         private RestClient get()
         {
-            
             //todo read from file
             var client = new RestClient();
             return client;
-
         }
-        
-        
-        
+
+
         public Player updateHp(string name, int current, int max)
         {
-            //basePath()
-            var x = new UpdatePlayerApi(basePath());
+            try
+            {
+                //basePath()
+                var x = new UpdatePlayerApi(basePath());
 
-            var playerUpdate = new PlayerUpdate();
-            playerUpdate.Name = name;
-            playerUpdate.Hp = current;
-            playerUpdate.HpMax = max;
-            var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
-            return resp;
+                var playerUpdate = new PlayerUpdate();
+                playerUpdate.Name = name;
+                playerUpdate.Hp = current;
+                playerUpdate.HpMax = max;
+                var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
+                return resp;
+            }
+            catch (Exception e)
+            {
+                handleError(e);
+                return null;
+            }
         }
-        
+
+        private void handleError(Exception exception)
+        {
+            Console.Error.WriteLine("Issue Encountered, {0}", exception);
+        }
+
         public Player updateMana(string name, int current)
         {
-            //basePath()
-            var x = new UpdatePlayerApi(basePath());
+            try
+            {
+                //basePath()
+                var x = new UpdatePlayerApi(basePath());
 
-            var playerUpdate = new PlayerUpdate();
-            playerUpdate.Name = name;
-            playerUpdate.Mana = current;
-            var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
-            return resp;
+                var playerUpdate = new PlayerUpdate();
+                playerUpdate.Name = name;
+                playerUpdate.Mana = current;
+                var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
+                return resp;
+            }
+            catch (Exception e)
+            {
+                handleError(e);
+                return null;
+            }
         }
 
         public Player updateWeight(string name, int weight)
         {
-            //basePath()
-            var x = new UpdatePlayerApi(basePath());
+            try
+            {
+                //basePath()
+                var x = new UpdatePlayerApi(basePath());
 
-            var playerUpdate = new PlayerUpdate();
-            playerUpdate.Name = name;
-            playerUpdate.Weight = weight;
-            var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
-            return resp;
+                var playerUpdate = new PlayerUpdate();
+                playerUpdate.Name = name;
+                playerUpdate.Weight = weight;
+                var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
+                return resp;
+            }
+            catch (Exception e)
+            {
+                handleError(e);
+                return null;
+            }
         }
-        
-        
+
+
         public Player inCombat(string name)
         {
-            //basePath()
-            var x = new UpdatePlayerApi(basePath());
+            try
+            {
+                //basePath()
+                var x = new UpdatePlayerApi(basePath());
 
-            var playerUpdate = new PlayerUpdate();
-            playerUpdate.Name = name;
-            playerUpdate.CombatWindowOpen = true;
-            var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
-            return resp;
+                var playerUpdate = new PlayerUpdate();
+                playerUpdate.Name = name;
+                playerUpdate.CombatWindowOpen = true;
+                var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
+                return resp;
+            }
+            catch (Exception e)
+            {
+                handleError(e);
+                return null;
+            }
         }
-        
-        
+
+
         public Player outOfCombat(string name)
         {
-            //basePath()
-            var x = new UpdatePlayerApi(basePath());
+            try
+            {
+                //basePath()
+                var x = new UpdatePlayerApi(basePath());
 
-            var playerUpdate = new PlayerUpdate();
-            playerUpdate.Name = name;
-            playerUpdate.ExitedCombat = true;
-            var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
-            return resp;
+                var playerUpdate = new PlayerUpdate();
+                playerUpdate.Name = name;
+                playerUpdate.ExitedCombat = true;
+                var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
+                return resp;
+            }
+            catch (Exception e)
+            {
+                handleError(e);
+                return null;
+            }
         }
-
 
 
         public Event nextEvent(string name)
         {
-            //try {
+            try
+            {
                 var api = new GetOrdersPlayerApi(basePath());
                 return api.EventUsingGET(name);
-            //}ca
+            }
+            catch (Exception e)
+            {
+                handleError(e);
+                return null;
+            }
         }
 
         public string completeEvent(string egoName, Event currentEvent)
         {
-            var api = new CompleteOrdersPlayerApi(basePath());
-            return api.EventUsingPOST(true, currentEvent.Id, egoName);
+            try
+            {
+                var api = new CompleteOrdersPlayerApi(basePath());
+                return api.EventUsingPOST(true, currentEvent.Id, egoName);
+            }
+            catch (Exception e)
+            {
+                handleError(e);
+                return null;
+            }
         }
 
         public Player login(string name)
         {
-            var x = new UpdatePlayerApi(basePath());
+            try
+            {
+                var x = new UpdatePlayerApi(basePath());
 
-            var playerUpdate = new PlayerUpdate();
-            playerUpdate.Name = name;
-            var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
-            return resp;
+                var playerUpdate = new PlayerUpdate();
+                playerUpdate.Name = name;
+                var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
+                return resp;
+            }
+            catch (Exception e)
+            {
+                handleError(e);
+                return null;
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Threading;
 using AutoIt;
 using runner;
 using runner.Cursor;
+using Tesseract.ConsoleDemo;
 
 /// <summary>Contains functionality to get all the open windows.</summary>
 public static class HoverBox
@@ -16,15 +17,15 @@ public static class HoverBox
     {
     }
 
-    public static VerbWindow handle(IntPtr basehandle, bool b = false)
+    public static VerbWindow handle(Program program, IntPtr baseHandle, bool b = false)
     {
-        var hasStuff = list(basehandle, out int type);
+        var hasStuff = list(baseHandle, out int type);
         if (!string.IsNullOrEmpty(hasStuff))
         {
-            var findWindow = VerbWindow.findWindow(basehandle, hasStuff, true, b);
+            var findWindow = VerbWindow.findWindow(program, baseHandle, hasStuff, true, b);
             if (findWindow != null)
                 findWindow.type = type;
-
+            //else flushClick()
 
             return findWindow;
         }
@@ -39,10 +40,10 @@ public static class HoverBox
 //style=0x56000000
     /// <summary>Returns a dictionary that contains the handle and title of all the open windows.</summary>
     /// <returns>A dictionary that contains the handle and title of all the open windows.</returns>
-    private static string list(IntPtr basehandle, out int type)
+    private static string list(IntPtr baseHandle, out int type)
     {
         type = 0;
-        ScreenCapturer.GetScale(basehandle, out float sX, out float sY);
+        ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
 
         int l = (int) (483 * sX),
             t = (int) (24 * sY),
@@ -52,17 +53,25 @@ public static class HoverBox
         Rectangle rect = new Rectangle(l, t, r - l, b - t);
         var c = AutoItX.PixelGetColor(rect.Left + 3, rect.Top + 3);
 
-        if (c.Equals(item) && wantItem)
+        switch (c)
         {
-            type = item;
-            return DoOcr(rect);
-        }
-        else if (CursorUtil.isCursor(CursorUtil.hand, out int clickx, out int clickY))
-        {
-            var ocr = DoOcr(rect);
-            if(!string.IsNullOrEmpty(ocr))
-                return ocr;
-            return "IMPLIED";
+            case item when !wantItem:
+                return null;
+            case item:
+                type = item;
+                return DoOcr(rect);
+            default:
+            {
+                if (CursorUtil.isCursor(CursorUtil.hand, out int clickx, out int clickY))
+                {
+                    var ocr = DoOcr(rect);
+                    if(!string.IsNullOrEmpty(ocr))
+                        return ocr;
+                    return "IMPLIED";
+                }
+
+                break;
+            }
         }
 
         return null;

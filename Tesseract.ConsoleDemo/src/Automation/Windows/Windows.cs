@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using AutoIt;
 
 namespace runner
@@ -32,67 +33,67 @@ namespace runner
             return getHandle(_TreasureList);
         }
 
-        public static IntPtr getInCombat()
+        public static IntPtr getInCombat(IntPtr baseHandle)
         {
             return getHandle(_CombatWindow);
         }
 
-        public static IntPtr getExitCombatControl(IntPtr basehandle)
+        public static IntPtr getExitCombatControl(IntPtr baseHandle)
         {
-            if (basehandle == IntPtr.Zero) return IntPtr.Zero;
+            if (baseHandle == IntPtr.Zero) return IntPtr.Zero;
 
-            return AutoItX.ControlGetHandle(basehandle, "[Text:" + _ExitCombat + "]");
+            return AutoItX.ControlGetHandle(baseHandle, "[Text:" + _ExitCombat + "]");
         }
         
-        public static IntPtr getSell(IntPtr basehandle)
+        public static IntPtr getSell(IntPtr baseHandle)
         {
-            if (basehandle == IntPtr.Zero) return IntPtr.Zero;
+            if (baseHandle == IntPtr.Zero) return IntPtr.Zero;
 
-            return AutoItX.ControlGetHandle(basehandle, "[Text:Sale]");
+            return AutoItX.ControlGetHandle(baseHandle, "[Text:Sale]");
         }
         
-        public static IntPtr getNothingSelling(IntPtr basehandle)
+        public static IntPtr getNothingSelling(IntPtr baseHandle)
         {
-            if (basehandle == IntPtr.Zero) return IntPtr.Zero;
+            if (baseHandle == IntPtr.Zero) return IntPtr.Zero;
 
             return AutoItX.WinGetHandle("Sale");
         }
         
-        public static IntPtr getRepair(IntPtr basehandle)
+        public static IntPtr getRepair(IntPtr baseHandle)
         {
-            if (basehandle == IntPtr.Zero) return IntPtr.Zero;
+            if (baseHandle == IntPtr.Zero) return IntPtr.Zero;
 
-            return AutoItX.ControlGetHandle(basehandle, "[Text:Repair]");
+            return AutoItX.ControlGetHandle(baseHandle, "[Text:Repair]");
         }
         
-        public static IntPtr getRepairNothingControl(IntPtr basehandle)
+        public static IntPtr getRepairNothingControl(IntPtr baseHandle)
         {
-            if (basehandle == IntPtr.Zero) return IntPtr.Zero;
+            if (baseHandle == IntPtr.Zero) return IntPtr.Zero;
 
             return AutoItX.WinGetHandle("Repair");
         }
 
-        public static IntPtr getChatSender(IntPtr basehandle)
+        public static IntPtr getChatSender(IntPtr baseHandle)
         {
-            return AutoItX.ControlGetHandle(basehandle, "[ID:665]");
+            return AutoItX.ControlGetHandle(baseHandle, "[ID:665]");
         }
 
-        public static IntPtr getChatRoom(IntPtr basehandle)
+        public static IntPtr getChatRoom(IntPtr baseHandle)
         {
-            return AutoItX.ControlGetHandle(basehandle, "[ID:666]");
+            return AutoItX.ControlGetHandle(baseHandle, "[ID:666]");
         }
 
-        public static IntPtr getSpellList(IntPtr basehandle)
+        public static IntPtr getSpellList(IntPtr baseHandle)
         {
             return getHandle(_SpellList);
         }
 
-        public static IntPtr lookatIdentifier(IntPtr basehandle)
+        public static IntPtr lookatIdentifier(IntPtr baseHandle)
         {
             //todo this does up by a couple
-            var focused = AutoItX.ControlGetHandle(basehandle, "[CLASS:RichEdit20A]");
+            var focused = AutoItX.ControlGetHandle(baseHandle, "[CLASS:RichEdit20A]");
             
-            if (focused == basehandle) return IntPtr.Zero;
+            if (focused == baseHandle) return IntPtr.Zero;
 
             var ID = Win32.GetDlgCtrlID(focused);
             if(ID <= 666 || ID == 700) return IntPtr.Zero;
@@ -114,17 +115,18 @@ namespace runner
             return handleInventory;
         }
 
-        public static IntPtr HandleBaseWindow()
+        public static List<IntPtr> HandleBaseWindows()
         {
+            //TODO AE, listing
             if (AutoItX.WinExists(_baseClass) != 0)
             {
                 var handle = AutoItX.WinGetHandle(_baseClass);
                 AutoItX.WinMove(handle, 0, 0);
 
-                return handle;
+                return new List<IntPtr> {handle};
             }
 
-            return IntPtr.Zero;
+            return new List<IntPtr>();
         }
     }
 }

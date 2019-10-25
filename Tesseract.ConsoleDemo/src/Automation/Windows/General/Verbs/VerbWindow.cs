@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using AutoIt;
+using Tesseract.ConsoleDemo;
 
 namespace runner
 {
@@ -12,12 +13,13 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
      */
     public partial class VerbWindow
     {
-        private const string texts = "StealCastLokAtFightWRrpOpenETe";
+        public const string VerbClass = "Afx:";//...
+        public const string texts = "StealCastLokAtFightWRrpOpenETe";
         public IntPtr hWnd;
         public List<Verb> verbs;
         public string ocrText;
 
-        private VerbWindow(IntPtr hWnd, List<Verb> v, string ocrText)
+        internal VerbWindow(IntPtr hWnd, List<Verb> v, string ocrText)
         {
             this.hWnd = hWnd;
             this.ocrText = ocrText;
@@ -27,16 +29,16 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
         public static VerbWindow last = null;
         public int type;
 
-        public static VerbWindow findWindow(IntPtr baseHandle,
+        public static VerbWindow findWindow(Program program, IntPtr baseHandle,
             String mousedOver,
             bool allowClick = false, 
             bool lightWeight = false
         ){
             try
             {
-                var window = _findWindow(baseHandle, mousedOver, allowClick);
+                var window = VerbWindowHelper.findWindow(baseHandle, mousedOver, allowClick);
 
-                var verbWindow = fromHandle(window, mousedOver, lightWeight);
+                var verbWindow = VerbWindowHelper.fromHandle(program, baseHandle, window, mousedOver, lightWeight);
                 if (!lightWeight)
                     last = verbWindow;
                 else last = null;
@@ -49,8 +51,6 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
 
             return null;
         }
-
-        const string VerbClass = "Afx:";//...
 
 
         public void dismiss()

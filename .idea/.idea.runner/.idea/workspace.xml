@@ -2,43 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="489bfb63-d194-4bbe-ab2f-01713a0c5788" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Automation/VerbWindow.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/tessdata/config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/Automation/HoverBox.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/Automation/ToolTips.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/Win32/ScreenCapturer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/Win32/partias/Win32Dpi.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/Win32/partias/Win32GetLong.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/Win32/partias/Win32Memory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/Win32/partias/Win32Mouse.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/Win32/partias/Win32Structs.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/app.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/packages.config" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/tessdata/eng.cube.bigrams" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/tessdata/eng.cube.fold" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/tessdata/eng.cube.lm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/tessdata/eng.cube.nn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/tessdata/eng.cube.params" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/tessdata/eng.cube.size" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/tessdata/eng.cube.word-freq" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/tessdata/eng.tesseract_cube.nn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/runner/tessdata/eng.traineddata" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner.sln" beforeDir="false" afterPath="$PROJECT_DIR$/runner.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/Action.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/Automation/Action.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/ApiCaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/Util/ApiCaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/Util/Config.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/ControlLogger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/Automation/ControlLogger.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/StateEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/State/StateEngine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/StringUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/Util/StringUtil.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/Win32/DumpWindowsHandles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/Win32/Helpers/DumpWindowsHandles.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/Win32/OpenWindowGetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/Win32/Helpers/OpenWindowGetter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/Win32/Win32.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/Win32/Win32.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/Win32/Win32GetText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/Win32/Helpers/Win32GetText.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/Win32/WindowsEventTracker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/Win32/WindowsEventTracker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/Windows.cs" beforeDir="false" afterPath="$PROJECT_DIR$/runner/Automation/Windows.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/runner/runner.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/runner/runner.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Tesseract.ConsoleDemo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Tesseract.ConsoleDemo.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Release/Tesseract.ConsoleDemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Release/Tesseract.ConsoleDemo.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.csproj.CopyComplete" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.csprojAssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Release/Tesseract.ConsoleDemo.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Release/Tesseract.ConsoleDemo.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Release/Tesseract.ConsoleDemo.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Release/Tesseract.ConsoleDemo.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Release/Tesseract.ConsoleDemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Release/Tesseract.ConsoleDemo.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,109 +75,18 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1177931629">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runner/Program.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="61" column="9" selection-start-line="11" selection-start-column="7" selection-end-line="61" selection-end-column="9" />
-              <folding>
-                <marker date="1571363044582" expanded="false" signature="6:141" ph="..." />
-                <marker date="1571363044582" expanded="true" signature="159:1732" ph="{...}" />
-                <marker date="1571363044582" expanded="true" signature="179:1730" ph="{...}" />
-                <marker date="1571363044582" expanded="true" signature="282:1483" ph="{...}" />
-                <marker date="1571363044582" expanded="true" signature="1006:1473" ph="{...}" />
-                <marker date="1571363044582" expanded="true" signature="1037:1162" ph="/* new WindowHandleInfo(basehandle).GetAllChildHandles(); ... */" />
-                <marker date="1571363044582" expanded="true" signature="1524:1724" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/runner/runner.csproj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="5" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runner/packages.config">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runner/app.config">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runner/app.manifest">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Image.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9758">
-              <caret line="574" column="42" selection-start-line="574" selection-start-column="42" selection-end-line="574" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Advanced/ImageFormat.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DD49DC4E-D482-4B70-BFF6-DBB3D12D7CEB/81/aa159df7/TesseractEngine.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/12CF633E-21DD-4223-5639-833D7115A547/4e/fb6d3fc0/AdvancedOcr.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/12CF633E-21DD-4223-5639-833D7115A547/4d/b55ee4b1/AutoOcr.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5763">
-              <caret line="339" column="21" selection-start-line="339" selection-start-column="21" selection-end-line="339" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -392,6 +282,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -399,44 +290,11 @@
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="runner" type="24d0babc:SolutionExplorerModelNode" />
             </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="runner" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="runner" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="runner" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="runner" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Dependencies" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="runner" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="runner" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Dependencies" type="24d0babc:SolutionExplorerModelNode" />
-              <item name=".NETFramework 4.6.1" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="runner" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="runner" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Dependencies" type="24d0babc:SolutionExplorerModelNode" />
-              <item name=".NETFramework 4.6.1" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Packages" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="runner" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="runner" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="x64" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -448,7 +306,7 @@
     <property name="RiderNuGetCacheManager.AutoClear.temp" value="1" />
     <property name="SearchEverywhereHistoryKey" value="PlayerUpdate&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/packages/Tesseract.3.0.2.0/lib/net40/Tesseract.dll" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tesseract.ConsoleDemo/Tesseract.ConsoleDemo.csproj" />
     <property name="settings.editor.selected.configurable" value="RiderNuGetOptionsPageId" />
   </component>
   <component name="RunDashboard">
@@ -509,6 +367,7 @@
       <workItem from="1571373389551" duration="284000" />
       <workItem from="1571373682814" duration="491000" />
       <workItem from="1571416298719" duration="2729000" />
+      <workItem from="1571882166704" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1571201116505</created>
@@ -521,7 +380,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130582000" />
+    <option name="totallyTimeSpent" value="130605000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -534,9 +393,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="645" y="0" width="1219" height="1086" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27217916" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2764858" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -552,7 +410,7 @@
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unit Tests" order="11" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.2793177" side_tool="true" weight="0.3496583" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.2793177" side_tool="true" visible="true" weight="0.3486911" />
       <window_info anchor="bottom" id="Build" order="14" sideWeight="0.41364604" weight="0.3210634" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -585,14 +443,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/runner/Win32/WindowsEventTracker.cs</url>
           <line>59</line>
-          <properties documentPath="$PROJECT_DIR$/runner/Win32/WindowsEventTracker.cs" initialLine="52">
-            <startOffsets>
-              <option value="2037" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2096" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="$PROJECT_DIR$/runner/Win32/WindowsEventTracker.cs" initialLine="52" />
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
@@ -604,40 +455,19 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/runner/Automation/HoverBox.cs</url>
           <line>34</line>
-          <properties documentPath="$PROJECT_DIR$/runner/Automation/HoverBox.cs" initialLine="34">
-            <startOffsets>
-              <option value="1132" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1158" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="$PROJECT_DIR$/runner/Automation/HoverBox.cs" initialLine="34" />
           <option name="timeStamp" value="62" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/runner/Automation/HoverBox.cs</url>
           <line>27</line>
-          <properties documentPath="$PROJECT_DIR$/runner/Automation/HoverBox.cs" initialLine="27">
-            <startOffsets>
-              <option value="822" />
-            </startOffsets>
-            <endOffsets>
-              <option value="850" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="$PROJECT_DIR$/runner/Automation/HoverBox.cs" initialLine="27" />
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/runner/Automation/HoverBox.cs</url>
           <line>25</line>
-          <properties documentPath="$PROJECT_DIR$/runner/Automation/HoverBox.cs" initialLine="25">
-            <startOffsets>
-              <option value="702" />
-            </startOffsets>
-            <endOffsets>
-              <option value="799" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="$PROJECT_DIR$/runner/Automation/HoverBox.cs" initialLine="25" />
           <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
@@ -705,379 +535,56 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Point.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="18" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Util/Config.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Model/View.cs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/75/852afd71/UnmanagedType.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Util/StringUtil.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Win32/WindowHandleInfo.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="98" column="60" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/d1/22146f84/Marshal.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="1322" column="23" selection-start-line="1322" selection-start-column="23" selection-end-line="1322" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/b3/5ca99cdf/IntPtr.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/bf/afc028e2/UInt16.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/50/42c74b64/StructLayoutAttribute.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Graphics.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14620">
-          <caret line="860" column="20" selection-start-line="860" selection-start-column="20" selection-end-line="860" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/bd/2809364b/UInt32.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Util/ApiCaller.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="63" column="9" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Bitmap.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4743">
-          <caret line="279" column="15" selection-start-line="279" selection-start-column="15" selection-end-line="279" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/00/ecc397d5/ValueType.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="27" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Point.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Util/Config.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Model/View.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/75/852afd71/UnmanagedType.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Util/StringUtil.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Win32/WindowHandleInfo.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/d1/22146f84/Marshal.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/b3/5ca99cdf/IntPtr.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/bf/afc028e2/UInt16.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/50/42c74b64/StructLayoutAttribute.cs" />
+    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Graphics.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/bd/2809364b/UInt32.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Util/ApiCaller.cs" />
+    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Bitmap.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/659CD5F0-C4CE-410C-B23A-6CADD71BB76F/00/ecc397d5/ValueType.cs" />
     <entry file="file://$PROJECT_DIR$/app.manifest" />
-    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Rectangle.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Win32/partias/Win32Mouse.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Win32/partias/Win32Memory.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Win32/partias/Win32Dpi.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1571333566511" expanded="false" signature="6:126" ph="..." />
-            <marker date="1571333566511" expanded="true" signature="184:982" ph="{...}" />
-            <marker date="1571333566511" expanded="true" signature="318:471" ph="{...}" />
-            <marker date="1571333566511" expanded="true" signature="522:976" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Win32/Helpers/DumpWindowsHandles.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="895">
-          <caret line="61" column="41" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Win32/partias/Win32GetLong.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Win32/partias/Win32Structs.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="156" column="24" selection-start-line="156" selection-start-column="24" selection-end-line="156" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C0290916-2770-4C2F-8853-D40EAD53667F/90/d5cc540a/AutomationElement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="240" column="36" selection-start-line="240" selection-start-column="36" selection-end-line="240" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Win32/Helpers/Win32GetText.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Win32/Helpers/OpenWindowGetter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Win32/WindowsEventTracker.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <marker date="1571292668068" expanded="false" signature="6:51" ph="..." />
-            <marker date="1571292668068" expanded="true" signature="76:141" ph="/// cant make this shit work ... " />
-            <marker date="1571292668068" expanded="true" signature="180:2369" ph="{...}" />
-            <marker date="1571292668068" expanded="true" signature="1036:1168" ph="/* Need to ensure delegate is not collected while we're using it, ... */" />
-            <marker date="1571292668068" expanded="true" signature="1363:1714" ph="{...}" />
-            <marker date="1571292668068" expanded="true" signature="1746:1849" ph="{...}" />
-            <marker date="1571292668068" expanded="true" signature="2014:2363" ph="{...}" />
-            <marker date="1571292668068" expanded="true" signature="2222:2274" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Win32/Win32.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58282784-AF6A-4871-B9B7-2811FAB15086/55/c0533573/AutoItX.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="354" column="25" selection-start-line="354" selection-start-column="25" selection-end-line="354" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Rectangle.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Win32/partias/Win32Mouse.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Win32/partias/Win32Memory.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Win32/partias/Win32Dpi.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Win32/Helpers/DumpWindowsHandles.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Win32/partias/Win32GetLong.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Win32/partias/Win32Structs.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/C0290916-2770-4C2F-8853-D40EAD53667F/90/d5cc540a/AutomationElement.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Win32/Helpers/Win32GetText.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Win32/Helpers/OpenWindowGetter.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Win32/WindowsEventTracker.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Win32/Win32.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58282784-AF6A-4871-B9B7-2811FAB15086/55/c0533573/AutoItX.cs" />
     <entry file="file://$PROJECT_DIR$/runner/Win32/ScreenWorker.cs" />
-    <entry file="file://$PROJECT_DIR$/runner/Automation/Windows.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="46" column="61" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/State/StateEngine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Automation/ControlLogger.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Automation/ToolTips.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Win32/ScreenCapturer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="147" column="27" selection-start-line="147" selection-start-column="27" selection-end-line="147" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Automation/Action.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10D55B5F-CAB6-4027-9165-B66DDE8823E1/ff/db035709/TesseractEngine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="11" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Automation/HoverBox.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding>
-            <marker date="1571371522199" expanded="false" signature="6:83" ph="..." />
-            <marker date="1571371522199" expanded="true" signature="249:269" ph="{...}" />
-            <marker date="1571371522199" expanded="true" signature="275:478" ph="///Returns a dictionary that contains the handle and title of all the open windows. ... " />
-            <marker date="1571371522199" expanded="true" signature="525:1319" ph="{...}" />
-            <marker date="1571371522199" expanded="true" signature="799:1200" ph="{...}" />
-            <marker date="1571371522199" expanded="true" signature="1019:1190" ph="{...}" />
-            <marker date="1571371522199" expanded="true" signature="1085:1176" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10D55B5F-CAB6-4027-9165-B66DDE8823E1/61/0d89420f/Pix.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/Microsoft.Common.CurrentVersion.targets">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77044">
-          <caret line="4532" column="4" selection-start-line="4532" selection-start-column="4" selection-end-line="4532" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10D55B5F-CAB6-4027-9165-B66DDE8823E1/8a/9b78e71a/ILeptonicaApiSignatures.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="96" column="11" selection-start-line="96" selection-start-column="11" selection-end-line="96" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Image.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9758">
-          <caret line="574" column="42" selection-start-line="574" selection-start-column="42" selection-end-line="574" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Advanced/ImageFormat.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DD49DC4E-D482-4B70-BFF6-DBB3D12D7CEB/81/aa159df7/TesseractEngine.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/12CF633E-21DD-4223-5639-833D7115A547/4e/fb6d3fc0/AdvancedOcr.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="4" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/12CF633E-21DD-4223-5639-833D7115A547/4d/b55ee4b1/AutoOcr.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5763">
-          <caret line="339" column="21" selection-start-line="339" selection-start-column="21" selection-end-line="339" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/packages.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="61" column="9" selection-start-line="11" selection-start-column="7" selection-end-line="61" selection-end-column="9" />
-          <folding>
-            <marker date="1571363044582" expanded="false" signature="6:141" ph="..." />
-            <marker date="1571363044582" expanded="true" signature="159:1732" ph="{...}" />
-            <marker date="1571363044582" expanded="true" signature="179:1730" ph="{...}" />
-            <marker date="1571363044582" expanded="true" signature="282:1483" ph="{...}" />
-            <marker date="1571363044582" expanded="true" signature="1006:1473" ph="{...}" />
-            <marker date="1571363044582" expanded="true" signature="1037:1162" ph="/* new WindowHandleInfo(basehandle).GetAllChildHandles(); ... */" />
-            <marker date="1571363044582" expanded="true" signature="1524:1724" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/app.config">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="16" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/app.manifest">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/runner/runner.csproj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="49" selection-start-line="4" selection-start-column="49" selection-end-line="5" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/runner/Automation/Windows.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/State/StateEngine.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Automation/ControlLogger.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Automation/ToolTips.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Win32/ScreenCapturer.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Automation/Action.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10D55B5F-CAB6-4027-9165-B66DDE8823E1/ff/db035709/TesseractEngine.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/Automation/HoverBox.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10D55B5F-CAB6-4027-9165-B66DDE8823E1/61/0d89420f/Pix.cs" />
+    <entry file="file://C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/MSBuild/15.0/Bin/Microsoft.Common.CurrentVersion.targets" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10D55B5F-CAB6-4027-9165-B66DDE8823E1/8a/9b78e71a/ILeptonicaApiSignatures.cs" />
+    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Image.cs" />
+    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03056.00/Source/ndp/fx/src/commonui/System/Drawing/Advanced/ImageFormat.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DD49DC4E-D482-4B70-BFF6-DBB3D12D7CEB/81/aa159df7/TesseractEngine.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/12CF633E-21DD-4223-5639-833D7115A547/4e/fb6d3fc0/AdvancedOcr.cs" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/12CF633E-21DD-4223-5639-833D7115A547/4d/b55ee4b1/AutoOcr.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/packages.config" />
+    <entry file="file://$PROJECT_DIR$/runner/Program.cs" />
+    <entry file="file://$PROJECT_DIR$/runner/app.config" />
+    <entry file="file://$PROJECT_DIR$/runner/app.manifest" />
+    <entry file="file://$PROJECT_DIR$/runner/runner.csproj" />
   </component>
 </project>
