@@ -72,7 +72,7 @@ namespace runner.ActionWorkers
                         throw new NotImplementedException();
                 }
 
-                return findPlaceToClickAndClick(desired, span, constantSide, start, end);
+                return findPlaceToClickAndClick(baseHandle, desired, span, constantSide, start, end);
             }
 
             return false;
@@ -84,7 +84,7 @@ namespace runner.ActionWorkers
             Hori
         }
 
-        static bool findPlaceToClickAndClick(Bitmap desired, Span spanType, int constantSide, int start, int end)
+        static bool findPlaceToClickAndClick(IntPtr baseHandle, Bitmap desired, Span spanType, int constantSide, int start, int end)
         {
             ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);
             for (int slide = start; slide < end; slide += (end - start) / 20)
@@ -107,14 +107,18 @@ namespace runner.ActionWorkers
                 x = (int) (x * sX);
                 y = (int) (y * sY);
 
-                AutoItX.MouseMove(x, y, 1);
+                MouseManager.MouseMove(baseHandle, x, y, 1);
                 Thread.Sleep(1);
 
-                if (!CursorUtil.isCursor(desired, out int clickx, out int clickY)) continue;
-                
-                AutoItX.MouseMove(x, y, 1);
+                if (!CursorUtil.isCursor(desired, out int clickx, out int clickY)){ Thread.Sleep(100); continue;}
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                MouseManager.MouseMove(baseHandle, x, y, 1);
                 Thread.Sleep(10);
-                AutoItX.MouseClick("LEFT", x, y, 3,3);
+                MouseManager.MouseClick(baseHandle, "LEFT", x, y, 1);
+                Thread.Sleep(1);
+                MouseManager.MouseClick(baseHandle, "LEFT", x, y, 1);
+                Thread.Sleep(1);
+                MouseManager.MouseClick(baseHandle, "LEFT", x, y, 1);
                 Thread.Sleep(TimeSpan.FromSeconds(1));
                 return true;
             }

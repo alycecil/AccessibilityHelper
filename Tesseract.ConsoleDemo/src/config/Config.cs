@@ -62,16 +62,15 @@ namespace runner
             return ignoreList;
         }
 
-        public static bool click(string keyX, string keyY)
+        public static bool click(IntPtr baseHandle, string keyX, string keyY)
         {
             var foundX = getAsInt(keyX, out int x);
             var foundY = getAsInt(keyY, out int y);
             if (foundX && foundY)
             {
                 ScreenCapturer.GetScale(IntPtr.Zero,out float sX, out float sY);
-                AutoItX.MouseMove((int) (x * sX), (int) (y * sY));
-                Thread.Sleep(1);
-                AutoItX.MouseClick();
+                MouseManager.MouseMove(baseHandle,(int) (x * sX), (int) (y * sY));
+                MouseManager.MouseClick(baseHandle);
                 return true;
             }
 

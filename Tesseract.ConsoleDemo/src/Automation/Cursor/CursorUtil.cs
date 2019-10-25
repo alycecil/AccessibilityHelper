@@ -11,6 +11,7 @@ namespace runner.Cursor
         public static Bitmap right = load("./right.tiff");
         public static Bitmap up = load("./up.tiff");
         public static Bitmap down = load("./down.tiff");
+        public static Bitmap hand = load("./hand.tiff");
         static Bitmap load(String desired)
         {
             return new Bitmap(desired);

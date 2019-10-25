@@ -6,12 +6,12 @@ namespace runner.ActionWorkers
 {
     public class ActionIdle : AbstractActionWorker
     {
-        public static bool DoIdle()
+        public static bool DoIdle(Program program, IntPtr baseHandle)
         {
             bool didSomething = false;
-            if (!findVerbWindow(out var verbWindow)) return false;
+            if (!findVerbWindow(program, baseHandle, out var verbWindow)) return false;
 
-            if (!Program.stateEngine.InState(StateEngine.OutOfCombat))
+            if (!program.stateEngine.InState(StateEngine.OutOfCombat))
             {
                 Console.WriteLine("Not Lazing About, stopping doIdle");
                 return false;
@@ -22,9 +22,9 @@ namespace runner.ActionWorkers
                 if (didSomething) break;
                 //Console.WriteLine("Idle Considering doing[{0}]", verb.what);
 
-                var hpValue = Program.ego?.Hp?.Value;
-                var maxHp = Program.MaxHp;
-                var weight = Program.ego?.Weight?.Value;
+                var hpValue = program.ego?.Hp?.Value;
+                var maxHp = program.MaxHp;
+                var weight = program.ego?.Weight?.Value;
 
                 if (hpValue == null)
                 {
@@ -36,23 +36,31 @@ namespace runner.ActionWorkers
                     weight = 60;
                 }
 
-                if (
-                    hpValue > 20 &&
-                    weight < 90 &&
-                    verb.what.Equals(Verb.Fight)
-                )
+                if (hpValue > 20 &&
+                    verb.what.Equals(Verb.Steal))
                 {
-                    Console.WriteLine("Starting A fight");
-                    VerbWindow.click(verb);
+                    Console.WriteLine("Stealing!!!!");
+                    VerbWindow.click(baseHandle, verb);
                     didSomething = true;
                 }
                 else if (
-                    Action.wantToRepair &&
+                    hpValue > 20 &&
+                    weight < 90 &&
+                    verb.what.Equals(Verb.Fight) 
+                    //&& verbWindow.ocrText?.TrimEnd()?.EndsWith("hp", StringComparison.OrdinalIgnoreCase) == true
+                )
+                {
+                    Console.WriteLine("Starting A fight");
+                    VerbWindow.click(baseHandle, verb);
+                    didSomething = true;
+                }
+                else if (
+                    program.action.wantToRepair &&
                     verb.what.Equals(Verb.Repair))
                 {
                     Console.WriteLine("Repairing");
-                    VerbWindow.click(verb);
-                    Action.wantToRepair = false;
+                    VerbWindow.click(baseHandle, verb);
+                    program.action.wantToRepair = false;
                     didSomething = true;
                 }
                 else if (
@@ -60,8 +68,8 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Sell))
                 {
                     Console.WriteLine("Selling");
-                    VerbWindow.click(verb);
-                    Action.wantToRepair = true;
+                    VerbWindow.click(baseHandle, verb);
+                    program.action.wantToRepair = true;
                     didSomething = true;
                 }
                 else if (
@@ -73,8 +81,8 @@ namespace runner.ActionWorkers
                     var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y + 60 * sX), verb.rect.Width,
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(implied);
-                    Action.wantToRepair = true;
+                    VerbWindow.click(baseHandle, implied);
+                    program.action.wantToRepair = true;
                     didSomething = true;
                 }
                 else if (
@@ -86,8 +94,8 @@ namespace runner.ActionWorkers
                     var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y - 15 * sX), verb.rect.Width,
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(implied);
-                    Action.wantToRepair = true;
+                    VerbWindow.click(baseHandle, implied);
+                    program.action.wantToRepair = true;
                     didSomething = true;
                 }
                 else
@@ -106,8 +114,8 @@ namespace runner.ActionWorkers
             }
             else
             {
-                VerbWindow.last = null;
-                WindowScan.flushScreenScan();
+                program.lastVerbWindow = null;
+                program.windowScanManager.flushScreenScan();
             }
 
 

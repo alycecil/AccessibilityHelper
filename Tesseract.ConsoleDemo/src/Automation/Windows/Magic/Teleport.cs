@@ -41,7 +41,7 @@ namespace Tesseract
             string keyX = Config.KEY_TELEPORT + target + "X",
                 keyY = Config.KEY_TELEPORT + target + "Y";
 
-            if (Config.click(keyX, keyY))
+            if (Config.click(baseHandle, keyX, keyY))
             {
                 return true;
             }

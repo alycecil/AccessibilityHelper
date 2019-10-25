@@ -93,15 +93,19 @@
     <Compile Include="src\Automation\Hook\SingleControlLogger.cs" />
     <Compile Include="src\Automation\HoverBox.cs" />
     <Compile Include="src\Automation\ITickable.cs" />
+    <Compile Include="src\Automation\MouseManager\MouseManager.cs" />
     <Compile Include="src\Automation\ToolTips.cs" />
     <Compile Include="src\Automation\Windows\Combat\CombatWindow.cs" />
     <Compile Include="src\Automation\Windows\Combat\ExitWindow.cs" />
     <Compile Include="src\Automation\Windows\General\ChatFrame.cs" />
     <Compile Include="src\Automation\Windows\General\Inventory.cs" />
     <Compile Include="src\Automation\Windows\General\LootWindow.cs" />
-    <Compile Include="src\Automation\Windows\General\Partials\Verbs.cs" />
-    <Compile Include="src\Automation\Windows\General\Partials\VerbWindowsHelpers.cs" />
-    <Compile Include="src\Automation\Windows\General\VerbWindow.cs" />
+    <Compile Include="src\Automation\Windows\General\Partials\TooltipToVerb.cs" />
+    <Compile Include="src\Automation\Windows\General\Partials\VerbWindowHelper.cs" />
+    <Compile Include="src\Automation\Windows\General\Verbs\Verbs.cs" />
+    <Compile Include="src\Automation\Windows\General\Verbs\VerbToolTips.cs" />
+    <Compile Include="src\Automation\Windows\General\Verbs\VerbWindow.cs" />
+    <Compile Include="src\Automation\Windows\General\Verbs\VerbWindowOCR.cs" />
     <Compile Include="src\Automation\Windows\Magic\Spell.cs" />
     <Compile Include="src\Automation\Windows\Magic\SpellWindow.cs" />
     <Compile Include="src\Automation\Windows\Magic\Teleport.cs" />
@@ -111,6 +115,7 @@
     <Compile Include="src\Automation\Windows\Scans\PartialWindowScan.cs" />
     <Compile Include="src\Automation\Windows\Scans\Thing.cs" />
     <Compile Include="src\Automation\Windows\Scans\WindowScan.cs" />
+    <Compile Include="src\Automation\Windows\Scans\WindowScanManager.cs" />
     <Compile Include="src\Automation\Windows\Windows.cs" />
     <Compile Include="src\config\Config.cs" />
     <Compile Include="src\config\Secrets.cs" />
@@ -141,7 +146,10 @@
     <Compile Include="src\swagger\Model\PlayerUpdate.cs" />
     <Compile Include="src\swagger\Model\View.cs" />
     <Compile Include="src\Util\ApiCaller.cs" />
+    <Compile Include="src\Util\BoundsManager.cs" />
     <Compile Include="src\Util\ImageManip.cs" />
+    <Compile Include="src\Util\OCRHelper.cs" />
+    <Compile Include="src\Util\PixelManager.cs" />
     <Compile Include="src\Util\StringUtil.cs" />
     <Compile Include="src\Util\Win32\Win32CursorUtils.cs" />
     <Compile Include="src\Util\Win32\Helpers\DumpWindowsHandles.cs" />
@@ -195,6 +203,9 @@
   <ItemGroup>
     <Content Include="app.manifest" />
     <Content Include="down.tiff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="hand.tiff">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="left.tiff">

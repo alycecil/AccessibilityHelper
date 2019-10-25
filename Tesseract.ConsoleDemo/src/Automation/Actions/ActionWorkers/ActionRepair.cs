@@ -7,12 +7,12 @@ namespace runner.ActionWorkers
 {
     public class ActionRepair : AbstractActionWorker
     {
-        public static bool DoAction()
+        public static bool DoAction(Program program, IntPtr baseHandle)
         {
             bool didSomething = false;
-           if (!findVerbWindow(out var verbWindow)) return false;
+           if (!findVerbWindow(program, baseHandle, out var verbWindow)) return false;
 
-            if (!Program.stateEngine.InState(StateEngine.OutOfCombat))
+            if (!program.stateEngine.InState(StateEngine.OutOfCombat))
             {
                 Console.WriteLine("Can't Repair while not out of combat");
                 return false;
@@ -26,15 +26,13 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Repair))
                 {
                     Console.WriteLine("Repairing");
-                    VerbWindow.click(verb);
-                    Action.wantToRepair = false;
+                    VerbWindow.click(baseHandle,verb);
+                    program.action.wantToRepair = false;
                     
-                    Thread.Sleep(TimeSpan.FromSeconds(3));
-                    Action.handleRepairControl(Windows.HandleBaseWindow());
+                    Thread.Sleep(TimeSpan.FromSeconds(2));
+                    program.action.handleRepairControl(baseHandle);
                     
-                    
-                    VerbWindow.last = null;
-                    WindowScan.flushScreenScan();
+                    program.action.Repaired();
                     
                     didSomething = true;
                 }

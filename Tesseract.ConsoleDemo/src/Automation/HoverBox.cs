@@ -1,26 +1,31 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.Threading;
 using AutoIt;
 using runner;
+using runner.Cursor;
+using Tesseract.ConsoleDemo;
 
 /// <summary>Contains functionality to get all the open windows.</summary>
 public static class HoverBox
 {
     // private static Tesseract Ocr;
+    internal static bool wantItem = false;
 
     static HoverBox()
     {
     }
 
-    public static VerbWindow handle(IntPtr basehandle, bool b = false)
+    public static VerbWindow handle(Program program, IntPtr baseHandle, bool b = false)
     {
-        var hasStuff = list(basehandle, out int type);
+        var hasStuff = list(baseHandle, out int type);
         if (!string.IsNullOrEmpty(hasStuff))
         {
-            var findWindow = VerbWindow.findWindow(basehandle, hasStuff, true, b);
-            if(findWindow!=null)
+            var findWindow = VerbWindow.findWindow(program, baseHandle, hasStuff, true, b);
+            if (findWindow != null)
                 findWindow.type = type;
-            
+            //else flushClick()
 
             return findWindow;
         }
@@ -35,10 +40,10 @@ public static class HoverBox
 //style=0x56000000
     /// <summary>Returns a dictionary that contains the handle and title of all the open windows.</summary>
     /// <returns>A dictionary that contains the handle and title of all the open windows.</returns>
-    private static string list(IntPtr basehandle, out int type)
+    private static string list(IntPtr baseHandle, out int type)
     {
         type = 0;
-        ScreenCapturer.GetScale(basehandle, out float sX, out float sY);
+        ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
 
         int l = (int) (483 * sX),
             t = (int) (24 * sY),
@@ -46,29 +51,29 @@ public static class HoverBox
             b = (int) (37 * sY);
 
         Rectangle rect = new Rectangle(l, t, r - l, b - t);
-
         var c = AutoItX.PixelGetColor(rect.Left + 3, rect.Top + 3);
-        var c2 = AutoItX.PixelGetColor(rect.Left + 5, rect.Top + 5);
-        var c3 = AutoItX.PixelGetColor(rect.Left + 17, rect.Top + 4);
 
-        if (!c2.Equals(c) || !c2.Equals(c3))
-            return null;
+        switch (c)
+        {
+            case item when !wantItem:
+                return null;
+            case item:
+                type = item;
+                return DoOcr(rect);
+            default:
+            {
+                if (CursorUtil.isCursor(CursorUtil.hand, out int clickx, out int clickY))
+                {
+                    var ocr = DoOcr(rect);
+                    if(!string.IsNullOrEmpty(ocr))
+                        return ocr;
+                    return "IMPLIED";
+                }
 
-        if (c.Equals(hasHp))
-        {
-            type = hasHp;
-            return DoOcr(rect);
+                break;
+            }
         }
-        else if (c.Equals(item))
-        {
-            type = item;
-            return DoOcr(rect);
-        }
-        else if (c != 497579)
-        {
-            //Console.WriteLine("Got Color : {0}", c);
-            //item color : 6244104
-        }
+
         return null;
     }
 
@@ -77,6 +82,18 @@ public static class HoverBox
         var capture = ScreenCapturer.Capture(rect);
         capture = ImageManip.AdjustThreshold(capture, .9f);
         capture = ImageManip.Max(capture);
-        return ImageManip.doOcr(capture);
+
+        var ocr = ImageManip.doOcr(capture);
+//        if (!string.IsNullOrEmpty(ocr))
+//        {
+//            Console.WriteLine("ocr [{0}]", ocr);
+//            ScreenCapturer.ImageSave("cap_%NOW%_" + ocr + "_", ImageFormat.Tiff, capture);
+//        }
+//        else
+//        {
+//            ScreenCapturer.ImageSave("cap_%NOW%_EMPTY_", ImageFormat.Tiff, capture);
+//        }
+
+        return ocr;
     }
 }

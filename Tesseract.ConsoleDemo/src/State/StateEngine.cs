@@ -16,48 +16,51 @@ namespace runner
             LookAt = 4;
 
         private int currentState = UNKNOWN;
+        private IntPtr baseHandle;
+        private Program program;
+
+        public StateEngine(Program program, IntPtr baseHandle)
+        {
+            this.baseHandle = baseHandle;
+            this.program = program;
+        }
 
         private void alert(int state)
         {
             Console.WriteLine("State Change from {0} to {1}", AsString(currentState), AsString(state));
             //TODO send state changes    
 
-            if (state == InCobmatClickingExit)
-            {
-                Action.askForWeight();
-            }
-
             if (state == InCombat)
             {
-                WindowScan.flushScreenScan();
+                program.windowScanManager.flushScreenScan();
                 if (currentState == InCombatActing)
                 {
-                    Action.ReadHP();
+                    program.action.ReadHP(baseHandle);
                 }
                 //Program.requestScreenScan();
 
-                Action.inCombat();
+                program.action.inCombat();
             }
             else if (currentState == InCombat 
                      || currentState == InCombatActing && state == InCobmatAfter)
             {
-                Action.askForWeight();
-                Action.ReadHP();
+                program.action.askForWeight(baseHandle);
+                program.action.ReadHP(baseHandle);
             }
             else if (state == OutOfCombat)
             {
-                WindowScan.requestScreenScan();
-                Action.outOfCombat();
+                program.windowScanManager.requestScreenScan(baseHandle);
+                program.action.outOfCombat();
             }
         }
 
-        public void HandleStateChanges(IntPtr basehandle)
+        public void HandleStateChanges()
         {
-            if (Windows.getInCombat() != IntPtr.Zero)
+            if (Windows.getInCombat(baseHandle) != IntPtr.Zero)
             {
                 seeCombatOption();
             }
-            else if (Windows.getExitCombatControl(basehandle) != IntPtr.Zero
+            else if (Windows.getExitCombatControl(baseHandle) != IntPtr.Zero
                  && !InState(InCobmatClickingExit)
             )
             {
@@ -76,15 +79,15 @@ namespace runner
                 InState(InCobmatClickingExit)
                 || InState(LookAt)
                 || InState(UNKNOWN)
-                || Windows.getSell(basehandle) != IntPtr.Zero
-                || Windows.getNothingSelling(basehandle) != IntPtr.Zero
-                || Windows.getRepairNothingControl(basehandle) != IntPtr.Zero
-                || Windows.getRepair(basehandle) != IntPtr.Zero)
+                || Windows.getSell(baseHandle) != IntPtr.Zero
+                || Windows.getNothingSelling(baseHandle) != IntPtr.Zero
+                || Windows.getRepairNothingControl(baseHandle) != IntPtr.Zero
+                || Windows.getRepair(baseHandle) != IntPtr.Zero)
             {
                 //we out of combat probably
                 state(OutOfCombat);
             }
-            else if (Windows.lookatIdentifier(basehandle) != IntPtr.Zero)
+            else if (Windows.lookatIdentifier(baseHandle) != IntPtr.Zero)
             {
                 seeLookAt();
             }

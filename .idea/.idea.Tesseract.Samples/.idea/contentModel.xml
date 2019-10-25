@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\dev\runner" t="IncludeFlat">
+    <e p="C:\Users\alyce\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\alyce\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Tesseract.Samples.-536739512.00" t="ExcludeRecursive" />
+    <e p="H:\dev\runner" t="IncludeFlat">
       <e p="Console Examples" t="Include" />
       <e p="packages" t="ExcludeRecursive">
         <e p="AutoItX.Dotnet.3.3.14.5\build\AutoItX3.dll" t="Include" />
@@ -12,6 +14,7 @@
         <e p="app.manifest" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="down.tiff" t="Include" />
+        <e p="hand.tiff" t="Include" />
         <e p="Left.tiff" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="packages.config" t="Include" />
@@ -47,6 +50,9 @@
             </e>
             <e p="HoverBox.cs" t="Include" />
             <e p="ITickable.cs" t="Include" />
+            <e p="MouseManager" t="Include">
+              <e p="MouseManager.cs" t="Include" />
+            </e>
             <e p="ToolTips.cs" t="Include" />
             <e p="Windows" t="Include">
               <e p="Combat" t="Include">
@@ -58,10 +64,15 @@
                 <e p="Inventory.cs" t="Include" />
                 <e p="LootWindow.cs" t="Include" />
                 <e p="Partials" t="Include">
-                  <e p="Verbs.cs" t="Include" />
-                  <e p="VerbWindowsHelpers.cs" t="Include" />
+                  <e p="TooltipToVerb.cs" t="Include" />
+                  <e p="VerbWindowHelper.cs" t="Include" />
                 </e>
-                <e p="VerbWindow.cs" t="Include" />
+                <e p="Verbs" t="Include">
+                  <e p="Verbs.cs" t="Include" />
+                  <e p="VerbToolTips.cs" t="Include" />
+                  <e p="VerbWindow.cs" t="Include" />
+                  <e p="VerbWindowOCR.cs" t="Include" />
+                </e>
               </e>
               <e p="Magic" t="Include">
                 <e p="Spell.cs" t="Include" />
@@ -77,6 +88,7 @@
                 <e p="PartialWindowScan.cs" t="Include" />
                 <e p="Thing.cs" t="Include" />
                 <e p="WindowScan.cs" t="Include" />
+                <e p="WindowScanManager.cs" t="Include" />
               </e>
               <e p="Windows.cs" t="Include" />
             </e>
@@ -125,7 +137,10 @@
           </e>
           <e p="Util" t="Include">
             <e p="ApiCaller.cs" t="Include" />
+            <e p="BoundsManager.cs" t="Include" />
             <e p="ImageManip.cs" t="Include" />
+            <e p="OCRHelper.cs" t="Include" />
+            <e p="PixelManager.cs" t="Include" />
             <e p="StringUtil.cs" t="Include" />
             <e p="Win32" t="Include">
               <e p="Helpers" t="Include">
@@ -174,7 +189,5 @@
       </e>
       <e p="Tesseract.Samples.sln" t="IncludeFlat" />
     </e>
-    <e p="C:\Users\alyce\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\alyce\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_Tesseract.Samples.-574209405.00" t="ExcludeRecursive" />
   </component>
 </project>

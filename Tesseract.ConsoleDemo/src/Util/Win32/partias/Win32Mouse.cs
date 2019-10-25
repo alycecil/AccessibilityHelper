@@ -37,15 +37,15 @@ namespace runner
             UIntPtr dwExtraInfo);
 
 
-        public static void move(int x, int y)
+        private static void move(int x, int y)
         {
             ScreenCapturer.GetScale(IntPtr.Zero, out var scaleX, out var scaleY);
+            
             Win32.mouse_event(Win32.MouseEventFlags.ABSOLUTE,
                 (int) (x*scaleX),
                 (int) (y*scaleY),
                 0, UIntPtr.Zero);
-            AutoItX.MouseMove( (int) (x*scaleX),
-                (int) (y*scaleY), 0);
+            
         }
     }
 }

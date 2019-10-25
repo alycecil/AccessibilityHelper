@@ -10,9 +10,9 @@ namespace runner
         public static bool handle(IntPtr baseHandle)
         {
             
-            ToolTips.moveOver(ExpectedTT.Inventory);
+            ToolTips.moveOver(baseHandle, ExpectedTT.Inventory);
             Thread.Sleep(1);
-            AutoItX.MouseClick();
+            MouseManager.MouseClick(baseHandle);
             Thread.Sleep(TimeSpan.FromSeconds(1));
 
             var hWnd = Windows.HandleInventory();

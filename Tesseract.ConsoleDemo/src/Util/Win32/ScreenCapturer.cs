@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace runner
 {
@@ -132,11 +133,17 @@ namespace runner
         {
             if (x == 0 || y == 0)
             {
-                using (var g1 = Graphics.FromHwnd(IntPtr.Zero))
+                using (var g1 = Graphics.FromHwnd(handle))
                 {
                     x = g1.DpiX / 96f;
                     y = g1.DpiY / 96f;
                 }
+
+                if (x < 2)
+                    x = 2;
+                if (y < 2)
+                    y = 2;
+                Console.WriteLine("Scale is [{0}, {1}]",x,y);
             }
 
             scaleX = x;
@@ -168,5 +175,21 @@ namespace runner
             image.Save(filename, format);
         }
 
+        public static void CaptureScreen(IntPtr hWnd, out int height, out int offet, out int w, out Rectangle rect,
+            out Bitmap capture)
+        {
+            ScreenCapturer.GetScale(hWnd, out float sX, out float sY);
+            height = (int) (sY * 12);
+            offet = (int) (sX * 7);
+            w = (int) (sX * 66);
+
+            Thread.Sleep(100);
+
+            ScreenCapturer.GetBounds(hWnd, out rect);
+            capture = ScreenCapturer.Capture(rect);
+            rect.Width /= 3;
+            capture = ImageManip.AdjustThreshold(capture, .9f);
+            capture = ImageManip.Max(capture);
+        }
     }
 }
