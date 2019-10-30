@@ -19,6 +19,9 @@ namespace runner
             Sell = "Hail",
             Fight = "Fight",
             Talk = "Talk",
+            Chat = "Chat",
+            Follow = "Follow",
+            Group = "Group",
             Shop = "Shop",
             Cast = "Cast",
             Enter = "Eninr",
@@ -51,14 +54,6 @@ namespace runner
             y = this.rect.Y + 5;
 
             MouseManager.MouseMove(baseHandle, x, y, 1);
-        }
-    }
-
-    public partial class VerbWindow
-    {
-        public static void click(IntPtr baseHandle, Verb verb)
-        {
-            verb.click(baseHandle, out var x, out var y);
         }
     }
 }

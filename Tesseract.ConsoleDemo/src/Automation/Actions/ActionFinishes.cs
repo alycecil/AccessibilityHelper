@@ -24,8 +24,15 @@ namespace runner
         {
             int _weight = Int32.Parse(weight.Trim());
 
-            var __w = _caller.updateWeight(_program.ego.Name, _weight);
-            _program.ego.Weight = __w.Weight;
+            var w = _caller.updateWeight(_program.ego.Name, _weight);
+            if (w != null)
+            {
+                _program.ego.Weight = w.Weight;
+            }
+            else
+            {
+                _program.ego.Weight = new Expiringint(false, _weight);
+            }
 
             var notTooMuch = _weight < max;
             if (_weight > min && notTooMuch)
@@ -66,11 +73,10 @@ namespace runner
         {
             Console.WriteLine("Sold Stuff, lets get out weight below 70% or we cant do a thing");
             SetCurrentAction(Event.ActionEnum.CheckStatus);
-            UpdateWeightOnlyIfUnder(70);                                              
+            UpdateWeightOnlyIfUnder(70);
             askForWeight(_program.baseHandle);
-                
-                
-            
+
+
             //we need to wait for a voice command on what to do, if weight over 70% 
             HandleComplete(SellInventory);
         }

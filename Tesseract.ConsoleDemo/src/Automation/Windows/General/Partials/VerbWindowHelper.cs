@@ -170,12 +170,12 @@ namespace runner
                 string tipHelper = TooltipToVerb.ToolTipHelper(program, baseHandle, hWnd, ocr, bounds);
                 if (String.IsNullOrEmpty(tipHelper)) return false;
 
-                wanted = VerbWindowOCR.cleanUpOCRTT(tipHelper, out cleaned);
+                wanted = VerbWindowOCR.CleanUpOcrTooltips(tipHelper, out cleaned);
             }
             else
             {
                 if (String.IsNullOrEmpty(ocr)) return false;
-                wanted = VerbWindowOCR.cleanUpOCR(ocr, out cleaned);
+                wanted = VerbWindowOCR.CleanUpOcr(ocr, out cleaned);
             }
 
             if (!wanted) return false;

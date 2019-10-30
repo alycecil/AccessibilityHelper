@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using IO.Swagger.Api;
 using IO.Swagger.Model;
@@ -46,9 +47,13 @@ namespace runner
             }
         }
 
+        HashSet<string> set = new HashSet<string>();
         private void handleError(Exception exception)
         {
-            Console.Error.WriteLine("Issue Encountered, {0}", exception);
+            var eText = exception.ToString();
+            if (set.Contains(eText)) return;
+            set.Add(eText);
+            Console.Error.WriteLine("Api Issue Encountered, {0}", eText);
         }
 
         public Player updateMana(string name, int current)

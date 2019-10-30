@@ -11,7 +11,7 @@ namespace runner
 Name:	"AliceDjinn"
 ControlType:	UIA_PaneControlTypeId (0xC371)
      */
-    public partial class VerbWindow
+    public class VerbWindow
     {
         public const string VerbClass = "Afx:";//...
         public const string texts = "StealCastLokAtFightWRrpOpenETe";
@@ -52,7 +52,11 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
             return null;
         }
 
-
+        public static void click(IntPtr baseHandle, Verb verb)
+        {
+            verb.click(baseHandle, out var x, out var y);
+        }
+        
         public void dismiss()
         {
             if (hWnd != IntPtr.Zero)

@@ -11,14 +11,14 @@ namespace Tesseract.ConsoleDemo
     public class Program
     {
         public WindowScan scan = null;
-        public Player ego = new Player();
-        public StateEngine stateEngine;
+        public readonly Player ego = new Player();
+        public readonly StateEngine stateEngine;
         public int MaxHp = 1000;
-        private static long tick = 0;
-        public WindowScanManager windowScanManager;
+        private long tick = 0;
+        public readonly WindowScanManager windowScanManager;
         public readonly IntPtr baseHandle;
-        private ControlLogger roomLogger;
-        public Action action;
+        private readonly ControlLogger roomLogger;
+        public readonly Action action;
         public VerbWindow lastVerbWindow;
 
         public Program(IntPtr baseHandle)
@@ -26,6 +26,7 @@ namespace Tesseract.ConsoleDemo
             this.baseHandle = baseHandle;
             this.action = new Action(this);
             this.stateEngine = new StateEngine(this, baseHandle);
+            this.windowScanManager = new WindowScanManager(this);
             this.roomLogger = ControlLogger.build(this, baseHandle);
         }
 
@@ -57,29 +58,39 @@ namespace Tesseract.ConsoleDemo
 
         private void MainLoop()
         {
-            ego.Name = Config.get(Config.KEY_ME);
-
-            new ApiCaller().login(ego.Name);
+            Login();
 //////MAIN LOOP
             while (true)
             {
-                tick++;
-                Thread.Sleep(1);
-                __base();
-
-
-                EveryTickFirst();
-
-                FastTick();
-                CommonTick();
-                RareTick();
-
-
-                EveryTickLast();
-
-
-                tick %= Int32.MaxValue;
+                Loop();
             }
+        }
+
+        private void Login()
+        {
+            ego.Name = Config.get(Config.KEY_ME);
+
+            new ApiCaller().login(ego.Name);
+        }
+
+        private void Loop()
+        {
+            tick++;
+            Thread.Sleep(1);
+            __base();
+
+
+            EveryTickFirst();
+
+            FastTick();
+            CommonTick();
+            RareTick();
+
+
+            EveryTickLast();
+
+
+            tick %= Int32.MaxValue;
         }
 
         const int WARMUP_TICKS = 10;
