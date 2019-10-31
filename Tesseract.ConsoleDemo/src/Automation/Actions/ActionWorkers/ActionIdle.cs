@@ -9,7 +9,13 @@ namespace runner.ActionWorkers
         public static bool DoIdle(Program program, IntPtr baseHandle)
         {
             bool didSomething = false;
-            if (!findVerbWindow(program, baseHandle, out var verbWindow)) return false;
+
+            if (!findVerbWindow(program, baseHandle, out var verbWindow))
+            {
+                Console.WriteLine("Idle Passive");
+                return false;
+            }
+            else Console.Write("Do Idle~");
 
             if (!program.stateEngine.InState(StateEngine.OutOfCombat))
             {
@@ -46,7 +52,7 @@ namespace runner.ActionWorkers
                 else if (
                     hpValue > 20 &&
                     weight < 90 &&
-                    verb.what.Equals(Verb.Fight) 
+                    verb.what.Equals(Verb.Fight)
                     //&& verbWindow.ocrText?.TrimEnd()?.EndsWith("hp", StringComparison.OrdinalIgnoreCase) == true
                 )
                 {

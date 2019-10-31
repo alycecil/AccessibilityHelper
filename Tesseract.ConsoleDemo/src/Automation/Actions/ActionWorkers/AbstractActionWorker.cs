@@ -11,7 +11,7 @@ namespace runner.ActionWorkers
 
             if (verbWindow == null)
             {
-                //Console.Write("[...]");
+                Console.Write("[...]");
                 return false;
             }
 

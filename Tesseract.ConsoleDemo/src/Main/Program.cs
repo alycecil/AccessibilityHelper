@@ -43,17 +43,24 @@ namespace Tesseract.ConsoleDemo
             {
                 throw new Exception("Other App Not Running");
             }
-            
+
+            List<Program> programs = new List<Program>();
             foreach (IntPtr baseHandle in handleBaseWindows)
             {
                 //todo refactor into threads
-                new Program(baseHandle).MainLoop();
+                var program = new Program(baseHandle);
+                program.Login();
+                programs.Add(program);
             }
 
             //Action.ReadHP();
-
-
-           
+            while (true)
+            {
+                foreach (var program in programs)
+                {
+                    program.Loop();
+                }
+            }
         }
 
         private void MainLoop()
@@ -104,15 +111,16 @@ namespace Tesseract.ConsoleDemo
         private void EveryTickFirst()
         {
             ToolTips.handle(this, baseHandle);
+            HoverBox.handle(this, baseHandle);
         }
 
         private void FastTick()
         {
             if (tick % 3 != 0) return;
+            windowScanManager.handleScreenScan(this, baseHandle);
             roomLogger.LogRoom();
             scan?.tickCommon(tick, this, baseHandle);
-            windowScanManager.handleScreenScan(this, baseHandle);
-            HoverBox.handle(this, baseHandle);
+
             stateEngine.HandleStateChanges();
         }
 
@@ -142,7 +150,7 @@ namespace Tesseract.ConsoleDemo
         private void RareTick()
         {
             if (tick % 100 != 0) return;
-            
+
 
             action.GetNextEvent(baseHandle);
             //
@@ -176,6 +184,7 @@ namespace Tesseract.ConsoleDemo
             {
                 throw new Exception("Other App Not Running");
             }
+
             return baseHandle;
         }
 

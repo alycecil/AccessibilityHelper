@@ -11,7 +11,7 @@ namespace runner
     }
     public class MouseManager
     {
-        public static bool MouseMove(IntPtr baseHandle, int x=Int32.MinValue, int y=Int32.MinValue, int speed = 1)
+        public static bool MouseMove(IntPtr baseHandle, int x=-2147483647, int y = -2147483647, int speed = 1)
         {
             return AutoItX.MouseMove(x, y,  speed)!=0;
         }
