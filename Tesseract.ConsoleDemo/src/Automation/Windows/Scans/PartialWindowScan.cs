@@ -86,10 +86,7 @@ namespace runner
 
 
             VerbWindow.findWindow(program, baseHandle,"DISMISS")?.dismiss();
-            ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
-            int _y = (int) (currentY * sY);
-            int _x = (int) (currentX * sX);
-            MouseManager.MouseMove(baseHandle, _x, _y, 1);
+            MouseManager.MouseMoveUnScaled(baseHandle, currentX, currentY);
             
             ResetWork();
         }

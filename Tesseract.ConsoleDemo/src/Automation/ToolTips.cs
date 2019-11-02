@@ -184,19 +184,19 @@ namespace runner
             {
                 case Health:
                     AutoItX.WinActivate(baseHandle);
-                    MouseManager.MouseMove(baseHandle, 500, 350);
+                    MouseManager.MouseMoveUnScaled(baseHandle, 500, 350);
                     break;
                 case Mana:
                     AutoItX.WinActivate(baseHandle);
-                    MouseManager.MouseMove(baseHandle,590, 350);
+                    MouseManager.MouseMoveUnScaled(baseHandle,590, 350);
                     break;
                 case ExpectedToolTip.Inventory:
                     AutoItX.WinActivate(baseHandle);
-                    MouseManager.MouseMove(baseHandle,500, 375);
+                    MouseManager.MouseMoveUnScaled(baseHandle,500, 375);
                     break;
                 case Spells:
                     AutoItX.WinActivate(baseHandle);
-                    MouseManager.MouseMove(baseHandle,590, 375);
+                    MouseManager.MouseMoveUnScaled(baseHandle,590, 375);
                     break;
                 
             }

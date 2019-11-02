@@ -145,12 +145,11 @@ namespace Tesseract.ConsoleDemo
 
         private void RareTick()
         {
-            if (tick % 100 != 0) return;
-
-
+            if (tick % 10 != 0) return;
             action.GetNextEvent(baseHandle);
             //
 
+            if (tick % 100 != 0) return;
             if (stateEngine.InState(StateEngine.OutOfCombat))
             {
                 if (scan == null)

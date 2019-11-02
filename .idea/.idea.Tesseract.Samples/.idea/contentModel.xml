@@ -52,6 +52,7 @@
             <e p="HoverBox.cs" t="Include" />
             <e p="ITickable.cs" t="Include" />
             <e p="MouseManager" t="Include">
+              <e p="MouseButton.cs" t="Include" />
               <e p="MouseManager.cs" t="Include" />
             </e>
             <e p="ToolTips.cs" t="Include" />

@@ -23,7 +23,7 @@ namespace runner
                     Console.WriteLine("Mouse Over New Thing [{0}], Clicking on", mousedOver);
                     MouseManager.MouseClick(baseHandle);
                     Thread.Sleep(TimeSpan.FromMilliseconds(100));
-                    MouseManager.MouseMove(baseHandle, 0, 0, 1);
+                    MouseManager.MouseMoveUnScaled(baseHandle, 0, 0, 1);
 
                     myHandle = __findWindow(baseHandle, mousedOver, allowClick);
                 }

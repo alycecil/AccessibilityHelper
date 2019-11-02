@@ -6,6 +6,9 @@ namespace runner.ActionWorkers
 {
     public class ActionIdle : AbstractActionWorker
     {
+        
+        static bool enableTheft = false;
+        
         public static bool DoIdle(Program program, IntPtr baseHandle)
         {
             bool didSomething = false;
@@ -44,7 +47,8 @@ namespace runner.ActionWorkers
                 }
 
                 if (hpValue > 20 &&
-                    verb.what.Equals(Verb.Steal))
+                    verb.what.Equals(Verb.Steal) && 
+                    enableTheft)
                 {
                     Console.WriteLine("Stealing!!!!");
                     VerbWindow.click(baseHandle, verb);
@@ -118,6 +122,7 @@ namespace runner.ActionWorkers
                     Console.Write("Verb[{0}],", verb.what);
 
                 Console.WriteLine("].");
+                program.scan?.DidWork();
             }
             else
             {

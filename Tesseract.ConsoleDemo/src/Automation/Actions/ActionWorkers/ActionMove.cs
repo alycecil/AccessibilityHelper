@@ -71,7 +71,7 @@ namespace runner.ActionWorkers
                     default:
                         throw new NotImplementedException();
                 }
-
+                Thread.Sleep(TimeSpan.FromSeconds(1));
                 return findPlaceToClickAndClick(baseHandle, desired, span, constantSide, start, end);
             }
 
@@ -86,7 +86,6 @@ namespace runner.ActionWorkers
 
         static bool findPlaceToClickAndClick(IntPtr baseHandle, Bitmap desired, Span spanType, int constantSide, int start, int end)
         {
-            ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);
             for (int slide = start; slide < end; slide += (end - start) / 20)
             {
                 int x, y;
@@ -104,21 +103,14 @@ namespace runner.ActionWorkers
                         throw new NotImplementedException();
                 }
 
-                x = (int) (x * sX);
-                y = (int) (y * sY);
-
-                MouseManager.MouseMove(baseHandle, x, y, 1);
-                Thread.Sleep(1);
-
-                if (!CursorUtil.isCursor(desired, out int clickx, out int clickY)){ Thread.Sleep(100); continue;}
-                Thread.Sleep(TimeSpan.FromSeconds(1));
-                MouseManager.MouseMove(baseHandle, x, y, 1);
-                Thread.Sleep(10);
-                MouseManager.MouseClick(baseHandle, "LEFT", x, y, 1);
-                Thread.Sleep(1);
-                MouseManager.MouseClick(baseHandle, "LEFT", x, y, 1);
-                Thread.Sleep(1);
-                MouseManager.MouseClick(baseHandle, "LEFT", x, y, 1);
+                MouseManager.MouseMoveUnScaled(baseHandle, x, y, 1);
+                if (!CursorUtil.isCursor(desired, out int clickx, out int clickY))
+                {
+                    Thread.Sleep(TimeSpan.FromMilliseconds(100)); 
+                    continue;
+                }
+                MouseManager.MouseMoveUnScaled(baseHandle, x, y, 1);
+                MouseManager.MouseClick(baseHandle);
                 Thread.Sleep(TimeSpan.FromSeconds(1));
                 return true;
             }

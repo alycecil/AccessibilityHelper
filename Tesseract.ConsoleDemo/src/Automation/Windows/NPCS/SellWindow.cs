@@ -44,6 +44,13 @@ namespace runner
             {
                 close(program, baseHandle, sellScreen);
             }
+            else
+            {
+                //close it hard
+                AutoItX.WinClose(sellScreen);
+                Console.Error.WriteLine("Unable to find anything to sell; lets ask for weight and reply we did our job");
+                program.action.SoldInventory();
+            }
         }
 
         private static bool SellStuff(Program program, IntPtr baseHandle, TreeWalker walker, AutomationElement list, IntPtr sellScreen)

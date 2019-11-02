@@ -20,7 +20,7 @@ namespace runner
 
         public void HandleRepairControl(IntPtr baseHandle)
         {
-            RepairWindow.handle(baseHandle);
+            RepairWindow.handle(baseHandle, _program);
         }
 
         public void DoSell(IntPtr baseHandle)

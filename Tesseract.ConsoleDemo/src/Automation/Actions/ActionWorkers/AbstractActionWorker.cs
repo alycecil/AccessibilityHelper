@@ -28,6 +28,7 @@ namespace runner.ActionWorkers
                 if (verbWindow?.verbs.Count == 0)
                 {
                     Console.WriteLine("Nothing To Do Yet, Maybe I should screen scan better");
+                    program.scan?.DidWork();
                     program.lastVerbWindow = null;
                     return false;
                 }
@@ -37,6 +38,7 @@ namespace runner.ActionWorkers
             if (!Win32.IsWindowVisible(verbWindow.hWnd) || verbWindow.verbs.Count == 0)
             {
                 Console.WriteLine("[Lost VerbWindow]");
+                program.scan?.DidWork();
                 program.lastVerbWindow = null;
                 return false;
             }

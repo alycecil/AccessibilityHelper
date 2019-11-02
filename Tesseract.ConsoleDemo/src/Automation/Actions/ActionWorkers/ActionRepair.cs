@@ -33,15 +33,32 @@ namespace runner.ActionWorkers
                     VerbWindow.click(baseHandle,verb);
                     program.action.wantToRepair = false;
                     
-                    Thread.Sleep(TimeSpan.FromSeconds(2));
-                    program.action.HandleRepairControl(baseHandle);
                     
-                    program.action.Repaired();
                     
+                    didSomething = true;
+                }else if (
+                    verb.what.Equals(Verb.Sell))
+                {
+                    Console.WriteLine("Repairing at implied by sell");
+                    ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
+                    var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y - 59 * sY), 
+                        verb.rect.Width,
+                        verb.rect.Height);
+                    Verb implied = new Verb(r2, Verb.Sell);
+                    VerbWindow.click(baseHandle, implied);
+                    program.action.wantToRepair = false;
                     didSomething = true;
                 }
             }
 
+            if (didSomething)
+            {
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                program.action.HandleRepairControl(baseHandle);
+                    
+            }
+
+            program.scan?.DidWork();
             return didSomething;
 
         }

@@ -94,6 +94,7 @@
     <Compile Include="src\Automation\Hook\SingleControlLogger.cs" />
     <Compile Include="src\Automation\HoverBox.cs" />
     <Compile Include="src\Automation\ITickable.cs" />
+    <Compile Include="src\Automation\MouseManager\MouseButton.cs" />
     <Compile Include="src\Automation\MouseManager\MouseManager.cs" />
     <Compile Include="src\Automation\ToolTips.cs" />
     <Compile Include="src\Automation\TTDT.cs" />

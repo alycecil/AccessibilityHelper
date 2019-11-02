@@ -16,7 +16,7 @@ namespace runner
             Repair = "Repair",
             Steal = "Steal",
             WalkTo = "Walk To",
-            Sell = "Hail",
+            Sell = "Sell",
             Fight = "Fight",
             Talk = "Talk",
             Chat = "Chat",
@@ -41,10 +41,9 @@ namespace runner
 
         public void click(IntPtr baseHandle, out int x, out int y)
         {
-            mouseover(baseHandle, out x, out y);
-            Console.WriteLine("Clicking on ({0},{1})", x, y);
             Thread.Sleep(1);
             mouseover(baseHandle, out x, out y);
+            Console.WriteLine("Clicking on ({0},{1})", x, y);
             MouseManager.MouseClick(baseHandle, "LEFT", x, y, 1, 1);
         }
 
@@ -53,7 +52,7 @@ namespace runner
             x = this.rect.X + 25;
             y = this.rect.Y + 5;
 
-            MouseManager.MouseMove(baseHandle, x, y, 1);
+            MouseManager.MouseMoveAbsolute(baseHandle, x, y, 1);
         }
     }
 }

@@ -70,7 +70,7 @@ namespace runner
             {
                 for (int y = 20; y < bounds.Height; y += (int)(21*sY))
                 {
-                    MouseManager.MouseMove(baseHandle,bounds.X + x, bounds.Y + y, 1);
+                    MouseManager.MouseMoveAbsolute(baseHandle,bounds.X + x, bounds.Y + y, 1);
                     var tt = ToolTips.handle(program, baseHandle);
                     if (!string.IsNullOrEmpty(tt) && !seenBefore.Contains(tt))
                     {
