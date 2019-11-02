@@ -2,15 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="23560944-9abb-4b5b-8cc4-98a9e35d63be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ExpectedToolTip.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/TTDT.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/User32Delegate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Tesseract.ConsoleDemo.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/Tesseract.ConsoleDemo.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Release/Tesseract.ConsoleDemo.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Release/Tesseract.ConsoleDemo.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionFinishes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionFinishes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/MouseManager/MouseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/MouseManager/MouseManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionRepair.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionRepair.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionSell.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionSell.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/TooltipToVerb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/TooltipToVerb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScanManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScanManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/DumpWindowsHandles.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/DumpWindowsHandles.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/OpenWindowGetter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/OpenWindowGetter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32CursorUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32CursorUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/WindowHandleInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/WindowHandleInfo.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +97,6 @@
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/SellWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/RepairWindow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Spell.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/Thing.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/ExitWindow.cs" root0="FORCE_HIGHLIGHTING" />
@@ -87,20 +119,26 @@
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/MouseManager/MouseManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/TTDT.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ExpectedToolTip.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/User32Delegate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/StringUtil.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ApiCaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ImageManip.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFEB5FDC-A719-42E1-8134-223465F4F838/49/10b30104/Icon.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/WindowHandleInfo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32CursorUtils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/app.config" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/OpenWindowGetter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/Win32GetText.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/DumpWindowsHandles.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Scoll.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Memory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Dpi.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/58282784-AF6A-4871-B9B7-2811FAB15086/3d/946d03c6/AutoItX_DLLImport.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Mouse.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Structs.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tesseract.ConsoleDemo/packages.config" root0="FORCE_HIGHLIGHTING" />
@@ -119,57 +157,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32CursorUtils.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/AutomationElement/Scroller.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Cursor/CursorUtil.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ImageManip.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/VerbWindow.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/RepairWindow.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/partias/Win32Mouse.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Config.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Inventory.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/ExitWindow.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ITickable.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScanManager.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/BundledControlLogger.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/ControlLogger.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Hook/SingleControlLogger.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/LootWindow.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/Verbs.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/PixelManager.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/OCRHelper.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/TooltipToVerb.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/OCRHelper.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowsHelpers.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowHelper.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/FullWindowScan.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/SellWindow.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionSell.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionRepair.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionFinishes.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ApiCaller.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindow.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/Verbs.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbToolTips.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindowOCR.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/MouseManager/MouseManager.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScan.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindow.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionSell.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionRepair.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/RepairWindow.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Inventory.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/SpellWindow.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionRequests.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/WindowScanManager.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Scans/PartialWindowScan.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Secrets.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32CursorUtils.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Partials/VerbWindowHelper.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/DumpWindowsHandles.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/User32Delegate.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/WindowHandleInfo.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Helpers/OpenWindowGetter.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ExpectedToolTip.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/ToolTips.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/HoverBox.cs" />
       </list>
     </option>
   </component>
@@ -258,7 +296,9 @@
       <workItem from="1571948104179" duration="15077000" />
       <workItem from="1572022972926" duration="11173000" />
       <workItem from="1572403566192" duration="3320000" />
-      <workItem from="1572494003670" duration="722000" />
+      <workItem from="1572494003670" duration="1087000" />
+      <workItem from="1572581250140" duration="1143000" />
+      <workItem from="1572618887268" duration="20973000" />
     </task>
     <task id="LOCAL-00001" summary="Note">
       <created>1571704973144</created>
@@ -295,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572411577704</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Loop">
+      <created>1572499219045</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1572499219045</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,7 +370,8 @@
     <MESSAGE value="Sell" />
     <MESSAGE value="click on stuff" />
     <MESSAGE value="Removing statics" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing statics" />
+    <MESSAGE value="Loop" />
+    <option name="LAST_COMMIT_MESSAGE" value="Loop" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -339,27 +387,14 @@
           <option name="timeStamp" value="83" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs</url>
-          <line>53</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" initialLine="49">
-            <startOffsets>
-              <option value="1859" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1900" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="123" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs</url>
           <line>49</line>
           <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Magic/Teleport.cs" initialLine="32">
             <startOffsets>
-              <option value="1252" />
+              <option value="1289" />
             </startOffsets>
             <endOffsets>
-              <option value="1288" />
+              <option value="1325" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="138" />
@@ -382,91 +417,26 @@
           <line>129</line>
           <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" initialLine="125">
             <startOffsets>
-              <option value="4064" />
+              <option value="4087" />
             </startOffsets>
             <endOffsets>
-              <option value="4077" />
+              <option value="4100" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindow.cs</url>
-          <line>56</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindow.cs" initialLine="56">
+          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs</url>
+          <line>54</line>
+          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/CombatWindow.cs" initialLine="53">
             <startOffsets>
-              <option value="1659" />
+              <option value="1881" />
             </startOffsets>
             <endOffsets>
-              <option value="1704" />
+              <option value="1922" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="166" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs</url>
-          <line>25</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs" initialLine="19">
-            <startOffsets>
-              <option value="718" />
-            </startOffsets>
-            <endOffsets>
-              <option value="756" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="168" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindow.cs</url>
-          <line>63</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/VerbWindow.cs" initialLine="63">
-            <startOffsets>
-              <option value="1831" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1863" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="169" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs</url>
-          <line>19</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionIdle.cs" initialLine="13">
-            <startOffsets>
-              <option value="516" />
-            </startOffsets>
-            <endOffsets>
-              <option value="574" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="170" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs</url>
-          <line>43</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs" initialLine="43">
-            <startOffsets>
-              <option value="1473" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1485" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="171" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs</url>
-          <line>36</line>
-          <properties documentPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/AbstractActionWorker.cs" initialLine="36">
-            <startOffsets>
-              <option value="1225" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1300" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="172" />
+          <option name="timeStamp" value="179" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

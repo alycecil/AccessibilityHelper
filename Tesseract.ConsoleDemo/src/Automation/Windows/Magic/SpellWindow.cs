@@ -132,9 +132,9 @@ namespace runner
 
             if (!program.stateEngine.InState(StateEngine.OutOfCombat)) return false;
             
-            Teleport.close();
+            Teleport.close(baseHandle);
 
-            ToolTips.moveOver(baseHandle,ExpectedTT.Spells);
+            ToolTips.moveOver(baseHandle,ExpectedToolTip.Spells);
             Thread.Sleep(1);
             MouseManager.MouseClick(baseHandle);
             if (__TryGetWindow(baseHandle, out spell)) return true;

@@ -26,7 +26,6 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
             this.verbs = v;
         }
 
-        public static VerbWindow last = null;
         public int type;
 
         public static VerbWindow findWindow(Program program, IntPtr baseHandle,
@@ -40,8 +39,8 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
 
                 var verbWindow = VerbWindowHelper.fromHandle(program, baseHandle, window, mousedOver, lightWeight);
                 if (!lightWeight)
-                    last = verbWindow;
-                else last = null;
+                    program.lastVerbWindow = verbWindow;
+                else program.lastVerbWindow = null;
                 return verbWindow;
             }
             catch (Exception wtfHappened)
@@ -62,7 +61,8 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
             if (hWnd != IntPtr.Zero)
             {
                 Console.WriteLine("Dismissing");
-                AutoItX.WinClose(hWnd);
+                //AutoItX.WinClose(hWnd);
+                MouseManager.MouseClick(hWnd, "LEFT", 0,0);
             }
             else
             {

@@ -17,6 +17,7 @@ namespace runner
         private Event _currentEvent;
         private Event.ActionEnum _currentAction = Idle;
         private readonly Program _program;
+        private CombatWindow combatWindow = new CombatWindow();
 
         public Action(Program program)
         {
@@ -25,6 +26,7 @@ namespace runner
 
         public bool wantToRepair = true;
 
+        private long waitUntil = -1;
         public void HandleNextAction(IntPtr baseHandle)
         {
             bool complete = false;
@@ -37,7 +39,7 @@ namespace runner
                     complete = true;
                     break;
 
-                case CheckStatus when _program.getTick() % 1000 == 0:
+                case CheckStatus when _program.getTick() > waitUntil:
                     complete = true;
                     break;
                 case CheckStatus:
@@ -55,7 +57,7 @@ namespace runner
                 {
                     if (_program.getTick() % 100 == 0)
                     {
-                        this.ReadHP(baseHandle);
+                        this.ReadHp(baseHandle);
                     }
 
                     //Console.WriteLine("Checking Status");
@@ -78,7 +80,7 @@ namespace runner
                 case CombatAttack:
                 case CombatCast:
                 case CombatGuard:
-                    this.doCombat(baseHandle);
+                    this.DoCombat(baseHandle);
                     complete = Windows.getInCombat(baseHandle) == IntPtr.Zero;
                     break;
                 default:
@@ -109,7 +111,9 @@ namespace runner
                 {
                     case CheckStatus:
                         //Console.WriteLine("Checking Status [{0}]", currentEvent);
-                        askForWeight(baseHandle);
+                        AskForWeight(baseHandle);
+                        waitUntil = _program.getTick() + 100; 
+                        //wait no longer than 100 tics before we say we did that.
                         break;
                     case SellInventory:
                     case Repair:

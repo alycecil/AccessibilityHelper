@@ -6,39 +6,19 @@ using System.Runtime.InteropServices;
 using AutoIt;
 using runner;
 using Tesseract.ConsoleDemo;
-using static runner.ExpectedTT;
+using static runner.ExpectedToolTip;
 using static runner.Win32;
 
 namespace runner
 {
-    public enum ExpectedTT
-    {
-        Health,
-        Mana,
-        Inventory,
-        Spells,
-        Buttons,
-        Other,
-        None
-    }
-
-
-    public static class TTDT
-    {
-        public const int TTDT_AUTOMATIC = 0;
-        public const int TTDT_AUTOPOP = 2;
-        public const int TTDT_INITIAL = 3;
-        public const int TTDT_RESHOW = 1;
-    }
-
     /// <summary>Contains functionality to get all the open windows.</summary>
-    public static class ToolTips
+    internal class ToolTips : User32Delegate
     {
-        private static ExpectedTT _expectedTt = Other;
+        private static ExpectedToolTip _expectedToolTip = Other;
 
-        public static void setExpected(ExpectedTT expectedTt)
+        public static void setExpected(ExpectedToolTip expectedToolTip)
         {
-            _expectedTt = expectedTt;
+            _expectedToolTip = expectedToolTip;
         }
 
         public static string handle(Program program,  IntPtr baseHandle)
@@ -79,7 +59,7 @@ namespace runner
         {
             String text = String.Empty;
             String lookingFor = "None";
-            switch (_expectedTt)
+            switch (_expectedToolTip)
             {
                 case Mana:
                     lookingFor = "Mana";
@@ -112,7 +92,7 @@ namespace runner
                     text = ImageManip.doOcr(capture);
                     break;
 
-                case ExpectedTT.Inventory:
+                case ExpectedToolTip.Inventory:
                 case Other:
                 default:
                     break;
@@ -198,15 +178,9 @@ namespace runner
             }
         }
 
-        private delegate bool EnumWindowsProc(IntPtr hWnd, int lParam);
-
-        [DllImport("USER32.DLL")]
-        private static extern bool EnumWindows(EnumWindowsProc enumFunc, int lParam);
-
-
-        public static void moveOver(IntPtr baseHandle, ExpectedTT expectedTt)
+        public static void moveOver(IntPtr baseHandle, ExpectedToolTip expectedToolTip)
         {
-            switch (expectedTt)
+            switch (expectedToolTip)
             {
                 case Health:
                     AutoItX.WinActivate(baseHandle);
@@ -216,7 +190,7 @@ namespace runner
                     AutoItX.WinActivate(baseHandle);
                     MouseManager.MouseMove(baseHandle,590, 350);
                     break;
-                case ExpectedTT.Inventory:
+                case ExpectedToolTip.Inventory:
                     AutoItX.WinActivate(baseHandle);
                     MouseManager.MouseMove(baseHandle,500, 375);
                     break;

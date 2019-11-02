@@ -11,7 +11,11 @@ namespace runner.ActionWorkers
         public static bool DoAction(Program program, IntPtr baseHandle)
         {
             bool didSomething = false;
-            if (!findVerbWindow(program, baseHandle,out var verbWindow)) return false;
+            if (!findVerbWindow(program, baseHandle, out var verbWindow))
+            {
+                program.scan?.DidWork();
+                return false;
+            }
 
             if (!program.stateEngine.InState(StateEngine.OutOfCombat))
             {
@@ -27,7 +31,7 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Sell))
                 {
                     Console.WriteLine("selling");
-                    VerbWindow.click(baseHandle,verb);
+                    VerbWindow.click(baseHandle, verb);
                     program.action.wantToRepair = false;
                     didSomething = true;
                 }
@@ -51,7 +55,7 @@ namespace runner.ActionWorkers
                     var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y - 15 * sX), verb.rect.Width,
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(baseHandle,implied);
+                    VerbWindow.click(baseHandle, implied);
                     program.action.wantToRepair = true;
                     didSomething = true;
                 }
@@ -62,10 +66,9 @@ namespace runner.ActionWorkers
                 Thread.Sleep(TimeSpan.FromSeconds(1));
                 program.lastVerbWindow = null;
                 program.windowScanManager.flushScreenScan();
-                program.action.doSell(baseHandle);
-                
+                program.action.DoSell(baseHandle);
             }
-            
+
             return false;
         }
     }

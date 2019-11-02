@@ -6,8 +6,7 @@ namespace runner
 {
     public class WindowScanManager
     {
-        private bool __scanPlease = false,
-            __fullScreenPlease = false;
+        private bool __scanPlease = false;
 
         private Program Program;
 
@@ -18,22 +17,14 @@ namespace runner
 
         public void flushScreenScan()
         {
-            //Program.scan?.delete();
             Program.scan = null;
             __scanPlease = false;
-            __fullScreenPlease = false;
         }
 
         public void requestScreenScan(IntPtr baseHandle)
         {
             flushScreenScan();
             __scanPlease = true;
-        }
-
-        public void requestFullScreenScan()
-        {
-            flushScreenScan();
-            __fullScreenPlease = true;
         }
 
         public static void GetConfig(
@@ -70,15 +61,6 @@ namespace runner
                 if (program.scan == null)
                 {
                     program.scan = new PartialWindowScan(program);
-                }
-            }
-            else if (__fullScreenPlease)
-            {
-                var _scan = FullWindowScan.scanScreen(program, baseHandle);
-                if (_scan != null)
-                {
-                    program.scan = _scan;
-                    __scanPlease = false;
                 }
             }
         }

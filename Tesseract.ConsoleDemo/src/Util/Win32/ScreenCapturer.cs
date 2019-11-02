@@ -164,6 +164,7 @@ namespace runner
         /// Image.</param>
         public static void ImageSave(string filename, ImageFormat format, Image image)
         {
+#if DEBUG
             format = format ?? ImageFormat.Png;
             if (!filename.Contains("."))
                 filename = filename.Trim() + "." + format.ToString().ToLower();
@@ -172,7 +173,11 @@ namespace runner
                 filename = Path.Combine(Environment.GetEnvironmentVariable("TEMP") ?? @"C:\Temp", filename);
 
             filename = filename.Replace("%NOW%", DateTime.Now.ToString("yyyy-MM-dd@hh.mm.ss"));
-            image.Save(filename, format);
+            image.Save(filename, format);         
+#else   
+            Console.WriteLine("Not Saved");
+#endif
+
         }
 
         public static void CaptureScreen(IntPtr hWnd, out int height, out int offet, out int w, out Rectangle rect,

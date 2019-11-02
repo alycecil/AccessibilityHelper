@@ -15,7 +15,7 @@ namespace runner
             //Console.WriteLine("--XXX-- Mouse move, sleep");
             Thread.Sleep(2);
 
-            ToolTips.setExpected(ExpectedTT.Buttons);
+            ToolTips.setExpected(ExpectedToolTip.Buttons);
 
             var tt = ToolTips.handle(program, hWnd);
             //Console.WriteLine(" --{1}--[{0}]", tt, ocr);

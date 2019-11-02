@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Automation;
 using Tesseract.ConsoleDemo;
 
 namespace runner
 {
-    internal static class VerbWindowHelper
+    internal class VerbWindowHelper : User32Delegate
     {
+        
         const int stepSize = 7;
 
         public static IntPtr findWindow(IntPtr baseHandle, String mousedOver, bool allowClick)
@@ -66,7 +66,8 @@ namespace runner
             var end = captureHeight - height;
 
             //Console.WriteLine("Possible Checks - [{0}]", end / stepSize);
-            for (int location = 0; location < end; location += stepSize)
+            ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
+            for (int location = 0; location < end; location += Math.Max((int)(stepSize*sY), stepSize/2))
             {
                 Color captureTime = capture.GetPixel(20, location);
 
@@ -187,11 +188,5 @@ namespace runner
             item = new Verb(rect: bounds, what: ocr);
             return true;
         }
-
-
-        private delegate bool EnumWindowsProc(IntPtr hWnd, int lParam);
-
-        [DllImport("USER32.DLL")]
-        private static extern bool EnumWindows(EnumWindowsProc enumFunc, int lParam);
     }
 }

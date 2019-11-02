@@ -10,26 +10,34 @@ namespace runner
         
         public static Bitmap CaptureCursor(out int x, out int y)
         {
-            Bitmap bmp;
-            IntPtr hicon;
-            CURSORINFO ci = new CURSORINFO(); 
-            ICONINFO icInfo;
-            ci.cbSize = Marshal.SizeOf(ci);
-            if(GetCursorInfo(out ci))
+            try
             {
-                if (ci.flags == CURSOR_SHOWING)
-                { 
-                    hicon = CopyIcon(ci.hCursor);
-                    if(GetIconInfo(hicon, out icInfo))
+                Bitmap bmp;
+                IntPtr hicon;
+                CURSORINFO ci = new CURSORINFO();
+                ICONINFO icInfo;
+                ci.cbSize = Marshal.SizeOf(ci);
+                if (GetCursorInfo(out ci))
+                {
+                    if (ci.flags == CURSOR_SHOWING)
                     {
-                        x = ci.ptScreenPos.x - ((int)icInfo.xHotspot);
-                        y = ci.ptScreenPos.y - ((int)icInfo.yHotspot);
-                        Icon ic = Icon.FromHandle(hicon);
-                        bmp = ic.ToBitmap(); 
+                        hicon = CopyIcon(ci.hCursor);
+                        if (GetIconInfo(hicon, out icInfo))
+                        {
+                            x = ci.ptScreenPos.x - ((int) icInfo.xHotspot);
+                            y = ci.ptScreenPos.y - ((int) icInfo.yHotspot);
+                            Icon ic = Icon.FromHandle(hicon);
+                            bmp = ic.ToBitmap();
 
-                        return bmp;
+                            return bmp;
+                        }
                     }
                 }
+
+            }
+            catch (Exception e)
+            {
+                Console.Error.WriteLine("Error encountered capturing cursor, returning null; [{0}]", e);
             }
 
             x = y = 0;

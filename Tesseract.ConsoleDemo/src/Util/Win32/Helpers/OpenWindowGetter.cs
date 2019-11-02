@@ -4,8 +4,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using runner;
 
-/// <summary>Contains functionality to get all the open windows.</summary>
-public static class OpenWindowGetter
+namespace runner
+{
+    /// <summary>Contains functionality to get all the open windows.</summary>
+internal class OpenWindowGetter : User32Delegate
 {
     /// <summary>Returns a dictionary that contains the handle and title of all the open windows.</summary>
     /// <returns>A dictionary that contains the handle and title of all the open windows.</returns>
@@ -31,11 +33,5 @@ public static class OpenWindowGetter
 
         return windows;
     }
-
-    private delegate bool EnumWindowsProc(IntPtr hWnd, int lParam);
-
-    [DllImport("USER32.DLL")]
-    private static extern bool EnumWindows(EnumWindowsProc enumFunc, int lParam);
-
-
+}
 }

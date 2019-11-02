@@ -58,18 +58,15 @@ namespace Tesseract.ConsoleDemo
             {
                 foreach (var program in programs)
                 {
-                    program.Loop();
+                    try
+                    {
+                        program.Loop();
+                    }
+                    catch (Exception e)
+                    {
+                        Console.Error.WriteLine("Fatal Error : [{0}]", e);
+                    }
                 }
-            }
-        }
-
-        private void MainLoop()
-        {
-            Login();
-//////MAIN LOOP
-            while (true)
-            {
-                Loop();
             }
         }
 
@@ -83,7 +80,6 @@ namespace Tesseract.ConsoleDemo
         private void Loop()
         {
             tick++;
-            Thread.Sleep(1);
             __base();
 
 
@@ -131,19 +127,19 @@ namespace Tesseract.ConsoleDemo
 
             if (stateEngine.InState(StateEngine.InCombat))
             {
-                action.doCombat(baseHandle);
+                action.DoCombat(baseHandle);
             }
             else if (stateEngine.InState(StateEngine.InCobmatAfter))
             {
-                action.doLoot(baseHandle);
+                action.DoLoot(baseHandle);
                 action.exitCombat(baseHandle);
             }
             else
                 //if (stateEngine.InState(StateEngine.OutOfCombat))
             {
-                action.handleRepairControl(baseHandle);
-                action.doLoot(baseHandle);
-                action.doSell(baseHandle);
+                action.HandleRepairControl(baseHandle);
+                action.DoLoot(baseHandle);
+                action.DoSell(baseHandle);
             }
         }
 
@@ -164,8 +160,8 @@ namespace Tesseract.ConsoleDemo
             if (tick % 5000 != 0) return;
             if (stateEngine.InState(StateEngine.OutOfCombat))
             {
-                action.ReadHP(baseHandle);
-                action.askForWeight(baseHandle);
+                action.ReadHp(baseHandle);
+                action.AskForWeight(baseHandle);
             }
 
             if (tick % 10000 != 0) return;

@@ -88,6 +88,7 @@
     <Compile Include="src\Automation\Actions\ActionWorkers\ActionSell.cs" />
     <Compile Include="src\Automation\AutomationElement\Scroller.cs" />
     <Compile Include="src\Automation\Cursor\CursorUtil.cs" />
+    <Compile Include="src\Automation\ExpectedToolTip.cs" />
     <Compile Include="src\Automation\Hook\BundledControlLogger.cs" />
     <Compile Include="src\Automation\Hook\ControlLogger.cs" />
     <Compile Include="src\Automation\Hook\SingleControlLogger.cs" />
@@ -95,6 +96,7 @@
     <Compile Include="src\Automation\ITickable.cs" />
     <Compile Include="src\Automation\MouseManager\MouseManager.cs" />
     <Compile Include="src\Automation\ToolTips.cs" />
+    <Compile Include="src\Automation\TTDT.cs" />
     <Compile Include="src\Automation\Windows\Combat\CombatWindow.cs" />
     <Compile Include="src\Automation\Windows\Combat\ExitWindow.cs" />
     <Compile Include="src\Automation\Windows\General\ChatFrame.cs" />
@@ -111,7 +113,6 @@
     <Compile Include="src\Automation\Windows\Magic\Teleport.cs" />
     <Compile Include="src\Automation\Windows\NPCS\RepairWindow.cs" />
     <Compile Include="src\Automation\Windows\NPCS\SellWindow.cs" />
-    <Compile Include="src\Automation\Windows\Scans\FullWindowScan.cs" />
     <Compile Include="src\Automation\Windows\Scans\PartialWindowScan.cs" />
     <Compile Include="src\Automation\Windows\Scans\Thing.cs" />
     <Compile Include="src\Automation\Windows\Scans\WindowScan.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="src\Util\OCRHelper.cs" />
     <Compile Include="src\Util\PixelManager.cs" />
     <Compile Include="src\Util\StringUtil.cs" />
+    <Compile Include="src\Util\Win32\User32Delegate.cs" />
     <Compile Include="src\Util\Win32\Win32CursorUtils.cs" />
     <Compile Include="src\Util\Win32\Helpers\DumpWindowsHandles.cs" />
     <Compile Include="src\Util\Win32\Helpers\OpenWindowGetter.cs" />

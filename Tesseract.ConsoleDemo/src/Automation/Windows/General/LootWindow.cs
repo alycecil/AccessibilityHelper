@@ -23,7 +23,7 @@ namespace runner
             if (hCntr == IntPtr.Zero) return false;
             if (program.ego?.Weight?.Value == null)
             {
-                program.action.askForWeight(baseHandle);
+                program.action.AskForWeight(baseHandle);
                 TakeAll(baseHandle,hCntr, rectangle, sX, sY);
                 close(baseHandle,hCntr, rectangle, sX, sY);
                 return false;
@@ -116,7 +116,7 @@ namespace runner
                         sleeps++;
                         if (sleeps > 7)
                         {
-                            program.action.askForWeight(baseHandle);
+                            program.action.AskForWeight(baseHandle);
                             takeAll = true;
                             closeWindow = true;
                             sleeps = 0;

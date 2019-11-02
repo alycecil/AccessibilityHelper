@@ -8,9 +8,9 @@ namespace Tesseract
 {
     public static class Teleport
     {
-        public static void close()
+        public static void close(IntPtr baseHandle)
         {
-            var w = Windows.getTeleport();
+            var w = Windows.getTeleport(baseHandle);
             if (w == IntPtr.Zero) return;
 
             AutoItX.WinClose(w);
@@ -29,7 +29,7 @@ namespace Tesseract
             for (int i = 0; i < 10; i++)
             {
                 Thread.Sleep(100);
-                window = Windows.getTeleport();
+                window = Windows.getTeleport(baseHandle);
                 AutoItX.WinMove(window, 0, 0);
 
                 if (window != IntPtr.Zero) break;

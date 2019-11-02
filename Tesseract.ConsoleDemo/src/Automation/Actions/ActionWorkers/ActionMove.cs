@@ -19,7 +19,7 @@ namespace runner.ActionWorkers
     }
 
 
-    public class ActionMove
+    public class ActionMove : AbstractActionWorker
     {
         public static bool handle(IntPtr baseHandle, Event currentEvent)
         {

@@ -14,7 +14,7 @@ namespace runner
         private static string _SpellList = "Spell List";
 
 
-        private static IntPtr getHandle(String which)
+        private static IntPtr getHandle(IntPtr baseHandle, string which)
         {
             if (AutoItX.WinExists(which) != 0)
             {
@@ -23,19 +23,19 @@ namespace runner
 
             return IntPtr.Zero;
         }
-        public static IntPtr getTeleport()
+        public static IntPtr getTeleport(IntPtr baseHandle)
         {
-            return getHandle("Teleport");
+            return getHandle(baseHandle, "Teleport");
         }
 
-        public static IntPtr getLoot()
+        public static IntPtr getLoot(IntPtr baseHandle)
         {
-            return getHandle(_TreasureList);
+            return getHandle(baseHandle, _TreasureList);
         }
 
         public static IntPtr getInCombat(IntPtr baseHandle)
         {
-            return getHandle(_CombatWindow);
+            return getHandle(baseHandle, _CombatWindow);
         }
 
         public static IntPtr getExitCombatControl(IntPtr baseHandle)
@@ -85,7 +85,7 @@ namespace runner
 
         public static IntPtr getSpellList(IntPtr baseHandle)
         {
-            return getHandle(_SpellList);
+            return getHandle(baseHandle, _SpellList);
         }
 
         public static IntPtr lookatIdentifier(IntPtr baseHandle)
@@ -107,11 +107,11 @@ namespace runner
             return IntPtr.Zero;
         }
 
-        public static IntPtr HandleInventory()
+        public static IntPtr HandleInventory(IntPtr baseHandle)
         {
-            IntPtr handleInventory = getHandle(_titleInventory);
-            if(handleInventory!=IntPtr.Zero)
-                AutoItX.WinMove(handleInventory, 0, 800);
+            IntPtr handleInventory = getHandle(baseHandle, _titleInventory);
+//            if(handleInventory!=IntPtr.Zero)
+//                AutoItX.WinMove(handleInventory, 0, 800);
             return handleInventory;
         }
 

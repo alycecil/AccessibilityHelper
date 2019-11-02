@@ -12,10 +12,11 @@ namespace runner.ActionWorkers
 
             if (!findVerbWindow(program, baseHandle, out var verbWindow))
             {
-                Console.WriteLine("Idle Passive");
+                //Console.WriteLine("-Passive");
+                program.scan?.DidWork();
                 return false;
             }
-            else Console.Write("Do Idle~");
+            else Console.Write("-Do Idle~");
 
             if (!program.stateEngine.InState(StateEngine.OutOfCombat))
             {
@@ -26,7 +27,7 @@ namespace runner.ActionWorkers
             foreach (var verb in verbWindow.verbs)
             {
                 if (didSomething) break;
-                //Console.WriteLine("Idle Considering doing[{0}]", verb.what);
+                Console.Write("Consider [{0}],", verb.what);
 
                 var hpValue = program.ego?.Hp?.Value;
                 var maxHp = program.MaxHp;
@@ -120,7 +121,9 @@ namespace runner.ActionWorkers
             }
             else
             {
+                
                 program.lastVerbWindow = null;
+                program.scan?.DidWork();
                 program.windowScanManager.flushScreenScan();
             }
 

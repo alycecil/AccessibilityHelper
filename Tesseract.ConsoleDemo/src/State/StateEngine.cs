@@ -35,7 +35,7 @@ namespace runner
                 program.windowScanManager.flushScreenScan();
                 if (currentState == InCombatActing)
                 {
-                    program.action.ReadHP(baseHandle);
+                    program.action.ReadHp(baseHandle);
                 }
                 //Program.requestScreenScan();
 
@@ -44,8 +44,8 @@ namespace runner
             else if (currentState == InCombat 
                      || currentState == InCombatActing && state == InCobmatAfter)
             {
-                program.action.askForWeight(baseHandle);
-                program.action.ReadHP(baseHandle);
+                program.action.AskForWeight(baseHandle);
+                program.action.ReadHp(baseHandle);
             }
             else if (state == OutOfCombat)
             {
@@ -67,7 +67,7 @@ namespace runner
                 seeExitCombat();
             }
 
-            else if (Windows.HandleInventory() != IntPtr.Zero)
+            else if (Windows.HandleInventory(baseHandle) != IntPtr.Zero)
             {
                 seeInventory();
             }

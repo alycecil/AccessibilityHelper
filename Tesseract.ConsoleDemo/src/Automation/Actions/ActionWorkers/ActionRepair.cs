@@ -10,7 +10,11 @@ namespace runner.ActionWorkers
         public static bool DoAction(Program program, IntPtr baseHandle)
         {
             bool didSomething = false;
-           if (!findVerbWindow(program, baseHandle, out var verbWindow)) return false;
+            if (!findVerbWindow(program, baseHandle, out var verbWindow))
+            {
+                program.scan?.DidWork();
+                return false;
+            }
 
             if (!program.stateEngine.InState(StateEngine.OutOfCombat))
             {
@@ -30,7 +34,7 @@ namespace runner.ActionWorkers
                     program.action.wantToRepair = false;
                     
                     Thread.Sleep(TimeSpan.FromSeconds(2));
-                    program.action.handleRepairControl(baseHandle);
+                    program.action.HandleRepairControl(baseHandle);
                     
                     program.action.Repaired();
                     

@@ -66,7 +66,7 @@ namespace runner
 
             HandleComplete(CheckHpMana);
 
-            ToolTips.setExpected(ExpectedTT.None);
+            ToolTips.setExpected(ExpectedToolTip.None);
         }
 
         public void SoldInventory()
@@ -74,7 +74,7 @@ namespace runner
             Console.WriteLine("Sold Stuff, lets get out weight below 70% or we cant do a thing");
             SetCurrentAction(Event.ActionEnum.CheckStatus);
             UpdateWeightOnlyIfUnder(70);
-            askForWeight(_program.baseHandle);
+            AskForWeight(_program.baseHandle);
 
 
             //we need to wait for a voice command on what to do, if weight over 70% 

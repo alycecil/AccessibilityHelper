@@ -11,7 +11,7 @@ namespace runner.ActionWorkers
 
             if (verbWindow == null)
             {
-                Console.Write("[...]");
+                //Console.Write("[No Verb Window]");
                 return false;
             }
 
@@ -25,7 +25,7 @@ namespace runner.ActionWorkers
                 program.lastVerbWindow = verbWindow;
                 Console.WriteLine("Actions Scanned Again");
 
-                if (verbWindow == null || verbWindow.verbs.Count == 0)
+                if (verbWindow?.verbs.Count == 0)
                 {
                     Console.WriteLine("Nothing To Do Yet, Maybe I should screen scan better");
                     program.lastVerbWindow = null;
@@ -36,7 +36,7 @@ namespace runner.ActionWorkers
 
             if (!Win32.IsWindowVisible(verbWindow.hWnd) || verbWindow.verbs.Count == 0)
             {
-                Console.WriteLine("Lost VerbWindow");
+                Console.WriteLine("[Lost VerbWindow]");
                 program.lastVerbWindow = null;
                 return false;
             }
