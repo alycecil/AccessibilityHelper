@@ -31,7 +31,7 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Sell))
                 {
                     Console.WriteLine("selling");
-                    VerbWindow.click(baseHandle, verb);
+                    VerbWindow.Click(baseHandle, verb);
                     program.action.wantToRepair = true;
                     didSomething = true;
                 }
@@ -39,11 +39,11 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Repair))
                 {
                     Console.WriteLine("Selling at implied Button from repair");
-                    ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);
+                    WindowHandleInfo.GetScale(IntPtr.Zero, out float sX, out float sY);
                     var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y + 60 * sY), verb.rect.Width,
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(baseHandle, implied);
+                    VerbWindow.Click(baseHandle, implied);
                     program.action.wantToRepair = true;
                     didSomething = true;
                 }
@@ -51,11 +51,11 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Talk))
                 {
                     Console.WriteLine("Selling at implied Button from Talk");
-                    ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);
+                    WindowHandleInfo.GetScale(IntPtr.Zero, out float sX, out float sY);
                     var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y - 15 * sX), verb.rect.Width,
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(baseHandle, implied);
+                    VerbWindow.Click(baseHandle, implied);
                     program.action.wantToRepair = true;
                     didSomething = true;
                 }

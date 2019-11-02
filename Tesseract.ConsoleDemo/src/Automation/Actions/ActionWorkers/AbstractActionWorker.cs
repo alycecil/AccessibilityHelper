@@ -19,7 +19,7 @@ namespace runner.ActionWorkers
             {
                 Console.WriteLine("Scrap Scan Sucked, Trying Again");
                 int type = verbWindow.type;
-                verbWindow = VerbWindow.findWindow(program, baseHandle, verbWindow.ocrText, false, false);
+                verbWindow = VerbWindow.FindWindow(program, baseHandle, verbWindow.ocrText, false, false);
                 if (verbWindow != null)
                     verbWindow.type = type;
                 program.lastVerbWindow = verbWindow;

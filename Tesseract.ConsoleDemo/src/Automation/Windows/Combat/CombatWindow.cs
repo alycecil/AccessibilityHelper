@@ -21,7 +21,7 @@ namespace runner
             var combat = Windows.getInCombat(baseHandle);
             if (combat == IntPtr.Zero) return;
 
-            ScreenCapturer.GetBounds(combat, out var bounds);
+            WindowHandleInfo.GetBounds(combat, out var bounds);
             //ScreenCapturer.CaptureAndSave("RCombat", combat);
             ToolTips.setExpected(ExpectedToolTip.Buttons);
 
@@ -41,7 +41,7 @@ namespace runner
                     string spotKey = spot.Key;
                     if (spotKey?.StartsWith(tt) == true)
                     {
-                        MouseManager.MouseClick(baseHandle,"LEFT",bounds.X + spot.Value.X, bounds.Y + spot.Value.Y, 1, 1);
+                        MouseManager.MouseClickAbsolute(baseHandle,MouseButton.LEFT,bounds.X + spot.Value.X, bounds.Y + spot.Value.Y, 1, 1);
                         return;
                     }
                     else
@@ -64,7 +64,7 @@ namespace runner
             {
                 return clickingLocations;
             }
-            ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
+            WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
             var seenBefore = new HashSet<string>();
             for (int x = 20; x < bounds.Width; x += (int)(40*sX))
             {

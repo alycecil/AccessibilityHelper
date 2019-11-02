@@ -69,7 +69,7 @@ namespace runner
             if (foundX && foundY)
             {
                 MouseManager.MouseMoveUnScaled(baseHandle,x,y);
-                MouseManager.MouseClick(baseHandle);
+                MouseManager.MouseClickAbsolute(baseHandle);
                 return true;
             }
 

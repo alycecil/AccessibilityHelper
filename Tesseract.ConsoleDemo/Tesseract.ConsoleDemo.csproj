@@ -153,6 +153,8 @@
     <Compile Include="src\Util\OCRHelper.cs" />
     <Compile Include="src\Util\PixelManager.cs" />
     <Compile Include="src\Util\StringUtil.cs" />
+    <Compile Include="src\Util\Win32\CaptureMode.cs" />
+    <Compile Include="src\Util\Win32\Rect.cs" />
     <Compile Include="src\Util\Win32\User32Delegate.cs" />
     <Compile Include="src\Util\Win32\Win32CursorUtils.cs" />
     <Compile Include="src\Util\Win32\Helpers\DumpWindowsHandles.cs" />

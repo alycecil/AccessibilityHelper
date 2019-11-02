@@ -145,6 +145,7 @@
             <e p="PixelManager.cs" t="Include" />
             <e p="StringUtil.cs" t="Include" />
             <e p="Win32" t="Include">
+              <e p="CaptureMode.cs" t="Include" />
               <e p="Helpers" t="Include">
                 <e p="DumpWindowsHandles.cs" t="Include" />
                 <e p="OpenWindowGetter.cs" t="Include" />
@@ -158,6 +159,7 @@
                 <e p="Win32Scoll.cs" t="Include" />
                 <e p="Win32Structs.cs" t="Include" />
               </e>
+              <e p="Rect.cs" t="Include" />
               <e p="ScreenCapturer.cs" t="Include" />
               <e p="User32Delegate.cs" t="Include" />
               <e p="Win32.cs" t="Include" />

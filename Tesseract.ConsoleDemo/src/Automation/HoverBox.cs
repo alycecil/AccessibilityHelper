@@ -24,7 +24,7 @@ namespace runner
             var hasStuff = list(baseHandle, out int type);
             if (!string.IsNullOrEmpty(hasStuff))
             {
-                var findWindow = VerbWindow.findWindow(program, baseHandle, hasStuff, true, b);
+                var findWindow = VerbWindow.FindWindow(program, baseHandle, hasStuff, true, b);
                 if (findWindow != null)
                     findWindow.type = type;
                 //else flushClick()
@@ -45,7 +45,7 @@ namespace runner
         private static string list(IntPtr baseHandle, out int type)
         {
             type = 0;
-            ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
+            WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
 
             int l = (int) (483 * sX),
                 t = (int) (24 * sY),

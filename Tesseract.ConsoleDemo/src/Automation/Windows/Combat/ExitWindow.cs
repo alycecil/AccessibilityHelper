@@ -15,8 +15,8 @@ namespace runner
         public static bool Click(IntPtr hWdw, IntPtr hCntr)
         {
             if(hCntr==IntPtr.Zero) return false;
-            ScreenCapturer.GetScale(hCntr, out var sX, out var sY);
-            ScreenCapturer.GetBounds(hCntr, out Rectangle rectangle);
+            WindowHandleInfo.GetScale(hCntr, out var sX, out var sY);
+            WindowHandleInfo.GetBounds(hCntr, out Rectangle rectangle);
 
             rectangle.Y += (int)(startBtnY * sY);
             rectangle.X += (int)(startBtnX * sX);
@@ -24,9 +24,9 @@ namespace runner
             rectangle.Height= (int) ((endBtnY - startBtnY) * sY);
             
             //ScreenCapturer.ImageSave("RExit", ImageFormat.Tiff, ScreenCapturer.Capture(rectangle));
-            //AutoItX.ControlClick(hWdw, hCntr, "left", 1, startBtnX, startBtnY);
+            //AutoItX.ControlClick(hWdw, hCntr, MouseButton.LEFT, 1, startBtnX, startBtnY);
 
-            MouseManager.MouseClick(hCntr,"LEFT", rectangle.X, rectangle.Y);
+            MouseManager.MouseClickAbsolute(hCntr,MouseButton.LEFT, rectangle.X, rectangle.Y);
             
             
 

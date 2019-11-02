@@ -17,20 +17,21 @@ namespace runner
 
         public static bool HandleLoot(Program program, IntPtr baseHandle, IntPtr hCntr)
         {
-            ScreenCapturer.GetScale(hCntr, out var sX, out var sY);
-            ScreenCapturer.GetBounds(hCntr, out Rectangle rectangle);
-
             if (hCntr == IntPtr.Zero) return false;
+            
+            WindowHandleInfo.GetScale(hCntr, out var sX, out var sY);
+            WindowHandleInfo.GetBounds(hCntr, out Rectangle rectangle);
+
             if (program.ego?.Weight?.Value == null)
             {
                 program.action.AskForWeight(baseHandle);
-                TakeAll(baseHandle,hCntr, rectangle, sX, sY);
-                close(baseHandle,hCntr, rectangle, sX, sY);
+                TakeAll(baseHandle, hCntr, rectangle, sX, sY);
+                close(baseHandle, hCntr, rectangle, sX, sY);
                 return false;
             }
             else if (program.ego?.Weight?.Value > 98)
             {
-                close(baseHandle,hCntr, rectangle, sX, sY);
+                close(baseHandle, hCntr, rectangle, sX, sY);
             }
 
             //ScreenCapturer.ImageSave("RLoot", ImageFormat.Tiff, ScreenCapturer.Capture(rectangle));
@@ -66,14 +67,15 @@ namespace runner
 
         private static void TakeAll(IntPtr baseHandle, IntPtr hCntr, Rectangle rectangle, float sX, float sY)
         {
-            MouseManager.MouseClick(baseHandle, "LEFT", (int) (rectangle.Left + sX * TakeAllX),
+            MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT, (int) (rectangle.Left + sX * TakeAllX),
                 (int) (rectangle.Top + sY * TakeAllY));
             Thread.Sleep(TimeSpan.FromSeconds(30));
         }
 
         private static void close(IntPtr baseHandle, IntPtr hCntr, Rectangle rectangle, float sX, float sY)
         {
-            MouseManager.MouseClick(baseHandle, "LEFT", (int) (rectangle.Left + sX * DoneAllX),
+            MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT, 
+                (int) (rectangle.Left + sX * DoneAllX),
                 (int) (rectangle.Top + sY * TakeAllY));
             //Action.askForWeight();
         }
@@ -92,7 +94,7 @@ namespace runner
             if (child == null) return false;
 
             System.Windows.Rect bounds = child.Current.BoundingRectangle;
-            ScreenCapturer.ConvertRect(out var rect, bounds);
+            WindowHandleInfo.ConvertRect(out var rect, bounds);
             rect.Width *= 2;
             rect.Height *= 2;
 
@@ -104,11 +106,15 @@ namespace runner
 
                 var currentName = child.Current.Name;
 
-                if (wanted(cap, currentName))
+                if (Wanted(cap, currentName))
                 {
                     Console.WriteLine("Looting with Desire {1}@{0}", rect, currentName);
-                    MouseManager.MouseClick(baseHandle,"LEFT", (int) (rect.X + 13 * sX), (int) (rect.Y + 4 * sY));
-                    MouseManager.MouseClick(baseHandle,"RIGHT", (int) (rect.X + 13 * sX), (int) (rect.Y + 4 * sY));
+                    MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT, 
+                        (int) (rect.X + 13 * sX),
+                        (int) (rect.Y + 4 * sY));
+                    MouseManager.MouseClickAbsolute(baseHandle, MouseButton.RIGHT, 
+                        (int) (rect.X + 13 * sX),
+                        (int) (rect.Y + 4 * sY));
                     Thread.Sleep(TimeSpan.FromSeconds(1));
 
                     if (currentName.Equals(last))
@@ -155,7 +161,7 @@ namespace runner
         }
 
 
-        private static bool wanted(Bitmap cap, string currentName)
+        private static bool Wanted(Bitmap cap, string currentName)
         {
             if (Config.getIgnoreList().Contains(currentName))
             {

@@ -44,7 +44,7 @@ namespace runner
             Thread.Sleep(1);
             mouseover(baseHandle, out x, out y);
             Console.WriteLine("Clicking on ({0},{1})", x, y);
-            MouseManager.MouseClick(baseHandle, "LEFT", x, y, 1, 1);
+            MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT, x, y, 1, 1);
         }
 
         public void mouseover(IntPtr baseHandle, out int x, out int y)

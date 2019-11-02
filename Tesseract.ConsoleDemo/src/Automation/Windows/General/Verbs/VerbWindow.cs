@@ -28,7 +28,7 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
 
         public int type;
 
-        public static VerbWindow findWindow(Program program, IntPtr baseHandle,
+        public static VerbWindow FindWindow(Program program, IntPtr baseHandle,
             String mousedOver,
             bool allowClick = false, 
             bool lightWeight = false
@@ -51,18 +51,18 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
             return null;
         }
 
-        public static void click(IntPtr baseHandle, Verb verb)
+        public static void Click(IntPtr baseHandle, Verb verb)
         {
             verb.click(baseHandle, out var x, out var y);
         }
         
-        public void dismiss()
+        public void Dismiss()
         {
             if (hWnd != IntPtr.Zero)
             {
                 Console.WriteLine("Dismissing");
                 //AutoItX.WinClose(hWnd);
-                MouseManager.MouseClick(hWnd, "LEFT", 0,0);
+                MouseManager.MouseClickAbsolute(hWnd, MouseButton.LEFT, 0,0);
             }
             else
             {

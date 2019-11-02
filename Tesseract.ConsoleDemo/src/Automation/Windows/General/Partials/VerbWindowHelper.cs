@@ -21,7 +21,7 @@ namespace runner
                 if (allowClick)
                 {
                     Console.WriteLine("Mouse Over New Thing [{0}], Clicking on", mousedOver);
-                    MouseManager.MouseClick(baseHandle);
+                    MouseManager.MouseClickAbsolute(baseHandle);
                     Thread.Sleep(TimeSpan.FromMilliseconds(100));
                     MouseManager.MouseMoveUnScaled(baseHandle, 0, 0, 1);
 
@@ -45,7 +45,7 @@ namespace runner
 
             List<Verb> verbs = new List<Verb>();
 
-            ScreenCapturer.CaptureScreen(hWnd, out var height, out var offset, out var w, out var rect,
+            CaptureScreen(hWnd, out var height, out var offset, out var w, out var rect,
                 out var capture);
 
             var captureHeight = capture.Height;
@@ -66,7 +66,7 @@ namespace runner
             var end = captureHeight - height;
 
             //Console.WriteLine("Possible Checks - [{0}]", end / stepSize);
-            ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
+            WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
             for (int location = 0; location < end; location += Math.Max((int)(stepSize*sY), stepSize/2))
             {
                 Color captureTime = capture.GetPixel(20, location);
@@ -131,7 +131,7 @@ namespace runner
                 var text = Win32GetText.GetControlText(hWnd);
                 if (String.IsNullOrEmpty(text)) return true;
 
-                ScreenCapturer.GetBounds(hWnd, out var rect);
+                WindowHandleInfo.GetBounds(hWnd, out var rect);
                 //Console.WriteLine("Right Class {0:x} @{1}", hWnd.ToInt32(), rect);
                 Win32.GetWindowThreadProcessId(hWnd, out var thread);
 
@@ -187,6 +187,23 @@ namespace runner
                 Win32GetText.GetControlText(hWnd));
             item = new Verb(rect: bounds, what: ocr);
             return true;
+        }
+        
+        private static void CaptureScreen(IntPtr hWnd, out int height, out int offet, out int w, out Rectangle rect,
+            out Bitmap capture)
+        {
+            WindowHandleInfo.GetScale(hWnd, out float sX, out float sY);
+            height = (int) (sY * 12);
+            offet = (int) (sX * 7);
+            w = (int) (sX * 66);
+
+            Thread.Sleep(100);
+
+            WindowHandleInfo.GetBounds(hWnd, out rect);
+            capture = ScreenCapturer.Capture(rect);
+            rect.Width /= 3;
+            capture = ImageManip.AdjustThreshold(capture, .9f);
+            capture = ImageManip.Max(capture);
         }
     }
 }

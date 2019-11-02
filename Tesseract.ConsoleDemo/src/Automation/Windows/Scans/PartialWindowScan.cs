@@ -85,7 +85,7 @@ namespace runner
             currentY += STEP_Y;
 
 
-            VerbWindow.findWindow(program, baseHandle,"DISMISS")?.dismiss();
+            VerbWindow.FindWindow(program, baseHandle,"DISMISS")?.Dismiss();
             MouseManager.MouseMoveUnScaled(baseHandle, currentX, currentY);
             
             ResetWork();

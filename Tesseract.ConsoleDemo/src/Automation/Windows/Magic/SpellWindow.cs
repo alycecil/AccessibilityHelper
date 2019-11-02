@@ -75,7 +75,7 @@ namespace runner
                 int count = 0;
                 while (spell != null)
                 {
-                    ScreenCapturer.ConvertRect(out var rect, spell.Current.BoundingRectangle);
+                    WindowHandleInfo.ConvertRect(out var rect, spell.Current.BoundingRectangle);
                     if (!rect.IsEmpty
                         && spell.TryGetClickablePoint(out var loc2)
                         && whatWeAreLookngFor(spell, walker, spellName, type, curEvent)
@@ -83,10 +83,10 @@ namespace runner
                     {
                         //todo click
 
-                        ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
+                        WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
 
 
-                        MouseManager.MouseClick(baseHandle,"RIGHT", (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
+                        MouseManager.MouseClickAbsolute(baseHandle,MouseButton.RIGHT, (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
                         return true;
                     }
 
@@ -136,7 +136,7 @@ namespace runner
 
             ToolTips.moveOver(baseHandle,ExpectedToolTip.Spells);
             Thread.Sleep(1);
-            MouseManager.MouseClick(baseHandle);
+            MouseManager.MouseClickAbsolute(baseHandle);
             if (__TryGetWindow(baseHandle, out spell)) return true;
 
             //anyother look ups here

@@ -51,7 +51,7 @@ namespace runner.ActionWorkers
                     enableTheft)
                 {
                     Console.WriteLine("Stealing!!!!");
-                    VerbWindow.click(baseHandle, verb);
+                    VerbWindow.Click(baseHandle, verb);
                     didSomething = true;
                 }
                 else if (
@@ -62,7 +62,7 @@ namespace runner.ActionWorkers
                 )
                 {
                     Console.WriteLine("Starting A fight");
-                    VerbWindow.click(baseHandle, verb);
+                    VerbWindow.Click(baseHandle, verb);
                     didSomething = true;
                 }
                 else if (
@@ -70,7 +70,7 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Repair))
                 {
                     Console.WriteLine("Repairing");
-                    VerbWindow.click(baseHandle, verb);
+                    VerbWindow.Click(baseHandle, verb);
                     program.action.wantToRepair = false;
                     didSomething = true;
                 }
@@ -79,7 +79,7 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Sell))
                 {
                     Console.WriteLine("Selling");
-                    VerbWindow.click(baseHandle, verb);
+                    VerbWindow.Click(baseHandle, verb);
                     program.action.wantToRepair = true;
                     didSomething = true;
                 }
@@ -88,11 +88,11 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Repair))
                 {
                     Console.WriteLine("Selling at implied Button");
-                    ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);
+                    WindowHandleInfo.GetScale(IntPtr.Zero, out float sX, out float sY);
                     var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y + 60 * sX), verb.rect.Width,
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(baseHandle, implied);
+                    VerbWindow.Click(baseHandle, implied);
                     program.action.wantToRepair = true;
                     didSomething = true;
                 }
@@ -101,11 +101,11 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Talk))
                 {
                     Console.WriteLine("Selling at implied Button from Talk");
-                    ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);
+                    WindowHandleInfo.GetScale(IntPtr.Zero, out float sX, out float sY);
                     var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y - 15 * sX), verb.rect.Width,
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(baseHandle, implied);
+                    VerbWindow.Click(baseHandle, implied);
                     program.action.wantToRepair = true;
                     didSomething = true;
                 }
@@ -117,7 +117,7 @@ namespace runner.ActionWorkers
 
             if (!didSomething)
             {
-                Console.Write("Idle Considered doing [");
+                Console.Write("\r\nIdle Considered doing [");
                 foreach (var verb in verbWindow.verbs)
                     Console.Write("Verb[{0}],", verb.what);
 

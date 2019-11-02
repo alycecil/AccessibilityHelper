@@ -12,7 +12,7 @@ namespace runner
             
             ToolTips.moveOver(baseHandle, ExpectedToolTip.Inventory);
             Thread.Sleep(TimeSpan.FromMilliseconds(1));
-            MouseManager.MouseClick(baseHandle);
+            MouseManager.MouseClickAbsolute(baseHandle);
             Thread.Sleep(TimeSpan.FromMilliseconds(100));
 
             var hWnd = Windows.HandleInventory(baseHandle);

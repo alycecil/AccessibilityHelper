@@ -70,7 +70,7 @@ namespace runner
                 int count = 0;
                 while (sellable != null)
                 {
-                    ScreenCapturer.ConvertRect(out var rect, sellable.Current.BoundingRectangle);
+                    WindowHandleInfo.ConvertRect(out var rect, sellable.Current.BoundingRectangle);
                     if (!rect.IsEmpty
                         && sellable.TryGetClickablePoint(out var loc2)
                         && wantToSell(sellable, walker, config, out string name)
@@ -78,13 +78,13 @@ namespace runner
                     {
                         //todo click
 
-                        ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
+                        WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
 
                         //TODO
                         Console.WriteLine("Selling [{0}] @ false loc {1}", name, loc2);
 
 
-                        MouseManager.MouseClick(baseHandle,"RIGHT", (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
+                        MouseManager.MouseClickAbsolute(baseHandle,MouseButton.RIGHT, (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
                         return true;
                     }
 
@@ -126,8 +126,8 @@ namespace runner
 
         private static void close(Program program, IntPtr baseHandle, IntPtr sellScreen)
         {
-            ScreenCapturer.GetScale(sellScreen, out float sX, out float sY);
-            MouseManager.MouseClick(baseHandle,"LEFT", (int) (sX * baseX), (int) (sY * baseY));
+            WindowHandleInfo.GetScale(sellScreen, out float sX, out float sY);
+            MouseManager.MouseClickAbsolute(baseHandle,MouseButton.LEFT, (int) (sX * baseX), (int) (sY * baseY));
             Thread.Sleep(100);
             
             program.action.SoldInventory();

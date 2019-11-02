@@ -29,7 +29,7 @@ namespace runner
             {
                 //click repair all
                 MouseManager.MouseMoveUnScaled(baseHandle, baseX, baseY);
-                MouseManager.MouseClick(baseHandle, "LEFT");
+                MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT);
                 program.action.Repaired();
             }
         }
