@@ -150,6 +150,7 @@
     <Compile Include="src\Util\ApiCaller.cs" />
     <Compile Include="src\Util\BoundsManager.cs" />
     <Compile Include="src\Util\ImageManip.cs" />
+    <Compile Include="src\Util\ImageManipActiveTesting.cs" />
     <Compile Include="src\Util\OCRHelper.cs" />
     <Compile Include="src\Util\PixelManager.cs" />
     <Compile Include="src\Util\StringUtil.cs" />

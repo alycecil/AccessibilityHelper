@@ -32,7 +32,7 @@ namespace Tesseract.ConsoleDemo
 
         public static void Main(string[] args)
         {
-            ImageManip.testOcr(args);
+            ImageManipActiveTesting.testOcr(args);
             //Win32GetText.GetToolTipText((IntPtr)0x47)
             AutoItX.Init();
 
@@ -162,6 +162,7 @@ namespace Tesseract.ConsoleDemo
             }
 
             if (tick % 5000 != 0) return;
+            Console.WriteLine("Tick Passed [{0}]", tick);
             if (stateEngine.InState(StateEngine.OutOfCombat))
             {
                 action.ReadHp(baseHandle);

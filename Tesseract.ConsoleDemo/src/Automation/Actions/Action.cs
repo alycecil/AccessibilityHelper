@@ -1,8 +1,4 @@
 using System;
-using System.Drawing;
-using System.Threading;
-using System.Web.Configuration;
-using AutoIt;
 using IO.Swagger.Model;
 using runner.ActionWorkers;
 using runner.Magic;
@@ -149,7 +145,7 @@ namespace runner
             }
             else
             {
-                Console.WriteLine("Implied Action Completed [{0}]", actionCompleted);
+                Console.WriteLine("Implied Action Completed [{0}], State [{1}]", actionCompleted, _program.stateEngine);
             }
 
             //if(_currentAction != Idle)
@@ -161,8 +157,9 @@ namespace runner
             if (complete && _currentAction != Idle)
             {
                 //tell api we are done
-                Console.WriteLine("Complete Event:[{0}]\r\n---Api result:[{1}]", _caller.completeEvent(_program.ego.Name, _currentEvent),
-                    _currentEvent);
+                Console.WriteLine("Complete Event:[{0}], State [{2}]\r\n---Api result:[{1}]", 
+                    _caller.completeEvent(_program.ego.Name, _currentEvent),
+                    _currentEvent, _program.stateEngine);
                 _currentEvent = null;
                 _currentAction = Idle;
             }

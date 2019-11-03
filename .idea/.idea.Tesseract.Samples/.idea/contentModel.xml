@@ -141,6 +141,7 @@
             <e p="ApiCaller.cs" t="Include" />
             <e p="BoundsManager.cs" t="Include" />
             <e p="ImageManip.cs" t="Include" />
+            <e p="ImageManipActiveTesting.cs" t="Include" />
             <e p="OCRHelper.cs" t="Include" />
             <e p="PixelManager.cs" t="Include" />
             <e p="StringUtil.cs" t="Include" />

@@ -62,18 +62,30 @@ namespace runner
         {
             try
             {
-                var result = new Bitmap(bounds.Width, bounds.Height);
-                using (var g = Graphics.FromImage(result))
+                int width = bounds.Width;
+                int height = bounds.Height;
+                int boundsLeft = bounds.Left;
+                int boundsTop = bounds.Top;
+                if (width > 1 && height > 1 && boundsLeft >= 0 && boundsTop >= 0)
                 {
-                    g.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size);
-                    //g.CopyFromScreen(new Point(boundsRaw.Left,boundsRaw.Top), Point.Empty, bounds.Size);
+                    var result = new Bitmap(width, height);
+                    using (var g = Graphics.FromImage(result))
+                    {
+                        g.CopyFromScreen(
+                            new Point(boundsLeft, boundsTop),
+                            Point.Empty,
+                            bounds.Size);
+                    }
+
+                    return result;
                 }
-                return result;
             }
-            catch (Exception){}
-            
-            return new Bitmap(1,1);
-            
+            catch (Exception e)
+            {
+                Console.Error.WriteLine("Error Encountered in Screen Capture {0}", e);
+            }
+            Console.WriteLine("Nothing to capture");
+            return null;
         }
 
         /// <summary> Save an image to a specific file </summary>
@@ -95,11 +107,10 @@ namespace runner
                 filename = Path.Combine(Environment.GetEnvironmentVariable("TEMP") ?? @"C:\Temp", filename);
 
             filename = filename.Replace("%NOW%", DateTime.Now.ToString("yyyy-MM-dd@hh.mm.ss"));
-            image.Save(filename, format);         
-#else   
+            image.Save(filename, format);
+#else
             Console.WriteLine("Not Saved");
 #endif
-
         }
     }
 }

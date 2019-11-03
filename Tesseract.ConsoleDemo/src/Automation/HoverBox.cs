@@ -35,7 +35,7 @@ namespace runner
             return null;
         }
 
-        //private static readonly int hasHp = Color.FromArgb(0, 16, 113, 9).ToArgb();
+        private static readonly int hasHp = Color.FromArgb(0, 16, 113, 9).ToArgb();
         private const int item = 6244104;
 
 
@@ -64,7 +64,9 @@ namespace runner
                     return DoOcr(rect);
                 default:
                 {
-                    if (CursorUtil.isCursor(CursorUtil.hand, out int clickx, out int clickY))
+                    if (CursorUtil.isCursor(CursorUtil.hand,
+                            out int clickx, out int clickY)
+                        || c == hasHp)
                     {
                         var ocr = DoOcr(rect);
                         if (!string.IsNullOrEmpty(ocr))
@@ -82,10 +84,13 @@ namespace runner
         private static string DoOcr(Rectangle rect)
         {
             var capture = ScreenCapturer.Capture(rect);
+            if(capture== null) return null;
+            
             capture = ImageManip.AdjustThreshold(capture, .9f);
             capture = ImageManip.Max(capture);
 
             var ocr = ImageManip.doOcr(capture);
+            capture.Dispose();
 //        if (!string.IsNullOrEmpty(ocr))
 //        {
 //            Console.WriteLine("ocr [{0}]", ocr);

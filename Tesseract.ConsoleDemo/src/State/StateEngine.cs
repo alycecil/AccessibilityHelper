@@ -76,8 +76,7 @@ namespace runner
                 combatWait();
             }
             else if (
-                InState(InCobmatClickingExit)
-                || InState(LookAt)
+                InState(LookAt)
                 || InState(UNKNOWN)
                 || Windows.getSell(baseHandle) != IntPtr.Zero
                 || Windows.getNothingSelling(baseHandle) != IntPtr.Zero
@@ -90,6 +89,10 @@ namespace runner
             else if (Windows.lookatIdentifier(baseHandle) != IntPtr.Zero)
             {
                 seeLookAt();
+            }else if (InState(InCobmatClickingExit))
+            {
+                Console.WriteLine("Clicking inventory open, after combat");
+                ToolTips.MoveOver(baseHandle, ExpectedToolTip.Inventory, true);
             }
         }
 
@@ -164,6 +167,11 @@ namespace runner
         public bool InState(int state)
         {
             return state == currentState;
+        }
+
+        public override string ToString()
+        {
+            return "StateEngine[" +AsString(currentState)  + "]";
         }
     }
 }

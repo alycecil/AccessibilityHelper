@@ -53,49 +53,53 @@ namespace runner
 
         private static string HandleCapture(Program program, IntPtr baseHandle, Bitmap capture)
         {
-            String text = String.Empty;
-            String lookingFor = "None";
-            switch (_expectedToolTip)
+            using (capture)
             {
-                case Mana:
-                    text = ImageManip.doOcr(capture, "1234567890");
-                    if (text.Contains(" ") && text.IndexOf(" ") == text.LastIndexOf(" ") && text.Length < 10)
-                    {
-                        text.Remove(text.IndexOf(" "));
-                    }
-
-                    if (!text.Contains(" "))
-                    {
-                        if (int.TryParse(text, out var current))
+                String text = String.Empty;
+                String lookingFor = "None";
+                switch (_expectedToolTip)
+                {
+                    case Mana:
+                        text = ImageManip.doOcr(capture, "1234567890");
+                        if (text.Contains(" ") && text.IndexOf(" ") == text.LastIndexOf(" ") && text.Length < 10)
                         {
-                            Console.WriteLine("Mana is at [{0}]", current);
-
-                            SetExpected(Other);
-                            program.action.ReadManaComplete(current);
+                            text.Remove(text.IndexOf(" "));
                         }
-                    }
-                    break;
-                
-                case Health:
-                    text = HandleHealth(program, baseHandle, capture);
-                    break;
-                
-                case Buttons:
-                    text = ImageManip.doOcr(capture);
-                    break;
 
-                case ExpectedToolTip.Inventory:
-                case Other:
-                default:
-                    break;
-            }
+                        if (!text.Contains(" "))
+                        {
+                            if (int.TryParse(text, out var current))
+                            {
+                                Console.WriteLine("Mana is at [{0}]", current);
+
+                                SetExpected(Other);
+                                program.action.ReadManaComplete(current);
+                            }
+                        }
+
+                        break;
+
+                    case Health:
+                        text = HandleHealth(program, baseHandle, capture);
+                        break;
+
+                    case Buttons:
+                        text = ImageManip.doOcr(capture);
+                        break;
+
+                    case ExpectedToolTip.Inventory:
+                    case Other:
+                    default:
+                        break;
+                }
 
 //            if (!string.IsNullOrEmpty(text))
 //            {
 //                Console.WriteLine("TTL [{0}] Looking for [{1}]", text, lookingFor);
 //            }
 
-            return text;
+                return text;
+            }
         }
 
         private static string HandleHealth(Program program, IntPtr baseHandle, Bitmap capture)

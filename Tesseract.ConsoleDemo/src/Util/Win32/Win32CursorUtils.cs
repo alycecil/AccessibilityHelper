@@ -10,10 +10,10 @@ namespace runner
         
         public static Bitmap CaptureCursor(out int x, out int y)
         {
+            IntPtr hicon=IntPtr.Zero;
             try
             {
                 Bitmap bmp;
-                IntPtr hicon;
                 CURSORINFO ci = new CURSORINFO();
                 ICONINFO icInfo;
                 ci.cbSize = Marshal.SizeOf(ci);
@@ -22,15 +22,24 @@ namespace runner
                     if (ci.flags == CURSOR_SHOWING)
                     {
                         hicon = CopyIcon(ci.hCursor);
-                        if (GetIconInfo(hicon, out icInfo))
+                        if (hicon != IntPtr.Zero
+                            && GetIconInfo(hicon, out icInfo))
                         {
                             x = ci.ptScreenPos.x - ((int) icInfo.xHotspot);
                             y = ci.ptScreenPos.y - ((int) icInfo.yHotspot);
-                            Icon ic = Icon.FromHandle(hicon);
-                            bmp = ic.ToBitmap();
-
-                            return bmp;
+                            if (x > 0 && y > 0)
+                            {
+                                using (Icon ic = Icon.FromHandle(hicon))
+                                {
+                                    if (ic.Width > 1 && ic.Height > 1)
+                                    {
+                                        bmp = ic.ToBitmap();
+                                        return bmp;
+                                    }
+                                }
+                            }
                         }
+
                     }
                 }
 
@@ -38,6 +47,11 @@ namespace runner
             catch (Exception e)
             {
                 Console.Error.WriteLine("Error encountered capturing cursor, returning null; [{0}]", e);
+            }
+            finally
+            {
+                if(hicon!=IntPtr.Zero)
+                    DestroyIcon(hicon);
             }
 
             x = y = 0;
@@ -102,6 +116,9 @@ namespace runner
 
         [DllImport("user32.dll", EntryPoint = "CopyIcon")]
         public static extern IntPtr CopyIcon(IntPtr hIcon);
+        
+        [DllImport("user32.dll")]
+        public static extern IntPtr DestroyIcon(IntPtr hIcon);
 
         [DllImport("user32.dll", EntryPoint = "GetIconInfo")]
         public static extern bool GetIconInfo(IntPtr hIcon, out ICONINFO piconinfo);

@@ -15,15 +15,7 @@ namespace runner
         public static bool Click(IntPtr hWdw, IntPtr hCntr)
         {
             if(hCntr==IntPtr.Zero) return false;
-           
-            
-            //ScreenCapturer.ImageSave("RExit", ImageFormat.Tiff, ScreenCapturer.Capture(rectangle));
-            //AutoItX.ControlClick(hWdw, hCntr, MouseButton.LEFT, 1, startBtnX, startBtnY);
-
             MouseManager.MouseClick(hCntr,startBtnX, startBtnY);
-            
-            
-
             return true;
         }
     }

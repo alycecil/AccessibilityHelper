@@ -39,25 +39,40 @@ namespace runner
 
             if (lightWeight)
             {
-#if DEBUG
-                Console.WriteLine("Built New Lightweight VerbWindow");
-#endif
-                return new VerbWindow(hWnd, null, ocrName);
+                return MakeLightVerbWindow(hWnd, ocrName);
             }
 
-            List<Verb> verbs = new List<Verb>();
+            try
+            {
+                List<Verb> verbs = new List<Verb>();
 
-            CaptureScreen(hWnd, out var height, out var offset, out var w, out var rect,
-                out var capture);
+                CaptureScreen(hWnd, out var height, out var offset, out var w, out var rect,
+                    out var capture);
+                using (capture)
+                {
+                    var captureHeight = capture.Height;
 
-            var captureHeight = capture.Height;
+                    FindVerbs(Program, baseHandle, hWnd, captureHeight, height, capture, offset, w, rect,
+                        verbs);
 
-            FindVerbs(Program, baseHandle, hWnd, captureHeight, height, capture, offset, w, rect,
-                verbs);
+                    Console.WriteLine("Built New VerbWindow with details");
 
-            Console.WriteLine("Built New VerbWindow with details");
+                    return new VerbWindow(hWnd, verbs, ocrName);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.Error.WriteLine("Error on VerbWindow details [{0}]", e);
+                return MakeLightVerbWindow(hWnd, ocrName);
+            }
+        }
 
-            return new VerbWindow(hWnd, verbs, ocrName);
+        private static VerbWindow MakeLightVerbWindow(IntPtr hWnd, string ocrName)
+        {
+#if DEBUG
+            Console.WriteLine("Built New Lightweight VerbWindow");
+#endif
+            return new VerbWindow(hWnd, null, ocrName);
         }
 
         private static void FindVerbs(Program program, IntPtr baseHandle, IntPtr hWnd, int captureHeight, int height,
@@ -83,32 +98,35 @@ namespace runner
 
                 Rectangle r2 = new Rectangle(offset, location, w, height);
                 var sub = new Bitmap(rect.Width, height);
-                using (var g = Graphics.FromImage(sub))
+                using (sub)
                 {
-                    g.DrawImage(capture, new Rectangle(0, 0, sub.Width, sub.Height),
-                        r2,
-                        GraphicsUnit.Pixel);
-                }
+                    using (var g = Graphics.FromImage(sub))
+                    {
+                        g.DrawImage(capture, new Rectangle(0, 0, sub.Width, sub.Height),
+                            r2,
+                            GraphicsUnit.Pixel);
+                    }
 
 
-                string ocr = ImageManip.doOcr(sub, VerbWindow.texts);
+                    string ocr = ImageManip.doOcr(sub, VerbWindow.texts);
 
 
-                if (TryGetVerb(program, baseHandle, hWnd, ocr, rect, offset, w, height, out var item, 0, location))
-                {
-                    location += height;
-                    verbs.Add(item);
-                    //Console.WriteLine("Added OCR Verb");
-                }
-                else if (TryGetVerb(program, baseHandle, hWnd, ocr, rect, offset, w, height, out item, 1, location))
-                {
-                    location += height;
-                    verbs.Add(item);
-                    //Console.WriteLine("Added TT Verb");
-                }
-                else
-                {
-                    //Console.WriteLine("Skipped");
+                    if (TryGetVerb(program, baseHandle, hWnd, ocr, rect, offset, w, height, out var item, 0, location))
+                    {
+                        location += height;
+                        verbs.Add(item);
+                        //Console.WriteLine("Added OCR Verb");
+                    }
+                    else if (TryGetVerb(program, baseHandle, hWnd, ocr, rect, offset, w, height, out item, 1, location))
+                    {
+                        location += height;
+                        verbs.Add(item);
+                        //Console.WriteLine("Added TT Verb");
+                    }
+                    else
+                    {
+                        //Console.WriteLine("Skipped");
+                    }
                 }
             }
 
@@ -207,6 +225,7 @@ namespace runner
 
             WindowHandleInfo.GetBounds(hWnd, out rect);
             capture = ScreenCapturer.Capture(rect);
+            if(capture==null) return;
             rect.Width /= 3;
             capture = ImageManip.AdjustThreshold(capture, .9f);
             capture = ImageManip.Max(capture);
