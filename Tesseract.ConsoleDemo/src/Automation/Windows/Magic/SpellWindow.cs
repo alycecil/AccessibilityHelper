@@ -78,21 +78,26 @@ namespace runner
                     WindowHandleInfo.ConvertRect(out var rect, spell.Current.BoundingRectangle);
                     if (!rect.IsEmpty
                         && spell.TryGetClickablePoint(out var loc2)
-                        && whatWeAreLookngFor(spell, walker, spellName, type, curEvent)
                     )
                     {
-                        //todo click
+                        //visible count
+                        
+                        if (whatWeAreLookngFor(spell, walker, spellName, type, curEvent))
+                        {
+                            //todo click
 
-                        WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
+                            WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
 
 
-                        MouseManager.MouseClickAbsolute(baseHandle,MouseButton.RIGHT, (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
-                        return true;
+                            MouseManager.MouseClickAbsolute(baseHandle,MouseButton.RIGHT, (int) locBase.X, (int) (locBase.Y + count * (rect.Height) * sY));
+                            return true;
+                        }
+                        count++;
                     }
 
 
                     spell = walker.GetNextSibling(spell);
-                    count++;
+                    
                 }
             }
             catch (Exception)
@@ -134,9 +139,7 @@ namespace runner
             
             Teleport.close(baseHandle);
 
-            ToolTips.moveOver(baseHandle,ExpectedToolTip.Spells);
-            Thread.Sleep(1);
-            MouseManager.MouseClickAbsolute(baseHandle);
+            ToolTips.moveOver(baseHandle,ExpectedToolTip.Spells, true);
             if (__TryGetWindow(baseHandle, out spell)) return true;
 
             //anyother look ups here

@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 using Tesseract.ConsoleDemo;
-
+//#define TRACE
 namespace runner.ActionWorkers
 {
     public class ActionIdle : AbstractActionWorker
@@ -65,6 +65,7 @@ namespace runner.ActionWorkers
                     VerbWindow.Click(baseHandle, verb);
                     didSomething = true;
                 }
+#if IdleAll                
                 else if (
                     program.action.wantToRepair &&
                     verb.what.Equals(Verb.Repair))
@@ -109,28 +110,29 @@ namespace runner.ActionWorkers
                     program.action.wantToRepair = true;
                     didSomething = true;
                 }
+#endif                
                 else
                 {
-                    //Console.WriteLine("-- Nothing doing.");
+                    Console.Write("-- Nothing doing.");
                 }
             }
 
-            if (!didSomething)
+            if (didSomething)
+            {
+                
+                program.windowScanManager.flushScreenScan();
+            }
+            else
             {
                 Console.Write("\r\nIdle Considered doing [");
                 foreach (var verb in verbWindow.verbs)
                     Console.Write("Verb[{0}],", verb.what);
 
-                Console.WriteLine("].");
-                program.scan?.DidWork();
-            }
-            else
-            {
+                Console.WriteLine("] but nothing was worth doing.");
                 
-                program.lastVerbWindow = null;
-                program.scan?.DidWork();
-                program.windowScanManager.flushScreenScan();
             }
+            
+            program.FinishVerbWindow();
 
 
             return didSomething;

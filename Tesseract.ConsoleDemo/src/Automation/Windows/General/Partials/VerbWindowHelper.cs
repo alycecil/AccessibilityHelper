@@ -39,7 +39,9 @@ namespace runner
 
             if (lightWeight)
             {
+#if DEBUG
                 Console.WriteLine("Built New Lightweight VerbWindow");
+#endif
                 return new VerbWindow(hWnd, null, ocrName);
             }
 
@@ -130,6 +132,9 @@ namespace runner
 
                 var text = Win32GetText.GetControlText(hWnd);
                 if (String.IsNullOrEmpty(text)) return true;
+                
+                //dont close combat windows et al
+                if (Windows.GetKnownWindow(hWnd, text)!=null) return true;
 
                 WindowHandleInfo.GetBounds(hWnd, out var rect);
                 //Console.WriteLine("Right Class {0:x} @{1}", hWnd.ToInt32(), rect);
@@ -182,9 +187,10 @@ namespace runner
             if (!wanted) return false;
             ocr = cleaned;
 
-
+#if DEBUG
             Console.Write("[{2}] Added Verb [{0}] @ [{1}]", ocr, bounds,
                 Win32GetText.GetControlText(hWnd));
+#endif
             item = new Verb(rect: bounds, what: ocr);
             return true;
         }

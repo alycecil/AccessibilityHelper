@@ -28,8 +28,7 @@ namespace runner
             if (repair != IntPtr.Zero)
             {
                 //click repair all
-                MouseManager.MouseMoveUnScaled(baseHandle, baseX, baseY);
-                MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT);
+                MouseManager.MouseClick(baseHandle, baseX, baseY);
                 program.action.Repaired();
             }
         }

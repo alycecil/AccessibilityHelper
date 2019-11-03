@@ -35,7 +35,7 @@ namespace runner
             return null;
         }
 
-        private static readonly int hasHp = Color.FromArgb(0, 16, 113, 9).ToArgb();
+        //private static readonly int hasHp = Color.FromArgb(0, 16, 113, 9).ToArgb();
         private const int item = 6244104;
 
 

@@ -73,24 +73,23 @@ namespace runner
                     WindowHandleInfo.ConvertRect(out var rect, sellable.Current.BoundingRectangle);
                     if (!rect.IsEmpty
                         && sellable.TryGetClickablePoint(out var loc2)
-                        && wantToSell(sellable, walker, config, out string name)
                     )
                     {
-                        //todo click
+                        if (wantToSell(sellable, walker, config, out string name))
+                        {
+                            WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
+#if TRACE_SELL
+                            Console.WriteLine("Selling [{0}] @ false loc {1}", name, loc2);
+#endif
+                            MouseManager.MouseClickAbsolute(baseHandle,MouseButton.RIGHT, (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
+                            return true;
+                        }
 
-                        WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
-
-                        //TODO
-                        Console.WriteLine("Selling [{0}] @ false loc {1}", name, loc2);
-
-
-                        MouseManager.MouseClickAbsolute(baseHandle,MouseButton.RIGHT, (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
-                        return true;
+                        count++;
                     }
 
 
                     sellable = walker.GetNextSibling(sellable);
-                    count++;
                 }
             }
             catch (Exception)

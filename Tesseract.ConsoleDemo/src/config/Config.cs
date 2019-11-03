@@ -68,8 +68,7 @@ namespace runner
             var foundY = getAsInt(keyY, out int y);
             if (foundX && foundY)
             {
-                MouseManager.MouseMoveUnScaled(baseHandle,x,y);
-                MouseManager.MouseClickAbsolute(baseHandle);
+                MouseManager.MouseClick(baseHandle,x,y);
                 return true;
             }
 

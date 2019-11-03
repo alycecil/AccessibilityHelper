@@ -63,8 +63,8 @@ namespace runner.ActionWorkers
 
             if (didSomething)
             {
-                program.lastVerbWindow = null;
                 program.windowScanManager.flushScreenScan();
+                program.FinishVerbWindow();
                 Thread.Sleep(TimeSpan.FromSeconds(5));
                 program.action.DoSell(baseHandle);
             }

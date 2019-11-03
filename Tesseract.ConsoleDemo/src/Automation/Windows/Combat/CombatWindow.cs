@@ -46,13 +46,15 @@ namespace runner
                     }
                     else
                     {
+#if DEBUG
                         Console.WriteLine("saw [{0}] looking for [{1}]",spotKey,tt);
+#endif
                     }
                 }
             }
             else
             {
-                Console.WriteLine("Not sure what to do");
+                Console.WriteLine("Combat Window - Not sure what to do");
             }
         }
 

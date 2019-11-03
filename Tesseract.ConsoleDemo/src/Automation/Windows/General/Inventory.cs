@@ -10,9 +10,7 @@ namespace runner
         public static bool handle(IntPtr baseHandle)
         {
             
-            ToolTips.moveOver(baseHandle, ExpectedToolTip.Inventory);
-            Thread.Sleep(TimeSpan.FromMilliseconds(1));
-            MouseManager.MouseClickAbsolute(baseHandle);
+            ToolTips.moveOver(baseHandle, ExpectedToolTip.Inventory, true);
             Thread.Sleep(TimeSpan.FromMilliseconds(100));
 
             var hWnd = Windows.HandleInventory(baseHandle);

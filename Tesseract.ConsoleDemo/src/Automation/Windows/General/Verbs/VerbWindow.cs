@@ -8,12 +8,12 @@ namespace runner
     /**
      * How found:	Focus
 	hwnd=0x00170C7A 32bit class="Afx:00860000:0:00000000:00000000:0001002B" style=0x96000000 ex=0x0
-Name:	"AliceDjinn"
+Name:	"WhatEver"
 ControlType:	UIA_PaneControlTypeId (0xC371)
      */
     public class VerbWindow
     {
-        public const string VerbClass = "Afx:";//...
+        public const string VerbClass = "Afx:"; //...
         public const string texts = "StealCastLokAtFightWRrpOpenETe";
         public IntPtr hWnd;
         public List<Verb> verbs;
@@ -30,17 +30,16 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
 
         public static VerbWindow FindWindow(Program program, IntPtr baseHandle,
             String mousedOver,
-            bool allowClick = false, 
+            bool allowClick = false,
             bool lightWeight = false
-        ){
+        )
+        {
             try
             {
                 var window = VerbWindowHelper.findWindow(baseHandle, mousedOver, allowClick);
 
                 var verbWindow = VerbWindowHelper.fromHandle(program, baseHandle, window, mousedOver, lightWeight);
-                if (!lightWeight)
-                    program.lastVerbWindow = verbWindow;
-                else program.lastVerbWindow = null;
+                program.lastVerbWindow = verbWindow;
                 return verbWindow;
             }
             catch (Exception wtfHappened)
@@ -55,14 +54,22 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
         {
             verb.click(baseHandle, out var x, out var y);
         }
-        
+
         public void Dismiss()
         {
             if (hWnd != IntPtr.Zero)
             {
                 Console.WriteLine("Dismissing");
-                //AutoItX.WinClose(hWnd);
-                MouseManager.MouseClickAbsolute(hWnd, MouseButton.LEFT, 0,0);
+                try
+                {
+                    AutoItX.WinClose(hWnd);
+                }
+                catch (Exception)
+                {
+                    // ignored
+                }
+
+                //MouseManager.MouseClick(hWnd, -10,-10);
             }
             else
             {

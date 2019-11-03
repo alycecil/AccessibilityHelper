@@ -78,7 +78,7 @@ namespace runner
 
 
             //we need to wait for a voice command on what to do, if weight over 70% 
-            HandleComplete(SellInventory);
+            //HandleComplete(SellInventory);
         }
 
         public void Repaired()

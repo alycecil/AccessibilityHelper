@@ -24,8 +24,8 @@ namespace runner
 
             if (program.ego?.Weight?.Value == null)
             {
-                program.action.AskForWeight(baseHandle);
                 TakeAll(baseHandle, hCntr, rectangle, sX, sY);
+                program.action.AskForWeight(baseHandle);
                 close(baseHandle, hCntr, rectangle, sX, sY);
                 return false;
             }
@@ -49,6 +49,7 @@ namespace runner
                 if (takeAll)
                 {
                     TakeAll(baseHandle, hCntr, rectangle, sX, sY);
+                    program.action.AskForWeight(baseHandle);
                 }
 
                 if (closeWindow)
@@ -69,7 +70,7 @@ namespace runner
         {
             MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT, (int) (rectangle.Left + sX * TakeAllX),
                 (int) (rectangle.Top + sY * TakeAllY));
-            Thread.Sleep(TimeSpan.FromSeconds(30));
+            Thread.Sleep(TimeSpan.FromSeconds(10));
         }
 
         private static void close(IntPtr baseHandle, IntPtr hCntr, Rectangle rectangle, float sX, float sY)
@@ -109,9 +110,9 @@ namespace runner
                 if (Wanted(cap, currentName))
                 {
                     Console.WriteLine("Looting with Desire {1}@{0}", rect, currentName);
-                    MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT, 
-                        (int) (rect.X + 13 * sX),
-                        (int) (rect.Y + 4 * sY));
+//                    MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT, 
+//                        (int) (rect.X + 13 * sX),
+//                        (int) (rect.Y + 4 * sY));
                     MouseManager.MouseClickAbsolute(baseHandle, MouseButton.RIGHT, 
                         (int) (rect.X + 13 * sX),
                         (int) (rect.Y + 4 * sY));
@@ -140,7 +141,7 @@ namespace runner
                 }
                 else if (Scroller.ScrollElement(list, ScrollAmount.NoAmount, ScrollAmount.SmallDecrement))
                 {
-                    i++;
+                    i = 0;
                 }
                 else if (i > 12)
                 {

@@ -58,15 +58,20 @@ namespace Tesseract.ConsoleDemo
             {
                 foreach (var program in programs)
                 {
-                    try
+                    do
                     {
-                        program.Loop();
-                    }
-                    catch (Exception e)
-                    {
-                        Console.Error.WriteLine("Fatal Error : [{0}]", e);
-                    }
+                        //Console.Write(".");
+                        try
+                        {
+                            program.Loop();
+                        }
+                        catch (Exception e)
+                        {
+                            Console.Error.WriteLine("Fatal Error : [{0}]", e);
+                        }
+                    } while (program.lastVerbWindow != null);
                 }
+                //Console.Write("!");
             }
         }
 
@@ -186,6 +191,13 @@ namespace Tesseract.ConsoleDemo
         public long getTick()
         {
             return tick;
+        }
+
+        public void FinishVerbWindow()
+        {
+            lastVerbWindow?.Dismiss(); 
+            lastVerbWindow = null;
+            scan?.DidWork();
         }
     }
 }

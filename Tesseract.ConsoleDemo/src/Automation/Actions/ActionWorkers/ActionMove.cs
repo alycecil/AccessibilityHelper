@@ -109,8 +109,7 @@ namespace runner.ActionWorkers
                     Thread.Sleep(TimeSpan.FromMilliseconds(100)); 
                     continue;
                 }
-                MouseManager.MouseMoveUnScaled(baseHandle, x, y, 1);
-                MouseManager.MouseClickAbsolute(baseHandle);
+                MouseManager.MouseClick(baseHandle, x, y);
                 Thread.Sleep(TimeSpan.FromSeconds(1));
                 return true;
             }

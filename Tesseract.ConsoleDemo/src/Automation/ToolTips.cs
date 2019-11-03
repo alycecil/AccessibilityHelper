@@ -178,27 +178,38 @@ namespace runner
             }
         }
 
-        public static void moveOver(IntPtr baseHandle, ExpectedToolTip expectedToolTip)
+        public static void moveOver(IntPtr baseHandle, ExpectedToolTip expectedToolTip, bool click = false)
         {
+            int x, y;
             switch (expectedToolTip)
             {
                 case Health:
-                    AutoItX.WinActivate(baseHandle);
-                    MouseManager.MouseMoveUnScaled(baseHandle, 500, 350);
+                    x = 500;
+                    y = 350;
                     break;
                 case Mana:
-                    AutoItX.WinActivate(baseHandle);
-                    MouseManager.MouseMoveUnScaled(baseHandle,590, 350);
+                    x = 590;
+                    y = 350;
                     break;
                 case ExpectedToolTip.Inventory:
-                    AutoItX.WinActivate(baseHandle);
-                    MouseManager.MouseMoveUnScaled(baseHandle,500, 375);
+                    x = 500;
+                    y = 375;
                     break;
                 case Spells:
-                    AutoItX.WinActivate(baseHandle);
-                    MouseManager.MouseMoveUnScaled(baseHandle,590, 375);
+                    x = 590;
+                    y = 375;
                     break;
+                default: throw new NotImplementedException();
                 
+            }
+            AutoItX.WinActivate(baseHandle);
+            if (click)
+            {
+                MouseManager.MouseClick(baseHandle,x,y);
+            }
+            else
+            {
+                MouseManager.MouseMoveUnScaled(baseHandle,x,y);
             }
         }
     }

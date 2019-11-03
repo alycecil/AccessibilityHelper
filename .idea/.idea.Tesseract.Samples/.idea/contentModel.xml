@@ -54,6 +54,7 @@
             <e p="MouseManager" t="Include">
               <e p="MouseButton.cs" t="Include" />
               <e p="MouseManager.cs" t="Include" />
+              <e p="MouseManagerHelper.cs" t="Include" />
             </e>
             <e p="ToolTips.cs" t="Include" />
             <e p="TTDT.cs" t="Include" />
@@ -63,7 +64,6 @@
                 <e p="ExitWindow.cs" t="Include" />
               </e>
               <e p="General" t="Include">
-                <e p="ChatFrame.cs" t="Include" />
                 <e p="Inventory.cs" t="Include" />
                 <e p="LootWindow.cs" t="Include" />
                 <e p="Partials" t="Include">

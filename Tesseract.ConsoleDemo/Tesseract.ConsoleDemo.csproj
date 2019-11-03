@@ -96,11 +96,11 @@
     <Compile Include="src\Automation\ITickable.cs" />
     <Compile Include="src\Automation\MouseManager\MouseButton.cs" />
     <Compile Include="src\Automation\MouseManager\MouseManager.cs" />
+    <Compile Include="src\Automation\MouseManager\MouseManagerHelper.cs" />
     <Compile Include="src\Automation\ToolTips.cs" />
     <Compile Include="src\Automation\TTDT.cs" />
     <Compile Include="src\Automation\Windows\Combat\CombatWindow.cs" />
     <Compile Include="src\Automation\Windows\Combat\ExitWindow.cs" />
-    <Compile Include="src\Automation\Windows\General\ChatFrame.cs" />
     <Compile Include="src\Automation\Windows\General\Inventory.cs" />
     <Compile Include="src\Automation\Windows\General\LootWindow.cs" />
     <Compile Include="src\Automation\Windows\General\Partials\TooltipToVerb.cs" />
