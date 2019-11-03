@@ -77,7 +77,8 @@ namespace Tesseract.ConsoleDemo
 
         private void Login()
         {
-            ego.Name = Config.get(Config.KEY_ME);
+            Guid g = Guid.NewGuid();
+            ego.Name = g.ToString();
 
             new ApiCaller().login(ego.Name);
         }

@@ -9,7 +9,6 @@ namespace runner
     {
         public static readonly string 
             KEY_API_ENDPOINT = "API_ENDPOINT",
-            KEY_ME = "NAME",
             KEY_SCREENSCAN = "SCREENSCAN",
             KEY_AUTOGUARD = "KEY_AUTO_GUARD",
             KEY_TELEPORT = "KEY_TELEPORT..";

@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="23560944-9abb-4b5b-8cc4-98a9e35d63be" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tesseract.Samples/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/bin/Debug/Tesseract.ConsoleDemo.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/obj/Debug/Tesseract.ConsoleDemo.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Cursor/CursorUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Cursor/CursorUtil.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ImageManip.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ImageManip.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32CursorUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32CursorUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Config.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Config.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,7 +154,6 @@
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Inventory.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/ActionWorkers/ActionMove.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/NPCS/RepairWindow.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Config.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/MouseManager/MouseButton.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/MouseManager/MouseManager.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/General/Verbs/Verbs.cs" />
@@ -175,7 +169,6 @@
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Windows.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/State/StateEngine.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Actions/Action.cs" />
-        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Windows/Combat/ExitWindow.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/ScreenCapturer.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ApiCaller.cs" />
@@ -186,7 +179,9 @@
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/ImageManip.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Automation/Cursor/CursorUtil.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Util/Win32/Win32CursorUtils.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Config.cs" />
         <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/config/Secrets.cs" />
+        <option value="$PROJECT_DIR$/Tesseract.ConsoleDemo/src/Main/Program.cs" />
       </list>
     </option>
   </component>
@@ -283,7 +278,7 @@
       <workItem from="1572618887268" duration="23977000" />
       <workItem from="1572673163512" duration="6890000" />
       <workItem from="1572713630448" duration="57469000" />
-      <workItem from="1572787688764" duration="7359000" />
+      <workItem from="1572787688764" duration="7835000" />
     </task>
     <task id="LOCAL-00001" summary="Note">
       <created>1571704973144</created>
@@ -369,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572780239654</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Memory Leak still was happening">
+      <created>1572818644714</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1572818644714</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,7 +405,8 @@
     <MESSAGE value="Continued refactoring" />
     <MESSAGE value="ToolTips Refactor names" />
     <MESSAGE value="Memory Leak with Icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Memory Leak with Icons" />
+    <MESSAGE value="Memory Leak still was happening" />
+    <option name="LAST_COMMIT_MESSAGE" value="Memory Leak still was happening" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
