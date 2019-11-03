@@ -4,7 +4,7 @@ using AutoIt;
 
 namespace runner
 {
-    public class Windows
+    internal class Windows : User32Delegate
     {
         const int chatSendId = 665;
         const int chatRoomUsualId = 666;

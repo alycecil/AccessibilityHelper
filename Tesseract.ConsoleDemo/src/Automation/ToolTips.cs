@@ -16,14 +16,14 @@ namespace runner
     {
         private static ExpectedToolTip _expectedToolTip = Other;
 
-        public static void setExpected(ExpectedToolTip expectedToolTip)
+        public static void SetExpected(ExpectedToolTip expectedToolTip)
         {
             _expectedToolTip = expectedToolTip;
         }
 
-        public static string handle(Program program,  IntPtr baseHandle)
+        public static string Handle(Program program,  IntPtr baseHandle)
         {
-            var all = list(baseHandle);
+            var all = List(baseHandle);
             foreach (var keyValuePair in all)
             {
                 var winGetState = keyValuePair.Value;
@@ -41,15 +41,11 @@ namespace runner
 
         private static string HandleVisible(Program program, IntPtr baseHandle, KeyValuePair<IntPtr, int> keyValuePair)
         {
-//Console.WriteLine("Visi");
-            //ScreenCapturer.CaptureAndSave("alices"+hWnd,hWnd);
             //TODO HANDLE BETTER
             var capture = ScreenCapturer.Capture(keyValuePair.Key);
             capture = ImageManip.AdjustThreshold(capture, .3f);
-//            ScreenCapturer.ImageSave("currentThingRaw", ImageFormat.Tiff, capture);
             capture = ImageManip.Invert(capture);
             capture = ImageManip.Max(capture);
-//            ScreenCapturer.ImageSave("currentThing1", ImageFormat.Tiff, capture);
 
 
             return HandleCapture(program, baseHandle, capture);
@@ -62,7 +58,6 @@ namespace runner
             switch (_expectedToolTip)
             {
                 case Mana:
-                    lookingFor = "Mana";
                     text = ImageManip.doOcr(capture, "1234567890");
                     if (text.Contains(" ") && text.IndexOf(" ") == text.LastIndexOf(" ") && text.Length < 10)
                     {
@@ -75,20 +70,17 @@ namespace runner
                         {
                             Console.WriteLine("Mana is at [{0}]", current);
 
-                            setExpected(Other);
+                            SetExpected(Other);
                             program.action.ReadManaComplete(current);
                         }
                     }
-
                     break;
+                
                 case Health:
-                    lookingFor = "HP";
                     text = HandleHealth(program, baseHandle, capture);
-
-
                     break;
+                
                 case Buttons:
-                    lookingFor = "Button";
                     text = ImageManip.doOcr(capture);
                     break;
 
@@ -129,7 +121,7 @@ namespace runner
 
                         Console.WriteLine("Hp is at [{0}] of [{1}]", current, max);
 
-                        setExpected(Other);
+                        SetExpected(Other);
                         program.action.ReadHpComplete(baseHandle, current, max);
                     }
 
@@ -139,7 +131,7 @@ namespace runner
 
         /// <summary>Returns a dictionary that contains the handle and title of all the open windows.</summary>
         /// <returns>A dictionary that contains the handle and title of all the open windows.</returns>
-        private static IDictionary<IntPtr, int> list(IntPtr baseHandle)
+        private static IDictionary<IntPtr, int> List(IntPtr baseHandle)
         {
             GetWindowThreadProcessId(baseHandle, out var main);
             IntPtr shellWindow = GetShellWindow();
@@ -156,8 +148,6 @@ namespace runner
                 if ("tooltips_class32".Equals(clz)
                     && thread == main)
                 {
-                    int _h = (int) hWnd;
-
                     MakeQuick(hWnd);
 
                     var winGetState = AutoItX.WinGetState(hWnd);
@@ -178,7 +168,7 @@ namespace runner
             }
         }
 
-        public static void moveOver(IntPtr baseHandle, ExpectedToolTip expectedToolTip, bool click = false)
+        public static void MoveOver(IntPtr baseHandle, ExpectedToolTip expectedToolTip, bool click = false)
         {
             int x, y;
             switch (expectedToolTip)

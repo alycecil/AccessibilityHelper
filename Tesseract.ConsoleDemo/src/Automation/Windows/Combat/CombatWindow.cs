@@ -23,7 +23,7 @@ namespace runner
 
             WindowHandleInfo.GetBounds(combat, out var bounds);
             //ScreenCapturer.CaptureAndSave("RCombat", combat);
-            ToolTips.setExpected(ExpectedToolTip.Buttons);
+            ToolTips.SetExpected(ExpectedToolTip.Buttons);
 
 
             Dictionary<string, Point> spots = GetClicks(program, baseHandle, bounds);
@@ -73,7 +73,7 @@ namespace runner
                 for (int y = 20; y < bounds.Height; y += (int)(21*sY))
                 {
                     MouseManager.MouseMoveAbsolute(baseHandle,bounds.X + x, bounds.Y + y, 1);
-                    var tt = ToolTips.handle(program, baseHandle);
+                    var tt = ToolTips.Handle(program, baseHandle);
                     if (!string.IsNullOrEmpty(tt) && !seenBefore.Contains(tt))
                     {
                         seenBefore.Add(tt);

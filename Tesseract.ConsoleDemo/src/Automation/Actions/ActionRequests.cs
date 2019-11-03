@@ -8,14 +8,14 @@ namespace runner
     {
         public void ReadHp(IntPtr baseHandle)
         {
-            ToolTips.moveOver(baseHandle, ExpectedToolTip.Health);
-            ToolTips.setExpected(ExpectedToolTip.Health);
+            ToolTips.MoveOver(baseHandle, ExpectedToolTip.Health);
+            ToolTips.SetExpected(ExpectedToolTip.Health);
         }
 
         private void ReadMana(IntPtr baseHandle)
         {
-            ToolTips.moveOver(baseHandle, ExpectedToolTip.Mana);
-            ToolTips.setExpected(ExpectedToolTip.Mana);
+            ToolTips.MoveOver(baseHandle, ExpectedToolTip.Mana);
+            ToolTips.SetExpected(ExpectedToolTip.Mana);
         }
 
         public void HandleRepairControl(IntPtr baseHandle)

@@ -111,7 +111,7 @@ namespace Tesseract.ConsoleDemo
 
         private void EveryTickFirst()
         {
-            ToolTips.handle(this, baseHandle);
+            ToolTips.Handle(this, baseHandle);
             HoverBox.handle(this, baseHandle);
         }
 
@@ -188,7 +188,7 @@ namespace Tesseract.ConsoleDemo
             return baseHandle;
         }
 
-        public long getTick()
+        public long GetTick()
         {
             return tick;
         }

@@ -39,7 +39,7 @@ namespace runner
                     complete = true;
                     break;
 
-                case CheckStatus when _program.getTick() > waitUntil:
+                case CheckStatus when _program.GetTick() > waitUntil:
                     complete = true;
                     break;
                 case CheckStatus:
@@ -55,7 +55,7 @@ namespace runner
 
                 case CheckHpMana:
                 {
-                    if (_program.getTick() % 100 == 0)
+                    if (_program.GetTick() % 100 == 0)
                     {
                         this.ReadHp(baseHandle);
                     }
@@ -112,7 +112,7 @@ namespace runner
                     case CheckStatus:
                         //Console.WriteLine("Checking Status [{0}]", currentEvent);
                         AskForWeight(baseHandle);
-                        waitUntil = _program.getTick() + 100; 
+                        waitUntil = _program.GetTick() + 100; 
                         //wait no longer than 100 tics before we say we did that.
                         break;
                     case SellInventory:

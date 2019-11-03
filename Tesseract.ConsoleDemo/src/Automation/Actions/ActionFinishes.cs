@@ -66,7 +66,7 @@ namespace runner
 
             HandleComplete(CheckHpMana);
 
-            ToolTips.setExpected(ExpectedToolTip.None);
+            ToolTips.SetExpected(ExpectedToolTip.None);
         }
 
         public void SoldInventory()

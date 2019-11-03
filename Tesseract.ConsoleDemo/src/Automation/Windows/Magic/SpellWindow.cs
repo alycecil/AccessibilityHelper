@@ -139,7 +139,7 @@ namespace runner
             
             Teleport.close(baseHandle);
 
-            ToolTips.moveOver(baseHandle,ExpectedToolTip.Spells, true);
+            ToolTips.MoveOver(baseHandle,ExpectedToolTip.Spells, true);
             if (__TryGetWindow(baseHandle, out spell)) return true;
 
             //anyother look ups here
