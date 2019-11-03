@@ -103,8 +103,7 @@ namespace runner
 
         public static string doOcr(Bitmap capture, string charset = null)
         {
-            string test;
-
+            if (capture == null) return null;
 
 //        ScreenCapturer.ImageSave("CornerBox", ImageFormat.Tiff, capture);
             string result = String.Empty;
@@ -129,10 +128,10 @@ namespace runner
                 {
                     using (var page = ocr.Process(img))
                     {
-                        test = page.GetText();
-                        if (!String.IsNullOrEmpty(test))
+                        var text = page.GetText();
+                        if (!String.IsNullOrEmpty(text))
                         {
-                            result = test.Trim();
+                            result = text.Trim();
                         }
                     }
                 }
