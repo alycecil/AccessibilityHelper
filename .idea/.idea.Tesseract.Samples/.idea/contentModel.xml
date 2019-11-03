@@ -43,6 +43,7 @@
             <e p="Cursor" t="Include">
               <e p="CursorUtil.cs" t="Include" />
             </e>
+            <e p="ExpectedToolTip.cs" t="Include" />
             <e p="Hook" t="Include">
               <e p="BundledControlLogger.cs" t="Include" />
               <e p="ControlLogger.cs" t="Include" />
@@ -51,16 +52,18 @@
             <e p="HoverBox.cs" t="Include" />
             <e p="ITickable.cs" t="Include" />
             <e p="MouseManager" t="Include">
+              <e p="MouseButton.cs" t="Include" />
               <e p="MouseManager.cs" t="Include" />
+              <e p="MouseManagerHelper.cs" t="Include" />
             </e>
             <e p="ToolTips.cs" t="Include" />
+            <e p="TTDT.cs" t="Include" />
             <e p="Windows" t="Include">
               <e p="Combat" t="Include">
                 <e p="CombatWindow.cs" t="Include" />
                 <e p="ExitWindow.cs" t="Include" />
               </e>
               <e p="General" t="Include">
-                <e p="ChatFrame.cs" t="Include" />
                 <e p="Inventory.cs" t="Include" />
                 <e p="LootWindow.cs" t="Include" />
                 <e p="Partials" t="Include">
@@ -84,7 +87,6 @@
                 <e p="SellWindow.cs" t="Include" />
               </e>
               <e p="Scans" t="Include">
-                <e p="FullWindowScan.cs" t="Include" />
                 <e p="PartialWindowScan.cs" t="Include" />
                 <e p="Thing.cs" t="Include" />
                 <e p="WindowScan.cs" t="Include" />
@@ -139,10 +141,12 @@
             <e p="ApiCaller.cs" t="Include" />
             <e p="BoundsManager.cs" t="Include" />
             <e p="ImageManip.cs" t="Include" />
+            <e p="ImageManipActiveTesting.cs" t="Include" />
             <e p="OCRHelper.cs" t="Include" />
             <e p="PixelManager.cs" t="Include" />
             <e p="StringUtil.cs" t="Include" />
             <e p="Win32" t="Include">
+              <e p="CaptureMode.cs" t="Include" />
               <e p="Helpers" t="Include">
                 <e p="DumpWindowsHandles.cs" t="Include" />
                 <e p="OpenWindowGetter.cs" t="Include" />
@@ -156,7 +160,9 @@
                 <e p="Win32Scoll.cs" t="Include" />
                 <e p="Win32Structs.cs" t="Include" />
               </e>
+              <e p="Rect.cs" t="Include" />
               <e p="ScreenCapturer.cs" t="Include" />
+              <e p="User32Delegate.cs" t="Include" />
               <e p="Win32.cs" t="Include" />
               <e p="Win32CursorUtils.cs" t="Include" />
               <e p="WindowHandleInfo.cs" t="Include" />

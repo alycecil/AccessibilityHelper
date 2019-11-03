@@ -17,20 +17,21 @@ namespace runner
 
         public static bool HandleLoot(Program program, IntPtr baseHandle, IntPtr hCntr)
         {
-            ScreenCapturer.GetScale(hCntr, out var sX, out var sY);
-            ScreenCapturer.GetBounds(hCntr, out Rectangle rectangle);
-
             if (hCntr == IntPtr.Zero) return false;
+
+            WindowHandleInfo.GetScale(hCntr, out var sX, out var sY);
+            WindowHandleInfo.GetBounds(hCntr, out Rectangle rectangle);
+
             if (program.ego?.Weight?.Value == null)
             {
-                program.action.askForWeight(baseHandle);
-                TakeAll(baseHandle,hCntr, rectangle, sX, sY);
-                close(baseHandle,hCntr, rectangle, sX, sY);
+                TakeAll(baseHandle, hCntr, rectangle, sX, sY);
+                program.action.AskForWeight(baseHandle);
+                close(baseHandle, hCntr, rectangle, sX, sY);
                 return false;
             }
             else if (program.ego?.Weight?.Value > 98)
             {
-                close(baseHandle,hCntr, rectangle, sX, sY);
+                close(baseHandle, hCntr, rectangle, sX, sY);
             }
 
             //ScreenCapturer.ImageSave("RLoot", ImageFormat.Tiff, ScreenCapturer.Capture(rectangle));
@@ -43,18 +44,24 @@ namespace runner
                 bool closeWindow;
 
                 bool takeAll;
-                while (HandleList(program, baseHandle, walker, list, out closeWindow, out takeAll, sX, sY)) ;
-
-                if (takeAll)
+                try
                 {
-                    TakeAll(baseHandle, hCntr, rectangle, sX, sY);
-                }
+                    while (HandleList(program, baseHandle, walker, list, out closeWindow, out takeAll, sX, sY)) ;
 
-                if (closeWindow)
+                    if (takeAll)
+                    {
+                        TakeAll(baseHandle, hCntr, rectangle, sX, sY);
+                        program.action.AskForWeight(baseHandle);
+                    }
+
+                    if (closeWindow)
+                    {
+                        close(baseHandle, hCntr, rectangle, sX, sY);
+                    }
+                }
+                catch (ElementNotAvailableException)
                 {
-                    close(baseHandle, hCntr, rectangle, sX, sY);
                 }
-
 
                 return true;
             }
@@ -66,14 +73,15 @@ namespace runner
 
         private static void TakeAll(IntPtr baseHandle, IntPtr hCntr, Rectangle rectangle, float sX, float sY)
         {
-            MouseManager.MouseClick(baseHandle, "LEFT", (int) (rectangle.Left + sX * TakeAllX),
+            MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT, (int) (rectangle.Left + sX * TakeAllX),
                 (int) (rectangle.Top + sY * TakeAllY));
-            Thread.Sleep(TimeSpan.FromSeconds(30));
+            Thread.Sleep(TimeSpan.FromSeconds(10));
         }
 
         private static void close(IntPtr baseHandle, IntPtr hCntr, Rectangle rectangle, float sX, float sY)
         {
-            MouseManager.MouseClick(baseHandle, "LEFT", (int) (rectangle.Left + sX * DoneAllX),
+            MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT,
+                (int) (rectangle.Left + sX * DoneAllX),
                 (int) (rectangle.Top + sY * TakeAllY));
             //Action.askForWeight();
         }
@@ -92,7 +100,7 @@ namespace runner
             if (child == null) return false;
 
             System.Windows.Rect bounds = child.Current.BoundingRectangle;
-            ScreenCapturer.ConvertRect(out var rect, bounds);
+            WindowHandleInfo.ConvertRect(out var rect, bounds);
             rect.Width *= 2;
             rect.Height *= 2;
 
@@ -100,52 +108,58 @@ namespace runner
             while (child != null)
             {
                 var cap = ScreenCapturer.Capture(rect);
-
-
-                var currentName = child.Current.Name;
-
-                if (wanted(cap, currentName))
+                using (cap)
                 {
-                    Console.WriteLine("Looting with Desire {1}@{0}", rect, currentName);
-                    MouseManager.MouseClick(baseHandle,"LEFT", (int) (rect.X + 13 * sX), (int) (rect.Y + 4 * sY));
-                    MouseManager.MouseClick(baseHandle,"RIGHT", (int) (rect.X + 13 * sX), (int) (rect.Y + 4 * sY));
-                    Thread.Sleep(TimeSpan.FromSeconds(1));
 
-                    if (currentName.Equals(last))
+                    var currentName = child.Current.Name;
+
+                    if (Wanted(cap, currentName))
                     {
-                        sleeps++;
-                        if (sleeps > 7)
-                        {
-                            program.action.askForWeight(baseHandle);
-                            takeAll = true;
-                            closeWindow = true;
-                            sleeps = 0;
-                            return false;
-                        }
+                        Console.WriteLine("Looting with Desire {1}@{0}", rect, currentName);
+//                    MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT, 
+//                        (int) (rect.X + 13 * sX),
+//                        (int) (rect.Y + 4 * sY));
+                        MouseManager.MouseClickAbsolute(baseHandle, MouseButton.RIGHT,
+                            (int) (rect.X + 13 * sX),
+                            (int) (rect.Y + 4 * sY));
+                        Thread.Sleep(TimeSpan.FromSeconds(1));
 
-                        Thread.Sleep(100);
-                        return true;
+                        if (currentName.Equals(last))
+                        {
+                            sleeps++;
+                            if (sleeps > 7)
+                            {
+                                program.action.AskForWeight(baseHandle);
+                                takeAll = true;
+                                closeWindow = true;
+                                sleeps = 0;
+                                return false;
+                            }
+
+                            Thread.Sleep(100);
+                            return true;
+                        }
+                        else
+                        {
+                            last = currentName;
+                            sleeps = 0;
+                        }
+                    }
+                    else if (Scroller.ScrollElement(list, ScrollAmount.NoAmount, ScrollAmount.SmallDecrement))
+                    {
+                        i = 0;
+                    }
+                    else if (i > 12)
+                    {
+                        takeAll = true;
+                        return false;
                     }
                     else
                     {
-                        last = currentName;
-                        sleeps = 0;
+                        child = walker.GetNextSibling(child);
+                        i++;
+                        rect.Y += rect.Height;
                     }
-                }
-                else if (Scroller.ScrollElement(list, ScrollAmount.NoAmount, ScrollAmount.SmallDecrement))
-                {
-                    i++;
-                }
-                else if (i > 12)
-                {
-                    takeAll = true;
-                    return false;
-                }
-                else
-                {
-                    child = walker.GetNextSibling(child);
-                    i++;
-                    rect.Y += rect.Height;
                 }
             }
 
@@ -155,7 +169,7 @@ namespace runner
         }
 
 
-        private static bool wanted(Bitmap cap, string currentName)
+        private static bool Wanted(Bitmap cap, string currentName)
         {
             if (Config.getIgnoreList().Contains(currentName))
             {

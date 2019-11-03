@@ -6,42 +6,42 @@ namespace runner
 {
     public partial class Action
     {
-        public void ReadHP(IntPtr baseHandle)
+        public void ReadHp(IntPtr baseHandle)
         {
-            ToolTips.moveOver(baseHandle, ExpectedTT.Health);
-            ToolTips.setExpected(ExpectedTT.Health);
+            ToolTips.MoveOver(baseHandle, ExpectedToolTip.Health);
+            ToolTips.SetExpected(ExpectedToolTip.Health);
         }
 
         private void ReadMana(IntPtr baseHandle)
         {
-            ToolTips.moveOver(baseHandle, ExpectedTT.Mana);
-            ToolTips.setExpected(ExpectedTT.Mana);
+            ToolTips.MoveOver(baseHandle, ExpectedToolTip.Mana);
+            ToolTips.SetExpected(ExpectedToolTip.Mana);
         }
 
-        public void handleRepairControl(IntPtr baseHandle)
+        public void HandleRepairControl(IntPtr baseHandle)
         {
-            RepairWindow.handle(baseHandle);
+            RepairWindow.handle(baseHandle, _program);
         }
 
-        public void doSell(IntPtr baseHandle)
+        public void DoSell(IntPtr baseHandle)
         {
             SellWindow.handle(_program, baseHandle);
         }
 
-        public void askForWeight(IntPtr baseHandle)
+        public void AskForWeight(IntPtr baseHandle)
         {
             var charOut = Windows.getChatSender(baseHandle);
             AutoItX.ControlSend(baseHandle, charOut, "/weight\r\n");
         }
 
-        public void doCombat(IntPtr baseHandle)
+        public void DoCombat(IntPtr baseHandle)
         {
-            CombatWindow.handle(_program, baseHandle);
+            combatWindow.handle(_program, baseHandle);
         }
 
-        public void doLoot(IntPtr baseHandle)
+        public void DoLoot(IntPtr baseHandle)
         {
-            var loot = Windows.getLoot();
+            var loot = Windows.getLoot(baseHandle);
             if (loot == IntPtr.Zero) return;
 
             if (LootWindow.HandleLoot(_program, baseHandle, loot))
@@ -54,7 +54,7 @@ namespace runner
         public void exitCombat(IntPtr baseHandle)
         {
             if (!_program.stateEngine.InState(StateEngine.InCobmatAfter)) return;
-            if (Windows.getLoot() != IntPtr.Zero) return;
+            if (Windows.getLoot(baseHandle) != IntPtr.Zero) return;
 
             var exit = Windows.getExitCombatControl(baseHandle);
 

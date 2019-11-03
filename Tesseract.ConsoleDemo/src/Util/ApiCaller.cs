@@ -1,5 +1,5 @@
 using System;
-using System.Runtime.InteropServices;
+using System.Collections.Generic;
 using IO.Swagger.Api;
 using IO.Swagger.Model;
 using RestSharp;
@@ -32,10 +32,7 @@ namespace runner
                 //basePath()
                 var x = new UpdatePlayerApi(basePath());
 
-                var playerUpdate = new PlayerUpdate();
-                playerUpdate.Name = name;
-                playerUpdate.Hp = current;
-                playerUpdate.HpMax = max;
+                var playerUpdate = new PlayerUpdate {Name = name, Hp = current, HpMax = max};
                 var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
                 return resp;
             }
@@ -46,9 +43,13 @@ namespace runner
             }
         }
 
+        private readonly HashSet<string> set = new HashSet<string>();
         private void handleError(Exception exception)
         {
-            Console.Error.WriteLine("Issue Encountered, {0}", exception);
+            var eText = exception.ToString();
+            if (set.Contains(eText)) return;
+            set.Add(eText);
+            Console.Error.WriteLine("Api Issue Encountered, {0}", eText);
         }
 
         public Player updateMana(string name, int current)
@@ -58,9 +59,7 @@ namespace runner
                 //basePath()
                 var x = new UpdatePlayerApi(basePath());
 
-                var playerUpdate = new PlayerUpdate();
-                playerUpdate.Name = name;
-                playerUpdate.Mana = current;
+                var playerUpdate = new PlayerUpdate {Name = name, Mana = current};
                 var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
                 return resp;
             }
@@ -78,9 +77,7 @@ namespace runner
                 //basePath()
                 var x = new UpdatePlayerApi(basePath());
 
-                var playerUpdate = new PlayerUpdate();
-                playerUpdate.Name = name;
-                playerUpdate.Weight = weight;
+                var playerUpdate = new PlayerUpdate {Name = name, Weight = weight};
                 var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
                 return resp;
             }
@@ -99,9 +96,11 @@ namespace runner
                 //basePath()
                 var x = new UpdatePlayerApi(basePath());
 
-                var playerUpdate = new PlayerUpdate();
-                playerUpdate.Name = name;
-                playerUpdate.CombatWindowOpen = true;
+                var playerUpdate = new PlayerUpdate
+                {
+                    Name = name, 
+                    CombatWindowOpen = true
+                };
                 var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
                 return resp;
             }
@@ -120,9 +119,11 @@ namespace runner
                 //basePath()
                 var x = new UpdatePlayerApi(basePath());
 
-                var playerUpdate = new PlayerUpdate();
-                playerUpdate.Name = name;
-                playerUpdate.ExitedCombat = true;
+                var playerUpdate = new PlayerUpdate
+                {
+                    Name = name, 
+                    ExitedCombat = true
+                };
                 var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
                 return resp;
             }
@@ -150,6 +151,7 @@ namespace runner
 
         public string completeEvent(string egoName, Event currentEvent)
         {
+            if (currentEvent == null) return null;
             try
             {
                 var api = new CompleteOrdersPlayerApi(basePath());
@@ -168,8 +170,7 @@ namespace runner
             {
                 var x = new UpdatePlayerApi(basePath());
 
-                var playerUpdate = new PlayerUpdate();
-                playerUpdate.Name = name;
+                var playerUpdate = new PlayerUpdate {Name = name};
                 var resp = x.PlayerUpdateUsingPOST(name, playerUpdate);
                 return resp;
             }

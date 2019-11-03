@@ -1,8 +1,4 @@
 using System;
-using System.Drawing;
-using System.Threading;
-using System.Web.Configuration;
-using AutoIt;
 using IO.Swagger.Model;
 using runner.ActionWorkers;
 using runner.Magic;
@@ -17,6 +13,7 @@ namespace runner
         private Event _currentEvent;
         private Event.ActionEnum _currentAction = Idle;
         private readonly Program _program;
+        private CombatWindow combatWindow = new CombatWindow();
 
         public Action(Program program)
         {
@@ -25,6 +22,7 @@ namespace runner
 
         public bool wantToRepair = true;
 
+        private long waitUntil = -1;
         public void HandleNextAction(IntPtr baseHandle)
         {
             bool complete = false;
@@ -37,7 +35,7 @@ namespace runner
                     complete = true;
                     break;
 
-                case CheckStatus when _program.getTick() % 1000 == 0:
+                case CheckStatus when _program.GetTick() > waitUntil:
                     complete = true;
                     break;
                 case CheckStatus:
@@ -53,9 +51,9 @@ namespace runner
 
                 case CheckHpMana:
                 {
-                    if (_program.getTick() % 100 == 0)
+                    if (_program.GetTick() % 100 == 0)
                     {
-                        this.ReadHP(baseHandle);
+                        this.ReadHp(baseHandle);
                     }
 
                     //Console.WriteLine("Checking Status");
@@ -78,7 +76,7 @@ namespace runner
                 case CombatAttack:
                 case CombatCast:
                 case CombatGuard:
-                    this.doCombat(baseHandle);
+                    this.DoCombat(baseHandle);
                     complete = Windows.getInCombat(baseHandle) == IntPtr.Zero;
                     break;
                 default:
@@ -109,7 +107,9 @@ namespace runner
                 {
                     case CheckStatus:
                         //Console.WriteLine("Checking Status [{0}]", currentEvent);
-                        askForWeight(baseHandle);
+                        AskForWeight(baseHandle);
+                        waitUntil = _program.GetTick() + 100; 
+                        //wait no longer than 100 tics before we say we did that.
                         break;
                     case SellInventory:
                     case Repair:
@@ -145,7 +145,7 @@ namespace runner
             }
             else
             {
-                Console.WriteLine("Implied Action Completed [{0}]", actionCompleted);
+                Console.WriteLine("Implied Action Completed [{0}], State [{1}]", actionCompleted, _program.stateEngine);
             }
 
             //if(_currentAction != Idle)
@@ -157,8 +157,9 @@ namespace runner
             if (complete && _currentAction != Idle)
             {
                 //tell api we are done
-                Console.WriteLine("Complete Event:[{0}]\r\n---Api result:[{1}]", _caller.completeEvent(_program.ego.Name, _currentEvent),
-                    _currentEvent);
+                Console.WriteLine("Complete Event:[{0}], State [{2}]\r\n---Api result:[{1}]", 
+                    _caller.completeEvent(_program.ego.Name, _currentEvent),
+                    _currentEvent, _program.stateEngine);
                 _currentEvent = null;
                 _currentAction = Idle;
             }

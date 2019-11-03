@@ -39,7 +39,7 @@ namespace runner
 
         private static void move(int x, int y)
         {
-            ScreenCapturer.GetScale(IntPtr.Zero, out var scaleX, out var scaleY);
+            WindowHandleInfo.GetScale(IntPtr.Zero, out var scaleX, out var scaleY);
             
             Win32.mouse_event(Win32.MouseEventFlags.ABSOLUTE,
                 (int) (x*scaleX),

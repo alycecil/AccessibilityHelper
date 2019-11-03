@@ -15,6 +15,9 @@ namespace runner
             Enter = "Eninr",
             Sit = "Sit",
             Stand = "Stand",
+            Chat = "Show the Chat",
+            Follow = "Follow",
+            Group = "Join",
             Close = "Close";
     }
 }

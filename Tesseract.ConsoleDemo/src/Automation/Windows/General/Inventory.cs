@@ -10,17 +10,15 @@ namespace runner
         public static bool handle(IntPtr baseHandle)
         {
             
-            ToolTips.moveOver(baseHandle, ExpectedTT.Inventory);
-            Thread.Sleep(1);
-            MouseManager.MouseClick(baseHandle);
-            Thread.Sleep(TimeSpan.FromSeconds(1));
+            ToolTips.MoveOver(baseHandle, ExpectedToolTip.Inventory, true);
+            Thread.Sleep(TimeSpan.FromMilliseconds(100));
 
-            var hWnd = Windows.HandleInventory();
+            var hWnd = Windows.HandleInventory(baseHandle);
 
-            if (hWnd != IntPtr.Zero)
-            {
-                AutoItX.WinClose(hWnd);
-            }
+//            if (hWnd != IntPtr.Zero)
+//            {
+//                AutoItX.WinClose(hWnd);
+//            }
 
             return true;
         }

@@ -16,14 +16,14 @@ namespace runner
         private static string CastTT = "Cast"; //...
         private static string FleeTT = "Attempt to run"; //...
 
-        public static void handle(Program program, IntPtr baseHandle)
+        public void handle(Program program, IntPtr baseHandle)
         {
             var combat = Windows.getInCombat(baseHandle);
             if (combat == IntPtr.Zero) return;
 
-            ScreenCapturer.GetBounds(combat, out var bounds);
+            WindowHandleInfo.GetBounds(combat, out var bounds);
             //ScreenCapturer.CaptureAndSave("RCombat", combat);
-            ToolTips.setExpected(ExpectedTT.Buttons);
+            ToolTips.SetExpected(ExpectedToolTip.Buttons);
 
 
             Dictionary<string, Point> spots = GetClicks(program, baseHandle, bounds);
@@ -41,36 +41,39 @@ namespace runner
                     string spotKey = spot.Key;
                     if (spotKey?.StartsWith(tt) == true)
                     {
-                        MouseManager.MouseClick(baseHandle,"LEFT",bounds.X + spot.Value.X, bounds.Y + spot.Value.Y, 1, 1);        
+                        MouseManager.MouseClickAbsolute(baseHandle,MouseButton.LEFT,bounds.X + spot.Value.X, bounds.Y + spot.Value.Y, 1, 1);
+                        return;
                     }
                     else
                     {
+#if DEBUG
                         Console.WriteLine("saw [{0}] looking for [{1}]",spotKey,tt);
+#endif
                     }
                 }
             }
             else
             {
-                Console.WriteLine("Not sure what to do");
+                Console.WriteLine("Combat Window - Not sure what to do");
             }
         }
 
-        private static Dictionary<string, Point> clickingLocations = new Dictionary<string, Point>();
+        private Dictionary<string, Point> clickingLocations = new Dictionary<string, Point>();
 
-        private static Dictionary<string, Point> GetClicks(Program program, IntPtr baseHandle, Rectangle bounds)
+        private Dictionary<string, Point> GetClicks(Program program, IntPtr baseHandle, Rectangle bounds)
         {
             if (clickingLocations.Count > 0)
             {
                 return clickingLocations;
             }
-            ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
+            WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
             var seenBefore = new HashSet<string>();
             for (int x = 20; x < bounds.Width; x += (int)(40*sX))
             {
-                for (int y = 20; y < bounds.Height; y += (int)(40*sY))
+                for (int y = 20; y < bounds.Height; y += (int)(21*sY))
                 {
-                    MouseManager.MouseMove(baseHandle,bounds.X + x, bounds.Y + y, 1);
-                    var tt = ToolTips.handle(program, baseHandle);
+                    MouseManager.MouseMoveAbsolute(baseHandle,bounds.X + x, bounds.Y + y, 1);
+                    var tt = ToolTips.Handle(program, baseHandle);
                     if (!string.IsNullOrEmpty(tt) && !seenBefore.Contains(tt))
                     {
                         seenBefore.Add(tt);

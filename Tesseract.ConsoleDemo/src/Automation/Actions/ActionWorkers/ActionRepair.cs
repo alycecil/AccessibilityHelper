@@ -10,7 +10,11 @@ namespace runner.ActionWorkers
         public static bool DoAction(Program program, IntPtr baseHandle)
         {
             bool didSomething = false;
-           if (!findVerbWindow(program, baseHandle, out var verbWindow)) return false;
+            if (!findVerbWindow(program, baseHandle, out var verbWindow))
+            {
+                program.scan?.DidWork();
+                return false;
+            }
 
             if (!program.stateEngine.InState(StateEngine.OutOfCombat))
             {
@@ -26,18 +30,35 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Repair))
                 {
                     Console.WriteLine("Repairing");
-                    VerbWindow.click(baseHandle,verb);
+                    VerbWindow.Click(baseHandle,verb);
                     program.action.wantToRepair = false;
                     
-                    Thread.Sleep(TimeSpan.FromSeconds(2));
-                    program.action.handleRepairControl(baseHandle);
                     
-                    program.action.Repaired();
                     
+                    didSomething = true;
+                }else if (
+                    verb.what.Equals(Verb.Sell))
+                {
+                    Console.WriteLine("Repairing at implied by sell");
+                    WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
+                    var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y - 59 * sY), 
+                        verb.rect.Width,
+                        verb.rect.Height);
+                    Verb implied = new Verb(r2, Verb.Sell);
+                    VerbWindow.Click(baseHandle, implied);
+                    program.action.wantToRepair = false;
                     didSomething = true;
                 }
             }
 
+            if (didSomething)
+            {
+                Thread.Sleep(TimeSpan.FromSeconds(1));
+                program.action.HandleRepairControl(baseHandle);
+                    
+            }
+
+            program.scan?.DidWork();
             return didSomething;
 
         }

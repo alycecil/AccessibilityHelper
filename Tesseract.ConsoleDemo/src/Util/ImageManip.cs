@@ -14,6 +14,7 @@ namespace runner
         // Perform threshold adjustment on the image.
         public static Bitmap AdjustThreshold(Image image, float threshold)
         {
+            if (image == null) return null;
             // Make the result bitmap.
             Bitmap bm = new Bitmap(image.Width, image.Height);
 
@@ -36,6 +37,7 @@ namespace runner
                 gr.DrawImage(image, points, rect,
                     GraphicsUnit.Pixel, attributes);
             }
+            image.Dispose();
 
             // Return the result.
             return bm;
@@ -76,6 +78,7 @@ namespace runner
 
         private static Bitmap Transform(Bitmap source, ColorMatrix colorMatrix)
         {
+            if (source == null) return null;
 //create a blank bitmap the same size as original
             Bitmap newBitmap = new Bitmap(source.Width, source.Height);
 
@@ -92,6 +95,7 @@ namespace runner
 
             //dispose the Graphics object
             g.Dispose();
+            source.Dispose();
 
             return newBitmap;
         }
@@ -99,8 +103,7 @@ namespace runner
 
         public static string doOcr(Bitmap capture, string charset = null)
         {
-            string test;
-
+            if (capture == null) return null;
 
 //        ScreenCapturer.ImageSave("CornerBox", ImageFormat.Tiff, capture);
             string result = String.Empty;
@@ -125,10 +128,10 @@ namespace runner
                 {
                     using (var page = ocr.Process(img))
                     {
-                        test = page.GetText();
-                        if (!String.IsNullOrEmpty(test))
+                        var text = page.GetText();
+                        if (!String.IsNullOrEmpty(text))
                         {
-                            result = test.Trim();
+                            result = text.Trim();
                         }
                     }
                 }
@@ -136,77 +139,7 @@ namespace runner
             return result;
         }
 
-        public static void testOcr(string[] args)
-        {
-            var testImagePath = "./phototest.tif";
-            if (args.Length > 0)
-            {
-                testImagePath = args[0];
-            }
 
-            try
-            {
-                using (var engine = new TesseractEngine(@"./tessdata", "eng", EngineMode.Default))
-                {
-                    using (var img = Pix.LoadFromFile(testImagePath))
-                    {
-                        using (var page = engine.Process(img))
-                        {
-                            var text = page.GetText();
-                            Console.WriteLine("Mean confidence: {0}", page.GetMeanConfidence());
-
-                            Console.WriteLine("Text (GetText): \r\n{0}", text);
-                            Console.WriteLine("Text (iterator):");
-                            using (var iter = page.GetIterator())
-                            {
-                                iter.Begin();
-
-                                do
-                                {
-                                    do
-                                    {
-                                        do
-                                        {
-                                            do
-                                            {
-                                                if (iter.IsAtBeginningOf(PageIteratorLevel.Block))
-                                                {
-                                                    Console.WriteLine("<BLOCK>");
-                                                }
-
-                                                Console.Write(iter.GetText(PageIteratorLevel.Word));
-                                                Console.Write(" ");
-
-                                                if (iter.IsAtFinalOf(PageIteratorLevel.TextLine, PageIteratorLevel.Word))
-                                                {
-                                                    Console.WriteLine();
-                                                }
-                                            } while (iter.Next(PageIteratorLevel.TextLine, PageIteratorLevel.Word));
-
-                                            if (iter.IsAtFinalOf(PageIteratorLevel.Para, PageIteratorLevel.TextLine))
-                                            {
-                                                Console.WriteLine();
-                                            }
-                                        } while (iter.Next(PageIteratorLevel.Para, PageIteratorLevel.TextLine));
-                                    } while (iter.Next(PageIteratorLevel.Block, PageIteratorLevel.Para));
-                                } while (iter.Next(PageIteratorLevel.Block));
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Trace.TraceError(e.ToString());
-                Console.WriteLine("Unexpected Error: " + e.Message);
-                Console.WriteLine("Details: ");
-                Console.WriteLine(e.ToString());
-            }
-            //Console.Write("Press any key to continue . . . ");
-            //Console.ReadKey(true);
-        }
-        
-        
         [DllImport("msvcrt.dll")]
         private static extern int memcmp(IntPtr b1, IntPtr b2, long count);
 

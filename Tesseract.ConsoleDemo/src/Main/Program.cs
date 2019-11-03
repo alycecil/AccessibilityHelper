@@ -11,14 +11,14 @@ namespace Tesseract.ConsoleDemo
     public class Program
     {
         public WindowScan scan = null;
-        public Player ego = new Player();
-        public StateEngine stateEngine;
+        public readonly Player ego = new Player();
+        public readonly StateEngine stateEngine;
         public int MaxHp = 1000;
-        private static long tick = 0;
-        public WindowScanManager windowScanManager;
+        private long tick = 0;
+        public readonly WindowScanManager windowScanManager;
         public readonly IntPtr baseHandle;
-        private ControlLogger roomLogger;
-        public Action action;
+        private readonly ControlLogger roomLogger;
+        public readonly Action action;
         public VerbWindow lastVerbWindow;
 
         public Program(IntPtr baseHandle)
@@ -26,12 +26,13 @@ namespace Tesseract.ConsoleDemo
             this.baseHandle = baseHandle;
             this.action = new Action(this);
             this.stateEngine = new StateEngine(this, baseHandle);
+            this.windowScanManager = new WindowScanManager(this);
             this.roomLogger = ControlLogger.build(this, baseHandle);
         }
 
         public static void Main(string[] args)
         {
-            ImageManip.testOcr(args);
+            ImageManipActiveTesting.testOcr(args);
             //Win32GetText.GetToolTipText((IntPtr)0x47)
             AutoItX.Init();
 
@@ -42,44 +43,62 @@ namespace Tesseract.ConsoleDemo
             {
                 throw new Exception("Other App Not Running");
             }
-            
+
+            List<Program> programs = new List<Program>();
             foreach (IntPtr baseHandle in handleBaseWindows)
             {
                 //todo refactor into threads
-                new Program(baseHandle).MainLoop();
+                var program = new Program(baseHandle);
+                program.Login();
+                programs.Add(program);
             }
 
             //Action.ReadHP();
-
-
-           
+            while (true)
+            {
+                foreach (var program in programs)
+                {
+                    do
+                    {
+                        //Console.Write(".");
+                        try
+                        {
+                            program.Loop();
+                        }
+                        catch (Exception e)
+                        {
+                            Console.Error.WriteLine("Fatal Error : [{0}]", e);
+                        }
+                    } while (program.lastVerbWindow != null);
+                }
+                //Console.Write("!");
+            }
         }
 
-        private void MainLoop()
+        private void Login()
         {
             ego.Name = Config.get(Config.KEY_ME);
 
             new ApiCaller().login(ego.Name);
-//////MAIN LOOP
-            while (true)
-            {
-                tick++;
-                Thread.Sleep(1);
-                __base();
+        }
+
+        private void Loop()
+        {
+            tick++;
+            __base();
 
 
-                EveryTickFirst();
+            EveryTickFirst();
 
-                FastTick();
-                CommonTick();
-                RareTick();
-
-
-                EveryTickLast();
+            FastTick();
+            CommonTick();
+            RareTick();
 
 
-                tick %= Int32.MaxValue;
-            }
+            EveryTickLast();
+
+
+            tick %= Int32.MaxValue;
         }
 
         const int WARMUP_TICKS = 10;
@@ -92,16 +111,17 @@ namespace Tesseract.ConsoleDemo
 
         private void EveryTickFirst()
         {
-            ToolTips.handle(this, baseHandle);
+            ToolTips.Handle(this, baseHandle);
+            HoverBox.handle(this, baseHandle);
         }
 
         private void FastTick()
         {
             if (tick % 3 != 0) return;
+            windowScanManager.handleScreenScan(this, baseHandle);
             roomLogger.LogRoom();
             scan?.tickCommon(tick, this, baseHandle);
-            windowScanManager.handleScreenScan(this, baseHandle);
-            HoverBox.handle(this, baseHandle);
+
             stateEngine.HandleStateChanges();
         }
 
@@ -112,30 +132,29 @@ namespace Tesseract.ConsoleDemo
 
             if (stateEngine.InState(StateEngine.InCombat))
             {
-                action.doCombat(baseHandle);
+                action.DoCombat(baseHandle);
             }
             else if (stateEngine.InState(StateEngine.InCobmatAfter))
             {
-                action.doLoot(baseHandle);
+                action.DoLoot(baseHandle);
                 action.exitCombat(baseHandle);
             }
             else
                 //if (stateEngine.InState(StateEngine.OutOfCombat))
             {
-                action.handleRepairControl(baseHandle);
-                action.doLoot(baseHandle);
-                action.doSell(baseHandle);
+                action.HandleRepairControl(baseHandle);
+                action.DoLoot(baseHandle);
+                action.DoSell(baseHandle);
             }
         }
 
         private void RareTick()
         {
-            if (tick % 100 != 0) return;
-            
-
+            if (tick % 10 != 0) return;
             action.GetNextEvent(baseHandle);
             //
 
+            if (tick % 100 != 0) return;
             if (stateEngine.InState(StateEngine.OutOfCombat))
             {
                 if (scan == null)
@@ -143,10 +162,11 @@ namespace Tesseract.ConsoleDemo
             }
 
             if (tick % 5000 != 0) return;
+            Console.WriteLine("Tick Passed [{0}]", tick);
             if (stateEngine.InState(StateEngine.OutOfCombat))
             {
-                action.ReadHP(baseHandle);
-                action.askForWeight(baseHandle);
+                action.ReadHp(baseHandle);
+                action.AskForWeight(baseHandle);
             }
 
             if (tick % 10000 != 0) return;
@@ -165,12 +185,20 @@ namespace Tesseract.ConsoleDemo
             {
                 throw new Exception("Other App Not Running");
             }
+
             return baseHandle;
         }
 
-        public long getTick()
+        public long GetTick()
         {
             return tick;
+        }
+
+        public void FinishVerbWindow()
+        {
+            lastVerbWindow?.Dismiss(); 
+            lastVerbWindow = null;
+            scan?.DidWork();
         }
     }
 }

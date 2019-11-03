@@ -8,6 +8,7 @@ namespace runner
     {
         public List<Thing> things;
         public Program program;
+        protected bool workDoneOnTic;
 
         public WindowScan(List<Thing> things, Program program)
         {
@@ -16,5 +17,20 @@ namespace runner
         }
         
         public abstract void tickCommon(long tick, Program program, IntPtr baseHandle);
+
+        public void DidWork()
+        {
+            workDoneOnTic = true;
+        }
+
+        protected void ResetWork()
+        {
+            workDoneOnTic = false;
+        }
+
+        public bool IsDidWork()
+        {
+            return workDoneOnTic;
+        }
     }
 }

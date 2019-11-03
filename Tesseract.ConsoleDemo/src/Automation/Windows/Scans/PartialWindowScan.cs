@@ -28,16 +28,18 @@ namespace runner
                 out END_y);
 
             var r = new Random();
-            currentX = 400+r.Next(1,100);
+            currentX = 400+r.Next(1,19);
             currentY = START_Y;
+            
+            DidWork();
         }
 
 
         public override void tickCommon(long tick, Program program, IntPtr baseHandle)
         {
-            if (!Config.screenScan())
+            if (!Config.screenScan() || !IsDidWork())
                 return;
-            
+
             bool afterEndY = currentY > END_y-STEP_Y+1;
             bool afterEndX = currentX > (END_X-STEP_X+1);
 
@@ -67,7 +69,7 @@ namespace runner
 
             else if (afterEndY)
             {
-                int y = currentY;
+                //int y = currentY;
                 currentY = START_Y;
                 currentX += STEP_X;
                 
@@ -76,19 +78,17 @@ namespace runner
             }
             else if (afterEndX)
             {
-                var x = currentX;
+                //var x = currentX;
                 currentX = START_X + 3 + (currentX%END_X);
                 //Console.WriteLine("Resetting Current X from [{0}] to [{1}]", x, currentX);
             }
             currentY += STEP_Y;
 
 
-            VerbWindow.findWindow(program, baseHandle,"DISMISS")?.dismiss();
-            ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
-            int _y = (int) (currentY * sY);
-            int _x = (int) (currentX * sX);
-            MouseManager.MouseMove(baseHandle, _x, _y, 1);
-
+            program.lastVerbWindow?.Dismiss();
+            MouseManager.MouseMoveUnScaled(baseHandle, currentX, currentY);
+            
+            ResetWork();
         }
     }
 }

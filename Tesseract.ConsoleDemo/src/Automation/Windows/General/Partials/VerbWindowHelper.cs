@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Automation;
 using Tesseract.ConsoleDemo;
 
 namespace runner
 {
-    internal static class VerbWindowHelper
+    internal class VerbWindowHelper : User32Delegate
     {
+        
         const int stepSize = 7;
 
         public static IntPtr findWindow(IntPtr baseHandle, String mousedOver, bool allowClick)
@@ -21,9 +21,9 @@ namespace runner
                 if (allowClick)
                 {
                     Console.WriteLine("Mouse Over New Thing [{0}], Clicking on", mousedOver);
-                    MouseManager.MouseClick(baseHandle);
+                    MouseManager.MouseClickAbsolute(baseHandle);
                     Thread.Sleep(TimeSpan.FromMilliseconds(100));
-                    MouseManager.MouseMove(baseHandle, 0, 0, 1);
+                    MouseManager.MouseMoveUnScaled(baseHandle, 0, 0, 1);
 
                     myHandle = __findWindow(baseHandle, mousedOver, allowClick);
                 }
@@ -39,23 +39,40 @@ namespace runner
 
             if (lightWeight)
             {
-                Console.WriteLine("Built New Lightweight VerbWindow");
-                return new VerbWindow(hWnd, null, ocrName);
+                return MakeLightVerbWindow(hWnd, ocrName);
             }
 
-            List<Verb> verbs = new List<Verb>();
+            try
+            {
+                List<Verb> verbs = new List<Verb>();
 
-            ScreenCapturer.CaptureScreen(hWnd, out var height, out var offset, out var w, out var rect,
-                out var capture);
+                CaptureScreen(hWnd, out var height, out var offset, out var w, out var rect,
+                    out var capture);
+                using (capture)
+                {
+                    var captureHeight = capture.Height;
 
-            var captureHeight = capture.Height;
+                    FindVerbs(Program, baseHandle, hWnd, captureHeight, height, capture, offset, w, rect,
+                        verbs);
 
-            FindVerbs(Program, baseHandle, hWnd, captureHeight, height, capture, offset, w, rect,
-                verbs);
+                    Console.WriteLine("Built New VerbWindow with details");
 
-            Console.WriteLine("Built New VerbWindow with details");
+                    return new VerbWindow(hWnd, verbs, ocrName);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.Error.WriteLine("Error on VerbWindow details [{0}]", e);
+                return MakeLightVerbWindow(hWnd, ocrName);
+            }
+        }
 
-            return new VerbWindow(hWnd, verbs, ocrName);
+        private static VerbWindow MakeLightVerbWindow(IntPtr hWnd, string ocrName)
+        {
+#if DEBUG
+            Console.WriteLine("Built New Lightweight VerbWindow");
+#endif
+            return new VerbWindow(hWnd, null, ocrName);
         }
 
         private static void FindVerbs(Program program, IntPtr baseHandle, IntPtr hWnd, int captureHeight, int height,
@@ -66,7 +83,8 @@ namespace runner
             var end = captureHeight - height;
 
             //Console.WriteLine("Possible Checks - [{0}]", end / stepSize);
-            for (int location = 0; location < end; location += stepSize)
+            WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
+            for (int location = 0; location < end; location += Math.Max((int)(stepSize*sY), stepSize/2))
             {
                 Color captureTime = capture.GetPixel(20, location);
 
@@ -80,32 +98,35 @@ namespace runner
 
                 Rectangle r2 = new Rectangle(offset, location, w, height);
                 var sub = new Bitmap(rect.Width, height);
-                using (var g = Graphics.FromImage(sub))
+                using (sub)
                 {
-                    g.DrawImage(capture, new Rectangle(0, 0, sub.Width, sub.Height),
-                        r2,
-                        GraphicsUnit.Pixel);
-                }
+                    using (var g = Graphics.FromImage(sub))
+                    {
+                        g.DrawImage(capture, new Rectangle(0, 0, sub.Width, sub.Height),
+                            r2,
+                            GraphicsUnit.Pixel);
+                    }
 
 
-                string ocr = ImageManip.doOcr(sub, VerbWindow.texts);
+                    string ocr = ImageManip.doOcr(sub, VerbWindow.texts);
 
 
-                if (TryGetVerb(program, baseHandle, hWnd, ocr, rect, offset, w, height, out var item, 0, location))
-                {
-                    location += height;
-                    verbs.Add(item);
-                    //Console.WriteLine("Added OCR Verb");
-                }
-                else if (TryGetVerb(program, baseHandle, hWnd, ocr, rect, offset, w, height, out item, 1, location))
-                {
-                    location += height;
-                    verbs.Add(item);
-                    //Console.WriteLine("Added TT Verb");
-                }
-                else
-                {
-                    //Console.WriteLine("Skipped");
+                    if (TryGetVerb(program, baseHandle, hWnd, ocr, rect, offset, w, height, out var item, 0, location))
+                    {
+                        location += height;
+                        verbs.Add(item);
+                        //Console.WriteLine("Added OCR Verb");
+                    }
+                    else if (TryGetVerb(program, baseHandle, hWnd, ocr, rect, offset, w, height, out item, 1, location))
+                    {
+                        location += height;
+                        verbs.Add(item);
+                        //Console.WriteLine("Added TT Verb");
+                    }
+                    else
+                    {
+                        //Console.WriteLine("Skipped");
+                    }
                 }
             }
 
@@ -129,8 +150,11 @@ namespace runner
 
                 var text = Win32GetText.GetControlText(hWnd);
                 if (String.IsNullOrEmpty(text)) return true;
+                
+                //dont close combat windows et al
+                if (Windows.GetKnownWindow(hWnd, text)!=null) return true;
 
-                ScreenCapturer.GetBounds(hWnd, out var rect);
+                WindowHandleInfo.GetBounds(hWnd, out var rect);
                 //Console.WriteLine("Right Class {0:x} @{1}", hWnd.ToInt32(), rect);
                 Win32.GetWindowThreadProcessId(hWnd, out var thread);
 
@@ -170,28 +194,41 @@ namespace runner
                 string tipHelper = TooltipToVerb.ToolTipHelper(program, baseHandle, hWnd, ocr, bounds);
                 if (String.IsNullOrEmpty(tipHelper)) return false;
 
-                wanted = VerbWindowOCR.cleanUpOCRTT(tipHelper, out cleaned);
+                wanted = VerbWindowOCR.CleanUpOcrTooltips(tipHelper, out cleaned);
             }
             else
             {
                 if (String.IsNullOrEmpty(ocr)) return false;
-                wanted = VerbWindowOCR.cleanUpOCR(ocr, out cleaned);
+                wanted = VerbWindowOCR.CleanUpOcr(ocr, out cleaned);
             }
 
             if (!wanted) return false;
             ocr = cleaned;
 
-
+#if DEBUG
             Console.Write("[{2}] Added Verb [{0}] @ [{1}]", ocr, bounds,
                 Win32GetText.GetControlText(hWnd));
+#endif
             item = new Verb(rect: bounds, what: ocr);
             return true;
         }
+        
+        private static void CaptureScreen(IntPtr hWnd, out int height, out int offet, out int w, out Rectangle rect,
+            out Bitmap capture)
+        {
+            WindowHandleInfo.GetScale(hWnd, out float sX, out float sY);
+            height = (int) (sY * 12);
+            offet = (int) (sX * 7);
+            w = (int) (sX * 66);
 
+            Thread.Sleep(100);
 
-        private delegate bool EnumWindowsProc(IntPtr hWnd, int lParam);
-
-        [DllImport("USER32.DLL")]
-        private static extern bool EnumWindows(EnumWindowsProc enumFunc, int lParam);
+            WindowHandleInfo.GetBounds(hWnd, out rect);
+            capture = ScreenCapturer.Capture(rect);
+            if(capture==null) return;
+            rect.Width /= 3;
+            capture = ImageManip.AdjustThreshold(capture, .9f);
+            capture = ImageManip.Max(capture);
+        }
     }
 }

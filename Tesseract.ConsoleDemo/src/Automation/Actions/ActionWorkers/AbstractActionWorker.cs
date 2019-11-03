@@ -7,41 +7,47 @@ namespace runner.ActionWorkers
     {
         internal static bool findVerbWindow(Program program, IntPtr baseHandle, out VerbWindow verbWindow)
         {
-            verbWindow = program.lastVerbWindow;
-
-            if (verbWindow == null)
+            try
             {
-                //Console.Write("[...]");
-                return false;
-            }
+                verbWindow = program.lastVerbWindow;
 
-            if (verbWindow.verbs.Count == 0)
-            {
-                Console.WriteLine("Scrap Scan Sucked, Trying Again");
-                int type = verbWindow.type;
-                verbWindow = VerbWindow.findWindow(program, baseHandle, verbWindow.ocrText, false, false);
-                if (verbWindow != null)
-                    verbWindow.type = type;
-                program.lastVerbWindow = verbWindow;
-                Console.WriteLine("Actions Scanned Again");
-
-                if (verbWindow == null || verbWindow.verbs.Count == 0)
+                if (verbWindow == null)
                 {
-                    Console.WriteLine("Nothing To Do Yet, Maybe I should screen scan better");
-                    program.lastVerbWindow = null;
+                    //Console.Write("[No Verb Window]");
                     return false;
                 }
+
+                if (verbWindow.verbs.Count == 0)
+                {
+                    Console.WriteLine("Scrap Scan Sucked, Trying Again");
+                    int type = verbWindow.type;
+                    verbWindow = VerbWindow.FindWindow(program, baseHandle, verbWindow.ocrText, false, false);
+                    if (verbWindow != null)
+                        verbWindow.type = type;
+                    program.lastVerbWindow = verbWindow;
+                    Console.WriteLine("Actions Scanned Again");
+
+                    if (verbWindow?.verbs.Count == 0)
+                    {
+                        Console.WriteLine("Nothing To Do Yet, Maybe I should screen scan better");
+                        program.FinishVerbWindow();
+                        return false;
+                    }
+                }
+
+
+                if (Win32.IsWindowVisible(verbWindow.hWnd) && verbWindow.verbs.Count != 0) return true;
+                Console.WriteLine("[Lost VerbWindow]");
+                program.FinishVerbWindow();
+                return false;
             }
-
-
-            if (!Win32.IsWindowVisible(verbWindow.hWnd) || verbWindow.verbs.Count == 0)
+            catch (Exception e)
             {
-                Console.WriteLine("Lost VerbWindow");
-                program.lastVerbWindow = null;
+                Console.Error.WriteLine("Had An issue with find window [{0}]",e);
+                verbWindow = null;
                 return false;
             }
 
-            return true;
         }
     }
 }

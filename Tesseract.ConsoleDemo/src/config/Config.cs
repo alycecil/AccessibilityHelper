@@ -68,9 +68,7 @@ namespace runner
             var foundY = getAsInt(keyY, out int y);
             if (foundX && foundY)
             {
-                ScreenCapturer.GetScale(IntPtr.Zero,out float sX, out float sY);
-                MouseManager.MouseMove(baseHandle,(int) (x * sX), (int) (y * sY));
-                MouseManager.MouseClick(baseHandle);
+                MouseManager.MouseClick(baseHandle,x,y);
                 return true;
             }
 

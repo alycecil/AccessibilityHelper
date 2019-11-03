@@ -6,44 +6,24 @@ using System.Runtime.InteropServices;
 using AutoIt;
 using runner;
 using Tesseract.ConsoleDemo;
-using static runner.ExpectedTT;
+using static runner.ExpectedToolTip;
 using static runner.Win32;
 
 namespace runner
 {
-    public enum ExpectedTT
-    {
-        Health,
-        Mana,
-        Inventory,
-        Spells,
-        Buttons,
-        Other,
-        None
-    }
-
-
-    public static class TTDT
-    {
-        public const int TTDT_AUTOMATIC = 0;
-        public const int TTDT_AUTOPOP = 2;
-        public const int TTDT_INITIAL = 3;
-        public const int TTDT_RESHOW = 1;
-    }
-
     /// <summary>Contains functionality to get all the open windows.</summary>
-    public static class ToolTips
+    internal class ToolTips : User32Delegate
     {
-        private static ExpectedTT _expectedTt = Other;
+        private static ExpectedToolTip _expectedToolTip = Other;
 
-        public static void setExpected(ExpectedTT expectedTt)
+        public static void SetExpected(ExpectedToolTip expectedToolTip)
         {
-            _expectedTt = expectedTt;
+            _expectedToolTip = expectedToolTip;
         }
 
-        public static string handle(Program program,  IntPtr baseHandle)
+        public static string Handle(Program program,  IntPtr baseHandle)
         {
-            var all = list(baseHandle);
+            var all = List(baseHandle);
             foreach (var keyValuePair in all)
             {
                 var winGetState = keyValuePair.Value;
@@ -61,15 +41,11 @@ namespace runner
 
         private static string HandleVisible(Program program, IntPtr baseHandle, KeyValuePair<IntPtr, int> keyValuePair)
         {
-//Console.WriteLine("Visi");
-            //ScreenCapturer.CaptureAndSave("alices"+hWnd,hWnd);
             //TODO HANDLE BETTER
             var capture = ScreenCapturer.Capture(keyValuePair.Key);
             capture = ImageManip.AdjustThreshold(capture, .3f);
-//            ScreenCapturer.ImageSave("currentThingRaw", ImageFormat.Tiff, capture);
             capture = ImageManip.Invert(capture);
             capture = ImageManip.Max(capture);
-//            ScreenCapturer.ImageSave("currentThing1", ImageFormat.Tiff, capture);
 
 
             return HandleCapture(program, baseHandle, capture);
@@ -77,53 +53,53 @@ namespace runner
 
         private static string HandleCapture(Program program, IntPtr baseHandle, Bitmap capture)
         {
-            String text = String.Empty;
-            String lookingFor = "None";
-            switch (_expectedTt)
+            using (capture)
             {
-                case Mana:
-                    lookingFor = "Mana";
-                    text = ImageManip.doOcr(capture, "1234567890");
-                    if (text.Contains(" ") && text.IndexOf(" ") == text.LastIndexOf(" ") && text.Length < 10)
-                    {
-                        text.Remove(text.IndexOf(" "));
-                    }
-
-                    if (!text.Contains(" "))
-                    {
-                        if (int.TryParse(text, out var current))
+                String text = String.Empty;
+                String lookingFor = "None";
+                switch (_expectedToolTip)
+                {
+                    case Mana:
+                        text = ImageManip.doOcr(capture, "1234567890");
+                        if (text.Contains(" ") && text.IndexOf(" ") == text.LastIndexOf(" ") && text.Length < 10)
                         {
-                            Console.WriteLine("Mana is at [{0}]", current);
-
-                            setExpected(Other);
-                            program.action.ReadManaComplete(current);
+                            text.Remove(text.IndexOf(" "));
                         }
-                    }
 
-                    break;
-                case Health:
-                    lookingFor = "HP";
-                    text = HandleHealth(program, baseHandle, capture);
+                        if (!text.Contains(" "))
+                        {
+                            if (int.TryParse(text, out var current))
+                            {
+                                Console.WriteLine("Mana is at [{0}]", current);
 
+                                SetExpected(Other);
+                                program.action.ReadManaComplete(current);
+                            }
+                        }
 
-                    break;
-                case Buttons:
-                    lookingFor = "Button";
-                    text = ImageManip.doOcr(capture);
-                    break;
+                        break;
 
-                case ExpectedTT.Inventory:
-                case Other:
-                default:
-                    break;
-            }
+                    case Health:
+                        text = HandleHealth(program, baseHandle, capture);
+                        break;
+
+                    case Buttons:
+                        text = ImageManip.doOcr(capture);
+                        break;
+
+                    case ExpectedToolTip.Inventory:
+                    case Other:
+                    default:
+                        break;
+                }
 
 //            if (!string.IsNullOrEmpty(text))
 //            {
 //                Console.WriteLine("TTL [{0}] Looking for [{1}]", text, lookingFor);
 //            }
 
-            return text;
+                return text;
+            }
         }
 
         private static string HandleHealth(Program program, IntPtr baseHandle, Bitmap capture)
@@ -149,7 +125,7 @@ namespace runner
 
                         Console.WriteLine("Hp is at [{0}] of [{1}]", current, max);
 
-                        setExpected(Other);
+                        SetExpected(Other);
                         program.action.ReadHpComplete(baseHandle, current, max);
                     }
 
@@ -159,7 +135,7 @@ namespace runner
 
         /// <summary>Returns a dictionary that contains the handle and title of all the open windows.</summary>
         /// <returns>A dictionary that contains the handle and title of all the open windows.</returns>
-        private static IDictionary<IntPtr, int> list(IntPtr baseHandle)
+        private static IDictionary<IntPtr, int> List(IntPtr baseHandle)
         {
             GetWindowThreadProcessId(baseHandle, out var main);
             IntPtr shellWindow = GetShellWindow();
@@ -176,8 +152,6 @@ namespace runner
                 if ("tooltips_class32".Equals(clz)
                     && thread == main)
                 {
-                    int _h = (int) hWnd;
-
                     MakeQuick(hWnd);
 
                     var winGetState = AutoItX.WinGetState(hWnd);
@@ -198,33 +172,38 @@ namespace runner
             }
         }
 
-        private delegate bool EnumWindowsProc(IntPtr hWnd, int lParam);
-
-        [DllImport("USER32.DLL")]
-        private static extern bool EnumWindows(EnumWindowsProc enumFunc, int lParam);
-
-
-        public static void moveOver(IntPtr baseHandle, ExpectedTT expectedTt)
+        public static void MoveOver(IntPtr baseHandle, ExpectedToolTip expectedToolTip, bool click = false)
         {
-            switch (expectedTt)
+            int x, y;
+            switch (expectedToolTip)
             {
                 case Health:
-                    AutoItX.WinActivate(baseHandle);
-                    MouseManager.MouseMove(baseHandle, 500, 350);
+                    x = 500;
+                    y = 350;
                     break;
                 case Mana:
-                    AutoItX.WinActivate(baseHandle);
-                    MouseManager.MouseMove(baseHandle,590, 350);
+                    x = 590;
+                    y = 350;
                     break;
-                case ExpectedTT.Inventory:
-                    AutoItX.WinActivate(baseHandle);
-                    MouseManager.MouseMove(baseHandle,500, 375);
+                case ExpectedToolTip.Inventory:
+                    x = 500;
+                    y = 375;
                     break;
                 case Spells:
-                    AutoItX.WinActivate(baseHandle);
-                    MouseManager.MouseMove(baseHandle,590, 375);
+                    x = 590;
+                    y = 375;
                     break;
+                default: throw new NotImplementedException();
                 
+            }
+            AutoItX.WinActivate(baseHandle);
+            if (click)
+            {
+                MouseManager.MouseClick(baseHandle,x,y);
+            }
+            else
+            {
+                MouseManager.MouseMoveUnScaled(baseHandle,x,y);
             }
         }
     }

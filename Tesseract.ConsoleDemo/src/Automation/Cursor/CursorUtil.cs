@@ -7,11 +7,12 @@ namespace runner.Cursor
 {
     public class CursorUtil
     {
-        public static Bitmap left = load("./left.tiff");
-        public static Bitmap right = load("./right.tiff");
-        public static Bitmap up = load("./up.tiff");
-        public static Bitmap down = load("./down.tiff");
-        public static Bitmap hand = load("./hand.tiff");
+        public static readonly Bitmap left = load("./left.tiff");
+        public static readonly Bitmap right = load("./right.tiff");
+        public static readonly Bitmap up = load("./up.tiff");
+        public static readonly Bitmap down = load("./down.tiff");
+        public static readonly Bitmap hand = load("./hand.tiff");
+
         static Bitmap load(String desired)
         {
             return new Bitmap(desired);
@@ -19,13 +20,16 @@ namespace runner.Cursor
 
         public static bool isCursor(Bitmap desired, out int x1, out int x2)
         {
-            var cursor = Win32CursorUtils.CaptureCursor(out x1, out x2);
-
-            var result = ImageManip.CompareMemCmp(desired, cursor);
-            //Console.WriteLine("Oh Nice [{0}]", result);
-            return result;
+            using (var icon = new Win32CursorUtils())
+            {
+                icon.GetPoint(out x1, out x2);
+                using (var cursor = icon.Result)
+                {
+                    var result = ImageManip.CompareMemCmp(desired, cursor);
+                    //Console.WriteLine("Oh Nice [{0}]", result);
+                    return result;
+                }
+            }
         }
-        
-        
     }
 }

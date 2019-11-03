@@ -44,6 +44,13 @@ namespace runner
             {
                 close(program, baseHandle, sellScreen);
             }
+            else
+            {
+                //close it hard
+                AutoItX.WinClose(sellScreen);
+                Console.Error.WriteLine("Unable to find anything to sell; lets ask for weight and reply we did our job");
+                program.action.SoldInventory();
+            }
         }
 
         private static bool SellStuff(Program program, IntPtr baseHandle, TreeWalker walker, AutomationElement list, IntPtr sellScreen)
@@ -63,27 +70,26 @@ namespace runner
                 int count = 0;
                 while (sellable != null)
                 {
-                    ScreenCapturer.ConvertRect(out var rect, sellable.Current.BoundingRectangle);
+                    WindowHandleInfo.ConvertRect(out var rect, sellable.Current.BoundingRectangle);
                     if (!rect.IsEmpty
                         && sellable.TryGetClickablePoint(out var loc2)
-                        && wantToSell(sellable, walker, config, out string name)
                     )
                     {
-                        //todo click
+                        if (wantToSell(sellable, walker, config, out string name))
+                        {
+                            WindowHandleInfo.GetScale(baseHandle, out float sX, out float sY);
+#if TRACE_SELL
+                            Console.WriteLine("Selling [{0}] @ false loc {1}", name, loc2);
+#endif
+                            MouseManager.MouseClickAbsolute(baseHandle,MouseButton.RIGHT, (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
+                            return true;
+                        }
 
-                        ScreenCapturer.GetScale(baseHandle, out float sX, out float sY);
-
-                        //TODO
-                        Console.WriteLine("Selling [{0}] @ false loc {1}", name, loc2);
-
-
-                        MouseManager.MouseClick(baseHandle,"RIGHT", (int) locBase.X, (int) (locBase.Y + count * rect.Height * sY));
-                        return true;
+                        count++;
                     }
 
 
                     sellable = walker.GetNextSibling(sellable);
-                    count++;
                 }
             }
             catch (Exception)
@@ -119,8 +125,8 @@ namespace runner
 
         private static void close(Program program, IntPtr baseHandle, IntPtr sellScreen)
         {
-            ScreenCapturer.GetScale(sellScreen, out float sX, out float sY);
-            MouseManager.MouseClick(baseHandle,"LEFT", (int) (sX * baseX), (int) (sY * baseY));
+            WindowHandleInfo.GetScale(sellScreen, out float sX, out float sY);
+            MouseManager.MouseClickAbsolute(baseHandle,MouseButton.LEFT, (int) (sX * baseX), (int) (sY * baseY));
             Thread.Sleep(100);
             
             program.action.SoldInventory();

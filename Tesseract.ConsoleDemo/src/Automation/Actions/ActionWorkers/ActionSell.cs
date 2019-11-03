@@ -11,11 +11,15 @@ namespace runner.ActionWorkers
         public static bool DoAction(Program program, IntPtr baseHandle)
         {
             bool didSomething = false;
-            if (!findVerbWindow(program, baseHandle,out var verbWindow)) return false;
+            if (!findVerbWindow(program, baseHandle, out var verbWindow))
+            {
+                program.scan?.DidWork();
+                return false;
+            }
 
             if (!program.stateEngine.InState(StateEngine.OutOfCombat))
             {
-                Console.WriteLine("Can't Repair while not out of combat");
+                Console.WriteLine("Can't Sell while not out of combat");
                 return false;
             }
 
@@ -27,19 +31,19 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Sell))
                 {
                     Console.WriteLine("selling");
-                    VerbWindow.click(baseHandle,verb);
-                    program.action.wantToRepair = false;
+                    VerbWindow.Click(baseHandle, verb);
+                    program.action.wantToRepair = true;
                     didSomething = true;
                 }
                 else if (
                     verb.what.Equals(Verb.Repair))
                 {
                     Console.WriteLine("Selling at implied Button from repair");
-                    ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);
-                    var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y + 60 * sX), verb.rect.Width,
+                    WindowHandleInfo.GetScale(IntPtr.Zero, out float sX, out float sY);
+                    var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y + 60 * sY), verb.rect.Width,
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(baseHandle, implied);
+                    VerbWindow.Click(baseHandle, implied);
                     program.action.wantToRepair = true;
                     didSomething = true;
                 }
@@ -47,11 +51,11 @@ namespace runner.ActionWorkers
                     verb.what.Equals(Verb.Talk))
                 {
                     Console.WriteLine("Selling at implied Button from Talk");
-                    ScreenCapturer.GetScale(IntPtr.Zero, out float sX, out float sY);
+                    WindowHandleInfo.GetScale(IntPtr.Zero, out float sX, out float sY);
                     var r2 = new Rectangle(verb.rect.X, (int) (verb.rect.Y - 15 * sX), verb.rect.Width,
                         verb.rect.Height);
                     Verb implied = new Verb(r2, Verb.Sell);
-                    VerbWindow.click(baseHandle,implied);
+                    VerbWindow.Click(baseHandle, implied);
                     program.action.wantToRepair = true;
                     didSomething = true;
                 }
@@ -59,13 +63,12 @@ namespace runner.ActionWorkers
 
             if (didSomething)
             {
-                Thread.Sleep(TimeSpan.FromSeconds(1));
-                program.lastVerbWindow = null;
                 program.windowScanManager.flushScreenScan();
-                program.action.doSell(baseHandle);
-                
+                program.FinishVerbWindow();
+                Thread.Sleep(TimeSpan.FromSeconds(5));
+                program.action.DoSell(baseHandle);
             }
-            
+
             return false;
         }
     }

@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using AutoIt;
+using Tesseract.ConsoleDemo;
 
 namespace runner
 {
@@ -8,7 +9,7 @@ namespace runner
     {
         const int baseX = 414, baseY = 276;
 
-        public static void handle(IntPtr baseHandle)
+        public static void handle(IntPtr baseHandle, Program program)
         {
             var repair = Windows.getRepairNothingControl(baseHandle);
             if (repair != IntPtr.Zero)
@@ -19,15 +20,16 @@ namespace runner
                 if (text.Contains("You do not have anything that needs to be repaired."))
                 {
                     AutoItX.WinClose(repair);
+                    program.action.Repaired();
                 }
             }
 
             repair = Windows.getRepair(baseHandle);
             if (repair != IntPtr.Zero)
             {
-                ScreenCapturer.GetScale(repair, out float sX, out float sY);
                 //click repair all
-                MouseManager.MouseClick(baseHandle, "LEFT", (int) (sX * baseX), (int) (sY * baseY));
+                MouseManager.MouseClick(baseHandle, baseX, baseY);
+                program.action.Repaired();
             }
         }
     }

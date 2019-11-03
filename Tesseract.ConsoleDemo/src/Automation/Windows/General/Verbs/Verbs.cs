@@ -16,9 +16,12 @@ namespace runner
             Repair = "Repair",
             Steal = "Steal",
             WalkTo = "Walk To",
-            Sell = "Hail",
+            Sell = "Sell",
             Fight = "Fight",
             Talk = "Talk",
+            Chat = "Chat",
+            Follow = "Follow",
+            Group = "Group",
             Shop = "Shop",
             Cast = "Cast",
             Enter = "Eninr",
@@ -38,11 +41,12 @@ namespace runner
 
         public void click(IntPtr baseHandle, out int x, out int y)
         {
-            mouseover(baseHandle, out x, out y);
-            Console.WriteLine("Clicking on ({0},{1})", x, y);
             Thread.Sleep(1);
             mouseover(baseHandle, out x, out y);
-            MouseManager.MouseClick(baseHandle, "LEFT", x, y, 1, 1);
+#if DEBUG
+            Console.WriteLine("Clicking on ({0},{1})", x, y);
+#endif
+            MouseManager.MouseClickAbsolute(baseHandle, MouseButton.LEFT, x, y, 1, 1);
         }
 
         public void mouseover(IntPtr baseHandle, out int x, out int y)
@@ -50,15 +54,7 @@ namespace runner
             x = this.rect.X + 25;
             y = this.rect.Y + 5;
 
-            MouseManager.MouseMove(baseHandle, x, y, 1);
-        }
-    }
-
-    public partial class VerbWindow
-    {
-        public static void click(IntPtr baseHandle, Verb verb)
-        {
-            verb.click(baseHandle, out var x, out var y);
+            MouseManager.MouseMoveAbsolute(baseHandle, x, y, 1);
         }
     }
 }
