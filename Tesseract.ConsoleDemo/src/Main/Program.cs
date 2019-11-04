@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Threading;
 using AutoIt;
 using IO.Swagger.Model;
@@ -32,6 +33,12 @@ namespace Tesseract.ConsoleDemo
 
         public static void Main(string[] args)
         {
+            string name = null;
+            if (args.Length > 0)
+            {
+                name = args[0];
+            }
+
             ImageManipActiveTesting.testOcr(args);
             //Win32GetText.GetToolTipText((IntPtr)0x47)
             AutoItX.Init();
@@ -49,7 +56,7 @@ namespace Tesseract.ConsoleDemo
             {
                 //todo refactor into threads
                 var program = new Program(baseHandle);
-                program.Login();
+                program.Login(name);
                 programs.Add(program);
             }
 
@@ -65,20 +72,32 @@ namespace Tesseract.ConsoleDemo
                         {
                             program.Loop();
                         }
+                        catch (ExternalException wtfHappened)
+                        {
+                            throw new ExternalException("Fatal", wtfHappened);
+                        }
                         catch (Exception e)
                         {
                             Console.Error.WriteLine("Fatal Error : [{0}]", e);
                         }
                     } while (program.lastVerbWindow != null);
                 }
+
                 //Console.Write("!");
             }
         }
 
-        private void Login()
+        private void Login(string name)
         {
-            Guid g = Guid.NewGuid();
-            ego.Name = g.ToString();
+            if (name == null)
+            {
+                Guid g = Guid.NewGuid();
+                ego.Name = g.ToString();
+            }
+            else
+            {
+                ego.Name = name;
+            }
 
             new ApiCaller().login(ego.Name);
         }
@@ -197,7 +216,7 @@ namespace Tesseract.ConsoleDemo
 
         public void FinishVerbWindow()
         {
-            lastVerbWindow?.Dismiss(); 
+            lastVerbWindow?.Dismiss();
             lastVerbWindow = null;
             scan?.DidWork();
         }

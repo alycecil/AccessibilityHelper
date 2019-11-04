@@ -53,53 +53,94 @@ namespace runner
                 b = (int) (37 * sY);
 
             Rectangle rect = new Rectangle(l, t, r - l, b - t);
-            var c = AutoItX.PixelGetColor(rect.Left + 3, rect.Top + 3);
 
-            switch (c)
+            //var c = AutoItX.PixelGetColor(rect.Left + 3, rect.Top + 3);
+            using (var capture = ScreenCapturer.Capture(rect))
             {
-                case item when !wantItem:
-                    return null;
-                case item:
-                    type = item;
-                    return DoOcr(rect);
-                default:
+                var h = new __helper(capture);
+                var doIt = h.ShouldClick(out type);
+                if (doIt)
                 {
-                    if (CursorUtil.isCursor(CursorUtil.hand,
-                            out int clickx, out int clickY)
-                        || c == hasHp)
-                    {
-                        var ocr = DoOcr(rect);
-                        if (!string.IsNullOrEmpty(ocr))
-                            return ocr;
-                        return "IMPLIED";
-                    }
-
-                    break;
+                    var ocr = DoOcr(capture);
+                    if (!string.IsNullOrEmpty(ocr))
+                        return ocr;
+                    return "IMPLIED";
                 }
             }
 
             return null;
         }
 
-        private static string DoOcr(Rectangle rect)
+        private class __helper
         {
-            var capture = ScreenCapturer.Capture(rect);
-            if(capture== null) return null;
-            
+            private Bitmap capture;
+
+            internal __helper(Bitmap capture)
+            {
+                this.capture = capture;
+            }
+
+            internal bool ShouldClick(out int type)
+            {
+                var c = GetPixelColor(3,3);
+                
+                bool doIt = false;
+
+                switch (c)
+                {
+                    case item when !wantItem:
+                        type = item;
+                        break;
+                    case item:
+                        type = item;
+                        doIt = true;
+                        break;
+                    default:
+                    {
+                        type = c;
+                        if (c == hasHp)
+                        {
+                            doIt = true;
+                        }
+                        else if (CursorIsRight())
+                        {
+                            doIt = true;
+                        }
+
+                        break;
+                    }
+                }
+
+                return doIt;
+            }
+
+            private int GetPixelColor(int x, int y)
+            {
+                return capture.GetPixel(x,y).ToArgb() & 0x00FFFFFF;
+            }
+
+            private bool? cursorIsHand = null;
+            private bool CursorIsRight()
+            {
+                if (cursorIsHand == null)
+                {
+                    cursorIsHand = CursorUtil.isCursor(CursorUtil.hand,
+                        out int clickx, out int clickY);
+                }
+                if (cursorIsHand == null) return false;
+                return (bool) cursorIsHand;
+            }
+        }
+
+        private static string DoOcr(Bitmap capture)
+        {
+            if (capture == null) return null;
+
             capture = ImageManip.AdjustThreshold(capture, .9f);
             capture = ImageManip.Max(capture);
 
             var ocr = ImageManip.doOcr(capture);
             capture.Dispose();
-//        if (!string.IsNullOrEmpty(ocr))
-//        {
-//            Console.WriteLine("ocr [{0}]", ocr);
-//            ScreenCapturer.ImageSave("cap_%NOW%_" + ocr + "_", ImageFormat.Tiff, capture);
-//        }
-//        else
-//        {
-//            ScreenCapturer.ImageSave("cap_%NOW%_EMPTY_", ImageFormat.Tiff, capture);
-//        }
 
             return ocr;
         }

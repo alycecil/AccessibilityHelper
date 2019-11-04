@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using AutoIt;
 using Tesseract.ConsoleDemo;
 
@@ -41,6 +42,10 @@ ControlType:	UIA_PaneControlTypeId (0xC371)
                 var verbWindow = VerbWindowHelper.fromHandle(program, baseHandle, window, mousedOver, lightWeight);
                 program.lastVerbWindow = verbWindow;
                 return verbWindow;
+            }
+            catch (ExternalException wtfHappened)
+            {
+                throw new ExternalException("Fatal" , wtfHappened);
             }
             catch (Exception wtfHappened)
             {

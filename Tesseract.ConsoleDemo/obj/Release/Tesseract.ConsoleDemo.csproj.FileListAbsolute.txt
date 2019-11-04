@@ -67,3 +67,4 @@ H:\dev\runner\Tesseract.ConsoleDemo\bin\Release\RestSharp.xml
 H:\dev\runner\Tesseract.ConsoleDemo\bin\Release\Tesseract.xml
 H:\dev\runner\Tesseract.ConsoleDemo\obj\Release\Tesseract.ConsoleDemo.csprojAssemblyReference.cache
 H:\dev\runner\Tesseract.ConsoleDemo\obj\Release\Tesseract.ConsoleDemo.csproj.CopyComplete
+H:\dev\runner\Tesseract.ConsoleDemo\bin\Release\hand.tiff

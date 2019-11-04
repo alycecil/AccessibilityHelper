@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 using Tesseract.ConsoleDemo;
 
 namespace runner.ActionWorkers
@@ -40,6 +41,10 @@ namespace runner.ActionWorkers
                 Console.WriteLine("[Lost VerbWindow]");
                 program.FinishVerbWindow();
                 return false;
+            }
+            catch (ExternalException wtfHappened)
+            {
+                throw new ExternalException("Fatal" , wtfHappened);
             }
             catch (Exception e)
             {

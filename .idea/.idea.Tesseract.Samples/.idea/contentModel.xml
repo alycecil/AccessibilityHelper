@@ -9,6 +9,18 @@
         <e p="AutoItX.Dotnet.3.3.14.5\build\AutoItX3.dll" t="Include" />
         <e p="AutoItX.Dotnet.3.3.14.5\build\AutoItX3_x64.dll" t="Include" />
       </e>
+      <e p="Starter" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Release" t="Include">
+            <e p="net461" t="Include">
+              <e p="Starter.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Starter.csproj" t="IncludeRecursive" />
+      </e>
       <e p="Tesseract.ConsoleDemo" t="IncludeRecursive">
         <e p="app.config" t="Include" />
         <e p="app.manifest" t="Include" />
